@@ -22,15 +22,11 @@ header {
   background-color: var(--blue-dark);
   color: var(--blue-white);
   font-family: "Montserrat";
-  width: 100%;
-  margin: 0;
 }
 
 header img {
-  width: 5%;
+  width: 50px;
   margin: 1%;
-  padding: 0;
-  aspect-ratio: 1;
 }
 
 .Titre {
