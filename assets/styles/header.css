@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 0rem;
+
+  background: hsla(215, 45%, 53%, 1);
+
+  background: linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
+
+  background: -moz-linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
+
+  background: -webkit-linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1 );
+
+  color: var(--blue-white);
+  font-family: "Montserrat";
+  width: 100vw;
+  margin: 0;
+}
+
+header img {
+  width: 7rem;
+  margin: 0.5rem 1rem;
+  aspect-ratio: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header > #buttons {
+  padding-right: 2rem;
+}
+
+a {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
