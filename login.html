@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Connexion</title>
+    <meta
+      name="description"
+      content="Cette page vous permet de vous connecter au site."
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <header>
+    <img src="assets/images/logo.png" alt="logo" id="logo" />
+  </header>
+  <body>
+    <main>
+      <form id="myForm" method="post" onsubmit="return validateForm()">
+        <fieldset>
+          <label for="username">Identifiant</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="8"
+            required
+          />
+          <div id="loginbtns">
+            <input type="submit" value="Envoyer" />
+            <input type="reset" value="Réinitialiser" />
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

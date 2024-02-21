@@ -1,0 +1,11 @@
+/* Color Palette */
+:root {
+  --white: #ffffff;
+  --black: #04080f;
+  --blue-dark: #507dbc;
+  --blue: #a1c6ea;
+  --blue-light: #bbd1ea;
+  --blue-white: #dae3e5;
+  --blue-dark-contrast: #325480;
+  --blue-dark-contrast-hover: #1f3d5a;
+}
