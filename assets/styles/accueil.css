@@ -33,7 +33,7 @@ main > #flex-main > .blocs {
   flex: 30% 1 1;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0.5rem;
   gap: 1rem;
   border: solid black 2px;

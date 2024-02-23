@@ -1,41 +1,68 @@
-@import "normalize.css";
-@import "header.css";
 @import "color-palette.css";
+@import "header.css";
+@import "footer.css";
 
-.contact {
-  margin: 2rem;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 2rem;
-  display: flex;
-  flex-flow: column;
-  min-height: 75vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
 }
 
-.contact > h1 {
+/*----------MAIN----------*/
+
+body {
+  background: white;
+}
+
+h1 {
+  margin: 5rem 0rem 5rem 0rem;
   text-align: center;
-  margin: 1rem 0;
 }
 
-.contact > * {
-  margin: 1rem 1rem;
-}
-
-#contact-methods {
+#mail,
+#telephone,
+#adresse {
   display: flex;
-  flex-flow: row wrap;
-}
-
-#contact-methods > section {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
   align-items: center;
-  justify-content: center;
-  flex: 1 1 25%;
-  border: 2px solid black;
-  border-radius: 1rem;
-  padding: 1rem 1rem 0rem 1rem;
-  margin: 0.5rem;
+}
+
+#section-glo {
+  margin: auto;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
   text-align: center;
+  border: solid 2px black;
+  border-radius: 1rem;
+}
+
+#section-glo * {
+  font-size: 1.2rem;
+}
+
+#section-glo > section:not(:last-child) > p {
+  margin: 0rem 0rem 1rem 0rem;
+}
+
+#section-glo > section:last-child > p {
+  margin: 0rem;
+}
+
+#section-glo > section:not(:last-child) > i {
+  margin: 0rem 1rem 1rem 0rem;
+}
+
+#section-glo > section:last-child > i {
+  margin: 0rem 1rem 0rem 0rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #section-glo * {
+    font-size: 0.75rem;
+  }
+
+  main h1 {
+    font-size: 0.85rem;
+  }
 }
