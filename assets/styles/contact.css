@@ -67,16 +67,4 @@ h1 {
     main h1 {
         font-size: .85rem;
     }
-
-    header * {
-        font-size: .75rem;
-    }
-
-    header img {
-        transform: scale(0.75);
-    }
-
-    footer * {
-        font-size: .75rem;
-    }
 }

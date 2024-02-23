@@ -70,3 +70,13 @@ header #buttons a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+    header * {
+        font-size: .75rem;
+    }
+
+    header img {
+        transform: scale(0.75);
+    }
+}
