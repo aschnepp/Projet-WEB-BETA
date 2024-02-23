@@ -2,10 +2,6 @@
 @import "header.css";
 @import "color-palette.css";
 
-body {
-  background-color: var(--blue-white);
-}
-
 .about {
   margin: 2rem;
   background-color: white;
