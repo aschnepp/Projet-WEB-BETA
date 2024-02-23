@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import "header.css";
 @import "color-palette.css";
+@import "footer.css";
 
 .CGU {
   margin: 2rem;

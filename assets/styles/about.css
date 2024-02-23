@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import "header.css";
 @import "color-palette.css";
+@import "footer.css";
 
 .about {
   margin: 2rem;
