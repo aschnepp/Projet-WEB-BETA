@@ -71,3 +71,7 @@ fieldset a {
   display: flex;
   justify-content: space-around;
 }
+
+#remember {
+  margin-top: 3%;
+}
