@@ -57,6 +57,16 @@ fieldset input[type="reset"]:hover {
   background-color: var(--blue-white);
 }
 
+fieldset a {
+  color: var(--blue-dark-contrast);
+  text-align: center;
+  text-decoration: underline;
+  font-size: smaller;
+  width: auto;
+  height: auto;
+  background-color: var(--white);
+}
+
 #loginbtns {
   display: flex;
   justify-content: space-around;

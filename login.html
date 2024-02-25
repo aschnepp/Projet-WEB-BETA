@@ -14,9 +14,15 @@
     />
     <link rel="stylesheet" href="assets/styles/login.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="assets/images/logo.webp"
+      as="image"
+      type="image/webp"
+    />
   </head>
   <header>
-    <img src="assets/images/logo.png" alt="logo" id="logo" />
+    <img src="assets/images/logo.webp" alt="logo" id="logo" />
   </header>
   <body>
     <main>
@@ -32,10 +38,15 @@
             minlength="8"
             required
           />
+          <div>
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Se souvenir de moi</label>
+          </div>
           <div id="loginbtns">
             <input type="submit" value="Envoyer" />
             <input type="reset" value="Réinitialiser" />
           </div>
+          <a href="#">Demander un accès à la plateforme</a>
         </fieldset>
       </form>
     </main>
