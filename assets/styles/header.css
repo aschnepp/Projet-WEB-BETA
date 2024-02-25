@@ -115,11 +115,7 @@ header #header-droite a:hover {
     }
 
     i[class*="fa"] {
-        cursor: pointer;
         width: 26.6px;
         height: 26.6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
