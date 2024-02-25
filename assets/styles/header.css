@@ -1,5 +1,7 @@
 header {
   display: flex;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   padding: 0.1rem 0rem;
@@ -24,31 +26,63 @@ header {
     hsla(210, 63%, 77%, 1) 93%
   );
 
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
 
-  color: var(--blue-white);
+  color: white;
   font-family: "Montserrat";
-  width: 100vw;
-  margin: 0;
+  width: 100%;
 }
 
 header img {
-  width: 7rem;
-  margin: 0.5rem 1rem;
-  aspect-ratio: 1;
+  width: 50px;
 }
 
-header {
+header #image-accueil {
+  cursor: pointer;
+  margin: 0.5rem 1rem;
+}
+
+header > #header-gauche {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+header > #header-milieu {
+  color: var(--black);
+  border: solid black 1px;
+  border-radius: 10px;
+  background: var(--blue-white);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 header > #buttons {
+  margin-left: 0.5rem;
   padding-right: 2rem;
 }
 
-a {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+header > #buttons > a {
+  text-decoration: none;
+  color: var(--black);
+  padding: 3px 7px;
+  border: solid black 1px;
+  border-radius: 10px;
+  background: var(--blue-white);
+}
+
+header #buttons a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  header * {
+    font-size: 0.75rem;
+  }
+
+  header img {
+    transform: scale(0.75);
+  }
 }

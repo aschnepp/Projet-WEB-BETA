@@ -21,10 +21,18 @@
       type="image/webp"
     />
   </head>
-  <header>
-    <img src="../assets/images/logo.webp" alt="logo" id="logo" />
-  </header>
   <body>
+    <header>
+      <section id="header-gauche">
+        <a href="accueil.html" id="image-accueil"
+          ><img src="../assets/images/logo.webp" alt="logo" id="logo"
+        /></a>
+        <p id="header-p">Stage Catalyst</p>
+      </section>
+      <section id="buttons">
+        <a rel="preconnect" href="login.html">Connexion</a>
+      </section>
+    </header>
     <main>
       <form id="myForm" method="post" onsubmit="return validateForm()">
         <fieldset>
@@ -50,5 +58,13 @@
         </fieldset>
       </form>
     </main>
+    <footer>
+      <section id="liens-footer">
+        <a href="cgu.html" class="a-footer">CGU</a>
+        <a href="a-propos.html" class="a-footer">A Propos</a>
+        <a href="contact.html" class="a-footer">Contact</a>
+      </section>
+      <p>Stage Catalyst © 2024</p>
+    </footer>
   </body>
 </html>

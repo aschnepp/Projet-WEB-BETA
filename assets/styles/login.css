@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "header.css";
+@import "footer.css";
 @import "color-palette.css";
 
 body {
@@ -11,6 +12,16 @@ main {
   justify-content: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
 fieldset {
   display: flex;
   flex-direction: column;
@@ -18,7 +29,7 @@ fieldset {
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  width: 50%;
+  width: auto;
 }
 
 fieldset label {
@@ -65,6 +76,7 @@ fieldset a {
   width: auto;
   height: auto;
   background-color: var(--white);
+  margin-top: 1%;
 }
 
 #loginbtns {
