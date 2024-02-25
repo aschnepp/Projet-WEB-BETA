@@ -1,13 +1,7 @@
 @import "color-palette.css";
 @import "header.css";
 @import "footer.css";
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat";
-}
+@import "normalize.css";
 
 /*----------MAIN----------*/
 
@@ -32,7 +26,6 @@ h1 {
     padding: 1rem;
     width: fit-content;
     height: fit-content;
-    text-align: center;
     border: solid 2px black;
     border-radius: 1rem;
 }

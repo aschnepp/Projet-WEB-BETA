@@ -1,5 +1,7 @@
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
     position: sticky;
     top: 0;
     justify-content: space-between;
@@ -25,10 +27,13 @@ header {
     color: white;
     font-family: "Montserrat";
     width: 100%;
+    height: 75px;
+    z-index: 1000;
 }
 
 header img {
     width: 50px;
+    height: 50px;
 }
 
 header #image-accueil {
@@ -37,27 +42,56 @@ header #image-accueil {
 }
 
 header>#header-gauche {
+    justify-self: left;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-right: 0.5rem;
+    gap: 0.5rem;
 }
 
 header>#header-milieu {
-    color: var(--black);
-    border: solid black 1px;
-    border-radius: 10px;
-    background: var(--blue-white);
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem
 }
 
-header>#buttons {
-    margin-left: 0.5rem;
-    padding-right: 2rem;
+header>#header-droite {
+    justify-self: right;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-header>#buttons>a {
+input {
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    background-color: var(--blue-white);
+}
+
+i {
+    border: solid black 1.7px;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    background-color: var(--blue-white);
+    color: black;
+}
+
+i[class*="fa"] {
+    cursor: pointer;
+    width: 31.2px;
+    height: 31.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header>#header-droite {
+    margin-left: 0.5rem;
+    padding-right: 1rem;
+}
+
+header>#header-droite>a {
     text-decoration: none;
     color: var(--black);
     padding: 3px 7px;
@@ -66,7 +100,7 @@ header>#buttons>a {
     background: var(--blue-white);
 }
 
-header #buttons a:hover {
+header #header-droite a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
@@ -78,5 +112,14 @@ header #buttons a:hover {
 
     header img {
         transform: scale(0.75);
+    }
+
+    i[class*="fa"] {
+        cursor: pointer;
+        width: 26.6px;
+        height: 26.6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
