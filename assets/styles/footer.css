@@ -1,49 +1,49 @@
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  margin-top: 50px;
-  text-align: center;
-  gap: 1rem;
-  bottom: 0;
-  width: 100%;
-  background: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    margin-top: 50px;
+    text-align: center;
+    gap: 1rem;
+    bottom: 0;
+    width: 100%;
+    background: var(--blue);
 }
 
-footer > #liens-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 0px 0.75rem 1.5rem;
+footer>#liens-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0px 0.75rem 1.5rem;
 }
 
-footer > #liens-footer > a {
-  text-decoration: none;
-  color: var(--black);
+footer>#liens-footer>a {
+    text-decoration: none;
+    color: var(--black);
 }
 
-footer > #liens-footer > a:hover {
-  text-decoration: underline;
-  font-weight: bold;
+footer>#liens-footer>a:hover {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-footer > p {
-  padding-right: 1.5rem;
+footer>p {
+    padding-right: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
-  footer * {
-    font-size: 0.75rem;
-  }
+    footer * {
+        font-size: .75rem;
+    }
 }
