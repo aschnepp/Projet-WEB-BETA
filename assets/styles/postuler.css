@@ -35,13 +35,19 @@ fieldset {
 fieldset label {
   color: var(--blue-dark-contrast);
   font-weight: bold;
+  margin: 0.5rem 0;
+  width: auto;
 }
 
 fieldset input {
-  margin: 0.5rem 0;
   padding: 0.5rem;
   border: 1px solid var(--blue);
   border-radius: 5px;
+  width: auto;
+}
+
+fieldset input[type="file"] {
+  overflow: hidden;
 }
 
 fieldset input[type="submit"] {
@@ -79,11 +85,39 @@ fieldset a {
   margin-top: 1%;
 }
 
+fieldset section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--blue-light);
+  width: auto;
+  height: auto;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  word-break: break-word;
+}
+section h3 {
+  display: flex;
+  margin-top: auto 0;
+  align-items: center;
+  justify-content: center;
+}
+fieldset section p {
+  padding-left: 0.5rem;
+}
+
 #loginbtns {
   display: flex;
   justify-content: space-around;
 }
 
-#remember {
-  margin-top: 3%;
+#item {
+  flex: 1 1 auto;
+  min-width: auto;
+}
+
+section.infos {
+  margin-bottom: 0.5rem;
 }
