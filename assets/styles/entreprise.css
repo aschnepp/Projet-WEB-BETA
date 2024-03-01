@@ -11,11 +11,11 @@
 
 /*----------MAIN---------*/
 
-#section-main {
+main {
+    padding: 3rem 0rem 3rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 75px - 40px);
 }
 
 #section-formulaire {

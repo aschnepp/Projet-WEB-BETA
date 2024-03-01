@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link rel="preload" as="image" href="../assets/images/logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="../scripts/menuburger.js"></script>
     <meta name="description" content="Page de gestion des entreprises pour Stage Catalyst.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,61 +29,78 @@
         </section>
 
         <section id="header-droite">
-            <i class="fa fa-heart" id="wishlist" aria-hidden="true"></i>
-            <i class="fa fa-building" id="entreprise" aria-hidden="true"></i>
-            <i class="fa fa-briefcase" id="job" aria-hidden="true"></i>
-            <i class="fa fa-cog" aria-hidden="true"></i>
-            <a rel="preconnect" href="login.html">Connexion</a>
+            <!-- Menu Burger -->
+            <div id="menu-burger-header">
+                <div class="barre-haut"></div>
+                <div class="barre-milieu"></div>
+                <div class="barre-bas"></div>
+            </div>
+
+            <!-- Contenu du header-droite -->
+            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
+                href="test.html"></a>
+            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
     </header>
 
+
     <main>
-        <section id="section-main">
-            <section id="section-formulaire">
-                <h2>Création d'entreprise</h2>
-                <form action="" id="formulaire">
-                    <section id="nom">
-                        <label for="nom-entreprise">Nom*</label>
-                        <div>
-                            <input type="text" name="nom-entreprise" id="nom-entreprise" required placeholder="Nom">
-                        </div>
-                    </section>
+        <div id="menu-burger-flou">
+            <div id="menu-burger-main">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
+                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
+                    sit
+                    aperiam totam explicabo! Rem, tenetur.</p>
+                <div>zdq</div>
+                <div>zdqz</div>
+            </div>
+        </div>
+        <section id="section-formulaire">
+            <h2>Création d'entreprise</h2>
+            <form action="" id="formulaire">
+                <section id="nom">
+                    <label for="nom-entreprise">Nom*</label>
+                    <div>
+                        <input type="text" name="nom-entreprise" id="nom-entreprise" required placeholder="Nom">
+                    </div>
+                </section>
 
-                    <section id="adresse">
-                        <label for="adresse-entreprise">Adresse*</label>
-                        <div>
-                            <input type="text" name="adresse-entreprise" id="adresse-entreprise" required
-                                placeholder="Adresse">
-                        </div>
-                    </section>
+                <section id="adresse">
+                    <label for="adresse-entreprise">Adresse*</label>
+                    <div>
+                        <input type="text" name="adresse-entreprise" id="adresse-entreprise" required
+                            placeholder="Adresse">
+                    </div>
+                </section>
 
-                    <section id="localisation">
-                        <label for="ville-entreprise">Ville*</label>
-                        <label for="code-postal-entreprise">Code Postal*</label>
-                        <input type="text" name="ville-entreprise" id="ville-entreprise" required placeholder="Ville">
-                        <input type="text" name="code-postal-entreprise" id="code-postal-entreprise" required
-                            placeholder="Code Postal">
-                    </section>
+                <section id="localisation">
+                    <label for="ville-entreprise">Ville*</label>
+                    <label for="code-postal-entreprise">Code Postal*</label>
+                    <input type="text" name="ville-entreprise" id="ville-entreprise" required placeholder="Ville">
+                    <input type="text" name="code-postal-entreprise" id="code-postal-entreprise" required
+                        placeholder="Code Postal">
+                </section>
 
-                    <section id="secteur-activite">
-                        <label for="secteur-activite-entreprise">Secteur d'activité*</label>
-                        <div>
-                            <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise"
-                                required placeholder="Secteur d'activité">
-                        </div>
-                    </section>
+                <section id="secteur-activite">
+                    <label for="secteur-activite-entreprise">Secteur d'activité*</label>
+                    <div>
+                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
+                            placeholder="Secteur d'activité">
+                    </div>
+                </section>
 
-                    <section id="bouton-class-id" class="boutons">
-                        <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
-                        <input type="reset" id="reset" value="Réinitialiser">
-                        <button type="button">Annuler</button>
-                    </section>
+                <section id="bouton-class-id" class="boutons">
+                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
+                    <input type="reset" id="reset" value="Réinitialiser">
+                    <button type="button">Annuler</button>
+                </section>
 
-                    <section id="champs-obligatoires">
-                        <p>* : Champs obligatoires</p>
-                    </section>
-                </form>
-            </section>
+                <section id="champs-obligatoires">
+                    <p>* : Champs obligatoires</p>
+                </section>
+            </form>
         </section>
     </main>
 
