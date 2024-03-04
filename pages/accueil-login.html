@@ -9,7 +9,7 @@
         rel="stylesheet">
     <link rel="preload" as="image" href="../assets/images/logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
     <meta name="description" content="Page d'accueil après connexion.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,71 +58,11 @@
                 <div>zdqz</div>
             </div>
         </div>
-        <section id="section-formulaire">
-            <h2>Création d'offre</h2>
-            <form action="" id="formulaire">
-                <section id="nom">
-                    <label for="nom-offre">Nom*</label>
-                    <div>
-                        <input type="text" name="nom-offre" id="nom-offre" required placeholder="Nom">
-                    </div>
-                </section>
 
-                <section id="secteur">
-                    <label for="secteur-activite">Secteur d'activité*</label>
-                    <div>
-                        <input type="text" name="secteur-activite" id="secteur-activite" required
-                            placeholder="Secteur d'activité">
-                    </div>
-                </section>
+        <section id="section-main">
+            <h2>Bienvenue sur votre espace membre !</h2>
+            <h3>Voici les dernières offres mises en ligne.</h3>
 
-                <section id="competences">
-                    <label for="competence">Compétences*</label>
-                    <div>
-                        <input type="text" name="competence" id="competence" required placeholder="Compétences">
-                    </div>
-                </section>
-
-                <section id="entreprise-formulaire">
-                    <label for="entreprise-emploi">Entreprise*</label>
-                    <div>
-                        <input type="text" name="competence" id="entreprise-emploi" required placeholder="Entreprise">
-                    </div>
-                </section>
-
-                <section id="promotions">
-                    <label for="promotions-concernees">Promotions concernées*</label>
-                    <div>
-                        <input type="text" name="competence" id="promotions-concernees" required
-                            placeholder="Promotions concernées">
-                    </div>
-                </section>
-
-                <section id="dates">
-                    <label for="duree">Durée (en semaines)*</label>
-                    <label for="date-debut">Date de début*</label>
-                    <input type="text" name="duree" id="duree" required placeholder="Durée">
-                    <input type="text" name="date-debut" id="date-debut" required placeholder="Date de début">
-                </section>
-
-                <section id="informations-complementaires">
-                    <label for="remuneration">Rémunération (en €/h)*</label>
-                    <label for="nb-places">Nombre de places*</label>
-                    <input type="text" name="remuneration" id="remuneration" required placeholder="Rémunération">
-                    <input type="text" name="nb-places" id="nb-places" required placeholder="Nombre de places">
-                </section>
-
-                <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
-                    <input type="reset" id="reset" value="Réinitialiser">
-                    <button type="button" href="javascript:window.history.back();">Annuler
-                    </button>
-                </section>
-
-                <section id="champs-obligatoires">
-                    <p>* : Champs obligatoires</p>
-                </section>
-            </form>
         </section>
     </main>
 
