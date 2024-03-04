@@ -20,6 +20,17 @@
       as="image"
       type="image/webp"
     />
+    <link rel="preload" href="../assets/scripts/stats-offres.js" as="script" />
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://logo.clearbit.com" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../assets/scripts/stats-offres.js"
+    ></script>
   </head>
   <body>
     <header>
@@ -34,29 +45,34 @@
       </section>
     </header>
     <main>
-      <form id="myForm" method="post" onsubmit="return validateForm()">
-        <fieldset>
-          <label for="username">Identifiant</label>
-          <input type="text" id="username" name="username" required />
-          <label for="password">Mot de passe</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            minlength="8"
-            required
-          />
-          <div id="remember">
-            <input type="checkbox" id="souvenir" name="souvenir" />
-            <label for="remember">Se souvenir de moi</label>
+      <section id="stats-offres">
+        <div></div>
+        <h2>Répartition par secteur</h2>
+        <div id="piechart"></div>
+        <h2>Répartition par localité</h2>
+        <div id="regions_div"></div>
+        <h2>Top Offres</h2>
+        <section id="podium">
+          <div id="first" class="places">
+            <h1>🥇</h1>
+            <h4 id="logo1-name"></h4>
+            <div id="logo1-container"></div>
           </div>
-          <div id="loginbtns">
-            <input type="submit" value="Envoyer" />
-            <input type="reset" value="Réinitialiser" />
+          <div id="second" class="places">
+            <h1>🥈</h1>
+            <h4 id="logo2-name"></h4>
+            <div id="logo2-container"></div>
           </div>
-          <a href="#">Demander un accès à la plateforme</a>
-        </fieldset>
-      </form>
+          <div id="third" class="places">
+            <h1>🥉</h1>
+            <h4 id="logo3-name"></h4>
+            <div id="logo3-container"></div>
+          </div>
+        </section>
+        <a href="https://clearbit.com" id="attributions"
+          >Logos provided by Clearbit</a
+        >
+      </section>
     </main>
     <footer>
       <section id="liens-footer">

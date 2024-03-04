@@ -10,7 +10,9 @@ window.onload = function () {
   fetchAndDisplayLogo(entreprise1, "logo1-container");
   fetchAndDisplayLogo(entreprise2, "logo2-container");
   fetchAndDisplayLogo(entreprise3, "logo3-container");
-  document.getElementById("logo1-name").textContent = entreprise1;
+  document.getElementById("logo1-name").textContent = "1 - " + entreprise1;
+  document.getElementById("logo2-name").textContent = "2 - " + entreprise2;
+  document.getElementById("logo3-name").textContent = "3 - " + entreprise3;
 };
 
 function drawRegionsMap() {
