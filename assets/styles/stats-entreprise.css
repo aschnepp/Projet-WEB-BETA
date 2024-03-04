@@ -1,0 +1,46 @@
+@import "normalize.css";
+@import "header.css";
+@import "footer.css";
+@import "color-palette.css";
+
+body {
+  background-color: var(--white);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+#regions_div {
+  width: 50%;
+  aspect-ratio: 16/9;
+  z-index: 0;
+  height: auto;
+}
+
+#piechart {
+  width: 50%;
+  aspect-ratio: 1/1;
+  height: auto;
+  z-index: 0;
+}
+
+#attributions {
+  color: black;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #regions_div {
+    width: 80%;
+  }
+}

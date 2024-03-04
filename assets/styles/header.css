@@ -1,82 +1,89 @@
 header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.1rem 0rem;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 0rem;
 
-    background: hsla(215, 45%, 53%, 1);
+  background: hsla(215, 45%, 53%, 1);
 
-    background: linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
 
-    background: -moz-linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: -moz-linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
 
-    background: -webkit-linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: -webkit-linear-gradient(
+    315deg,
+    hsla(215, 45%, 53%, 1) 17%,
+    hsla(210, 63%, 77%, 1) 93%
+  );
 
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
 
-    color: white;
-    font-family: "Montserrat";
-    width: 100%;
+  color: white;
+  font-family: "Montserrat";
+  width: 100%;
+  z-index: 100;
 }
 
 header img {
-    width: 50px;
+  width: 50px;
 }
 
 header #image-accueil {
-    cursor: pointer;
-    margin: 0.5rem 1rem;
+  cursor: pointer;
+  margin: 0.5rem 1rem;
 }
 
-header>#header-gauche {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 0.5rem;
+header > #header-gauche {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.5rem;
 }
 
-header>#header-milieu {
-    color: var(--black);
-    border: solid black 1px;
-    border-radius: 10px;
-    background: var(--blue-white);
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+header > #header-milieu {
+  color: var(--black);
+  border: solid black 1px;
+  border-radius: 10px;
+  background: var(--blue-white);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-header>#buttons {
-    margin-left: 0.5rem;
-    padding-right: 2rem;
+header > #buttons {
+  margin-left: 0.5rem;
+  padding-right: 2rem;
 }
 
-header>#buttons>a {
-    text-decoration: none;
-    color: var(--black);
-    padding: 3px 7px;
-    border: solid black 1px;
-    border-radius: 10px;
-    background: var(--blue-white);
+header > #buttons > a {
+  text-decoration: none;
+  color: var(--black);
+  padding: 3px 7px;
+  border: solid black 1px;
+  border-radius: 10px;
+  background: var(--blue-white);
 }
 
 header #buttons a:hover {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
-    header * {
-        font-size: .75rem;
-    }
+  header * {
+    font-size: 0.75rem;
+  }
 
-    header img {
-        transform: scale(0.75);
-    }
+  header img {
+    transform: scale(0.75);
+  }
 }

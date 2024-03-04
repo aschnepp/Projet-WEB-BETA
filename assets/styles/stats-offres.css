@@ -1,0 +1,13 @@
+@import "normalize.css";
+@import "header.css";
+@import "footer.css";
+@import "color-palette.css";
+
+body {
+  background-color: var(--white);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
