@@ -5,5 +5,3 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteEngine On
 RewriteCond %{QUERY_STRING} ^(.*)i=[^&]+(.*)$ [NC]
 RewriteRule ^(.*)$ /$1?%1%2 [R=301,L]
-
-DirectoryIndex /pages/index.html
