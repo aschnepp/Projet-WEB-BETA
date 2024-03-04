@@ -108,6 +108,7 @@ header #header-droite a[class*="fa"]:hover {
     font-weight: none;
 }
 
+
 @media only screen and (max-width: 600px) {
     header * {
         font-size: .85rem;
@@ -122,15 +123,58 @@ header #header-droite a[class*="fa"]:hover {
         width: 26.6px;
         height: 26.6px;
         font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
     header #header-milieu input {
-        width: 100px;
+        width: 175px;
     }
 
     header #header-milieu i {
         width: 27.51px;
         height: 27.51px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header #header-milieu input {
+        width: 150px;
+    }
+
+    i[class*="fa"],
+    a[class*="fa"] {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header #header-milieu input {
+        width: 120px;
+    }
+
+    i[class*="fa"],
+    a[class*="fa"] {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+}
+
+
+@media only screen and (max-width: 320px) {
+    header #header-milieu input {
+        width: 110px;
+    }
+
+    i[class*="fa"],
+    a[class*="fa"] {
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 }
 
@@ -196,6 +240,7 @@ header #header-droite a[class*="fa"]:hover {
 
 main {
     position: relative;
+    background-color: white;
 }
 
 main #menu-burger-flou {
