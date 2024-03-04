@@ -84,17 +84,27 @@ main {
     margin: 3rem 4rem;
   }
 
-  main .blocs h2,
-  main .blocs p {
+  main .blocs h2 {
     font-size: 1rem;
+  }
+
+  main .blocs p {
+    font-size: 0.8rem;
   }
 
   main #flex-main {
     gap: 2rem;
-    padding: 0 3.5rem;
+    padding: 0 2rem;
   }
 
   main #flex-main .blocs {
     gap: 0;
+  }
+
+  main #flex-main #image1,
+  main #flex-main #image2,
+  main #flex-main #image3 {
+    width: 200px;
+    height: 130px
   }
 }
