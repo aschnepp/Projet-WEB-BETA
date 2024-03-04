@@ -29,7 +29,7 @@ fieldset {
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  width: auto;
+  width: 80%;
 }
 
 fieldset label {
@@ -48,6 +48,14 @@ fieldset input {
 
 fieldset input[type="file"] {
   overflow: hidden;
+  width: auto;
+}
+
+@media (max-width: 500px) {
+  fieldset input[type="file"] {
+    width: 150px;
+    color: transparent;
+  }
 }
 
 fieldset input[type="submit"] {
@@ -56,6 +64,7 @@ fieldset input[type="submit"] {
   font-weight: bold;
   cursor: pointer;
   border: 1px solid var(--blue-dark-contrast);
+  margin: 0.5rem 0;
 }
 
 fieldset input[type="submit"]:hover {
@@ -68,6 +77,7 @@ fieldset input[type="reset"] {
   font-weight: bold;
   cursor: pointer;
   border: 1px solid var(--blue-dark-contrast);
+  margin: 0.5rem 0;
 }
 
 fieldset input[type="reset"]:hover {
