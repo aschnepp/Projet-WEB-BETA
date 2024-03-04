@@ -10,3 +10,15 @@
 }
 
 /*----------MAIN---------*/
+
+main h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+main h3 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
