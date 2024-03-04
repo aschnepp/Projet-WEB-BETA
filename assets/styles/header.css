@@ -142,7 +142,7 @@ header #header-droite a[class*="fa"]:hover {
 }
 
 #menu-burger-header.active .barre-haut {
-    transform: rotate(45.5deg);
+    transform: rotate(43deg);
 }
 
 #menu-burger-header.active .barre-milieu {
@@ -151,7 +151,7 @@ header #header-droite a[class*="fa"]:hover {
 }
 
 #menu-burger-header.active .barre-bas {
-    transform: rotate(-45.5deg);
+    transform: rotate(-43deg);
 }
 
 #menu-burger-header.disabled {
@@ -218,7 +218,7 @@ main #menu-burger-main {
     right: calc(-40vw);
     width: 40vw;
     height: calc(100vh - 75px - 40px);
-    overflow-y: hidden;
+    overflow-y: scroll;
     transition: right 0.5s ease-in-out;
     background: var(--blue-dark);
 }

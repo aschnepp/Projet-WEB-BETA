@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Semaines', 'Nombre de stages effectués'],
+                [7, 10],
+                [8, 11],
+                [9, 12],
+                [10, 13],
+                [11, 14],
+                [12, 15],
+                [13, 16],
+                [14, 10],
+                [15, 18],
+                [16, 19],
+                [17, 20],
+                [18, 21],
+                [19, 22],
+                [20, 23],
+            ]);
+
+            var options = {
+                title: 'Graphique représentant les tendances des durées de stage',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                hAxis: {
+                    title: 'Semaines'
+                },
+                vAxis: {
+                    title: 'Nombre de stages effectués'
+                },
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Test', 'Nombre de stagiaires', { role: 'style' }],
+                ['2014', 1000, 'color: #3366cc'],
+                ['2015', 1170, 'color: #dc3912'],
+                ['2016', 660, 'color: #ff9900'],
+                ['2017', 1030, 'color: #109618']
+            ]);
+
+            var options = {
+                title: 'Entreprises ayant accepté le plus de stagiaires',
+                subtitle: 'Données de 2018 à 2023',
+                hAxis: {
+                    title: 'Entreprises'
+                },
+                vAxis: {
+                    title: 'Nombre de stages effectués'
+                },
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities',
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+</body>
+
+</html>
