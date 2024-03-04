@@ -1,0 +1,23 @@
+@import "normalize.css";
+@import "header.css";
+@import "color-palette.css";
+@import "footer.css";
+
+.CGU {
+  margin: 2rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-flow: column;
+  min-height: 75vh;
+}
+
+.CGU > h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.CGU > * {
+  margin: 1rem 1rem;
+}
