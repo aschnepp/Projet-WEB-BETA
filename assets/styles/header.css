@@ -113,7 +113,7 @@ header #header-droite a[class*="fa"]:hover {
     }
 
     header img {
-        transform: scale(0.85);
+        transform: scale(0.8);
     }
 
     i[class*="fa"],
@@ -121,6 +121,15 @@ header #header-droite a[class*="fa"]:hover {
         width: 26.6px;
         height: 26.6px;
         font-size: 1rem;
+    }
+
+    header #header-milieu input {
+        width: 100px;
+    }
+
+    header #header-milieu i {
+        width: 27.51px;
+        height: 27.51px;
     }
 }
 
@@ -163,8 +172,8 @@ header #header-droite a[class*="fa"]:hover {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
-        height: 45px;
-        width: 45px;
+        height: 40px;
+        width: 40px;
         cursor: pointer;
     }
 

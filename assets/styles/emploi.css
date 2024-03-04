@@ -42,13 +42,33 @@ main {
     margin-bottom: 0.5rem;
 }
 
-#localisation {
+#dates {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 4fr 6fr;
     grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-#localisation input {
+#dates label {
+    align-self: center;
+}
+
+#dates input {
+    width: 100%;
+}
+
+#informations-complementaires {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#informations-complementaires label {
+    align-self: center;
+}
+
+#informations-complementaires input {
     width: 100%;
 }
 
@@ -82,6 +102,12 @@ button:hover,
 }
 
 @media only screen and (max-width: 600px) {
+    #section-formulaire {
+        padding: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     #section-formulaire h2 {
         font-size: 1.3rem;
     }

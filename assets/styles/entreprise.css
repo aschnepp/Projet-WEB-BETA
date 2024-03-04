@@ -44,8 +44,13 @@ main {
 
 #localisation {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 6fr 4fr;
     grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#localisation #label-ville {
+    align-self: center;
 }
 
 #localisation input {
@@ -82,6 +87,12 @@ button:hover,
 }
 
 @media only screen and (max-width: 600px) {
+    #section-formulaire {
+        padding: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     #section-formulaire h2 {
         font-size: 1.3rem;
     }
