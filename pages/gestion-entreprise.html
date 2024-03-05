@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../assets/styles/emploi.css" />
+    <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -10,10 +10,10 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <meta name="description" content="Page de gestion des offres de stage.">
+    <meta name="description" content="Page de gestion des entreprises.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des offres</title>
+    <title>Gestion des entreprises</title>
 </head>
 
 <body>
@@ -58,57 +58,37 @@
             </div>
         </div>
         <section id="section-formulaire">
-            <h2>Création d'offre</h2>
+            <h2>Création d'entreprise</h2>
             <form action="" id="formulaire">
                 <section id="nom">
-                    <label for="nom-offre">Nom*</label>
+                    <label for="nom-entreprise">Nom*</label>
                     <div>
-                        <input type="text" name="nom-offre" id="nom-offre" required placeholder="Nom">
+                        <input type="text" name="nom-entreprise" id="nom-entreprise" required placeholder="Nom">
                     </div>
                 </section>
 
-                <section id="secteur">
-                    <label for="secteur-activite">Secteur d'activité*</label>
+                <section id="adresse">
+                    <label for="adresse-entreprise">Adresse*</label>
                     <div>
-                        <input type="text" name="secteur-activite" id="secteur-activite" required
+                        <input type="text" name="adresse-entreprise" id="adresse-entreprise" required
+                            placeholder="Adresse">
+                    </div>
+                </section>
+
+                <section id="localisation">
+                    <label for="ville-entreprise" id="label-ville">Ville*</label>
+                    <label for="code-postal-entreprise">Code Postal*</label>
+                    <input type="text" name="ville-entreprise" id="ville-entreprise" required placeholder="Ville">
+                    <input type="text" name="code-postal-entreprise" id="code-postal-entreprise" required
+                        placeholder="Code Postal">
+                </section>
+
+                <section id="secteur-activite">
+                    <label for="secteur-activite-entreprise">Secteur d'activité*</label>
+                    <div>
+                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
                             placeholder="Secteur d'activité">
                     </div>
-                </section>
-
-                <section id="competences">
-                    <label for="competence">Compétences*</label>
-                    <div>
-                        <input type="text" name="competence" id="competence" required placeholder="Compétences">
-                    </div>
-                </section>
-
-                <section id="entreprise-formulaire">
-                    <label for="entreprise-emploi">Entreprise*</label>
-                    <div>
-                        <input type="text" name="competence" id="entreprise-emploi" required placeholder="Entreprise">
-                    </div>
-                </section>
-
-                <section id="promotions">
-                    <label for="promotions-concernees">Promotions concernées*</label>
-                    <div>
-                        <input type="text" name="competence" id="promotions-concernees" required
-                            placeholder="Promotions concernées">
-                    </div>
-                </section>
-
-                <section id="dates">
-                    <label for="duree">Durée (en semaines)*</label>
-                    <label for="date-debut">Date de début*</label>
-                    <input type="text" name="duree" id="duree" required placeholder="Durée">
-                    <input type="text" name="date-debut" id="date-debut" required placeholder="Date de début">
-                </section>
-
-                <section id="informations-complementaires">
-                    <label for="remuneration">Rémunération (en €/h)*</label>
-                    <label for="nb-places">Nombre de places*</label>
-                    <input type="text" name="remuneration" id="remuneration" required placeholder="Rémunération">
-                    <input type="text" name="nb-places" id="nb-places" required placeholder="Nombre de places">
                 </section>
 
                 <section id="bouton-class-id" class="boutons">

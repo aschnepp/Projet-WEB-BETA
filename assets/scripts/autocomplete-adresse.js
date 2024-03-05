@@ -20,15 +20,15 @@ function getFormInputElement(componentType) {
 
     var currentPageURL = window.location.href;
 
-    if (currentPageURL.indexOf("etudiant") !== -1) {
+    if (currentPageURL.indexOf("gestion-etudiant") !== -1) {
         userType = "-etudiant";
     }
 
-    else if (currentPageURL.indexOf("tuteur") !== -1) {
+    else if (currentPageURL.indexOf("gestion-tuteur") !== -1) {
         userType = "-tuteur";
     }
 
-    else if (currentPageURL.indexOf("entreprise") !== -1) {
+    else if (currentPageURL.indexOf("gestion-entreprise") !== -1) {
         userType = "-tuteur";
     }
 
