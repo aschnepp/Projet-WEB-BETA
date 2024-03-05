@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../assets/styles/etudiants.css" />
+    <link rel="stylesheet" href="../assets/styles/gestion-offre.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -10,16 +10,16 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <meta name="description" content="Page de gestion des étudiants.">
+    <meta name="description" content="Page de gestion des offres de stage.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des étudiants</title>
+    <title>Gestion des offres</title>
 </head>
 
 <body>
     <header>
         <section id="header-gauche">
-            <a href="index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
             <p id="header-p">Stage Catalyst</p>
         </section>
 
@@ -58,69 +58,66 @@
             </div>
         </div>
         <section id="section-formulaire">
-            <h2>Création d'étudiants</h2>
+            <h2>Création d'offre</h2>
             <form action="" id="formulaire">
                 <section id="nom">
-                    <label for="nom-etudiant">Nom*</label>
+                    <label for="nom-offre">Nom*</label>
                     <div>
-                        <input type="text" name="nom-etudiant" id="nom-etudiant" required placeholder="Nom">
+                        <input type="text" name="nom-offre" id="nom-offre" required placeholder="Nom">
                     </div>
                 </section>
 
-                <section id="prenom">
-                    <label for="prenom-etudiant">Prénom*</label>
+                <section id="secteur">
+                    <label for="secteur-activite-offre">Secteur d'activité*</label>
                     <div>
-                        <input type="text" name="prenom-etudiant" id="prenom-etudiant" required placeholder="Prénom">
+                        <input type="text" name="secteur-activite-offre" id="secteur-activite-offre" required
+                            placeholder="Secteur d'activité">
                     </div>
                 </section>
 
-                <section id="email">
-                    <label for="email-etudiant">Email*</label>
+                <section id="competences">
+                    <label for="competence-offre">Compétences*</label>
                     <div>
-                        <input type="email" name="competence" id="email-etudiant" required placeholder="Email">
+                        <input type="text" name="competence-offre" id="competence-offre" required
+                            placeholder="Compétences">
                     </div>
                 </section>
 
-                <section id="date-naissance">
-                    <label for="date-naissance-etudiant">Date de naissance*</label>
+                <section id="entreprise-formulaire">
+                    <label for="entreprise-offre">Entreprise*</label>
                     <div>
-                        <input type="text" name="date-naissance-etudiant" id="date-naissance-etudiant" required
-                            placeholder="Date de naissance">
+                        <input type="text" name="entreprise-offre" id="entreprise-offre" required
+                            placeholder="Entreprise">
                     </div>
                 </section>
 
-                <section id="adresse-cp">
-                    <label for="adresse-etudiant">Adresse*</label>
-                    <label for="code-postal-etudiant">Code postal*</label>
-                    <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
-                    <input type="text" name="code-postal-etudiant" id="code-postal-etudiant" required
-                        placeholder="Code Postal">
-                </section>
-
-                <section id="ville-region">
-                    <label for="ville-etudiant">Ville*</label>
-                    <label for="region-etudiant">Region*</label>
-                    <input type="text" name="ville-etudiant" id="ville-etudiant" required placeholder="Ville">
-                    <input type="text" name="region-etudiant" id="region-etudiant" required placeholder="Région">
-                </section>
-
-                <section id="promotion">
-                    <label for="promotion-etudiant">Promotion*</label>
+                <section id="promotions">
+                    <label for="promotions-concernees-offre">Promotions concernées*</label>
                     <div>
-                        <input type="text" name="promotion-etudiant" id="promotion-etudiant" required
-                            placeholder="Promotion">
+                        <input type="text" name="promotions-concernees-offre" id="promotions-concernees-offre" required
+                            placeholder="Promotions concernées">
                     </div>
                 </section>
 
-                <section id="centre">
-                    <label for="centre-etudiant">Centre*</label>
-                    <div>
-                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre">
-                    </div>
+                <section id="dates">
+                    <label for="duree-offre">Durée (en semaines)*</label>
+                    <label for="date-debut-offre">Date de début*</label>
+                    <input type="text" name="duree-offre" id="duree-offre" required placeholder="Durée">
+                    <input type="text" name="date-debut-offre" id="date-debut-offre" required
+                        placeholder="Date de début">
+                </section>
+
+                <section id="informations-supplementaires">
+                    <label for="remuneration-offre">Rémunération (en €/h)*</label>
+                    <label for="nb-places-offre">Nombre de places*</label>
+                    <input type="text" name="remuneration-offre" id="remuneration-offre" required
+                        placeholder="Rémunération">
+                    <input type="text" name="nb-places-offre" id="nb-places-offre" required
+                        placeholder="Nombre de places">
                 </section>
 
                 <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'étudiant</button>
+                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
                     <input type="reset" id="reset" value="Réinitialiser">
                     <button type="button" onclick="javascript:window.history.back();">Annuler</button>
                 </section>

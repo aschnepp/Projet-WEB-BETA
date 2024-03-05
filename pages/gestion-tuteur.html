@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../assets/styles/entreprise.css" />
+    <link rel="stylesheet" href="../assets/styles/gestion-tuteur.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -10,16 +10,17 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <meta name="description" content="Page de gestion des entreprises.">
+    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
+    <meta name="description" content="Page de gestion des tuteurs.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des entreprises</title>
+    <title>Gestion des tuteurs</title>
 </head>
 
 <body>
     <header>
         <section id="header-gauche">
-            <a href="index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
             <p id="header-p">Stage Catalyst</p>
         </section>
 
@@ -58,41 +59,74 @@
             </div>
         </div>
         <section id="section-formulaire">
-            <h2>Création d'entreprise</h2>
+            <h2>Création des tuteurs</h2>
             <form action="" id="formulaire">
                 <section id="nom">
-                    <label for="nom-entreprise">Nom*</label>
+                    <label for="nom-tuteur">Nom*</label>
                     <div>
-                        <input type="text" name="nom-entreprise" id="nom-entreprise" required placeholder="Nom">
+                        <input type="text" name="nom-tuteur" id="nom-tuteur" required placeholder="Nom">
                     </div>
                 </section>
 
-                <section id="adresse">
-                    <label for="adresse-entreprise">Adresse*</label>
+                <section id="prenom">
+                    <label for="prenom-tuteur">Prénom*</label>
                     <div>
-                        <input type="text" name="adresse-entreprise" id="adresse-entreprise" required
-                            placeholder="Adresse">
+                        <input type="text" name="prenom-tuteur" id="prenom-tuteur" required placeholder="Prénom">
                     </div>
                 </section>
 
-                <section id="localisation">
-                    <label for="ville-entreprise" id="label-ville">Ville*</label>
-                    <label for="code-postal-entreprise">Code Postal*</label>
-                    <input type="text" name="ville-entreprise" id="ville-entreprise" required placeholder="Ville">
-                    <input type="text" name="code-postal-entreprise" id="code-postal-entreprise" required
+                <section id="email">
+                    <label for="email-tuteur">Email*</label>
+                    <div>
+                        <input type="email" name="competence" id="email-tuteur" required placeholder="Email">
+                    </div>
+                </section>
+
+                <section id="date-naissance">
+                    <label for="date-naissance-tuteur">Date de naissance*</label>
+                    <div>
+                        <input type="text" name="date-naissance-tuteur" id="date-naissance-tuteur" required
+                            placeholder="Date de naissance">
+                    </div>
+                </section>
+
+                <section id="adresse-cp-tuteur">
+                    <label for="adresse-tuteur">Adresse*</label>
+                    <label for="postal_code-tuteur">Code postal*</label>
+                    <input type="text" name="adresse-tuteur" id="adresse-tuteur" required placeholder="Adresse">
+                    <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required
                         placeholder="Code Postal">
                 </section>
 
-                <section id="secteur-activite">
-                    <label for="secteur-activite-entreprise">Secteur d'activité*</label>
+                <section id="ville-region-tuteur">
+                    <label for="locality-tuteur">Ville*</label>
+                    <label for="administrative_area_level_1-tuteur">Region*</label>
+                    <input type="text" name="locality-tuteur" id="locality-tuteur" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-tuteur" id="administrative_area_level_1-tuteur"
+                        required placeholder="Région">
+                </section>
+
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cA"
+                    async defer></script>
+
+                <section id="promotion">
+                    <label for="promotion-tuteur">Promotion*</label>
                     <div>
-                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
-                            placeholder="Secteur d'activité">
+                        <input type="text" name="promotion-tuteur" id="promotion-tuteur" required
+                            placeholder="Promotion">
+                    </div>
+                </section>
+
+                <section id="centre">
+                    <label for="centre-tuteur">Centre*</label>
+                    <div>
+                        <input type="text" name="centre-tuteur" id="centre-tuteur" required placeholder="Centre">
                     </div>
                 </section>
 
                 <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
+                    <button type="button" id="submit" value="envoyer">Créer l'étudiant</button>
                     <input type="reset" id="reset" value="Réinitialiser">
                     <button type="button" onclick="javascript:window.history.back();">Annuler</button>
                 </section>

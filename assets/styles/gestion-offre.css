@@ -21,7 +21,7 @@ main {
     padding: 3rem;
     border: 3px solid #04080f;
     border-radius: 1rem;
-    margin: 2rem;
+    margin: 3rem 2rem;
 }
 
 main #section-formulaire input {
@@ -46,18 +46,33 @@ main #section-formulaire input {
     margin-bottom: 0.5rem;
 }
 
-#localisation {
+#dates {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 4fr 6fr;
     grid-column-gap: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-#localisation #label-ville {
+#dates label {
     align-self: center;
 }
 
-#localisation input {
+#dates input {
+    width: 100%;
+}
+
+#informations-supplementaires {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#informations-supplementaires label {
+    align-self: center;
+}
+
+#informations-supplementaires input {
     width: 100%;
 }
 

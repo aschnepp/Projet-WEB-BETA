@@ -16,8 +16,23 @@ const ADDRESS_COMPONENT_TYPES_IN_FORM = [
 ];
 
 function getFormInputElement(componentType) {
-    // FAIRE POUR TUTEUR ET ETUDIANT
-    return document.getElementById(`${componentType}-tuteur`);
+    var userType = "";
+
+    var currentPageURL = window.location.href;
+
+    if (currentPageURL.indexOf("gestion-etudiant") !== -1) {
+        userType = "-etudiant";
+    }
+
+    else if (currentPageURL.indexOf("gestion-tuteur") !== -1) {
+        userType = "-tuteur";
+    }
+
+    else if (currentPageURL.indexOf("gestion-entreprise") !== -1) {
+        userType = "-tuteur";
+    }
+
+    return document.getElementById(`${componentType}${userType}`);
 }
 
 function fillInAddress(place) {
