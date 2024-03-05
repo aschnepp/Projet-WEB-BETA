@@ -61,7 +61,11 @@ fieldset input {
 
 fieldset textarea {
   height: 150px;
+  padding: 5px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
   resize: none;
+  background-color: var(--blue-light);
 }
 
 fieldset input[type="file"] {
