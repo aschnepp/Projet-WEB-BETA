@@ -38,6 +38,13 @@ fieldset {
   width: 80%;
 }
 
+fieldset legend {
+  color: var(--blue-dark-contrast);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  width: auto;
+}
+
 fieldset label {
   color: var(--blue-dark-contrast);
   font-weight: bold;
