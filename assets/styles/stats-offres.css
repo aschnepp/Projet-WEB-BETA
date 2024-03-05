@@ -78,10 +78,10 @@ main section {
 }
 
 @media (max-width: 600px) {
-  #heatmap {
+  .piecharts {
     width: 80%;
   }
-  #piechart {
+  #heatmap {
     width: 80%;
   }
   #duree-offres {
