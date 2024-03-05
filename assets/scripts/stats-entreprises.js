@@ -2,7 +2,10 @@ const entreprise1 = "Facebook";
 const entreprise2 = "Vinci";
 const entreprise3 = "Orange France";
 
-google.charts.load("current", { packages: ["geochart"] });
+google.charts.load("current", {
+  packages: ["geochart"],
+  mapsApiKey: "AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc",
+});
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawRegionsMap);

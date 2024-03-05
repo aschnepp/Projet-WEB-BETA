@@ -12,6 +12,10 @@ main {
   justify-content: center;
 }
 
+h1 {
+  margin: 0;
+}
+
 main section {
   display: flex;
   flex-direction: column;
@@ -20,18 +24,37 @@ main section {
   width: 100%;
 }
 
-#regions_div {
-  width: 50%;
-  aspect-ratio: 16/9;
-  z-index: 0;
+.graphique {
   height: auto;
+  z-index: 0;
 }
 
-#piechart {
-  width: 50%;
+.piecharts {
+  width: 40%;
   aspect-ratio: 1/1;
+}
+
+.places {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  width: auto;
   height: auto;
-  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#heatmap {
+  width: 50%;
+  aspect-ratio: 16/9;
+}
+
+#duree-offres {
+  width: 50%;
+  aspect-ratio: 16/9;
 }
 
 #attributions {
@@ -48,34 +71,20 @@ main section {
   flex-wrap: wrap;
 }
 
-.places {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 20px;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-#podium h4 {
+#podium p {
   text-align: center;
   margin-block-start: 0.9em;
   margin-block-end: 0.9em;
 }
 
 @media (max-width: 600px) {
-  #regions_div {
+  #heatmap {
     width: 80%;
   }
   #piechart {
     width: 80%;
   }
-}
-
-h1 {
-  margin: 0;
+  #duree-offres {
+    width: 90%;
+  }
 }
