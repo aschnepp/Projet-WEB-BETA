@@ -96,11 +96,39 @@ header>#header-droite>a.boutons-header {
     border: solid black 2px;
     border-radius: 10px;
     background: var(--blue-white);
+    position: relative;
+    display: inline-block;
+    position: relative;
 }
 
-header #header-droite a:hover {
-    text-decoration: underline;
+header>#header-droite>a.boutons-header::before {
+    display: block;
+    content: attr(title);
     font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+header>#header-droite>a.boutons-header::after {
+    background: transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--black);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+header>#header-droite>a.boutons-header:hover {
+    font-weight: bold;
+}
+
+header>#header-droite>a.boutons-header:hover::after {
+    width: 85%;
+    left: 10px;
 }
 
 header #header-droite a[class*="fa"]:hover {
@@ -204,15 +232,19 @@ header #header-droite a[class*="fa"]:hover {
 }
 
 @media only screen and (max-width: 900px) {
-    #header-p {
+    header #header-p {
         display: none;
     }
 
-    #header-droite>* {
+    header #header-droite>* {
         display: none;
     }
 
-    #menu-burger-header {
+    header #header-droite a.boutons-header {
+        display: none;
+    }
+
+    header #menu-burger-header {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
