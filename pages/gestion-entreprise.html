@@ -10,6 +10,7 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <meta name="description" content="Page de gestion des entreprises.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
 <body>
     <header>
         <section id="header-gauche">
-            <a href="index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
             <p id="header-p">Stage Catalyst</p>
         </section>
 
@@ -67,21 +68,25 @@
                     </div>
                 </section>
 
-                <section id="adresse">
+                <section id="adresse-cp-entreprise">
                     <label for="adresse-entreprise">Adresse*</label>
-                    <div>
-                        <input type="text" name="adresse-entreprise" id="adresse-entreprise" required
-                            placeholder="Adresse">
-                    </div>
-                </section>
-
-                <section id="localisation">
-                    <label for="ville-entreprise" id="label-ville">Ville*</label>
-                    <label for="code-postal-entreprise">Code Postal*</label>
-                    <input type="text" name="ville-entreprise" id="ville-entreprise" required placeholder="Ville">
-                    <input type="text" name="code-postal-entreprise" id="code-postal-entreprise" required
+                    <label for="postal_code-entreprise">Code postal*</label>
+                    <input type="text" name="adresse-entreprise" id="adresse-entreprise" required placeholder="Adresse">
+                    <input type="text" name="postal_code-entreprise" id="postal_code-entreprise" required
                         placeholder="Code Postal">
                 </section>
+
+                <section id="ville-region-entreprise">
+                    <label for="locality-entreprise">Ville*</label>
+                    <label for="administrative_area_level_1-entreprise">Region*</label>
+                    <input type="text" name="locality-entreprise" id="locality-entreprise" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-entreprise"
+                        id="administrative_area_level_1-entreprise" required placeholder="Région">
+                </section>
+
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cA"
+                    async defer></script>
 
                 <section id="secteur-activite">
                     <label for="secteur-activite-entreprise">Secteur d'activité*</label>

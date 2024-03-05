@@ -61,18 +61,18 @@ main #section-formulaire input {
     width: 100%;
 }
 
-#informations-complementaires {
+#informations-supplementaires {
     display: grid;
     grid-template-columns: 5fr 5fr;
     grid-column-gap: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-#informations-complementaires label {
+#informations-supplementaires label {
     align-self: center;
 }
 
-#informations-complementaires input {
+#informations-supplementaires input {
     width: 100%;
 }
 
