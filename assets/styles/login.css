@@ -1,7 +1,13 @@
 @import "normalize.css";
-@import "header.css";
+@import "header-accueil.css";
 @import "footer.css";
 @import "color-palette.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: var(--white);
@@ -86,4 +92,5 @@ fieldset a {
 
 #remember {
   margin-top: 3%;
+  text-align: center;
 }

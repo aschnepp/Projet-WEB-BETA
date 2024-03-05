@@ -3,6 +3,12 @@
 @import "footer.css";
 @import "color-palette.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--white);
 }
@@ -44,6 +50,11 @@ fieldset input {
   border: 1px solid var(--blue);
   border-radius: 5px;
   width: auto;
+}
+
+fieldset textarea {
+  height: 150px;
+  resize: none;
 }
 
 fieldset input[type="file"] {
@@ -108,12 +119,14 @@ fieldset section {
   flex-wrap: wrap;
   word-break: break-word;
 }
+
 section h3 {
   display: flex;
   margin-top: auto 0;
   align-items: center;
   justify-content: center;
 }
+
 fieldset section p {
   padding-left: 0.5rem;
 }

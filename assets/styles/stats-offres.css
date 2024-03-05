@@ -3,6 +3,12 @@
 @import "footer.css";
 @import "color-palette.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--white);
 }
@@ -81,9 +87,11 @@ main section {
   .piecharts {
     width: 80%;
   }
+
   #heatmap {
     width: 80%;
   }
+
   #duree-offres {
     width: 90%;
   }

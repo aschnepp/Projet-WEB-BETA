@@ -232,7 +232,7 @@ header #header-droite a[class*="fa"]:hover {
 }
 
 @media only screen and (max-width: 900px) {
-    header #header-p {
+    html body header #header-p {
         display: none;
     }
 
