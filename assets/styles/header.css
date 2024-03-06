@@ -112,7 +112,6 @@ header>#header-droite>a.boutons-header {
     background: var(--blue-white);
     position: relative;
     display: inline-block;
-    position: relative;
 }
 
 header>#header-droite>a.boutons-header::before {
@@ -142,7 +141,8 @@ header>#header-droite>a.boutons-header:hover {
 
 header>#header-droite>a.boutons-header:hover::after {
     width: 85%;
-    left: 10px;
+    bottom: 3px;
+    left: 8px;
 }
 
 header #header-droite a[class*="fa"]:hover {
