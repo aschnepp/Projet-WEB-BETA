@@ -29,7 +29,7 @@ function getFormInputElement(componentType) {
     }
 
     else if (currentPageURL.indexOf("gestion-entreprise") !== -1) {
-        userType = "-tuteur";
+        userType = "-entreprise";
     }
 
     return document.getElementById(`${componentType}${userType}`);
