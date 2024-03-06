@@ -26,7 +26,7 @@ footer {
 footer>#liens-footer {
     display: flex;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     gap: 1rem;
     padding: 0rem 0rem 0rem 1.5rem;
 }
@@ -70,6 +70,7 @@ footer>#liens-footer>a:hover::after {
 }
 
 footer>p {
+    font-size: 1.05rem;
     padding-right: 1.5rem;
 }
 
