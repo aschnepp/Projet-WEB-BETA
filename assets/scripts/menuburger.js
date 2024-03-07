@@ -8,18 +8,22 @@ function VerifLargeur() {
 
             hamburgerheader.classList.remove("active");
 
-            var hamburgermenuflou = document.querySelector("main #menu-burger-flou.flou-actif");
-            var hamburgermenumain = document.querySelector("main #menu-burger-main.affiche");
+      var hamburgermenuflou = document.querySelector(
+        "main #menu-burger-flou.flou-actif"
+      );
+      var hamburgermenumain = document.querySelector(
+        "main #menu-burger-main.affiche"
+      );
 
-            hamburgermenumain.classList.remove("affiche");
-            setTimeout(function () {
-                hamburgermenuflou.style.animation = "disparition-flou 0.5s forwards";
-                setTimeout(function () {
-                    hamburgermenuflou.classList.remove("flou-actif");
-                }, 500);
-            }, 500);
-        }
+      hamburgermenumain.classList.remove("affiche");
+      setTimeout(function () {
+        hamburgermenuflou.style.animation = "disparition-flou 0.5s forwards";
+        setTimeout(function () {
+          hamburgermenuflou.classList.remove("flou-actif");
+        }, 500);
+      }, 500);
     }
+  }
 }
 
 function ActivationMenuBurger() {
@@ -30,8 +34,8 @@ function ActivationMenuBurger() {
     var body = document.querySelector("body");
 
 
-    var hamburgermenuflou = document.querySelector("main #menu-burger-flou");
-    var hamburgermenumain = document.querySelector("main #menu-burger-main");
+  var hamburgermenuflou = document.querySelector("main #menu-burger-flou");
+  var hamburgermenumain = document.querySelector("main #menu-burger-main");
 
     if (hamburgermenumain.classList.contains("affiche")) {
         hamburgermenumain.classList.remove("affiche");
@@ -59,12 +63,11 @@ function ActivationMenuBurger() {
 }
 
 window.onload = function () {
-    var hamburgerheader = document.querySelector("header #menu-burger-header");
-
-    hamburgerheader.addEventListener("click", ActivationMenuBurger);
-    VerifLargeur();
-}
+  var hamburgerheader = document.querySelector("header #menu-burger-header");
+  hamburgerheader.addEventListener("click", ActivationMenuBurger);
+  VerifLargeur();
+};
 
 window.onresize = function () {
-    VerifLargeur();
-}
+  VerifLargeur();
+};
