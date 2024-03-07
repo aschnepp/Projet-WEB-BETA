@@ -3,12 +3,6 @@
 @import "footer.css";
 @import "normalize.css";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /*----------MAIN---------*/
 
 main h2 {
@@ -21,4 +15,70 @@ main h3 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+#offre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--blue-light);
+    width: auto;
+    height: auto;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  #offre h3 {
+    display: flex;
+    margin-top: auto 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#offre p {
+    padding-left: 0.5rem;
+}
+
+.headerOffre {
+    margin-bottom: .5rem;
+}
+
+fieldset section p {
+    padding-left: 0.5rem;
+}
+
+.headerOffre {
+    margin-bottom: .5rem;
+}
+
+#likes {
+    border: solid black 1.5px;
+    margin-left: 0.5rem;
+}
+
+#demandes {
+    margin-left: 0.5rem;
+    border: solid black 1.5px;
+}
+
+#offre {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#loginbtns {
+    display: flex;
+    justify-content: space-around;
+}
+
+#item {
+    flex: 1 1 auto;
+    min-width: auto;
+}
+
+section.infos {
+    margin-bottom: 0.5rem;
 }
