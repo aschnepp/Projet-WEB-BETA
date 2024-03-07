@@ -18,8 +18,8 @@ main {
   justify-content: center;
 }
 
-h1 {
-  margin: 0;
+h2 {
+  margin: 2% 0;
 }
 
 main section {
@@ -46,7 +46,7 @@ main section {
 #regions_div {
   width: 50%;
   aspect-ratio: 16/9;
-  z-index: 0;
+  z-index: 1;
   height: auto;
 }
 
@@ -54,12 +54,13 @@ main section {
   width: 40%;
   aspect-ratio: 1/1;
   height: auto;
-  z-index: 0;
+  z-index: 1;
 }
 
 #attributions {
   color: black;
   text-decoration: underline;
+  margin: 2% 0;
 }
 
 #podium {

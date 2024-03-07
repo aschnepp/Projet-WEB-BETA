@@ -18,8 +18,8 @@ main {
   justify-content: center;
 }
 
-h1 {
-  margin: 0;
+h2 {
+  margin: 2% 0;
 }
 
 main section {
@@ -38,6 +38,7 @@ main section {
 .piecharts {
   width: 40%;
   aspect-ratio: 1/1;
+  z-index: 1;
 }
 
 .places {
@@ -56,6 +57,7 @@ main section {
 #heatmap {
   width: 50%;
   aspect-ratio: 16/9;
+  z-index: 1;
 }
 
 #duree-offres {
@@ -66,6 +68,7 @@ main section {
 #attributions {
   color: black;
   text-decoration: underline;
+  margin: 2% 0;
 }
 
 #podium {
