@@ -280,9 +280,14 @@ header #header-droite a[class*="fa"]:hover {
 
 /*----------MENU BURGER MAIN----------*/
 
-main {
+html body main {
     position: relative;
     background-color: white;
+}
+
+
+html body.lock-scroll {
+    overflow: hidden;
 }
 
 main #menu-burger-flou {
@@ -298,6 +303,7 @@ main #menu-burger-flou {
 main #menu-burger-flou.flou-actif {
     display: block;
     background-color: rgba(0, 0, 0, 0.5);
+    overscroll-behavior: contain;
 }
 
 main #menu-burger-main {
@@ -308,7 +314,6 @@ main #menu-burger-main {
     z-index: 10000;
     right: calc(-40vw);
     width: 40vw;
-    overflow-y: hidden;
     height: calc(100vh - 60px - 30px);
     transition: right 0.5s ease-in-out;
     background: var(--blue-white);
@@ -316,6 +321,7 @@ main #menu-burger-main {
 
 main #menu-burger-main.affiche {
     right: 0px;
+    overscroll-behavior: contain;
 }
 
 @keyframes apparition-flou {
