@@ -65,7 +65,7 @@ fieldset textarea {
   border: 1px solid var(--black);
   border-radius: 5px;
   resize: none;
-  background-color: var(--blue-light);
+  background-color: var(--blue-white);
 }
 
 fieldset input[type="file"] {
@@ -120,7 +120,7 @@ fieldset a {
 fieldset section {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: var(--blue-light);
   width: auto;
@@ -142,9 +142,13 @@ fieldset section p {
   padding-left: 0.5rem;
 }
 
-.headerOffre {
+#offre .headerOffre {
+  width: 100%;
   margin-bottom: .5rem;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 #likes {
   border: solid black 1.5px;
@@ -173,4 +177,8 @@ fieldset section p {
 
 section.infos {
   margin-bottom: 0.5rem;
+}
+
+.infos {
+  gap: .5rem;
 }

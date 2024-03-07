@@ -17,6 +17,91 @@ main h3 {
     margin-bottom: 2rem;
 }
 
+main #fieldset-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 65%;
+}
+
+fieldset legend {
+    color: var(--blue-dark-contrast);
+    font-weight: bold;
+    margin: 0.5rem 0;
+    width: auto;
+}
+
+fieldset label {
+    color: var(--blue-dark-contrast);
+    font-weight: bold;
+    margin: 0.5rem 0;
+    width: auto;
+}
+
+fieldset input {
+    padding: 0.5rem;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    width: auto;
+}
+
+fieldset textarea {
+    height: 150px;
+    padding: 5px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    resize: none;
+    background-color: var(--blue-light);
+}
+
+fieldset input[type="file"] {
+    overflow: hidden;
+    width: auto;
+}
+
+@media (max-width: 500px) {
+    fieldset input[type="file"] {
+        width: 150px;
+        color: transparent;
+    }
+}
+
+fieldset a {
+    color: var(--blue-dark-contrast);
+    text-align: center;
+    text-decoration: underline;
+    font-size: smaller;
+    width: auto;
+    height: auto;
+    background-color: var(--white);
+    margin-top: 1%;
+}
+
+fieldset section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--blue-light);
+    width: auto;
+    height: auto;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
 #offre {
     display: flex;
     flex-direction: row;
@@ -29,29 +114,31 @@ main h3 {
     border-radius: 5px;
     flex-wrap: wrap;
     word-break: break-word;
-  }
+}
 
-  #offre h3 {
-    display: flex;
-    margin-top: auto 0;
-    align-items: center;
-    justify-content: center;
+#offre h3 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 #offre p {
     padding-left: 0.5rem;
 }
 
-.headerOffre {
+#offre .headerOffre {
+    width: 100%;
     margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
 }
 
 fieldset section p {
     padding-left: 0.5rem;
 }
 
-.headerOffre {
-    margin-bottom: .5rem;
+.infos {
+    gap: .5rem;
 }
 
 #likes {
@@ -69,11 +156,6 @@ fieldset section p {
     padding-bottom: 0.5rem;
 }
 
-#loginbtns {
-    display: flex;
-    justify-content: space-around;
-}
-
 #item {
     flex: 1 1 auto;
     min-width: auto;
@@ -81,4 +163,30 @@ fieldset section p {
 
 section.infos {
     margin-bottom: 0.5rem;
+}
+
+button {
+    background-color: var(--blue-dark);
+    color: var(--blue-light);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    background-color: var(--blue-dark-contrast);
+    color: var(--blue);
+}
+
+#rechercher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+#rechercher button {
+    transform: scale(1.25);
 }
