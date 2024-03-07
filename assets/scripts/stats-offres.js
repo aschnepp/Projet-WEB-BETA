@@ -18,14 +18,14 @@ google.charts.setOnLoadCallback(drawCompetencesPie);
 google.charts.setOnLoadCallback(drawHeatmap);
 google.charts.setOnLoadCallback(drawDuree);
 google.charts.setOnLoadCallback(drawPromoPie);
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   fetchAndDisplayLogo(entreprise1, "logo1-container");
   fetchAndDisplayLogo(entreprise2, "logo2-container");
   fetchAndDisplayLogo(entreprise3, "logo3-container");
   document.getElementById("logo1-name").textContent = "1 - " + offre1;
   document.getElementById("logo2-name").textContent = "2 - " + offre2;
   document.getElementById("logo3-name").textContent = "3 - " + offre3;
-};
+});
 
 // Fonction pour la carte géographique
 function drawHeatmap() {
