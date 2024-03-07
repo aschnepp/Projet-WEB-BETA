@@ -10,7 +10,6 @@
   border-radius: 2rem;
   display: flex;
   flex-flow: column;
-  min-height: 75vh;
 }
 
 .about > h1 {
