@@ -142,6 +142,25 @@ fieldset section p {
   padding-left: 0.5rem;
 }
 
+.headerOffre {
+  margin-bottom: .5rem;
+}
+
+#likes {
+  border: solid black 1.5px;
+  margin-left: 0.5rem;
+}
+
+#demandes {
+  margin-left: 0.5rem;
+  border: solid black 1.5px;
+}
+
+#offre {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 #loginbtns {
   display: flex;
   justify-content: space-around;
