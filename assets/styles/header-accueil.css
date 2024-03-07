@@ -1,0 +1,5 @@
+@import "header.css";
+
+html body header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
