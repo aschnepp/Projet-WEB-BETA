@@ -16,14 +16,26 @@
   border-radius: 2rem;
   display: flex;
   flex-flow: column;
-  min-height: 75vh;
 }
 
-.CGU>h1 {
+.CGU > h1 {
   text-align: center;
   margin: 1rem 0;
+  padding: 0 1rem;
 }
 
-.CGU>* {
+.CGU > p {
+  margin: 0.5rem 1rem;
+}
+
+.CGU > p:last-child {
+  margin-bottom: 1rem;
+}
+
+.CGU > ul {
+  margin-left: 3rem;
+}
+
+.CGU > * {
   margin: 1rem 1rem;
 }

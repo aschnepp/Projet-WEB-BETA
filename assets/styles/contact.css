@@ -16,15 +16,15 @@
   border-radius: 2rem;
   display: flex;
   flex-flow: column;
-  min-height: 75vh;
 }
 
-.contact>h1 {
+.contact > h1 {
   text-align: center;
+  padding: 0 1rem;
   margin: 1rem 0;
 }
 
-.contact>* {
+.contact > * {
   margin: 1rem 1rem;
 }
 
@@ -33,7 +33,7 @@
   flex-flow: row wrap;
 }
 
-#contact-methods>section {
+#contact-methods > section {
   display: flex;
   flex-flow: column wrap;
   align-content: center;

@@ -10,12 +10,21 @@
   border-radius: 2rem;
   display: flex;
   flex-flow: column;
-  min-height: 75vh;
 }
 
 .about > h1 {
   text-align: center;
+  padding: 0 1rem;
   margin: 1rem 0;
+}
+
+.about > p {
+  padding: 0 1rem;
+  margin: .5rem 0;
+}
+
+.about > p:last-child {
+  margin-bottom: 1rem;
 }
 
 .about > * {
