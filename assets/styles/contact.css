@@ -3,6 +3,12 @@
 @import "footer.css";
 @import "color-palette.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .contact {
   margin: 2rem;
   background-color: white;
@@ -12,12 +18,12 @@
   flex-flow: column;
 }
 
-.contact > h1 {
+.contact>h1 {
   text-align: center;
   margin: 1rem 0;
 }
 
-.contact > * {
+.contact>* {
   margin: 1rem 1rem;
 }
 
@@ -26,7 +32,7 @@
   flex-flow: row wrap;
 }
 
-#contact-methods > section {
+#contact-methods>section {
   display: flex;
   flex-flow: column wrap;
   align-content: center;
