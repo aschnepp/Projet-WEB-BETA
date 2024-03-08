@@ -18,23 +18,24 @@
   flex-flow: column;
 }
 
-.CGU>h1 {
+.CGU > h1 {
   text-align: center;
   margin: 1rem 0;
+  padding: 0 1rem;
 }
 
-.CGU>p {
-  margin: .5rem 1rem;
+.CGU > p {
+  margin: 0.5rem 1rem;
 }
 
-.CGU>p:last-child {
+.CGU > p:last-child {
   margin-bottom: 1rem;
 }
 
-.CGU>ul {
+.CGU > ul {
   margin-left: 3rem;
 }
 
-.CGU>* {
+.CGU > * {
   margin: 1rem 1rem;
 }
