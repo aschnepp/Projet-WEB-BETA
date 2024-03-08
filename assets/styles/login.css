@@ -74,6 +74,18 @@ fieldset input[type="reset"]:hover {
   background-color: var(--blue-white);
 }
 
+fieldset input[type="button"] {
+  background-color: var(--white);
+  color: var(--blue-dark-contrast);
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid var(--blue-dark-contrast);
+}
+
+fieldset input[type="button"]:hover {
+  background-color: var(--blue-white);
+}
+
 fieldset a {
   color: var(--blue-dark-contrast);
   text-align: center;
@@ -85,9 +97,14 @@ fieldset a {
   margin-top: 1%;
 }
 
+fieldset a:hover {
+  font-weight: bold;
+}
+
 #loginbtns {
   display: flex;
   justify-content: space-around;
+  gap: 0.5rem;
 }
 
 #remember {
