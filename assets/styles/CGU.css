@@ -23,6 +23,18 @@
   margin: 1rem 0;
 }
 
+.CGU>p {
+  margin: .5rem 1rem;
+}
+
+.CGU>p:last-child {
+  margin-bottom: 1rem;
+}
+
+.CGU>ul {
+  margin-left: 3rem;
+}
+
 .CGU>* {
   margin: 1rem 1rem;
 }
