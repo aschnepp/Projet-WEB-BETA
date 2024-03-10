@@ -18,23 +18,17 @@ header {
 
   background: hsla(215, 45%, 53%, 1);
 
-  background: linear-gradient(
-    315deg,
-    hsla(215, 45%, 53%, 1) 17%,
-    hsla(210, 63%, 77%, 1) 93%
-  );
+  background: linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
-  background: -moz-linear-gradient(
-    315deg,
-    hsla(215, 45%, 53%, 1) 17%,
-    hsla(210, 63%, 77%, 1) 93%
-  );
+  background: -moz-linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
-  background: -webkit-linear-gradient(
-    315deg,
-    hsla(215, 45%, 53%, 1) 17%,
-    hsla(210, 63%, 77%, 1) 93%
-  );
+  background: -webkit-linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
 
@@ -60,14 +54,14 @@ header #image-accueil {
   transform: scale(0.85);
 }
 
-header > #header-gauche {
+header>#header-gauche {
   justify-self: left;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-header > #header-milieu {
+header>#header-milieu {
   justify-self: center;
   align-self: center;
   display: flex;
@@ -98,7 +92,7 @@ header a[class*="fa"] {
   color: black;
 }
 
-header > #header-droite {
+header>#header-droite {
   justify-self: right;
   align-self: center;
   display: flex;
@@ -108,7 +102,7 @@ header > #header-droite {
   padding-right: 1.25rem;
 }
 
-header > #header-droite > a.boutons-header {
+header>#header-droite>a.boutons-header {
   text-decoration: none;
   font-weight: 500;
   padding: 3px 7px;
@@ -120,7 +114,7 @@ header > #header-droite > a.boutons-header {
   display: inline-block;
 }
 
-header > #header-droite > a.boutons-header::before {
+header>#header-droite>a.boutons-header::before {
   display: block;
   content: attr(title);
   font-weight: bold;
@@ -129,7 +123,7 @@ header > #header-droite > a.boutons-header::before {
   visibility: hidden;
 }
 
-header > #header-droite > a.boutons-header::after {
+header>#header-droite>a.boutons-header::after {
   background: transparent;
   content: "";
   display: block;
@@ -141,11 +135,11 @@ header > #header-droite > a.boutons-header::after {
   width: 0;
 }
 
-header > #header-droite > a.boutons-header:hover {
+header>#header-droite>a.boutons-header:hover {
   font-weight: bold;
 }
 
-header > #header-droite > a.boutons-header:hover::after {
+header>#header-droite>a.boutons-header:hover::after {
   width: 85%;
   bottom: 3px;
   left: 8px;
@@ -248,7 +242,7 @@ header #header-droite a[class*="fa"]:hover {
     display: none;
   }
 
-  header #header-droite > * {
+  header #header-droite>* {
     display: none;
   }
 
@@ -278,16 +272,40 @@ header #header-droite a[class*="fa"]:hover {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  header {
+    height: 50px;
+  }
+
+  html body main #menu-burger-flou {
+    top: 50px;
+    height: calc(100vh - 50px - 30px);
+  }
+
+  html body main #menu-burger-main {
+    top: 50px;
+    height: calc(100vh - 50px - 30px);
+  }
+
+  header #image-accueil {
+    transform: scale(0.75);
+  }
+
+  header #menu-burger-header {
+    transform: scale(0.75);
+  }
+}
+
 /*----------MENU BURGER MAIN----------*/
 
 html body main {
-    position: relative;
-    background-color: white;
+  position: relative;
+  background-color: white;
 }
 
 
 html body.lock-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 main #menu-burger-flou {
@@ -301,27 +319,28 @@ main #menu-burger-flou {
 }
 
 main #menu-burger-flou.flou-actif {
-    display: block;
-    background-color: rgba(0, 0, 0, 0.5);
-    overscroll-behavior: contain;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  overscroll-behavior: contain;
 }
 
 main #menu-burger-main {
-    top: 60px;
-    display: block;
-    position: fixed;
-    padding: 1.5rem;
-    z-index: 10000;
-    right: calc(-40vw);
-    width: 40vw;
-    height: calc(100vh - 60px - 30px);
-    transition: right 0.5s ease-in-out;
-    background: var(--blue-white);
+  top: 60px;
+  display: block;
+  position: fixed;
+  padding: 1.5rem;
+  z-index: 10000;
+  right: calc(-40vw);
+  width: 40vw;
+  height: calc(100vh - 60px - 30px);
+  transition: right 0.5s ease-in-out;
+  background: var(--blue-white);
+  overflow-y: auto;
 }
 
 main #menu-burger-main.affiche {
-    right: 0px;
-    overscroll-behavior: contain;
+  right: 0px;
+  overscroll-behavior: contain;
 }
 
 @keyframes apparition-flou {

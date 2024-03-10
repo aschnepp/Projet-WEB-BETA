@@ -24,8 +24,6 @@ form {
   align-items: center;
   justify-content: center;
   margin: 0;
-  width: auto;
-  height: auto;
 }
 
 fieldset {
@@ -35,7 +33,7 @@ fieldset {
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  width: 80%;
+  min-width: none;
 }
 
 fieldset legend {
@@ -61,6 +59,7 @@ fieldset input {
 
 fieldset textarea {
   height: 150px;
+  width: 100%;
   padding: 5px;
   border: 1px solid var(--black);
   border-radius: 5px;
@@ -70,14 +69,7 @@ fieldset textarea {
 
 fieldset input[type="file"] {
   overflow: hidden;
-  width: auto;
-}
-
-@media (max-width: 500px) {
-  fieldset input[type="file"] {
-    width: 150px;
-    color: transparent;
-  }
+  width: 100%;
 }
 
 fieldset input[type="submit"] {
@@ -144,6 +136,31 @@ fieldset section {
   word-break: break-word;
 }
 
+fieldset section#offre {
+  row-gap: 1rem;
+}
+
+fieldset section.headerOffre {
+  flex-wrap: wrap;
+  row-gap: .5rem;
+}
+
+fieldset section.headerOffre h3 {
+  justify-content: start;
+  flex-grow: 10;
+}
+
+fieldset section.stats {
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+fieldset section.stats section {
+  flex-wrap: nowrap;
+  gap: .5rem
+}
+
 section h3 {
   display: flex;
   margin-top: auto 0;
@@ -153,11 +170,21 @@ section h3 {
 
 fieldset section p {
   padding-left: 0.5rem;
+  text-align: center;
+}
+
+fieldset section.stats p {
+  padding-left: 0rem;
 }
 
 fieldset #description {
   border: solid black 1px;
   padding: 0.5rem;
+}
+
+fieldset #description p {
+  padding-left: 0rem;
+  text-align: initial;
 }
 
 #offre .headerOffre {
@@ -186,7 +213,9 @@ fieldset #description {
 #loginbtns {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  row-gap: 0rem;
+  column-gap: 1rem;
 }
 
 #item {

@@ -23,7 +23,7 @@ footer {
   box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.65);
 }
 
-footer > #liens-footer {
+footer>#liens-footer {
   display: flex;
   align-items: center;
   font-size: 1.05rem;
@@ -31,14 +31,14 @@ footer > #liens-footer {
   padding: 0rem 0rem 0rem 1.5rem;
 }
 
-footer > #liens-footer > a {
+footer>#liens-footer>a {
   display: inline-block;
   text-decoration: none;
   color: var(--black);
   position: relative;
 }
 
-footer > #liens-footer > a::before {
+footer>#liens-footer>a::before {
   display: block;
   content: attr(title);
   font-weight: bold;
@@ -47,7 +47,7 @@ footer > #liens-footer > a::before {
   visibility: hidden;
 }
 
-footer > #liens-footer > a::after {
+footer>#liens-footer>a::after {
   background: transparent;
   bottom: 0;
   content: "";
@@ -60,16 +60,16 @@ footer > #liens-footer > a::after {
   width: 0;
 }
 
-footer > #liens-footer > a:hover {
+footer>#liens-footer>a:hover {
   font-weight: bold;
 }
 
-footer > #liens-footer > a:hover::after {
+footer>#liens-footer>a:hover::after {
   width: 100%;
   left: 0;
 }
 
-footer > p {
+footer>p {
   padding-right: 1.5rem;
 }
 
@@ -83,4 +83,3 @@ footer > p {
     justify-content: center;
   }
 }
-

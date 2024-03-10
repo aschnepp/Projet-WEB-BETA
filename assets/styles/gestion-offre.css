@@ -53,6 +53,37 @@ main #section-formulaire textarea {
     margin-bottom: 0.5rem;
 }
 
+
+#adresse-cp-offre {
+    display: grid;
+    grid-template-columns: 0.8fr 0.4fr 0.5fr;
+    grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#adresse-cp-offre label {
+    align-self: center;
+}
+
+#adresse-cp-offre input {
+    width: 100%;
+}
+
+#ville-region-offre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#ville-region-offre label {
+    align-self: center;
+}
+
+#ville-region-offre input {
+    width: 100%;
+}
+
 #dates {
     display: grid;
     grid-template-columns: 4fr 6fr;

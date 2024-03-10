@@ -1,0 +1,491 @@
+@import "color-palette.css";
+@import "header.css";
+@import "footer.css";
+@import "normalize.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+/*----------MAIN---------*/
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    border: solid black 2px;
+    background: white;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #5a5757;
+    border: solid black 2px;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #5a5757;
+    border: solid black 1px;
+    cursor: pointer;
+}
+
+.slider::-ms-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #5a5757;
+    cursor: pointer;
+}
+
+main #page-recherche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #recherche-filtre-main {
+    display: none;
+    background-color: var(--blue-light);
+    flex-direction: column;
+    min-width: 300px;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+    min-height: calc(100vh - 60px - 30px);
+    max-height: calc(100vh - 60px - 30px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    overscroll-behavior: auto;
+    overflow-y: auto;
+}
+
+main #affichage-filtre {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3.5rem 2rem;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    word-break: break-word;
+    position: sticky;
+    overflow-y: auto;
+    min-height: calc(100vh - 60px - 30px);
+    max-height: calc(100vh - 60px - 30px);
+}
+
+main #affichage-filtre>section {
+    border: solid black 2px;
+    background-color: var(--blue-light);
+}
+
+main #page-recherche {
+    display: flex;
+    align-items: flex-start;
+}
+
+main #recherche-filtre-main #recherche-menu #boutons-filtre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem
+}
+
+main #recherche-filtre-main #recherche-menu output {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+main #recherche-filtre-main #menu-filtre #header-filtre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main #recherche-filtre-main #menu-filtre #header-filtre h3 {
+    margin-bottom: 0px;
+}
+
+
+main #recherche-filtre-main #menu-filtre #header-filtre div {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-white);
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 0rem 0.5rem;
+    border: solid black 2px;
+    border-radius: 3rem;
+
+}
+
+main #recherche-filtre-main #menu-filtre #header-filtre div * {
+    cursor: pointer;
+}
+
+main #recherche-filtre-main #menu-filtre #header-filtre button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+}
+
+main #recherche-filtre-main #menu-filtre #header-filtre label {
+    vertical-align: middle;
+}
+
+
+main #recherche-filtre-main #menu-filtre #header-filtre label:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+main #recherche-filtre-main #recherche-menu #boutons-filtre a {
+    position: relative;
+    text-align: center;
+    background-color: var(--blue-dark);
+    color: var(--blue-light);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    padding: .75rem 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+main #recherche-filtre-main #recherche-menu #boutons-filtre a:hover {
+    padding: .75rem 1.7rem;
+    background-color: var(--blue-dark-contrast);
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+main #recherche-filtre-main #recherche-menu #statistiques-entreprises #bouton-stats-entreprise:hover {
+    padding: .75rem 1.65rem;
+}
+
+main #recherche-filtre-main #menu-filtre #label-menu-filtre {
+    display: block;
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+}
+
+main #recherche-filtre-main #menu-filtre #choix-recherche {
+    margin-bottom: .75rem;
+}
+
+main #recherche-filtre-main h3 {
+    margin-bottom: .25rem;
+}
+
+main #recherche-filtre-main #recherche-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+main #recherche-filtre-main #recherche-menu section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+main #recherche-filtre-main #recherche-menu input[type="range"] {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+main #recherche-filtre-main input:not([type="range"]),
+main #recherche-filtre-main select {
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+main #recherche-filtre-main #recherche-menu #reset-filtre {
+    background-color: var(--blue-dark);
+    color: var(--blue-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+main #recherche-filtre-main #recherche-menu #reset-filtre:hover {
+    background-color: var(--blue-dark-contrast);
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+main #recherche-filtre-main::-webkit-scrollbar {
+    top: 50px;
+    width: 16px;
+}
+
+main #recherche-filtre-main::-webkit-scrollbar-thumb {
+    background: #808080;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+
+main #affichage-filtre::-webkit-scrollbar {
+    top: 50px;
+    width: 16px;
+}
+
+main #affichage-filtre::-webkit-scrollbar-thumb {
+    background: #808080;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+
+
+#bouton-promotions {
+    background-color: lightgray;
+    color: var(--black);
+    border: solid 2px var(--black);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+#bouton-promotions:hover {
+    background-color: darkgray;
+    color: var(--black);
+    font-weight: bold;
+    border: solid 2px var(--black);
+}
+
+#menu-deroulant-promotions {
+    position: relative;
+    display: block;
+}
+
+#liste-options-promotions {
+    display: none;
+    background-color: #f9f9f9;
+    width: 100%;
+    border: solid black 2px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 200px;
+    list-style: none;
+}
+
+#liste-options-promotions li {
+    padding: 5px 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+
+ul::-webkit-scrollbar {
+    width: 16px;
+}
+
+#liste-options-promotions li input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#liste-options-promotions.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+#filtre-cliquable {
+    position: fixed;
+    background-color: var(--blue-white);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    border-right: solid black 2px;
+    border-bottom: solid black 2px;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0rem 0rem 1rem 0rem;
+    gap: .75rem;
+}
+
+#filtre-cliquable * {
+    cursor: pointer;
+}
+
+#filtre-cliquable #icone-filtre {
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+}
+
+#filtre-cliquable label:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 850px) {
+    main #recherche-filtre-main.visible {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    main #affichage-filtre.notvisible {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    main #recherche-filtre-main {
+        min-height: calc(100vh - 50px - 30px);
+        max-height: calc(100vh - 50px - 30px);
+    }
+
+    main #affichage-filtre {
+        min-height: calc(100vh - 50px - 30px);
+        max-height: calc(100vh - 50px - 30px);
+    }
+}
+
+/* CSS POUR OFFRE */
+
+main #affichage-filtre section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--blue-light);
+    width: auto;
+    height: auto;
+    padding: 0 0.5rem;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-break: break-word;
+    gap: .5rem;
+}
+
+main #affichage-filtre section.stats section {
+    flex-wrap: nowrap;
+    gap: .5rem
+}
+
+main #affichage-filtre .headerOffre,
+main #affichage-filtre .infos {
+    padding: 1rem;
+}
+
+main #affichage-filtre .headerOffre h3 {
+    display: flex;
+    margin-top: auto 0;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 10;
+}
+
+main #affichage-filtre .headerOffre {
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: .5rem;
+}
+
+main #affichage-filtre .headerOffre .stats {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    flex-grow: 1;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+main #affichage-filtre .likes {
+    display: flex;
+    gap: 0.5rem;
+    border: solid black 1.5px;
+    margin-left: 0.5rem;
+}
+
+main #affichage-filtre .demandes {
+    display: flex;
+    gap: 0.5rem;
+    border: solid black 1.5px;
+    margin-left: 0.5rem;
+}
+
+main #affichage-filtre .description {
+    border: solid black 1px;
+    padding: 0.5rem;
+}
+
+main #affichage-filtre .infos {
+    gap: .5rem;
+}
+
+main #affichage-filtre .infos section {
+    gap: .3rem;
+}
+
+main #affichage-filtre p {
+    text-align: center;
+}
+
+
+main #affichage-filtre button {
+    padding: 0.5rem;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    width: auto;
+    background-color: var(--blue-dark-contrast);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--blue-dark-contrast);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+main #affichage-filtre button:hover {
+    background-color: var(--blue-dark-contrast-hover);
+}
+
+/* CSS POUR ENTREPRISE */
+
+/* CSS POUR ETUDIANT */
+
+/* CSS POUR TUTEUR */

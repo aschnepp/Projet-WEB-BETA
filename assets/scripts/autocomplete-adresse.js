@@ -9,6 +9,7 @@ const SHORT_NAME_ADDRESS_COMPONENT_TYPES =
     new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
 
 const ADDRESS_COMPONENT_TYPES_IN_FORM = [
+    'street_number',
     'adresse',
     'locality',
     'administrative_area_level_1',
@@ -32,7 +33,13 @@ function getFormInputElement(componentType) {
         userType = "-entreprise";
     }
 
+    else if (currentPageURL.indexOf("gestion-offre") !== -1) {
+        userType = "-offre";
+    }
+
     return document.getElementById(`${componentType}${userType}`);
+
+    //TODO Faire avec classes et pas ID pour plusieurs adresses entreprise
 }
 
 function fillInAddress(place) {
@@ -45,10 +52,14 @@ function fillInAddress(place) {
         return '';
     }
     function getComponentText(componentType) {
-        return (componentType === 'adresse') ?
-            `${getComponentName('street_number')} ${getComponentName('route')}` :
-            getComponentName(componentType);
+        if (componentType === 'adresse') {
+            const route = getComponentName('route');
+            return `${route}`;
+        } else {
+            return getComponentName(componentType);
+        }
     }
+
     for (const componentType of ADDRESS_COMPONENT_TYPES_IN_FORM) {
         getFormInputElement(componentType).value = getComponentText(componentType);
     }
