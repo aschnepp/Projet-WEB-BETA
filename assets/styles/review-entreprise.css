@@ -24,7 +24,7 @@ form {
     align-items: center;
     justify-content: center;
     margin: 0;
-    width: auto;
+    width: 60%;
     height: auto;
 }
 
@@ -68,18 +68,6 @@ fieldset textarea {
     background-color: var(--blue-white);
 }
 
-fieldset input[type="file"] {
-    overflow: hidden;
-    width: auto;
-}
-
-@media (max-width: 500px) {
-    fieldset input[type="file"] {
-        width: 150px;
-        color: transparent;
-    }
-}
-
 fieldset input[type="submit"] {
     background-color: var(--blue-dark-contrast);
     color: var(--white);
@@ -119,40 +107,29 @@ fieldset input[type="button"]:hover {
     background-color: var(--blue-white);
 }
 
-fieldset a {
-    color: var(--blue-dark-contrast);
-    text-align: center;
-    text-decoration: underline;
-    font-size: smaller;
-    width: auto;
-    height: auto;
-    background-color: var(--white);
-    margin-top: 1%;
-}
-
 fieldset section {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: top;
     background-color: var(--blue-light);
     width: auto;
     height: auto;
     padding: 0 0.5rem;
     border-radius: 5px;
-    flex-wrap: wrap;
     word-break: break-word;
 }
 
 section h3 {
     display: flex;
     margin-top: auto 0;
-    align-items: center;
+    align-items: top;
     justify-content: center;
+    width: auto
 }
 
 fieldset section p {
     padding-left: 0.5rem;
+    align-items: center;
 }
 
 fieldset #description {
@@ -160,27 +137,49 @@ fieldset #description {
     padding: 0.5rem;
 }
 
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 0.2rem;
+    width: 100%;
+    height: auto;
+    gap: .5rem;
+}
+
+
+#offre {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#offre .contentOffre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
 #offre .headerOffre {
     width: 100%;
     margin-bottom: .5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: auto
 }
 
+#offre .bodyOffre {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+}
 
-#likes {
-    border: solid black 1.5px;
+#note {
     margin-left: 0.5rem;
-}
-
-#demandes {
-    margin-left: 0.5rem;
-    border: solid black 1.5px;
-}
-
-#offre {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
 }
 
 #loginbtns {
@@ -189,17 +188,21 @@ fieldset #description {
     gap: 2rem;
 }
 
-#item {
-    flex: 1 1 auto;
-    min-width: auto;
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-section.infos {
-    margin-bottom: 0.5rem;
-}
 
-.infos {
-    gap: .5rem;
+/* CSS pour le système de notation */
+#rate-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--blue-white);
+    border: solid 1px var(--blue-dark-contrast);
 }
 
 .rate {

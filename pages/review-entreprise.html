@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/review-entreprise.js" as="script"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -65,83 +67,30 @@
             <fieldset>
                 <legend>Entreprise</legend>
                 <section id="offre">
-                    <section class="headerOffre">
-                        <h3>Stage Recherche Réseau</h3>
-                        <section class="stats">
+                    <div id="logo-container"></div>
+                    <section class="contentOffre">
+                        <section class="headerOffre">
+                            <h3>CESI</h3>
                             <section id="likes" class="item">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
                                     alt="wishlists" />
                                 <p>3</p>
                             </section>
-                            <section id="demandes" class="item">
-                                <img width="30" height="30"
-                                    src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
-                                <p>1</p>
-                            </section>
+                        </section>
+                        <section class="bodyOffre">
+                            <div class="items">
+                                <img width="30" height="30" src="https://img.icons8.com/ios/30/domain.png"
+                                    alt="domain" />
+                                <a href="https://www.cesi.fr/" target="_blank">www.cesi.fr</a>
+                            </div>
+
                         </section>
                     </section>
-                    <section class="infos">
-                        <section id="competences" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
-                                alt="learning" />
-                            <p>IP, NAT, CCNAv7</p>
-                        </section>
-                        <section id="localisation" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
-                                alt="map-marker" />
-                            <p>2 allée des foulons, 67380 Lingolsheim</p>
-                        </section>
-                        <section id="entreprise-logo" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
-                                alt="client-company" />
-                            <p>CESI Strasbourg</p>
-                        </section>
-                        <section id="promo" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
-                                alt="reviewer-male" />
-                            <p>CPI A2 Info</p>
-                        </section>
-                        <section id="duree" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
-                                alt="time--v1" />
-                            <p>12 Semaines</p>
-                        </section>
-                        <section id="date" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
-                                alt="google-calendar" />
-                            <p>08/04 - 19/07</p>
-                        </section>
-                        <section id="remuneration" class="item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
-                                alt="money--v1" />
-                            <p>4,35€ / heure</p>
-                        </section>
-                        <section id="places" class="item">
-                            <img width="30" height="30"
-                                src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
-                                alt="conference-call--v1" />
-                            <p>3 places</p>
-                        </section>
-                        <section id="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
-                                quaerat. Quisquam
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
-                                pariatur et modi,
-                                laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
-                                velit eos
-                                facilis. Sapiente!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
-                                tempore qui odio
-                                necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
-                                aliquid sit
-                                explicabo maiores molestiae?
-                            </p>
-                        </section>
-                    </section>
+
                 </section>
 
                 <label for="nom">Note</label>
-                <section>
+                <section id="rate-wrapper">
                     <div class="rate">
                         <input type="radio" id="star5" name="rating" value="5" required />
                         <label for="star5" title="Awesome"></label>
