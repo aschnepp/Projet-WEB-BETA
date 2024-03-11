@@ -114,27 +114,8 @@ fieldset section {
     background-color: var(--blue-light);
     width: auto;
     height: auto;
-    padding: 0 0.5rem;
     border-radius: 5px;
     word-break: break-word;
-}
-
-section h3 {
-    display: flex;
-    margin-top: auto 0;
-    align-items: top;
-    justify-content: center;
-    width: auto
-}
-
-fieldset section p {
-    padding-left: 0.5rem;
-    align-items: center;
-}
-
-fieldset #description {
-    border: solid black 1px;
-    padding: 0.5rem;
 }
 
 .items {
@@ -246,4 +227,26 @@ input:checked~label:hover,
 input:checked~label:hover~label,
 label:hover~input:checked~label {
     color: #f2ec35;
+}
+
+.rate2 {
+    display: inline-block;
+    border: 0;
+    color: #b0afaf;
+}
+
+.rate2>span:before {
+    display: inline-block;
+    font-size: .9rem;
+    padding: .3rem .2rem;
+    margin: 0;
+    cursor: pointer;
+    font-family: FontAwesome;
+    content: "\f005 ";
+}
+
+.rate2 .half:before {
+    content: "\f089 ";
+    
+    padding-right: 0;
 }
