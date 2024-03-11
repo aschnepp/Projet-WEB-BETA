@@ -1,7 +1,11 @@
-var entreprise1 = "Facebook";
+var grade = 4.4;
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetchAndDisplayLogo(entreprise1, "logo-container");
+    var entreprise1 = document.getElementById("website");
+    var domain = new URL(entreprise1).hostname;
+    domain = domain.replace("www.", "");
+    fetchAndDisplayLogo(domain, "logo-container");
+    displayGrade(grade);
 });
 
 window.onresize = function () {
@@ -41,3 +45,26 @@ function fetchAndDisplayLogo(entrepriseNom, containerId) {
       imageElements[i].style.width = `${imageSize}px`;
     }
   }
+
+function displayGrade(grade) {
+    const wrapper = document.getElementById("gradeWrapper");
+    const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/star--v1.png' alt='star--v1' />";
+    const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/filled-star.png' alt='filled-star' />";
+    const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/star-half-empty.png' alt='star-half-empty' />";
+    
+    let html = "";
+    let full = Math.floor(grade);
+    let half = ((grade % 1) >= 0.5) ? 1 : 0; 
+    let empty = 5 - full - half;    
+    for (let i = 0; i < full; i++) {
+        html += fullstar;
+    }
+    if (half > 0) {
+        html += halfstar;
+    }
+    for (let i = 0; i < empty; i++) {
+        html += emptystar;
+    }
+    wrapper.innerHTML = html;
+
+}

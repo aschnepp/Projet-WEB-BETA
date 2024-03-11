@@ -202,8 +202,8 @@ fieldset section {
 
 .rate>label:before {
     display: inline-block;
-    font-size: 1.5rem;
-    padding: .3rem .2rem;
+    font-size: 1.7rem;
+    padding: .3rem .7rem;
     margin: 0;
     cursor: pointer;
     font-family: FontAwesome;
@@ -219,34 +219,12 @@ fieldset section {
 input:checked~label,
 label:hover,
 label:hover~label {
-    color: #dbc00b;
+    color: #f4ab19;
 }
 
 input:checked+label:hover,
 input:checked~label:hover,
 input:checked~label:hover~label,
 label:hover~input:checked~label {
-    color: #f2ec35;
-}
-
-.rate2 {
-    display: inline-block;
-    border: 0;
-    color: #b0afaf;
-}
-
-.rate2>span:before {
-    display: inline-block;
-    font-size: .9rem;
-    padding: .3rem .2rem;
-    margin: 0;
-    cursor: pointer;
-    font-family: FontAwesome;
-    content: "\f005 ";
-}
-
-.rate2 .half:before {
-    content: "\f089 ";
-    
-    padding-right: 0;
+    color: #b67c0f;
 }
