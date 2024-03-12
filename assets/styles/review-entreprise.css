@@ -18,6 +18,10 @@ main {
     justify-content: center;
 }
 
+p {
+    word-break: break-word;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -66,6 +70,7 @@ fieldset textarea {
     border-radius: 5px;
     resize: none;
     background-color: var(--blue-white);
+    width: auto;
 }
 
 fieldset input[type="submit"] {
@@ -149,7 +154,8 @@ fieldset section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto
+    height: auto;
+    flex-wrap: wrap;
 }
 
 #offre .bodyOffre {
@@ -166,13 +172,30 @@ fieldset section {
 #loginbtns {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    column-gap: 1.5rem;
+    row-gap: 0rem;
+    flex-wrap: wrap;
 }
 
 #logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 800px) {
+    form {
+        width: 90%;
+    }
+
+    fieldset {
+        width: 90%;
+    }
+
+    #offre {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 
@@ -190,6 +213,7 @@ fieldset section {
     display: inline-block;
     border: 0;
     color: #b0afaf;
+    min-width: 240px;
 }
 
 .rate>input {
