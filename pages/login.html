@@ -2,75 +2,85 @@
 <html lang="fr">
 
 <head>
-  <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
-  <meta charset="utf-8" />
-  <title>Connexion</title>
-  <meta name="description" content="Cette page vous permet de vous connecter au site." />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/styles/login.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-  <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Main -->
+    <meta charset="utf-8" />
+    <title>Connexion</title>
+    <meta name="description" content="Cette page vous permet de vous connecter au site." />
+    <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
+
+    <!-- Preload -->
+    <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
+    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+
+    <!-- Style -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/styles/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 </head>
 
 <body>
-  <header>
-    <section id="header-gauche">
-      <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-      <p id="header-p">Stage Catalyst</p>
-    </section>
+    <header>
+        <section id="header-gauche">
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
+            <p id="header-p">Stage Catalyst</p>
+        </section>
 
-    <section id="header-droite">
-      <!-- Menu Burger -->
-      <div id="menu-burger-header">
-        <div class="barre-haut"></div>
-        <div class="barre-milieu"></div>
-        <div class="barre-bas"></div>
-      </div>
 
-      <a class="liens-header boutons-header" rel="preconnect" href="login.html" title="Connexion">Connexion</a>
-    </section>
-  </header>
-  <main>
+        <section id="header-milieu">
+        </section>
 
-    <div id="menu-burger-flou">
-      <div id="menu-burger-main">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-          architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-          sit
-          aperiam totam explicabo! Rem, tenetur.</p>
-        <div>zdq</div>
-        <div>zdqz</div>
-      </div>
-    </div>
+        <section id="header-droite">
+            <!-- Menu Burger -->
+            <div id="menu-burger-header">
+                <div class="barre-haut"></div>
+                <div class="barre-milieu"></div>
+                <div class="barre-bas"></div>
+            </div>
 
-    <form id="myForm" method="post" onsubmit="return validateForm()">
-      <fieldset>
-        <label for="username">Identifiant</label>
-        <input type="text" id="username" name="username" required />
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" minlength="8" required />
-        <div id="remember">
-          <input type="checkbox" id="souvenir" name="souvenir" />
-          <label for="souvenir">Se souvenir de moi</label>
+            <a class="liens-header boutons-header" rel="preconnect" href="login.html" title="Connexion">Connexion</a>
+        </section>
+    </header>
+    <main>
+
+        <div id="menu-burger-flou">
+            <div id="menu-burger-main">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
+                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
+                    sit
+                    aperiam totam explicabo! Rem, tenetur.</p>
+                <div>zdq</div>
+                <div>zdqz</div>
+            </div>
         </div>
-        <div id="loginbtns">
-          <input type="submit" value="Envoyer" />
-          <input type="reset" value="Réinitialiser" />
-        </div>
-        <a href="#">Demander un accès à la plateforme</a>
-      </fieldset>
-    </form>
-  </main>
-  <footer>
-    <section id="liens-footer">
-      <a href="../pages/cgu.html" class="a-footer">CGU</a>
-      <a href="../pages/about.html" class="a-footer">A Propos</a>
-      <a href="../pages/contact.html" class="a-footer">Contact</a>
-    </section>
-    <p>Stage Catalyst © 2024</p>
-  </footer>
+
+        <form id="myForm" method="post" onsubmit="return validateForm()">
+            <fieldset>
+                <label for="username">Identifiant</label>
+                <input type="text" id="username" name="username" required />
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" minlength="8" required />
+                <div id="remember">
+                    <input type="checkbox" id="souvenir" name="souvenir" />
+                    <label for="souvenir">Se souvenir de moi</label>
+                </div>
+                <div id="loginbtns">
+                    <input type="submit" value="Envoyer" />
+                    <input type="reset" value="Réinitialiser" />
+                    <input type="button" onclick="javascript:window.history.back();" value="Annuler" />
+                </div>
+                <a href="#">Demander un accès à la plateforme</a>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <section id="liens-footer">
+            <a href="../pages/cgu.html" class="a-footer">CGU</a>
+            <a href="../pages/about.html" class="a-footer">A Propos</a>
+            <a href="../pages/contact.html" class="a-footer">Contact</a>
+        </section>
+        <p>Stage Catalyst © 2024</p>
+    </footer>
 </body>
 
 </html>

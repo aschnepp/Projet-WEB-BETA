@@ -2,20 +2,25 @@
 <html lang="fr">
 
 <head>
+    <!-- Main -->
+    <meta charset="UTF-8">
+    <title>Gestion des entreprises</title>
+    <meta name="description" content="Page de gestion des entreprises.">
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
-    <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
+
+    <!-- Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
-    <meta name="description" content="Page de gestion des entreprises.">
-    <meta charset="UTF-8">
+
+    <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des entreprises</title>
+    <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
@@ -94,6 +99,14 @@
                     <div>
                         <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
                             placeholder="Secteur d'activité">
+                    </div>
+                </section>
+
+                <section id="description-activite">
+                    <label for="description-entreprise">Description entreprise*</label>
+                    <div>
+                        <textarea type="text" name="description-entreprise" id="description-entreprise" required
+                            placeholder="Description de l'entreprise"></textarea>
                     </div>
                 </section>
 

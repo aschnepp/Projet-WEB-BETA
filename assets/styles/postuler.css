@@ -106,6 +106,19 @@ fieldset input[type="reset"]:hover {
   background-color: var(--blue-white);
 }
 
+fieldset input[type="button"] {
+  background-color: var(--white);
+  color: var(--blue-dark-contrast);
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid var(--blue-dark-contrast);
+  margin: 0.5rem 0;
+}
+
+fieldset input[type="button"]:hover {
+  background-color: var(--blue-white);
+}
+
 fieldset a {
   color: var(--blue-dark-contrast);
   text-align: center;
@@ -142,6 +155,11 @@ fieldset section p {
   padding-left: 0.5rem;
 }
 
+fieldset #description {
+  border: solid black 1px;
+  padding: 0.5rem;
+}
+
 #offre .headerOffre {
   width: 100%;
   margin-bottom: .5rem;
@@ -167,7 +185,8 @@ fieldset section p {
 
 #loginbtns {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2rem;
 }
 
 #item {
