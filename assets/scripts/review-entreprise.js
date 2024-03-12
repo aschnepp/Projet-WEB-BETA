@@ -39,7 +39,7 @@ function fetchAndDisplayLogo(entrepriseNom, containerId) {
 // Function to resize the images based on viewport width
 function resizeImages() {
   const viewportWidth = window.innerWidth;
-  const imageSize = Math.min(viewportWidth * 0.2, 150); // Adjust the percentage or maximum size as needed
+  const imageSize = Math.min(viewportWidth * 0.3, 150); // Adjust the percentage or maximum size as needed
   const imageElements = document.getElementsByClassName("logo-image");
   for (let i = 0; i < imageElements.length; i++) {
     imageElements[i].style.width = `${imageSize}px`;
@@ -48,9 +48,9 @@ function resizeImages() {
 
 function displayGrade(grade) {
   const wrapper = document.getElementById("gradeWrapper");
-  const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/star--v1.png' alt='star--v1' />";
-  const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/filled-star.png' alt='filled-star' />";
-  const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/20/star-half-empty.png' alt='star-half-empty' />";
+  const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
+  const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
+  const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
   
   let html = "";
   let full = Math.floor(grade);
