@@ -128,6 +128,7 @@ header>#header-droite>a.boutons-header::after {
   content: "";
   display: block;
   height: 2px;
+  bottom: 3px;
   left: 50%;
   position: absolute;
   background: var(--black);
@@ -141,7 +142,6 @@ header>#header-droite>a.boutons-header:hover {
 
 header>#header-droite>a.boutons-header:hover::after {
   width: 85%;
-  bottom: 3px;
   left: 8px;
 }
 
