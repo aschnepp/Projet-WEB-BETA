@@ -28,6 +28,15 @@
   margin: 1rem 1rem;
 }
 
+.contact section > img {
+  width: 5rem;
+  padding: 0.5rem;
+}
+
+.contact section > p {
+  margin: 1rem 0;
+}
+
 #contact-methods {
   display: flex;
   flex-flow: row wrap;
