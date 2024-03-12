@@ -216,15 +216,15 @@ fieldset section {
     padding-right: 0;
 }
 
-input:checked~label,
-label:hover,
-label:hover~label {
+.rate>input:checked~label,
+.rate>label:hover,
+.rate>label:hover~label {
     color: #f4ab19;
 }
 
-input:checked+label:hover,
-input:checked~label:hover,
-input:checked~label:hover~label,
-label:hover~input:checked~label {
+.rate>input:checked+label:hover,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
     color: #b67c0f;
 }
