@@ -36,14 +36,14 @@ function StatsEntreprisesOuOffres() {
 
     if (valeurSelectionnee === "Entreprise") {
         return `
-        <a href="stats-entreprise.html" title="Statistiques d'entreprise"
+        <a href="stats-entreprise.html" target="_blank" title="Statistiques d'entreprise"
     id="bouton-stats-entreprise">Statistiques d'entreprises</a>
         `;
     }
 
     else if (valeurSelectionnee === "Offre") {
         return `
-        <a href="stats-offres.html" title="Statistiques d'offres" id="bouton-stats-offres">Statistiques
+        <a href="stats-offres.html" target="_blank" title="Statistiques d'offres" id="bouton-stats-offres">Statistiques
         d'offres</a>
         `;
     }
