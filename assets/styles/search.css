@@ -135,8 +135,42 @@ main #recherche-filtre-main #menu-filtre #header-filtre div {
     justify-content: space-between;
     padding: 0rem 0.5rem;
     border: solid black 2px;
-    border-radius: 3rem;
+    border-radius: 1rem;
+}
 
+#header-filtre div label {
+    position: relative;
+}
+
+#header-filtre div label::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#header-filtre div label::after {
+    background: transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    position: absolute;
+    background: var(--black);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#header-filtre div label:hover {
+    font-weight: bold;
+}
+
+#header-filtre div label:hover::after {
+    width: 100%;
+    left: 0px;
 }
 
 main #recherche-filtre-main #menu-filtre #header-filtre div * {
@@ -148,17 +182,6 @@ main #recherche-filtre-main #menu-filtre #header-filtre button {
     background-color: transparent;
     border: none;
 }
-
-main #recherche-filtre-main #menu-filtre #header-filtre label {
-    vertical-align: middle;
-}
-
-
-main #recherche-filtre-main #menu-filtre #header-filtre label:hover {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre a {
     position: relative;
@@ -351,9 +374,39 @@ ul::-webkit-scrollbar {
     border: none;
 }
 
-#filtre-cliquable label:hover {
-    text-decoration: underline;
+#filtre-cliquable label {
+    position: relative;
+}
+
+#filtre-cliquable label::before {
+    display: block;
+    content: attr(title);
     font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#filtre-cliquable label::after {
+    background: transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    bottom: 0px;
+    left: 50%;
+    position: absolute;
+    background: var(--black);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#filtre-cliquable label:hover {
+    font-weight: bold;
+}
+
+#filtre-cliquable label:hover::after {
+    width: 100%;
+    left: 0px;
 }
 
 @media only screen and (max-width: 850px) {

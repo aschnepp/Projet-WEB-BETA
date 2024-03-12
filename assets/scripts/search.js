@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var EtatFiltre = document.querySelector("#choix-recherche");
 
     ChoixFiltre();
+
     EtatFiltre.addEventListener("change", ChoixFiltre);
 });
 
@@ -28,6 +29,14 @@ function ChoixFiltre() {
 
     var BoutonReset = document.querySelector("#reset-filtre");
     BoutonReset.addEventListener("click", ResetCouleurSlider);
+    BoutonReset.addEventListener("click", ResetScrollToTop);
+}
+
+function ResetScrollToTop() {
+    document.querySelector("#recherche-filtre-main").scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function StatsEntreprisesOuOffres() {
