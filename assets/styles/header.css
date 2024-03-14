@@ -1,82 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+}
+
 header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.1rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  position: sticky;
+  top: 0px;
+  align-items: center;
 
-    background: hsla(215, 45%, 53%, 1);
+  background: hsla(215, 45%, 53%, 1);
 
-    background: linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
-    background: -moz-linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: -moz-linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
-    background: -webkit-linear-gradient(315deg,
-            hsla(215, 45%, 53%, 1) 17%,
-            hsla(210, 63%, 77%, 1) 93%);
+  background: -webkit-linear-gradient(315deg,
+      hsla(215, 45%, 53%, 1) 17%,
+      hsla(210, 63%, 77%, 1) 93%);
 
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
 
-    color: white;
-    font-family: "Montserrat";
-    width: 100%;
+  color: white;
+  font-family: "Montserrat";
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
 }
 
 header img {
-    width: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 header #image-accueil {
-    cursor: pointer;
-    margin: 0.5rem 1rem;
+  cursor: pointer;
+  justify-self: left;
+  display: flex;
+  align-items: center;
+  margin: 0rem 1rem;
+  transform: scale(0.85);
 }
 
 header>#header-gauche {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 0.5rem;
+  justify-self: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 header>#header-milieu {
-    color: var(--black);
-    border: solid black 1px;
-    border-radius: 10px;
-    background: var(--blue-white);
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-header>#buttons {
-    margin-left: 0.5rem;
-    padding-right: 2rem;
+header input {
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background-color: var(--blue-white);
 }
 
-header>#buttons>a {
-    text-decoration: none;
-    color: var(--black);
-    padding: 3px 7px;
-    border: solid black 1px;
-    border-radius: 10px;
-    background: var(--blue-white);
+header i[class*="fa"],
+header a[class*="fa"] {
+  cursor: pointer;
+  width: 31.2px;
+  height: 31.2px;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: end;
+  border: solid black 2px;
+  border-radius: 10px;
+  padding: 0.3rem;
+  background-color: var(--blue-white);
+  color: black;
 }
 
-header #buttons a:hover {
-    text-decoration: underline;
-    font-weight: bold;
+header>#header-droite {
+  justify-self: right;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  padding-right: 1.25rem;
+}
+
+header>#header-droite>a.boutons-header {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 3px 7px;
+  color: black;
+  border: solid black 2px;
+  border-radius: 10px;
+  background: var(--blue-white);
+  position: relative;
+  display: inline-block;
+}
+
+header>#header-droite>a.boutons-header::before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+header>#header-droite>a.boutons-header::after {
+  background: transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  bottom: 3px;
+  left: 50%;
+  position: absolute;
+  background: var(--black);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+header>#header-droite>a.boutons-header:hover {
+  font-weight: bold;
+}
+
+header>#header-droite>a.boutons-header:hover::after {
+  width: 85%;
+  left: 8px;
+}
+
+header #header-droite a[class*="fa"]:hover {
+  text-decoration: none;
+  font-weight: none;
 }
 
 @media only screen and (max-width: 600px) {
-    header * {
-        font-size: .75rem;
-    }
+  header * {
+    font-size: 0.85rem;
+  }
 
-    header img {
-        transform: scale(0.75);
-    }
+  i[class*="fa"],
+  a[class*="fa"] {
+    width: 26.6px;
+    height: 26.6px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  header #header-milieu input {
+    width: 175px;
+  }
+
+  header #header-milieu i {
+    width: 27.51px;
+    height: 27.51px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header #header-milieu input {
+    width: 150px;
+  }
+
+  i[class*="fa"],
+  a[class*="fa"] {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header #header-milieu input {
+    width: 120px;
+  }
+
+  i[class*="fa"],
+  a[class*="fa"] {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  header #header-milieu input {
+    width: 110px;
+  }
+
+  i[class*="fa"],
+  a[class*="fa"] {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+}
+
+/*----------MENU BURGER HEADER----------*/
+
+#menu-burger-header {
+  display: none;
+}
+
+#menu-burger-header.active .barre-haut {
+  transform: rotate(43deg);
+}
+
+#menu-burger-header.active .barre-milieu {
+  transform: translateX(1rem);
+  opacity: 0;
+}
+
+#menu-burger-header.active .barre-bas {
+  transform: rotate(-43deg);
+}
+
+#menu-burger-header.disabled {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 900px) {
+  html body header #header-p {
+    display: none;
+  }
+
+  header #header-droite>* {
+    display: none;
+  }
+
+  header #header-droite a.boutons-header {
+    display: none;
+  }
+
+  header #menu-burger-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .barre-haut,
+  .barre-milieu,
+  .barre-bas {
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+    margin: 5px 0;
+    transform-origin: left;
+    transition: all 0.5s;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  header {
+    height: 50px;
+  }
+
+  html body main #menu-burger-flou {
+    top: 50px;
+    height: calc(100vh - 50px - 30px);
+  }
+
+  html body main #menu-burger-main {
+    top: 50px;
+    height: calc(100vh - 50px - 30px);
+  }
+
+  header #image-accueil {
+    transform: scale(0.75);
+  }
+
+  header #menu-burger-header {
+    transform: scale(0.75);
+  }
+}
+
+/*----------MENU BURGER MAIN----------*/
+
+html body main {
+  position: relative;
+  background-color: white;
+}
+
+
+html body.lock-scroll {
+  overflow: hidden;
+}
+
+main #menu-burger-flou {
+  display: none;
+  position: fixed;
+  top: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: calc(100vh - 60px - 30px);
+  z-index: 1000;
+}
+
+main #menu-burger-flou.flou-actif {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  overscroll-behavior: contain;
+}
+
+main #menu-burger-main {
+  top: 60px;
+  display: block;
+  position: fixed;
+  padding: 1.5rem;
+  z-index: 10000;
+  right: calc(-40vw);
+  width: 40vw;
+  height: calc(100vh - 60px - 30px);
+  transition: right 0.5s ease-in-out;
+  background: var(--blue-white);
+  overflow-y: auto;
+}
+
+main #menu-burger-main.affiche {
+  right: 0px;
+  overscroll-behavior: contain;
+}
+
+@keyframes apparition-flou {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes disparition-flou {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main #menu-burger-main {
+    right: calc(-100%);
+    width: 100%;
+  }
+
+  main #menu-burger-main.affiche {
+    right: 0px;
+  }
 }

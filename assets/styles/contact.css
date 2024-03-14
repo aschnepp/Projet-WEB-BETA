@@ -3,6 +3,12 @@
 @import "footer.css";
 @import "color-palette.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .contact {
   margin: 2rem;
   background-color: white;
@@ -10,16 +16,25 @@
   border-radius: 2rem;
   display: flex;
   flex-flow: column;
-  min-height: 75vh;
 }
 
 .contact > h1 {
   text-align: center;
+  padding: 0 1rem;
   margin: 1rem 0;
 }
 
 .contact > * {
   margin: 1rem 1rem;
+}
+
+.contact section > img {
+  width: 5rem;
+  padding: 0.5rem;
+}
+
+.contact section > p {
+  margin: 1rem 0;
 }
 
 #contact-methods {

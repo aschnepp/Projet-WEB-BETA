@@ -1,0 +1,41 @@
+@import "normalize.css";
+@import "header.css";
+@import "color-palette.css";
+@import "footer.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.CGU {
+  margin: 2rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.CGU > h1 {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.CGU > p {
+  margin: 0.5rem 1rem;
+}
+
+.CGU > p:last-child {
+  margin-bottom: 1rem;
+}
+
+.CGU > ul {
+  margin-left: 3rem;
+}
+
+.CGU > * {
+  margin: 1rem 1rem;
+}

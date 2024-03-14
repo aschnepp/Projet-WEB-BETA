@@ -1,0 +1,150 @@
+@import "normalize.css";
+@import "header.css";
+@import "color-palette.css";
+@import "footer.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+}
+
+
+main p {
+  margin: 0.5rem 0;
+  word-break: break-all;
+}
+
+main .profile {
+  margin: 2rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+main #btn-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+main #btn-section img {
+  display: inline-block;
+  height: 2.5em;
+  padding: 1rem;
+}
+
+main #btn-section button {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border: 0.25rem solid black;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0rem 1rem 0rem 0rem;
+}
+
+main .profile>h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+main .profile>* {
+  margin: 0rem 1rem;
+}
+
+main #fa-user {
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  height: fit-content;
+  font-size: 10rem;
+  width: 10rem;
+}
+
+main .profile>section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+main #info {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 80%;
+  justify-content: start;
+  align-content: center;
+}
+
+main .profile section>section {
+  display: flex;
+  margin: 0rem 1rem;
+  gap: 1rem;
+  flex: 1 1 80%;
+  flex-wrap: wrap;
+}
+
+main .profile>section p:first-child {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main .profile>section p:first-child:after {
+  display: inline-block;
+  content: ":";
+  margin: 0rem 1rem;
+  text-decoration: none;
+  font-weight: initial;
+}
+
+@media only screen and (max-width: 1350px) {
+  section>section {
+    justify-content: center;
+  }
+
+  .profile>section {
+    text-align: center;
+  }
+
+  main .profile>section {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #btn-section {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    margin: 1rem 0;
+  }
+
+  section>section {
+    gap: 0;
+  }
+
+  .profile>section {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .fa-user {
+    font-size: 10rem;
+  }
+
+  section>section>p:first-child:after {
+    margin: 0rem 0.5rem;
+  }
+}
