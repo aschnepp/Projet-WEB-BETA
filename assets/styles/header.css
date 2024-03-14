@@ -105,7 +105,7 @@ header>#header-droite {
 header>#header-droite>a.boutons-header {
   text-decoration: none;
   font-weight: 500;
-  padding: 3px 7px;
+  padding: 0.3rem 7px;
   color: black;
   border: solid black 2px;
   border-radius: 10px;
