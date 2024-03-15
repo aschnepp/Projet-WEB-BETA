@@ -152,7 +152,7 @@ function AfficherFiltresOffre() {
 
     <section>
         <label for="date-stage-recherche">Date de début</label>
-        <input type="month" id="date-stage-recherche">
+        <input type="month"  id="date-stage-recherche">
     </section>
 
     <section>
@@ -188,7 +188,7 @@ function AfficherFiltresOffre() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset"  id="reset-filtre" value="Réinitialiser"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -226,7 +226,7 @@ function AfficherFiltresTuteur() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset"  id="reset-filtre" value="Réinitialiser"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -265,7 +265,7 @@ function AfficherFiltresEtudiant() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset"  id="reset-filtre" value="Réinitialiser"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
