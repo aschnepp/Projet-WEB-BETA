@@ -31,7 +31,7 @@
         </section>
 
         <section id="header-milieu">
-            <input type="text" id="recherche" placeholder="Rechercher">
+            <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
             <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
         </section>
 
@@ -70,7 +70,7 @@
                 <section id="nom">
                     <label for="nom-entreprise">Nom*</label>
                     <div>
-                        <input type="text" id="nom-entreprise" required placeholder="Nom">
+                        <input type="text" name="nom-entreprise" id="nom-entreprise" required placeholder="Nom">
                     </div>
                 </section>
 
@@ -78,16 +78,19 @@
                     <label for="adresse-entreprise">Adresse*</label>
                     <label for="street_number-entreprise">Numéro</label>
                     <label for="postal_code-entreprise">Code postal*</label>
-                    <input type="text" id="adresse-entreprise" required placeholder="Adresse">
-                    <input type="text" id="street_number-entreprise" required placeholder="Numéro">
-                    <input type="text" id="postal_code-entreprise" required placeholder="Code Postal">
+                    <input type="text" name="adresse-entreprise" id="adresse-entreprise" required placeholder="Adresse">
+                    <input type="text" name="street_number-entreprise" id="street_number-entreprise" required
+                        placeholder="Numéro">
+                    <input type="text" name="postal_code-entreprise" id="postal_code-entreprise" required
+                        placeholder="Code Postal">
                 </section>
 
                 <section id="ville-region-entreprise">
                     <label for="locality-entreprise">Ville*</label>
                     <label for="administrative_area_level_1-entreprise">Region*</label>
-                    <input type="text" id="locality-entreprise" required placeholder="Ville">
-                    <input type="text" id="administrative_area_level_1-entreprise" required placeholder="Région">
+                    <input type="text" name="locality-entreprise" id="locality-entreprise" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-entreprise"
+                        id="administrative_area_level_1-entreprise" required placeholder="Région">
                 </section>
 
                 <script
@@ -97,7 +100,8 @@
                 <section id="secteur-activite">
                     <label for="secteur-activite-entreprise">Secteur d'activité*</label>
                     <div>
-                        <input type="text" id="secteur-activite-entreprise" required placeholder="Secteur d'activité">
+                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
+                            placeholder="Secteur d'activité">
                     </div>
                 </section>
 
@@ -105,14 +109,15 @@
                 <section id="site-web">
                     <label for="site-web-entreprise">Site web*</label>
                     <div>
-                        <input type="text" id="site-web-entreprise" required placeholder="Site web">
+                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required
+                            placeholder="Site web">
                     </div>
                 </section>
 
                 <section id="description-activite">
                     <label for="description-entreprise">Description entreprise*</label>
                     <div>
-                        <textarea type="text" id="description-entreprise" required
+                        <textarea type="text" name="description-entreprise" id="description-entreprise" required
                             placeholder="Description de l'entreprise"></textarea>
                     </div>
                 </section>

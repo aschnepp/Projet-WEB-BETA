@@ -69,7 +69,7 @@ function getCookies() {
 function Connecte(status) {
   if (status == true) {
     return `
-    <input type="text" id="recherche" placeholder="Rechercher">
+    <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
     <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
     `
   }

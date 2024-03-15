@@ -57,11 +57,11 @@
         <form id="myForm" method="post" onsubmit="return validateForm()">
             <fieldset>
                 <label for="username">Identifiant</label>
-                <input type="text" id="username" required />
+                <input type="text" id="username" name="username" required />
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" minlength="8" required />
+                <input type="password" id="password" name="password" minlength="8" required />
                 <div id="remember">
-                    <input type="checkbox" id="souvenir" />
+                    <input type="checkbox" id="souvenir" name="souvenir" />
                     <label for="souvenir">Se souvenir de moi</label>
                 </div>
                 <div id="loginbtns">
