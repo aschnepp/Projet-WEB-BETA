@@ -1,3 +1,5 @@
+var grade = 4.2;
+
 document.addEventListener("DOMContentLoaded", function () {
     var EtatFiltre = document.querySelector("#choix-recherche");
 
@@ -24,12 +26,9 @@ function ChoixFiltre() {
         AfficherFiltresEtudiant();
     }
 
-
-    Slider();
-
     var BoutonReset = document.querySelector("#reset-filtre");
-    BoutonReset.addEventListener("click", ResetCouleurSlider);
     BoutonReset.addEventListener("click", ResetScrollToTop);
+    BoutonReset.addEventListener("click", ResetCouleurSlider);
 }
 
 function ResetScrollToTop() {
@@ -63,6 +62,7 @@ function StatsEntreprisesOuOffres() {
 }
 
 function AfficherFiltresEntreprise() {
+    ClearRecherche();
     document.querySelector("#recherche-menu").innerHTML =
         `
         <section>
@@ -119,10 +119,106 @@ function AfficherFiltresEntreprise() {
         `
     </section>
 ` ;
+
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
+
+<section class="entreprise">
+<div class="logo-container"></div>
+<section class="contentEntreprise">
+    <section class="headerOffre">
+        <h2>CESI</h2>
+        <section class="gradeWrapper">
+            <div class="rate2">
+
+            </div>
+        </section>
+    </section>
+    <section class="bodyEntreprise">
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
+                alt="domain" />
+            <a href="https://www.amazon.fr/" target="_blank" class="website">amazon.com</a>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
+                alt="map-marker" />
+            <p>2 allée des foulons, 67380 Lingolsheim</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
+                alt="client-company" />
+            <p>Education / Formation</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
+                alt="groups" />
+            <p>30 personnes</p>
+        </div>
+    </section>
+</section>
+<section class="boutons-entreprise">
+    <button>Voir les offres disponibles</button>
+</section>
+</section>
+
+<section class="entreprise">
+<div class="logo-container"></div>
+<section class="contentEntreprise">
+    <section class="headerOffre">
+        <h2>CESI</h2>
+        <section class="gradeWrapper">
+            <div class="rate2">
+
+            </div>
+        </section>
+    </section>
+    <section class="bodyEntreprise">
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
+                alt="domain" />
+            <a href="https://www.cesi.fr/" target="_blank" class="website">www.cesi.fr</a>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
+                alt="map-marker" />
+            <p>2 allée des foulons, 67380 Lingolsheim</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
+                alt="client-company" />
+            <p>Education / Formation</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
+                alt="groups" />
+            <p>30 personnes</p>
+        </div>
+    </section>
+</section>
+<section class="boutons-entreprise">
+    <button>Voir les offres disponibles</button>
+</section>
+</section>
+`);
+
+    var entreprises = document.querySelectorAll(".entreprise");
+    entreprises.forEach(function (entreprise) {
+        var website = entreprise.querySelector(".website");
+        var domain = new URL(website.href).hostname.replace("www.", "");
+        fetchAndDisplayLogo(domain, entreprise.querySelector(".logo-container"));
+    });
+
+    displayGrade(grade);
+
+    Slider();
 }
 
 
 function AfficherFiltresOffre() {
+    ClearRecherche();
     document.querySelector("#recherche-menu").innerHTML =
         `                
         <section>
@@ -193,9 +289,179 @@ function AfficherFiltresOffre() {
         `
     </section>
 ` ;
+
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
+
+<section class="offre">
+<section class="headerOffre">
+    <h3>Stage Recherche Réseau</h3>
+    <section class="stats">
+        <section class="likes item">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
+                alt="wishlists" />
+            <p>3</p>
+        </section>
+        <section class="demandes item">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
+            <p>1</p>
+        </section>
+    </section>
+</section>
+
+<section class="infos">
+    <section class="competences item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
+            alt="learning" />
+        <p>IP, NAT, CCNAv7</p>
+    </section>
+    <section class="localisation item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
+            alt="map-marker" />
+        <p>2 allée des foulons, 67380 Lingolsheim</p>
+    </section>
+    <section class="entreprise-logo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
+            alt="client-company" />
+        <p>CESI Strasbourg</p>
+    </section>
+    <section class="promo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
+            alt="reviewer-male" />
+        <p>CPI A2 Info</p>
+    </section>
+    <section class="duree item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
+            alt="time--v1" />
+        <p>12 Semaines</p>
+    </section>
+    <section class="date item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
+            alt="google-calendar" />
+        <p>08/04 - 19/07</p>
+    </section>
+    <section class="remuneration item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
+            alt="money--v1" />
+        <p>4,35€ / heure</p>
+    </section>
+    <section class="places item">
+        <img width="30" height="30"
+            src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
+            alt="conference-call--v1" />
+        <p>3 places</p>
+    </section>
+    <section class="description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
+            quaerat.
+            Quisquam
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
+            pariatur et
+            modi,
+            laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
+            velit
+            eos
+            facilis. Sapiente!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
+            tempore qui odio
+            necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
+            aliquid
+            sit
+            explicabo maiores molestiae
+        </p>
+    </section>
+    <button type="button" class="postuler">Postuler</button>
+</section>
+</section>
+
+<section class="offre">
+<section class="headerOffre">
+    <h3>Stage Recherche Réseau</h3>
+    <section class="stats">
+        <section class="likes item">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
+                alt="wishlists" />
+            <p>3</p>
+        </section>
+        <section class="demandes item">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
+            <p>1</p>
+        </section>
+    </section>
+</section>
+
+<section class="infos">
+    <section class="competences item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
+            alt="learning" />
+        <p>IP, NAT, CCNAv7</p>
+    </section>
+    <section class="localisation item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
+            alt="map-marker" />
+        <p>2 allée des foulons, 67380 Lingolsheim</p>
+    </section>
+    <section class="entreprise-logo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
+            alt="client-company" />
+        <p>CESI Strasbourg</p>
+    </section>
+    <section class="promo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
+            alt="reviewer-male" />
+        <p>CPI A2 Info</p>
+    </section>
+    <section class="duree item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
+            alt="time--v1" />
+        <p>12 Semaines</p>
+    </section>
+    <section class="date item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
+            alt="google-calendar" />
+        <p>08/04 - 19/07</p>
+    </section>
+    <section class="remuneration item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
+            alt="money--v1" />
+        <p>4,35€ / heure</p>
+    </section>
+    <section class="places item">
+        <img width="30" height="30"
+            src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
+            alt="conference-call--v1" />
+        <p>3 places</p>
+    </section>
+    <section class="description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
+            quaerat.
+            Quisquam
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
+            pariatur et
+            modi,
+            laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
+            velit
+            eos
+            facilis. Sapiente!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
+            tempore qui odio
+            necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
+            aliquid
+            sit
+            explicabo maiores molestiae
+        </p>
+    </section>
+    <button type="button" class="postuler">Postuler</button>
+</section>
+</section>
+`);
+    Slider();
 }
 
 function AfficherFiltresTuteur() {
+    ClearRecherche();
     document.querySelector("#recherche-menu").innerHTML =
         `
         <section>
@@ -232,6 +498,56 @@ function AfficherFiltresTuteur() {
     </section>
         `;
 
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
+    
+    <section class="tuteur">
+    <section>
+        <img src="../assets/fontawesome/svgs/solid/user.svg" alt="Icône utilisateur par défaut"
+            class="fa-user">
+        <section class="infos-tuteur">
+            <section>
+                <p>Prénom :</p>
+                <p>d,qzd,qdq</p>
+            </section>
+            <section>
+                <p>Nom :</p>
+                <p>DQZDQ</p>
+            </section>
+            <section>
+                <p>Email :</p>
+                <p>guigui67480&#8203;@gmail&#8203;.com</p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <section>
+            <p>Date de naissance :</p>
+            <p>11 mai 2004</p>
+        </section>
+        <section>
+            <p>Age :</p>
+            <p>19</p>
+        </section>
+        <section>
+            <p>Adresse :</p>
+            <p>19 rue des tests, Strasbourg, 67000</p>
+        </section>
+        <section>
+            <p>Promotion gérées</p>
+            <p>A1, A2, A3</p>
+        </section>
+        <section>
+            <p>Centre :</p>
+            <p>Strasbourg</p>
+        </section>
+    </section>
+    <section class="boutons-tuteur">
+        <button>Modifier</button>
+    </section>
+</section>
+    `
+    );
     var boutonPromotions = document.querySelector("#bouton-promotions");
     var optionsList = document.querySelector("#liste-options-promotions");
 
@@ -241,6 +557,7 @@ function AfficherFiltresTuteur() {
 }
 
 function AfficherFiltresEtudiant() {
+    ClearRecherche();
     document.querySelector("#recherche-menu").innerHTML =
         `                   <section>
         <label for="nom-etudiant-recherche">Nom</label>
@@ -270,24 +587,90 @@ function AfficherFiltresEtudiant() {
         `
     </section>
         `;
+
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
+
+        <section class="etudiant">
+        <section>
+            <img src="../assets/fontawesome/svgs/solid/user.svg" alt="Icône utilisateur par défaut"
+                class="fa-user">
+            <section class="infos-etudiant">
+                <section>
+                    <p>Prénom :</p>
+                    <p>d,qzd,qdq</p>
+                </section>
+                <section>
+                    <p>Nom :</p>
+                    <p>DQZDQ</p>
+                </section>
+                <section>
+                    <p>Email :</p>
+                    <p>guigui67480&#8203;@gmail&#8203;.com</p>
+                </section>
+            </section>
+        </section>
+        <section>
+            <section>
+                <p>Date de naissance :</p>
+                <p>11 mai 2004</p>
+            </section>
+            <section>
+                <p>Age :</p>
+                <p>19</p>
+            </section>
+            <section>
+                <p>Adresse :</p>
+                <p>19 rue des tests, Strasbourg, 67000</p>
+            </section>
+            <section>
+                <p>Promotion :</p>
+                <p>BAC +1</p>
+            </section>
+            <section>
+                <p>Centre :</p>
+                <p>Strasbourg</p>
+            </section>
+            <section>
+                <p>Candidatures effetuées :</p>
+                <p>47</p>
+            </section>
+            <section>
+                <p>Stages effectués :</p>
+                <p>3</p>
+            </section>
+        </section>
+        <section class="boutons-etudiant">
+            <button>Gérer ses offres de stage</button>
+            <button>Gérer sa wishlist</button>
+        </section>
+    </section>
+        `);
+}
+
+
+function ClearRecherche() {
+    const affichageFiltre = document.getElementById("affichage-filtre");
+
+    affichageFiltre.innerHTML = "<button>+ Afficher plus</button>";
 }
 
 function Slider() {
-    const SliderRecup = document.querySelectorAll(".slider")
+    const SliderRecup = document.querySelectorAll(".slider");
 
     SliderRecup.forEach(function (slider) {
-        const min = slider.min
-        const max = slider.max
-        const value = slider.value
+        const min = slider.min;
+        const max = slider.max;
+        const value = slider.value;
 
-        slider.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(value - min) / (max - min) * 100}%, #FFFFFF ${(value - min) / (max - min) * 100}%, #FFFFFF 100%)`
+        slider.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(value - min) / (max - min) * 100}%, #FFFFFF ${(value - min) / (max - min) * 100}%, #FFFFFF 100%)`;
 
         slider.addEventListener("input", function () {
-            this.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF 100%)`
+            this.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF 100%)`;
         });
-    }
-    );
+    });
 }
+
 
 function ResetCouleurSlider() {
     const SliderRecup = document.querySelectorAll(".slider");
@@ -296,3 +679,66 @@ function ResetCouleurSlider() {
         slider.style.background = `white`;
     });
 }
+
+
+
+
+function fetchAndDisplayLogo(entrepriseNom, container) {
+    const viewportWidth = window.innerWidth;
+    const imageSize = Math.min(viewportWidth * 0.2, 150);
+    const apiUrl = `https://autocomplete.clearbit.com/v1/companies/suggest?query=${encodeURIComponent(entrepriseNom)}`;
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            const domain = data[0]?.domain;
+            const logoUrl = `https://logo.clearbit.com/${domain}`;
+            const imageElement = document.createElement("img");
+            imageElement.src = logoUrl;
+            imageElement.classList.add("logo-image");
+            imageElement.alt = entrepriseNom;
+            imageElement.style.width = `${imageSize}px`;
+
+            container.appendChild(imageElement);
+        })
+        .catch((error) =>
+            console.error("Erreur lors de la récupération des données:", error)
+        );
+}
+
+window.onresize = function () {
+    resizeImages();
+};
+
+function resizeImages() {
+    const viewportWidth = window.innerWidth;
+    const imageSize = Math.min(viewportWidth * 0.3, 150);
+    const imageElements = document.querySelectorAll(".logo-image");
+    imageElements.forEach(function (imageElement) {
+        imageElement.style.width = `${imageSize}px`;
+    });
+}
+
+function displayGrade(grade) {
+    const rateWrappers = document.querySelectorAll(".gradeWrapper");
+    const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
+    const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
+    const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
+
+    rateWrappers.forEach(function (wrapper) {
+        let html = "";
+        let full = Math.floor(grade);
+        let half = ((grade % 1) >= 0.5) ? 1 : 0;
+        let empty = 5 - full - half;
+        for (let i = 0; i < full; i++) {
+            html += fullstar;
+        }
+        if (half > 0) {
+            html += halfstar;
+        }
+        for (let i = 0; i < empty; i++) {
+            html += emptystar;
+        }
+        wrapper.innerHTML = html;
+    });
+}
+
