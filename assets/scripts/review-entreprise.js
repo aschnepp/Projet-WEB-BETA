@@ -25,7 +25,7 @@ function fetchAndDisplayLogo(entrepriseNom, containerId) {
       const logoUrl = `https://logo.clearbit.com/${domain}`;
       const imageElement = document.createElement("img");
       imageElement.src = logoUrl;
-      imageElement.classList.add("logo-image"); // Add a class to the image element for easier selection
+      imageElement.classList.add("logo-image");
       imageElement.alt = entrepriseNom;
       imageElement.style.width = `${imageSize}px`;
 
@@ -35,11 +35,10 @@ function fetchAndDisplayLogo(entrepriseNom, containerId) {
       console.error("Erreur lors de la récupération des données:", error)
     );
 }
-  
-// Function to resize the images based on viewport width
+
 function resizeImages() {
   const viewportWidth = window.innerWidth;
-  const imageSize = Math.min(viewportWidth * 0.3, 150); // Adjust the percentage or maximum size as needed
+  const imageSize = Math.min(viewportWidth * 0.3, 150); 
   const imageElements = document.getElementsByClassName("logo-image");
   for (let i = 0; i < imageElements.length; i++) {
     imageElements[i].style.width = `${imageSize}px`;
