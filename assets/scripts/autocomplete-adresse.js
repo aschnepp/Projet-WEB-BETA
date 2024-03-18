@@ -29,10 +29,6 @@ function getFormInputElement(componentType) {
         userType = "-tuteur";
     }
 
-    else if (currentPageURL.indexOf("gestion-entreprise") !== -1) {
-        userType = "-entreprise";
-    }
-
     else if (currentPageURL.indexOf("gestion-offre") !== -1) {
         userType = "-offre";
     }
