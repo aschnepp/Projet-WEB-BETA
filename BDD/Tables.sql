@@ -1,29 +1,28 @@
-/*SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS `users`;
-DROP TABLE IF EXISTS `tutors`;
-DROP TABLE IF EXISTS `skills`;
-DROP TABLE IF EXISTS `Contains`;
-DROP TABLE IF EXISTS `campus`;
-DROP TABLE IF EXISTS `offers`;
-DROP TABLE IF EXISTS `Reviews`;
-DROP TABLE IF EXISTS `Is_about`;
-DROP TABLE IF EXISTS `Manages`;
-DROP TABLE IF EXISTS `Wishlists`;
-DROP TABLE IF EXISTS `regions`;
-DROP TABLE IF EXISTS `students`;
-DROP TABLE IF EXISTS `Asks_for`;
-DROP TABLE IF EXISTS `firms`;
-DROP TABLE IF EXISTS `Looks_for`;
-DROP TABLE IF EXISTS `Concerns`;
-DROP TABLE IF EXISTS `admins`;
-DROP TABLE IF EXISTS `Candidates`;
-DROP TABLE IF EXISTS `cities`;
-DROP TABLE IF EXISTS `address`;
-DROP TABLE IF EXISTS `activity_sectors`;
-DROP TABLE IF EXISTS `Possesses`;
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `users`;            
+DROP TABLE IF EXISTS `tutors`;           
+DROP TABLE IF EXISTS `skills`;           
+DROP TABLE IF EXISTS `Contains`;         
+DROP TABLE IF EXISTS `campus`;           
+DROP TABLE IF EXISTS `offers`;           
+DROP TABLE IF EXISTS `Reviews`;          
+DROP TABLE IF EXISTS `Is_about`;         
+DROP TABLE IF EXISTS `Manages`;          
+DROP TABLE IF EXISTS `Wishlists`;        
+DROP TABLE IF EXISTS `regions`;          
+DROP TABLE IF EXISTS `students`;         
+DROP TABLE IF EXISTS `firms`;            
+DROP TABLE IF EXISTS `Looks_for`;        
+DROP TABLE IF EXISTS `Concerns`;         
+DROP TABLE IF EXISTS `admins`;           
+DROP TABLE IF EXISTS `Candidates`;       
+DROP TABLE IF EXISTS `cities`;           
+DROP TABLE IF EXISTS `address`;          
+DROP TABLE IF EXISTS `activity_sectors`; 
+DROP TABLE IF EXISTS `Is_at`;            
+DROP TABLE IF EXISTS `Possesses`;        
 DROP TABLE IF EXISTS `promotions`;
-SET FOREIGN_KEY_CHECKS = 1;*/
-
+SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE IF NOT EXISTS promotions(
    promotion_id INT AUTO_INCREMENT,
@@ -44,7 +43,7 @@ CREATE TABLE IF NOT EXISTS firms(
    description_firm TEXT,
    website VARCHAR(100) ,
    logo TEXT,
-   inactive BOOLEAN NOT NULL,
+   inactif BOOLEAN NOT NULL,
    PRIMARY KEY(firm_id)
 );
 
@@ -85,11 +84,11 @@ CREATE TABLE IF NOT EXISTS regions(
 CREATE TABLE IF NOT EXISTS users(
    user_id INT AUTO_INCREMENT,
    username VARCHAR(35)  NOT NULL,
-   password VARCHAR(50)  NOT NULL,
+   password TEXT  NOT NULL,
    email VARCHAR(50) ,
    surname VARCHAR(50)  NOT NULL,
    name VARCHAR(50)  NOT NULL,
-   phone_number VARCHAR(15)  NOT NULL,
+   phone_number VARCHAR(25)  NOT NULL,
    birthdate DATE,
    picture TEXT,
    address_id INT NOT NULL,
@@ -119,6 +118,9 @@ CREATE TABLE IF NOT EXISTS cities(
    PRIMARY KEY(city_id),
    FOREIGN KEY(region_id) REFERENCES regions(region_id)
 );
+
+ALTER TABLE cities  
+  ADD CONSTRAINT unique_Combo UNIQUE(city_name , postal_code);
 
 CREATE TABLE IF NOT EXISTS students(
    user_id INT,
