@@ -146,14 +146,20 @@ fieldset section.headerOffre {
 }
 
 fieldset section.headerOffre h3 {
+  padding-left: 0.5rem;
+  align-items: center;
   justify-content: start;
-  flex-grow: 10;
+  flex-grow: 100;
 }
 
-fieldset section.stats {
+main fieldset section.stats {
   flex-grow: 1;
   justify-content: center;
   flex-wrap: nowrap;
+}
+
+main fieldset section.headerOffre {
+  padding: 0;
 }
 
 fieldset section.stats section {
@@ -163,7 +169,6 @@ fieldset section.stats section {
 
 section h3 {
   display: flex;
-  margin-top: auto 0;
   align-items: center;
   justify-content: center;
 }

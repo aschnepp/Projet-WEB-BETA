@@ -464,7 +464,7 @@ main #affichage-filtre .headerOffre h3 {
     margin-top: auto 0;
     align-items: center;
     justify-content: start;
-    flex-grow: 10;
+    flex-grow: 100;
 }
 
 main #affichage-filtre .headerOffre {
@@ -482,6 +482,7 @@ main #affichage-filtre .headerOffre .stats {
     flex-grow: 1;
     justify-content: center;
     flex-wrap: nowrap;
+    padding: 0px;
 }
 
 main #affichage-filtre .likes {
@@ -500,6 +501,7 @@ main #affichage-filtre .demandes {
 
 main #affichage-filtre .description {
     border: solid black 1px;
+    margin-top: 0.5rem;
     padding: 0.5rem;
 }
 
