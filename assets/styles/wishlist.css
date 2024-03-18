@@ -74,11 +74,10 @@ main .offre .headerOffre {
 
 main .offre .headerOffre .stats {
     display: flex;
-    flex-wrap: nowrap;
     gap: 1rem;
     flex-grow: 1;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding-right: 0.5rem;
 }
 
