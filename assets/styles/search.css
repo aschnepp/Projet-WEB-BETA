@@ -544,8 +544,7 @@ main #affichage-filtre button:hover {
 
 /* CSS POUR ENTREPRISE */
 
-
-.items {
+.entreprise .items {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -584,11 +583,22 @@ main #affichage-filtre .entreprise .bodyEntreprise {
     align-items: left;
 }
 
-#note {
-    margin-left: 0.5rem;
+main #affichage-filtre .entreprise .description {
+    flex: 1 0 100%;
+    border: transparent;
 }
 
-#logo-container {
+main #affichage-filtre .entreprise .description fieldset {
+    border: solid black 1.5px;
+    border-radius: 10px;
+    background-color: var(--blue-white);
+}
+
+main #affichage-filtre .entreprise .description fieldset legend {
+    font-weight: bold;
+}
+
+.logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
