@@ -206,9 +206,10 @@ function AfficherFiltresEntreprise() {
 
     var entreprises = document.querySelectorAll(".entreprise");
     entreprises.forEach(function (entreprise) {
-        var website = entreprise.querySelector(".website");
-        var domain = new URL(website.href).hostname.replace("www.", "");
-        fetchAndDisplayLogo(domain, entreprise.querySelector(".logo-container"));
+        var website = entreprise.querySelector(".website").getAttribute("href");
+        var domain = new URL(website).hostname.replace("www.", "");
+        var container = entreprise.querySelector(".logo-container");
+        fetchAndDisplayLogo(domain, container);
     });
 
     displayGrade(grade);
@@ -483,11 +484,11 @@ function AfficherFiltresTuteur() {
     <section id="menu-deroulant-promotions">
         <button type="button" id="bouton-promotions">Promotions assignées</button>
         <ul id="liste-options-promotions">
-            <li><input type="checkbox" id="option1"><label for="option1">Option 1</label></li>
-            <li><input type="checkbox" id="option2"><label for="option2">Option 1</label></li>
-            <li><input type="checkbox" id="option3"><label for="option3">Option 1</label></li>
-            <li><input type="checkbox" id="option4"><label for="option4">Option 1</label></li>
-            <li><input type="checkbox" id="option5"><label for="option5">Option 1</label></li>
+            <li><input type="checkbox" id="bac-1"><label for="bac-1">Bac +1</label></li>
+            <li><input type="checkbox" id="bac-2"><label for="bac-2">Bac +2</label></li>
+            <li><input type="checkbox" id="bac-3"><label for="bac-3">Bac +3</label></li>
+            <li><input type="checkbox" id="bac-4"><label for="bac-4">Bac +4</label></li>
+            <li><input type="checkbox" id="bac-5"><label for="bac-5">Bac +5</label></li>
         </ul>
     </section>
 
@@ -632,7 +633,7 @@ function AfficherFiltresEtudiant() {
                 <p>Strasbourg</p>
             </section>
             <section>
-                <p>Candidatures effetuées :</p>
+                <p>Candidatures effectuées :</p>
                 <p>47</p>
             </section>
             <section>
@@ -698,7 +699,13 @@ function fetchAndDisplayLogo(entrepriseNom, container) {
             imageElement.alt = entrepriseNom;
             imageElement.style.width = `${imageSize}px`;
 
-            container.appendChild(imageElement);
+            const existingElement = container.firstChild;
+
+            if (existingElement) {
+                container.replaceChild(imageElement, existingElement);
+            } else {
+                container.appendChild(imageElement);
+            }
         })
         .catch((error) =>
             console.error("Erreur lors de la récupération des données:", error)
