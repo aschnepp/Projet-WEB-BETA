@@ -378,7 +378,7 @@ function AfficherFiltresEntreprise() {
 <section class="entreprise">
 <div class="logo-container"></div>
 <section class="contentEntreprise">
-    <section class="headerOffre">
+    <section class="headerEntreprise">
         <h2>CESI</h2>
         <section class="gradeWrapper">
             <div class="rate2">
@@ -414,12 +414,24 @@ function AfficherFiltresEntreprise() {
     <button>Voir les offres disponibles</button>
     <button>Modifier entreprise</button>
 </section>
+<section class="description">
+<fieldset>
+    <legend>Description</legend>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+        neque tempora! Cum
+        quae
+        pariatur veniam enim vel amet eligendi fuga dolor suscipit ea? Fugiat unde ex expedita alias
+        minus
+        voluptatibus.
+    </p>
+</fieldset>
+</section>
 </section>
 
 <section class="entreprise">
 <div class="logo-container"></div>
 <section class="contentEntreprise">
-    <section class="headerOffre">
+    <section class="headerEntreprise">
         <h2>CESI</h2>
         <section class="gradeWrapper">
             <div class="rate2">
@@ -454,6 +466,18 @@ function AfficherFiltresEntreprise() {
 <section class="boutons-entreprise">
     <button>Voir les offres disponibles</button>
     <button>Modifier entreprise</button>
+</section>
+<section class="description">
+<fieldset>
+    <legend>Description</legend>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+        neque tempora! Cum
+        quae
+        pariatur veniam enim vel amet eligendi fuga dolor suscipit ea? Fugiat unde ex expedita alias
+        minus
+        voluptatibus.
+    </p>
+</fieldset>
 </section>
 </section>
 `);
