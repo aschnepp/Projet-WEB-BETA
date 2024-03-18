@@ -176,9 +176,8 @@ fieldset section p {
     padding-bottom: 0.5rem;
 }
 
-#item {
-    flex: 1 1 auto;
-    min-width: auto;
+.item {
+    flex-wrap: nowrap;
 }
 
 section.infos {
