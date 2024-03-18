@@ -13,11 +13,11 @@ function ChoixFiltre() {
     var EtatFiltre = document.querySelector("#choix-recherche");
     var valeurSelectionnee = EtatFiltre.value;
 
-    if (valeurSelectionnee === "Entreprise") {
-        AfficherFiltresEntreprise();
-    }
-    else if (valeurSelectionnee === "Offre") {
+    if (valeurSelectionnee === "Offre") {
         AfficherFiltresOffre();
+    }
+    else if (valeurSelectionnee === "Entreprise") {
+        AfficherFiltresEntreprise();
     }
     else if (valeurSelectionnee === "Tuteur") {
         AfficherFiltresTuteur();
@@ -59,165 +59,6 @@ function StatsEntreprisesOuOffres() {
     else {
         return '';
     }
-}
-
-function AfficherFiltresEntreprise() {
-    ClearRecherche();
-    document.querySelector("#recherche-menu").innerHTML =
-        `
-        <section>
-        <label for="nom-entreprise-recherche">Nom</label>
-        <input type="text" id="nom-entreprise-recherche" placeholder="Nom entreprise">
-    </section>
-
-    <section>
-        <label for="region-entreprise-recherche">Region</label>
-        <input type="text" id="region-entreprise-recherche" list="region-datalist"
-            placeholder="Selectionner une région">
-        <datalist id="region-datalist">
-            <option value="Pas de région">Pas de région spécifique</option>
-            <option value="test">Paris</option>
-            <option value="provence">Provence</option>
-            <option value="pays">Pays de la Loire</option>
-            <option value="corse">Corse</option>
-        </datalist>
-    </section>
-
-    <section>
-        <label for="secteur-activite-recherche">Secteur d'activité</label>
-        <select id="secteur-activite-recherche">
-        </select>
-    </section>
-
-    <section>
-        <label for="nombres-stagiaires-postuler-recherche">Nombre de postulations</label>
-        <input type="range" id="nombres-stagiaires-postuler-recherche" min="0" max="20" step="1" value="0"
-            autocomplete="off" class="slider"
-            oninput="this.nextElementSibling.value = this.value + ' minimum'">
-        <output>0 minimum</output>
-    </section>
-
-    <section>
-        <label for="evaluation-entreprise-recherche">Evaluation moyenne</label>
-        <input type="range" id="evaluation-entreprise-recherche" min="0" max="5" step="0.5" value="0"
-            autocomplete="off" class="slider"
-            oninput="this.nextElementSibling.value = this.value + '/5 minimum'">
-        <output>0/5 minimum</output>
-    </section>
-
-    <section>
-        <label for="places-disponibles-recherche">Places disponibles</label>
-        <input type="range" id="places-disponibles-recherche" min="1" max="15" step="1" value="1"
-            autocomplete="off" class="slider"
-            oninput="this.nextElementSibling.value = this.value + ' minimum'">
-        <output>1 minimum</output>
-    </section>
-
-    <section id="boutons-filtre">
-        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
-        <input type="button" name="ajout" class="ajout" value="Ajouter entreprise"> `
-        + StatsEntreprisesOuOffres() +
-        `
-    </section>
-` ;
-
-    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
-        `
-
-<section class="entreprise">
-<div class="logo-container"></div>
-<section class="contentEntreprise">
-    <section class="headerOffre">
-        <h2>CESI</h2>
-        <section class="gradeWrapper">
-            <div class="rate2">
-
-            </div>
-        </section>
-    </section>
-    <section class="bodyEntreprise">
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
-                alt="domain" />
-            <a href="https://www.amazon.fr/" target="_blank" class="website">amazon.com</a>
-        </div>
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
-                alt="map-marker" />
-            <p>2 allée des foulons, 67380 Lingolsheim</p>
-        </div>
-        <div class="items">
-            <img width="30" height="30"
-                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
-                alt="client-company" />
-            <p>Education / Formation</p>
-        </div>
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
-                alt="groups" />
-            <p>30 personnes</p>
-        </div>
-    </section>
-</section>
-<section class="boutons-entreprise">
-    <button>Voir les offres disponibles</button>
-    <button>Modifier entreprise</button>
-</section>
-</section>
-
-<section class="entreprise">
-<div class="logo-container"></div>
-<section class="contentEntreprise">
-    <section class="headerOffre">
-        <h2>CESI</h2>
-        <section class="gradeWrapper">
-            <div class="rate2">
-
-            </div>
-        </section>
-    </section>
-    <section class="bodyEntreprise">
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
-                alt="domain" />
-            <a href="https://www.cesi.fr/" target="_blank" class="website">www.cesi.fr</a>
-        </div>
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
-                alt="map-marker" />
-            <p>2 allée des foulons, 67380 Lingolsheim</p>
-        </div>
-        <div class="items">
-            <img width="30" height="30"
-                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
-                alt="client-company" />
-            <p>Education / Formation</p>
-        </div>
-        <div class="items">
-            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
-                alt="groups" />
-            <p>30 personnes</p>
-        </div>
-    </section>
-</section>
-<section class="boutons-entreprise">
-    <button>Voir les offres disponibles</button>
-    <button>Modifier entreprise</button>
-</section>
-</section>
-`);
-
-    var entreprises = document.querySelectorAll(".entreprise");
-    entreprises.forEach(function (entreprise) {
-        var website = entreprise.querySelector(".website").getAttribute("href");
-        var domain = new URL(website).hostname.replace("www.", "");
-        var container = entreprise.querySelector(".logo-container");
-        fetchAndDisplayLogo(domain, container);
-    });
-
-    displayGrade(grade);
-
-    Slider();
 }
 
 
@@ -468,6 +309,165 @@ function AfficherFiltresOffre() {
 </section>
 </section>
 `);
+    Slider();
+}
+
+function AfficherFiltresEntreprise() {
+    ClearRecherche();
+    document.querySelector("#recherche-menu").innerHTML =
+        `
+        <section>
+        <label for="nom-entreprise-recherche">Nom</label>
+        <input type="text" id="nom-entreprise-recherche" placeholder="Nom entreprise">
+    </section>
+
+    <section>
+        <label for="region-entreprise-recherche">Region</label>
+        <input type="text" id="region-entreprise-recherche" list="region-datalist"
+            placeholder="Selectionner une région">
+        <datalist id="region-datalist">
+            <option value="Pas de région">Pas de région spécifique</option>
+            <option value="test">Paris</option>
+            <option value="provence">Provence</option>
+            <option value="pays">Pays de la Loire</option>
+            <option value="corse">Corse</option>
+        </datalist>
+    </section>
+
+    <section>
+        <label for="secteur-activite-recherche">Secteur d'activité</label>
+        <select id="secteur-activite-recherche">
+        </select>
+    </section>
+
+    <section>
+        <label for="nombres-stagiaires-postuler-recherche">Nombre de postulations</label>
+        <input type="range" id="nombres-stagiaires-postuler-recherche" min="0" max="20" step="1" value="0"
+            autocomplete="off" class="slider"
+            oninput="this.nextElementSibling.value = this.value + ' minimum'">
+        <output>0 minimum</output>
+    </section>
+
+    <section>
+        <label for="evaluation-entreprise-recherche">Evaluation moyenne</label>
+        <input type="range" id="evaluation-entreprise-recherche" min="0" max="5" step="0.5" value="0"
+            autocomplete="off" class="slider"
+            oninput="this.nextElementSibling.value = this.value + '/5 minimum'">
+        <output>0/5 minimum</output>
+    </section>
+
+    <section>
+        <label for="places-disponibles-recherche">Places disponibles</label>
+        <input type="range" id="places-disponibles-recherche" min="1" max="15" step="1" value="1"
+            autocomplete="off" class="slider"
+            oninput="this.nextElementSibling.value = this.value + ' minimum'">
+        <output>1 minimum</output>
+    </section>
+
+    <section id="boutons-filtre">
+        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
+        <input type="button" name="ajout" class="ajout" value="Ajouter entreprise"> `
+        + StatsEntreprisesOuOffres() +
+        `
+    </section>
+` ;
+
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
+
+<section class="entreprise">
+<div class="logo-container"></div>
+<section class="contentEntreprise">
+    <section class="headerOffre">
+        <h2>CESI</h2>
+        <section class="gradeWrapper">
+            <div class="rate2">
+
+            </div>
+        </section>
+    </section>
+    <section class="bodyEntreprise">
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
+                alt="domain" />
+            <a href="https://www.amazon.fr/" target="_blank" class="website">amazon.com</a>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
+                alt="map-marker" />
+            <p>2 allée des foulons, 67380 Lingolsheim</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
+                alt="client-company" />
+            <p>Education / Formation</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
+                alt="groups" />
+            <p>30 personnes</p>
+        </div>
+    </section>
+</section>
+<section class="boutons-entreprise">
+    <button>Voir les offres disponibles</button>
+    <button>Modifier entreprise</button>
+</section>
+</section>
+
+<section class="entreprise">
+<div class="logo-container"></div>
+<section class="contentEntreprise">
+    <section class="headerOffre">
+        <h2>CESI</h2>
+        <section class="gradeWrapper">
+            <div class="rate2">
+
+            </div>
+        </section>
+    </section>
+    <section class="bodyEntreprise">
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
+                alt="domain" />
+            <a href="https://www.cesi.fr/" target="_blank" class="website">www.cesi.fr</a>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
+                alt="map-marker" />
+            <p>2 allée des foulons, 67380 Lingolsheim</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/45/client-company.png"
+                alt="client-company" />
+            <p>Education / Formation</p>
+        </div>
+        <div class="items">
+            <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
+                alt="groups" />
+            <p>30 personnes</p>
+        </div>
+    </section>
+</section>
+<section class="boutons-entreprise">
+    <button>Voir les offres disponibles</button>
+    <button>Modifier entreprise</button>
+</section>
+</section>
+`);
+
+    var entreprises = document.querySelectorAll(".entreprise");
+    entreprises.forEach(function (entreprise) {
+        var website = entreprise.querySelector(".website").getAttribute("href");
+        var domain = new URL(website).hostname.replace("www.", "");
+        var container = entreprise.querySelector(".logo-container");
+        fetchAndDisplayLogo(domain, container);
+    });
+
+    displayGrade(grade);
+
     Slider();
 }
 
