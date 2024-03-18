@@ -244,7 +244,9 @@ main #recherche-filtre-main select {
     border-radius: 5px;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre {
+main #recherche-filtre-main #recherche-menu #reset-filtre,
+main #recherche-filtre-main #recherche-menu .ajout,
+main #recherche-filtre-main #recherche-menu .modification {
     background-color: var(--blue-dark);
     color: var(--blue-light);
     border-radius: 0.5rem;
@@ -254,7 +256,9 @@ main #recherche-filtre-main #recherche-menu #reset-filtre {
     cursor: pointer;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre:hover {
+main #recherche-filtre-main #recherche-menu #reset-filtre:hover,
+main #recherche-filtre-main #recherche-menu .ajout:hover,
+main #recherche-filtre-main #recherche-menu .modification:hover {
     background-color: var(--blue-dark-contrast);
     font-weight: bold;
     text-decoration: underline;

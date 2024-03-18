@@ -114,7 +114,8 @@ function AfficherFiltresEntreprise() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
+        <input type="button" name="ajout" class="ajout" value="Ajouter entreprise"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -160,6 +161,7 @@ function AfficherFiltresEntreprise() {
 </section>
 <section class="boutons-entreprise">
     <button>Voir les offres disponibles</button>
+    <button>Modifier entreprise</button>
 </section>
 </section>
 
@@ -200,6 +202,7 @@ function AfficherFiltresEntreprise() {
 </section>
 <section class="boutons-entreprise">
     <button>Voir les offres disponibles</button>
+    <button>Modifier entreprise</button>
 </section>
 </section>
 `);
@@ -285,7 +288,8 @@ function AfficherFiltresOffre() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
+        <input type="button" name="ajout" class="ajout" value="Ajouter offre"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -372,7 +376,10 @@ function AfficherFiltresOffre() {
             explicabo maiores molestiae
         </p>
     </section>
-    <button type="button" class="postuler">Postuler</button>
+    <section class="boutons-offre">
+        <button type="button" class="postuler">Postuler</button>
+        <button>Modifier offre</button>
+    </section>
 </section>
 </section>
 
@@ -454,7 +461,10 @@ function AfficherFiltresOffre() {
             explicabo maiores molestiae
         </p>
     </section>
-    <button type="button" class="postuler">Postuler</button>
+    <section class="boutons-offre">
+        <button type="button" class="postuler">Postuler</button>
+        <button>Modifier offre</button>
+    </section>
 </section>
 </section>
 `);
@@ -493,7 +503,8 @@ function AfficherFiltresTuteur() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
+        <input type="button" name="ajout" class="ajout" value="Ajouter tuteur"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -544,7 +555,7 @@ function AfficherFiltresTuteur() {
         </section>
     </section>
     <section class="boutons-tuteur">
-        <button>Modifier</button>
+        <button>Modifier tuteur</button>
     </section>
 </section>
     `
@@ -583,7 +594,8 @@ function AfficherFiltresEtudiant() {
     </section>
 
     <section id="boutons-filtre">
-        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser"> `
+        <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
+        <input type="button" name="ajout" class="ajout" value="Ajouter etudiant"> `
         + StatsEntreprisesOuOffres() +
         `
     </section>
@@ -644,6 +656,7 @@ function AfficherFiltresEtudiant() {
         <section class="boutons-etudiant">
             <button>Gérer ses offres de stage</button>
             <button>Gérer sa wishlist</button>
+            <button>Modifier étudiant</button>
         </section>
     </section>
         `);
