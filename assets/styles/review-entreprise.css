@@ -122,6 +122,10 @@ fieldset section {
     word-break: break-word;
 }
 
+fieldset .description {
+    display: flex;
+}
+
 .items {
     display: flex;
     flex-direction: row;
@@ -135,6 +139,8 @@ fieldset section {
 
 #entreprise-review {
     justify-content: center;
+    background-color: var(--blue-light);
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
