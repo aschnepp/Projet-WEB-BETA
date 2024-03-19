@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -138,7 +138,10 @@
                         </section>
                     </section>
 
-                    <button type="button">Actualiser</button>
+                    <section id="boutons">
+                        <button type="button">Actualiser</button>
+                        <button type="button">Postuler</button>
+                    </section>
                 </section>
             </fieldset>
         </section>

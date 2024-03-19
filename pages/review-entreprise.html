@@ -12,8 +12,8 @@
     <!-- Preload -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <script rel="preload" src="../assets/scripts/review-entreprise.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/review-entreprise.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,22 +54,16 @@
     </header>
     <main>
         <div id="menu-burger-flou">
-            <div id="menu-burger-main">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-                    sit
-                    aperiam totam explicabo! Rem, tenetur.</p>
-                <div>zdq</div>
-                <div>zdqz</div>
-            </div>
+            <section id="menu-burger-main">
+            </section>
         </div>
         <form id="myForm" method="post">
             <fieldset>
                 <legend>Entreprise</legend>
-                <section id="offre">
+                <div id="entreprise-review">
                     <div id="logo-container"></div>
-                    <section class="contentOffre">
-                        <section class="headerOffre">
+                    <div class="contentEntreprise">
+                        <section class="headerEntreprise">
                             <h2>CESI</h2>
                             <section id="gradeWrapper">
                                 <div class="rate2">
@@ -77,35 +71,47 @@
                                 </div>
                             </section>
                         </section>
-                        <section class="bodyOffre">
-                            <div class="items">
+                        <div class="bodyEntreprise">
+                            <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
                                     alt="domain" />
                                 <a href="https://www.cesi.fr/" target="_blank" id="website">www.cesi.fr</a>
-                            </div>
-                            <div class="items">
+                            </section>
+                            <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
                                     alt="map-marker" />
                                 <p>2 allée des foulons, 67380 Lingolsheim</p>
-                            </div>
-                            <div class="items">
+                            </section>
+                            <section class="items">
                                 <img width="30" height="30"
                                     src="https://img.icons8.com/ios-glyphs/45/client-company.png"
                                     alt="client-company" />
                                 <p>Education / Formation</p>
-                            </div>
-                            <div class="items">
+                            </section>
+                            <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
                                     alt="groups" />
                                 <p>30 personnes</p>
-                            </div>
-                        </section>
-                    </section>
-
-                </section>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <fieldset>
+                            <legend>Description</legend>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+                                neque tempora! Cum
+                                quae
+                                pariatur veniam enim vel amet eligendi fuga dolor suscipit ea? Fugiat unde ex expedita
+                                alias
+                                minus
+                                voluptatibus.
+                            </p>
+                        </fieldset>
+                    </div>
+                </div>
 
                 <label for="star5" class="labels">Note</label>
-                <section id="rate-wrapper">
+                <div id="rate-wrapper">
                     <div class="rate">
                         <input type="radio" id="star5" name="rating" value="5" required />
                         <label for="star5" title="Awesome"></label>
@@ -128,7 +134,7 @@
                         <input type="radio" id="star0.5" name="rating" value="0.5" />
                         <label for="star0.5" class="half"></label>
                     </div>
-                </section>
+                </div>
                 <label for="motiv" class="labels">Commentaire</label>
                 <textarea id="motiv" name="motiv" required placeholder="Commentaire"></textarea>
                 <div id="loginbtns">

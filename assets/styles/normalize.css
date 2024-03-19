@@ -16,6 +16,35 @@ html {
   font-family: "Montserrat";
 }
 
+body .pac-container {
+  max-width: 422px;
+  width: 70vw !important;
+}
+
+/* .pac-container {
+  width: 422px !important;
+} */
+
+/* @media only screen and (max-width: 600px) {
+  .pac-container {
+    width: 350px !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .pac-container {
+    width: calc(150px + 30vw) !important;
+  }
+} */
+
+
+/* 
+@media only screen and (max-width: 300px) {
+  .pac-container {
+    width: 200px !important;
+  }
+} */
+
 body::-webkit-scrollbar {
   width: 16px;
   transform: translateX(-50%);

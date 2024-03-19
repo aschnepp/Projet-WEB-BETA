@@ -9,9 +9,9 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preloads -->
-    <link rel="preload" href="../assets/scripts/stats-entreprises.js" as="script" />
+    <link rel="preload" href="../assets/scripts/stats-entreprises.js" />
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
 
@@ -56,18 +56,10 @@
     </header>
     <main>
         <div id="menu-burger-flou">
-            <div id="menu-burger-main">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit
-                    doloribus, exercitationem architecto iure esse labore maiores
-                    officiis. Deserunt sint sapiente recusandae sequi soluta, sit
-                    aperiam totam explicabo! Rem, tenetur.
-                </p>
-                <div>zdq</div>
-                <div>zdqz</div>
-            </div>
+            <section id="menu-burger-main">
+            </section>
         </div>
-        <section id="stats-entreprise">
+        <div id="stats-entreprise">
             <div></div>
             <h2>Répartition par secteur</h2>
             <div id="piechart"></div>
@@ -92,7 +84,7 @@
                 </div>
             </section>
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
-        </section>
+        </div>
     </main>
     <footer>
         <section id="liens-footer">

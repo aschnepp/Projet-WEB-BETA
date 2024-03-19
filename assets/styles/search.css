@@ -78,14 +78,13 @@ main #recherche-filtre-main {
 
 main #affichage-filtre {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
     gap: 2.5rem;
-    justify-content: space-evenly;
     align-items: center;
     padding: 3.5rem 2rem;
     border-radius: 15px;
-    flex-wrap: wrap;
-    word-break: break-word;
+    flex-wrap: nowrap;
     position: sticky;
     overflow-y: auto;
     min-height: calc(100vh - 60px - 30px);
@@ -186,8 +185,8 @@ main #recherche-filtre-main #menu-filtre #header-filtre button {
 main #recherche-filtre-main #recherche-menu #boutons-filtre a {
     position: relative;
     text-align: center;
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
+    background-color: var(--blue-dark-contrast);
+    color: var(--white);
     text-decoration: none;
     border-radius: 0.5rem;
     padding: .75rem 2rem;
@@ -197,10 +196,9 @@ main #recherche-filtre-main #recherche-menu #boutons-filtre a {
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre a:hover {
     padding: .75rem 1.7rem;
-    background-color: var(--blue-dark-contrast);
+    background-color: var(--blue-dark-contrast-hover);
     font-weight: bold;
     text-decoration: underline;
-    color: var(--blue);
 }
 
 main #recherche-filtre-main #recherche-menu #statistiques-entreprises #bouton-stats-entreprise:hover {
@@ -245,9 +243,11 @@ main #recherche-filtre-main select {
     border-radius: 5px;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre {
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
+main #recherche-filtre-main #recherche-menu #reset-filtre,
+main #recherche-filtre-main #recherche-menu .ajout,
+main #recherche-filtre-main #recherche-menu .modification {
+    background-color: var(--blue-dark-contrast);
+    color: var(--white);
     border-radius: 0.5rem;
     padding: 0.75rem;
     width: 100%;
@@ -255,11 +255,12 @@ main #recherche-filtre-main #recherche-menu #reset-filtre {
     cursor: pointer;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre:hover {
-    background-color: var(--blue-dark-contrast);
+main #recherche-filtre-main #recherche-menu #reset-filtre:hover,
+main #recherche-filtre-main #recherche-menu .ajout:hover,
+main #recherche-filtre-main #recherche-menu .modification:hover {
+    background-color: var(--blue-dark-contrast-hover);
     font-weight: bold;
     text-decoration: underline;
-    color: var(--blue);
 }
 
 main #recherche-filtre-main::-webkit-scrollbar {
@@ -457,7 +458,7 @@ main #affichage-filtre section.stats section {
 
 main #affichage-filtre .headerOffre,
 main #affichage-filtre .infos {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 main #affichage-filtre .headerOffre h3 {
@@ -465,12 +466,11 @@ main #affichage-filtre .headerOffre h3 {
     margin-top: auto 0;
     align-items: center;
     justify-content: start;
-    flex-grow: 10;
+    flex-grow: 100;
 }
 
 main #affichage-filtre .headerOffre {
     width: 100%;
-    margin-bottom: .5rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -479,11 +479,11 @@ main #affichage-filtre .headerOffre {
 
 main #affichage-filtre .headerOffre .stats {
     display: flex;
-    flex-wrap: nowrap;
     gap: 1rem;
     flex-grow: 1;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    padding: 0px;
 }
 
 main #affichage-filtre .likes {
@@ -500,8 +500,10 @@ main #affichage-filtre .demandes {
     margin-left: 0.5rem;
 }
 
-main #affichage-filtre .description {
+main #affichage-filtre .offre .description {
     border: solid black 1px;
+    background-color: var(--blue-white);
+    margin-top: 0.5rem;
     padding: 0.5rem;
 }
 
@@ -520,7 +522,6 @@ main #affichage-filtre p {
 
 main #affichage-filtre button {
     padding: 0.5rem;
-    border: 1px solid var(--blue);
     border-radius: 5px;
     width: auto;
     background-color: var(--blue-dark-contrast);
@@ -532,13 +533,280 @@ main #affichage-filtre button {
     margin-bottom: 0.5rem;
 }
 
-
 main #affichage-filtre button:hover {
     background-color: var(--blue-dark-contrast-hover);
 }
 
+
+
 /* CSS POUR ENTREPRISE */
+
+.entreprise .items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 0.2rem;
+    width: 100%;
+    height: auto;
+    gap: .5rem;
+}
+
+main #affichage-filtre .entreprise {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+main #affichage-filtre .entreprise .contentEntreprise {
+    display: flex;
+    flex-direction: column;
+}
+
+main #affichage-filtre .entreprise .headerEntreprise {
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+main #affichage-filtre .entreprise .bodyEntreprise {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+}
+
+main #affichage-filtre .entreprise .description {
+    flex: 1 0 100%;
+    border: transparent;
+}
+
+main #affichage-filtre .entreprise .description fieldset {
+    border: solid black 1.5px;
+    border-radius: 10px;
+    background-color: var(--blue-white);
+}
+
+main #affichage-filtre .entreprise .description fieldset legend {
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .entreprise {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
 
 /* CSS POUR ETUDIANT */
 
+
+main #affichage-filtre .etudiant {
+    display: block;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    width: 80%;
+    padding: 0rem;
+}
+
+main #affichage-filtre .etudiant p {
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+}
+
+main #affichage-filtre .etudiant>* {
+    margin: 0rem 1rem;
+}
+
+main #affichage-filtre .etudiant .fa-user {
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: fit-content;
+    width: 7.5rem;
+}
+
+main #affichage-filtre .etudiant>section {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+main #affichage-filtre .etudiant .infos-etudiant {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 75%;
+    justify-content: left;
+    align-content: center;
+    padding: 0rem;
+}
+
+main #affichage-filtre .etudiant .infos-etudiant:last-child {
+    word-break: break-all;
+}
+
+main #affichage-filtre .etudiant section>section {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    flex: 1 1 80%;
+    flex-wrap: wrap;
+}
+
+main #affichage-filtre .etudiant section>section>p:first-child {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main #affichage-filtre .etudiant .boutons-etudiant {
+    row-gap: 0rem;
+}
+
+
+@media only screen and (max-width: 850px) {
+    main #affichage-filtre .etudiant section>section {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main #affichage-filtre .etudiant section>section {
+        gap: 0.5rem;
+    }
+
+    main #affichage-filtre .etudiant section {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    main #affichage-filtre .etudiant p {
+        margin: 0.4rem 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main #affichage-filtre .etudiant section>section {
+        gap: 0.25rem;
+    }
+
+    main #affichage-filtre .etudiant p {
+        margin: 0.3rem 0;
+    }
+}
+
 /* CSS POUR TUTEUR */
+
+
+
+main #affichage-filtre .tuteur {
+    display: block;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    width: 80%;
+    padding: 0rem;
+}
+
+main #affichage-filtre .tuteur p {
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+}
+
+main #affichage-filtre .tuteur>* {
+    margin: 0rem 1rem;
+}
+
+main #affichage-filtre .tuteur .fa-user {
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: fit-content;
+    width: 7.5rem;
+}
+
+main #affichage-filtre .tuteur>section {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+main #affichage-filtre .tuteur .infos-tuteur {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 75%;
+    justify-content: left;
+    align-content: center;
+    padding: 0rem;
+}
+
+main #affichage-filtre .tuteur .infos-tuteur:last-child {
+    word-break: break-all;
+}
+
+main #affichage-filtre .tuteur section>section {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    flex: 1 1 80%;
+    flex-wrap: wrap;
+}
+
+main #affichage-filtre .tuteur section>section>p:first-child {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main #affichage-filtre .tuteur .boutons-tuteur {
+    row-gap: 0rem;
+}
+
+
+@media only screen and (max-width: 850px) {
+    main #affichage-filtre .tuteur section>section {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main #affichage-filtre .tuteur section>section {
+        gap: 0.5rem;
+    }
+
+    main #affichage-filtre .tuteur section {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    main #affichage-filtre .tuteur p {
+        margin: 0.4rem 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main #affichage-filtre .tuteur section>section {
+        gap: 0.25rem;
+    }
+
+    main #affichage-filtre .tuteur p {
+        margin: 0.3rem 0;
+    }
+}

@@ -12,9 +12,9 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <script rel="preload" src="../assets/scripts/search.js" as="script"></script>
-    <script rel="preload" src="../assets/scripts/filtre.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/search.js"></script>
+    <script rel="preload" src="../assets/scripts/filtre.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,11 +37,11 @@
         </section>
 
         <section id="header-droite">
-            <section id="menu-burger-header">
-                <section class="barre-haut"></section>
-                <section class="barre-milieu"></section>
-                <section class="barre-bas"></section>
-            </section>
+            <div id="menu-burger-header">
+                <div class="barre-haut"></div>
+                <div class="barre-milieu"></div>
+                <div class="barre-bas"></div>
+            </div>
 
             <!-- Icônes se font tout seul en JS-->
         </section>
@@ -49,17 +49,17 @@
 
 
     <main>
-        <section id="menu-burger-flou">
+        <div id="menu-burger-flou">
             <section id="menu-burger-main">
             </section>
-        </section>
+        </div>
 
-        <section id="filtre-cliquable">
-            <button type="button" class="fa-solid fa-filter" name="icone-filtre" id="icone-filtre"></button>
+        <div id="filtre-cliquable">
+            <button type="button" class="fa-solid fa-filter" id="icone-filtre"></button>
             <label for="icone-filtre" id="label-icone-filtre" title="Filtrer">Filtrer</label>
-        </section>
+        </div>
 
-        <section id="page-recherche">
+        <div id="page-recherche">
             <section id="recherche-filtre-main">
                 <section id="menu-filtre">
                     <section id="header-filtre">
@@ -72,186 +72,21 @@
                     </section>
                     <label for="choix-recherche" id="label-menu-filtre">Choix du filtre</label>
                     <select id="choix-recherche">
-                        <option name="menu-entreprise" id="menu-entreprise">Entreprise</option>
-                        <option name="menu-offre" id="menu-offre">Offre</option>
-                        <option name="menu-etudiant" id="menu-etudiant">Etudiant</option>
-                        <option name="menu-tuteur" id="menu-tuteur">Tuteur</option>
+                        <option value="menu-offre" id="menu-offre">Offre</option>
+                        <option value="menu-entreprise" id="menu-entreprise">Entreprise</option>
+                        <option value="menu-etudiant" id="menu-etudiant">Etudiant</option>
+                        <option value="menu-tuteur" id="menu-tuteur">Tuteur</option>
                     </select>
                 </section>
                 <form id="recherche-menu">
                 </form>
             </section>
 
-            <section id="affichage-filtre">
+            <div id="affichage-filtre">
+            </div>
 
-                <section class="offre">
-                    <section class="headerOffre">
-                        <h3>Stage Recherche Réseau</h3>
-                        <section class="stats">
-                            <section class="likes item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
-                                    alt="wishlists" />
-                                <p>3</p>
-                            </section>
-                            <section class="demandes item">
-                                <img width="30" height="30"
-                                    src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
-                                <p>1</p>
-                            </section>
-                        </section>
-                    </section>
-
-                    <section class="infos">
-                        <section class="competences item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
-                                alt="learning" />
-                            <p>IP, NAT, CCNAv7</p>
-                        </section>
-                        <section class="localisation item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
-                                alt="map-marker" />
-                            <p>2 allée des foulons, 67380 Lingolsheim</p>
-                        </section>
-                        <section class="entreprise-logo item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
-                                alt="client-company" />
-                            <p>CESI Strasbourg</p>
-                        </section>
-                        <section class="promo item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
-                                alt="reviewer-male" />
-                            <p>CPI A2 Info</p>
-                        </section>
-                        <section class="duree item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
-                                alt="time--v1" />
-                            <p>12 Semaines</p>
-                        </section>
-                        <section class="date item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
-                                alt="google-calendar" />
-                            <p>08/04 - 19/07</p>
-                        </section>
-                        <section class="remuneration item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
-                                alt="money--v1" />
-                            <p>4,35€ / heure</p>
-                        </section>
-                        <section class="places item">
-                            <img width="30" height="30"
-                                src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
-                                alt="conference-call--v1" />
-                            <p>3 places</p>
-                        </section>
-                        <section class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
-                                quaerat.
-                                Quisquam
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
-                                pariatur et
-                                modi,
-                                laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
-                                velit
-                                eos
-                                facilis. Sapiente!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
-                                tempore qui odio
-                                necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
-                                aliquid
-                                sit
-                                explicabo maiores molestiae
-                            </p>
-                        </section>
-                        <button type="button" class="postuler">Postuler</button>
-                    </section>
-                </section>
-
-                <section class="offre">
-                    <section class="headerOffre">
-                        <h3>Stage Recherche Réseau</h3>
-                        <section class="stats">
-                            <section class="likes item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
-                                    alt="wishlists" />
-                                <p>3</p>
-                            </section>
-                            <section class="demandes item">
-                                <img width="30" height="30"
-                                    src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
-                                <p>1</p>
-                            </section>
-                        </section>
-                    </section>
-
-                    <section class="infos">
-                        <section class="competences item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
-                                alt="learning" />
-                            <p>IP, NAT, CCNAv7</p>
-                        </section>
-                        <section class="localisation item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
-                                alt="map-marker" />
-                            <p>2 allée des foulons, 67380 Lingolsheim</p>
-                        </section>
-                        <section class="entreprise-logo item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
-                                alt="client-company" />
-                            <p>CESI Strasbourg</p>
-                        </section>
-                        <section class="promo item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
-                                alt="reviewer-male" />
-                            <p>CPI A2 Info</p>
-                        </section>
-                        <section class="duree item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
-                                alt="time--v1" />
-                            <p>12 Semaines</p>
-                        </section>
-                        <section class="date item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
-                                alt="google-calendar" />
-                            <p>08/04 - 19/07</p>
-                        </section>
-                        <section class="remuneration item">
-                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
-                                alt="money--v1" />
-                            <p>4,35€ / heure</p>
-                        </section>
-                        <section class="places item">
-                            <img width="30" height="30"
-                                src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
-                                alt="conference-call--v1" />
-                            <p>3 places</p>
-                        </section>
-                        <section class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
-                                quaerat.
-                                Quisquam
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
-                                pariatur et
-                                modi,
-                                laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
-                                velit
-                                eos
-                                facilis. Sapiente!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
-                                tempore qui odio
-                                necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
-                                aliquid
-                                sit
-                                explicabo maiores molestiae
-                            </p>
-                        </section>
-                        <button type="button" class="postuler">Postuler</button>
-                    </section>
-                </section>
-
-            </section>
-
-
-        </section>
+            <!-- TODO: METTRE BOUTON MODIFIER SUR OFFRE ET ENTREPRISES SUR TUTEURS OU ADMIN -->
+        </div>
     </main>
 
     <footer>
