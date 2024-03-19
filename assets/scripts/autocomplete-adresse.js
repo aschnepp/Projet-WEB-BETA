@@ -34,8 +34,6 @@ function getFormInputElement(componentType) {
     }
 
     return document.getElementById(`${componentType}${userType}`);
-
-    //TODO Faire avec classes et pas ID pour plusieurs adresses entreprise
 }
 
 function fillInAddress(place) {

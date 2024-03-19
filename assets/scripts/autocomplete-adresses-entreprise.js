@@ -50,9 +50,12 @@ function fillInAddress(place, inputNumber) {
 }
 
 async function initMap() {
-    const { Autocomplete } = google.maps.places;
+    const {
+        Autocomplete
+    } = google.maps.places;
 
     const autocompleteElements = document.querySelectorAll('.adresse-cp-entreprise input[type="text"]');
+    
     autocompleteElements.forEach((inputElement, index) => {
         const inputName = inputElement.getAttribute('name');
         const inputNumber = inputName.match(/-(\d+)$/)[1];
@@ -70,7 +73,7 @@ async function initMap() {
                 window.alert(`Erreur pour : '${place.name}'`);
                 return;
             }
-            fillInAddress(place, inputNumber); 
+            fillInAddress(place, inputNumber);
         });
     });
 }
