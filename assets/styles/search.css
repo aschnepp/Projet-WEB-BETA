@@ -185,8 +185,8 @@ main #recherche-filtre-main #menu-filtre #header-filtre button {
 main #recherche-filtre-main #recherche-menu #boutons-filtre a {
     position: relative;
     text-align: center;
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
+    background-color: var(--blue-dark-contrast);
+    color: var(--white);
     text-decoration: none;
     border-radius: 0.5rem;
     padding: .75rem 2rem;
@@ -196,10 +196,9 @@ main #recherche-filtre-main #recherche-menu #boutons-filtre a {
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre a:hover {
     padding: .75rem 1.7rem;
-    background-color: var(--blue-dark-contrast);
+    background-color: var(--blue-dark-contrast-hover);
     font-weight: bold;
     text-decoration: underline;
-    color: var(--blue);
 }
 
 main #recherche-filtre-main #recherche-menu #statistiques-entreprises #bouton-stats-entreprise:hover {
@@ -247,8 +246,8 @@ main #recherche-filtre-main select {
 main #recherche-filtre-main #recherche-menu #reset-filtre,
 main #recherche-filtre-main #recherche-menu .ajout,
 main #recherche-filtre-main #recherche-menu .modification {
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
+    background-color: var(--blue-dark-contrast);
+    color: var(--white);
     border-radius: 0.5rem;
     padding: 0.75rem;
     width: 100%;
@@ -259,10 +258,9 @@ main #recherche-filtre-main #recherche-menu .modification {
 main #recherche-filtre-main #recherche-menu #reset-filtre:hover,
 main #recherche-filtre-main #recherche-menu .ajout:hover,
 main #recherche-filtre-main #recherche-menu .modification:hover {
-    background-color: var(--blue-dark-contrast);
+    background-color: var(--blue-dark-contrast-hover);
     font-weight: bold;
     text-decoration: underline;
-    color: var(--blue);
 }
 
 main #recherche-filtre-main::-webkit-scrollbar {
@@ -523,7 +521,6 @@ main #affichage-filtre p {
 
 main #affichage-filtre button {
     padding: 0.5rem;
-    border: 1px solid var(--blue);
     border-radius: 5px;
     width: auto;
     background-color: var(--blue-dark-contrast);
@@ -534,7 +531,6 @@ main #affichage-filtre button {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
-
 
 main #affichage-filtre button:hover {
     background-color: var(--blue-dark-contrast-hover);
