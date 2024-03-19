@@ -37,11 +37,11 @@
         </section>
 
         <section id="header-droite">
-            <section id="menu-burger-header">
-                <section class="barre-haut"></section>
-                <section class="barre-milieu"></section>
-                <section class="barre-bas"></section>
-            </section>
+            <div id="menu-burger-header">
+                <div class="barre-haut"></div>
+                <div class="barre-milieu"></div>
+                <div class="barre-bas"></div>
+            </div>
 
             <!-- Icônes se font tout seul en JS-->
         </section>
@@ -49,17 +49,17 @@
 
 
     <main>
-        <section id="menu-burger-flou">
+        <div id="menu-burger-flou">
             <section id="menu-burger-main">
             </section>
-        </section>
+        </div>
 
-        <section id="filtre-cliquable">
-            <button type="button" class="fa-solid fa-filter" name="icone-filtre" id="icone-filtre"></button>
+        <div id="filtre-cliquable">
+            <button type="button" class="fa-solid fa-filter" id="icone-filtre"></button>
             <label for="icone-filtre" id="label-icone-filtre" title="Filtrer">Filtrer</label>
-        </section>
+        </div>
 
-        <section id="page-recherche">
+        <div id="page-recherche">
             <section id="recherche-filtre-main">
                 <section id="menu-filtre">
                     <section id="header-filtre">
@@ -72,21 +72,21 @@
                     </section>
                     <label for="choix-recherche" id="label-menu-filtre">Choix du filtre</label>
                     <select id="choix-recherche">
-                        <option name="menu-offre" id="menu-offre">Offre</option>
-                        <option name="menu-entreprise" id="menu-entreprise">Entreprise</option>
-                        <option name="menu-etudiant" id="menu-etudiant">Etudiant</option>
-                        <option name="menu-tuteur" id="menu-tuteur">Tuteur</option>
+                        <option value="menu-offre" id="menu-offre">Offre</option>
+                        <option value="menu-entreprise" id="menu-entreprise">Entreprise</option>
+                        <option value="menu-etudiant" id="menu-etudiant">Etudiant</option>
+                        <option value="menu-tuteur" id="menu-tuteur">Tuteur</option>
                     </select>
                 </section>
                 <form id="recherche-menu">
                 </form>
             </section>
 
-            <section id="affichage-filtre">
-            </section>
+            <div id="affichage-filtre">
+            </div>
 
             <!-- TODO: METTRE BOUTON MODIFIER SUR OFFRE ET ENTREPRISES SUR TUTEURS OU ADMIN -->
-        </section>
+        </div>
     </main>
 
     <footer>

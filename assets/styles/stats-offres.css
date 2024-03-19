@@ -22,7 +22,8 @@ h2 {
   margin: 2% 0;
 }
 
-main section {
+main section,
+main #stats-offres {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -13,13 +13,13 @@ function ChoixFiltre() {
     var EtatFiltre = document.querySelector("#choix-recherche");
     var valeurSelectionnee = EtatFiltre.value;
 
-    if (valeurSelectionnee === "Offre") {
+    if (valeurSelectionnee === "menu-offre") {
         AfficherFiltresOffre();
     }
-    else if (valeurSelectionnee === "Entreprise") {
+    else if (valeurSelectionnee === "menu-entreprise") {
         AfficherFiltresEntreprise();
     }
-    else if (valeurSelectionnee === "Tuteur") {
+    else if (valeurSelectionnee === "menu-tuteur") {
         AfficherFiltresTuteur();
     }
     else {

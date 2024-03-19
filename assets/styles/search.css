@@ -500,8 +500,9 @@ main #affichage-filtre .demandes {
     margin-left: 0.5rem;
 }
 
-main #affichage-filtre .description {
+main #affichage-filtre .offre .description {
     border: solid black 1px;
+    background-color: var(--blue-white);
     margin-top: 0.5rem;
     padding: 0.5rem;
 }

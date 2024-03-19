@@ -32,7 +32,8 @@ main .offre:last-child {
     margin: 1rem 3rem 3rem 3rem;
 }
 
-main .offre section {
+main .offre section,
+main .offre div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -45,13 +46,14 @@ main .offre section {
     gap: .5rem;
 }
 
-main .offre section.infos {
+main .offre .infos {
     padding: 0.5rem;
     padding-bottom: 0rem;
     gap: .5rem;
 }
 
-main .offre section.stats section {
+main .offre .stats section,
+main .offre .stats div {
     flex-wrap: nowrap;
     gap: .5rem
 }
@@ -73,7 +75,7 @@ main .offre .headerOffre {
     row-gap: .5rem;
 }
 
-main .offre section.headerOffre section.stats {
+main .offre .headerOffre .stats {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -104,7 +106,8 @@ main .offre .description {
     padding: 0.5rem;
 }
 
-.offre .infos section {
+.offre .infos section,
+.offre .infos div {
     gap: .3rem;
 }
 
