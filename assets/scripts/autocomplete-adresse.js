@@ -80,3 +80,23 @@ async function initMap() {
         fillInAddress(place);
     });
 }
+
+function loadGoogleMaps() {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIGURATION.mapsApiKey}&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cA`;
+        script.async = true;
+        script.defer = true;
+        script.onerror = reject;
+        document.head.appendChild(script);
+        script.onload = resolve;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadGoogleMaps().then(() => {
+        initMap();
+    }).catch(error => {
+        console.error('Erreur de chargement de l\'API Google Maps :', error);
+    });
+});

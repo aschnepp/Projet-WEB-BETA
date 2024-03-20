@@ -67,7 +67,7 @@ fieldset textarea {
     height: 150px;
     padding: 5px;
     border: 1px solid var(--black);
-    border-radius: 5px;
+    border-radius: 10px;
     resize: none;
     background-color: var(--blue-white);
     width: auto;
@@ -197,7 +197,7 @@ main #entreprise-review .description {
 
 main #entreprise-review .description fieldset {
     border: solid black 1.5px;
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: var(--blue-white);
 }
 
@@ -229,6 +229,7 @@ main #entreprise-review .description fieldset legend {
     gap: 1rem;
     background-color: var(--blue-white);
     border: solid 1px var(--blue-dark-contrast);
+    border-radius: 10px;
 }
 
 .rate {
