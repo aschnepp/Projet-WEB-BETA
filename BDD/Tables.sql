@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS users(
    birthdate DATE,
    picture TEXT,
    address_id INT NOT NULL,
+   first_connection BOOLEAN DEFAULT 0,
    PRIMARY KEY(user_id),
    FOREIGN KEY(address_id) REFERENCES address(address_id)
 );
