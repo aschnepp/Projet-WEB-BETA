@@ -74,8 +74,6 @@ async function initMap() {
     autocomplete.addListener('place_changed', () => {
         const place = autocomplete.getPlace();
         if (!place.geometry) {
-            // User entered the name of a Place that was not suggested and
-            // pressed the Enter key, or the Place Details request failed.
             window.alert(`Erreur pour : '${place.name}'`);
             return;
         }
