@@ -9,7 +9,8 @@ const CONFIGURATION = {
     }
 };
 
-const SHORT_NAME_ADDRESS_COMPONENT_TYPES = new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
+const SHORT_NAME_ADDRESS_COMPONENT_TYPES =
+    new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
 
 const ADDRESS_COMPONENT_TYPES_IN_FORM = [
     'street_number',
@@ -54,8 +55,8 @@ async function initMap() {
         Autocomplete
     } = google.maps.places;
 
-    const autocompleteElements = document.querySelectorAll('.adresse-cp-entreprise input[type="text"]');
-    
+    const autocompleteElements = document.querySelectorAll('.adresse-cp-entreprise input[type="text"]:first-of-type');
+
     autocompleteElements.forEach((inputElement, index) => {
         const inputName = inputElement.getAttribute('name');
         const inputNumber = inputName.match(/-(\d+)$/)[1];
