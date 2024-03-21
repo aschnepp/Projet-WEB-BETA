@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS firms(
    firm_id INT AUTO_INCREMENT,
    firm_name VARCHAR(50)  NOT NULL,
    description_firm TEXT,
-   website VARCHAR(100) ,
+   website TEXT ,
    logo TEXT,
    inactif BOOLEAN NOT NULL,
    PRIMARY KEY(firm_id)
