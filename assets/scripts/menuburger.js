@@ -63,11 +63,16 @@ function ActivationMenuBurger() {
 }
 
 function getCookies() {
-  return document.cookie;
+  if (document.cookie) {
+    const cookieValue = document.cookie.split('=')[1];
+    const decodedCookie = atob(cookieValue);
+    return JSON.parse(decodedCookie);
+  }
+  else return null;
 }
 
 function Connecte(status) {
-  if (status == true) {
+  if (status) {
     return `
     <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
     <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
@@ -77,14 +82,23 @@ function Connecte(status) {
 }
 
 function Status(status) {
-  if (status !== ``) {
-    if (true) {
+  if (status) {
+    if (status.userType == "Admin") {
       return `
       <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
       <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
           href="test.html"></a>
       <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
       <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="entreprise.html"></a>
+      `
+    }
+    else if (status.userType == "Tuteur") {
+      return `
+
+      `
+    }
+    else {
+      return `
       `
     }
   }
@@ -100,18 +114,18 @@ function Status(status) {
 
 window.onload = function () {
   //TODO REMPLISSAGE DU HEADER AU CHARGEMENT DE LA PAGE EN FCT DES COOKIES
-  console.log(getCookies());
+  var connected = getCookies()
 
-  var connected = true;
-
-  document.querySelector("#header-milieu").innerHTML = Connecte(connected = true);
+  document.querySelector("#header-milieu").innerHTML = Connecte("connected");
 
   // if (connecte == false) {
   //   document.querySelector("#recherche").style.display = "none";
   //   document.querySelector("#loupe").style.display = "none";
   // }
 
-  var status = Status(Connecte(connected = true));
+
+  var status = Status(connected);
+
 
   document.querySelector("#header-droite").insertAdjacentHTML('beforeend', status);
 
