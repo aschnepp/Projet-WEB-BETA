@@ -65,8 +65,8 @@ function ActivationMenuBurger() {
 function getCookies() {
   if (document.cookie) {
     const cookieValue = document.cookie.split('=')[1];
-    const decodedCookie = atob(cookieValue);
-    return JSON.parse(decodedCookie);
+    // const decodedCookie = atob(cookieValue);
+    // return JSON.parse(decodedCookie);
   }
   else return null;
 }

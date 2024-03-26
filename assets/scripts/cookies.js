@@ -4,7 +4,7 @@ function submitForm(event) {
     var formData = new FormData(document.getElementById('myForm'));
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../php/cookies.php', true);
+    xhr.open('POST', '../assets/back/controller/cookies.php', true);
     xhr.send(formData);
 
     xhr.onreadystatechange = function () {

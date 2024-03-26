@@ -1,4 +1,6 @@
 <?php
+require("../model/model.php");
+
 class Cookie
 {
     private $email;
@@ -25,16 +27,14 @@ class Cookie
     }
 }
 
-$db = "stagecatalyst";
+$dbName = "stagecatalyst";
 $dbHost = "31.32.226.226";
 $dbPort = 3306;
 $dbUser = "admin";
 $dbPasswd = "Ur38sy36&*";
 
-try {
-    $pdo = new PDO('mysql:host=' . $dbHost . ';port=' . $dbPort . ';dbname=' . $db . '', $dbUser, $dbPasswd);
-} catch (PDOException $e) {
-}
+
+$Model = new Model($dbName, $dbHost, $dbPort, $dbUser, $dbPasswd);
 
 $connexionAutho = 0;
 
@@ -43,37 +43,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $remember = isset($_POST['souvenir']) ? $_POST['souvenir'] : 'off';
 
-    $expression = "SELECT * FROM users WHERE email=:email";
-    $requete = $pdo->prepare($expression);
-    $requete->bindParam(':email', $email);
-    $requete->execute();
-    $resultat = $requete->fetch(PDO::FETCH_OBJ);
+    $condition = "email = '{$email}'";
+
+    $resultat = $Model->fetch("users", ["*"], $condition, true);
 
     if ($resultat) {
+        $connexionAutho = 1;
         $hashedPasswordFromDb = $resultat->password;
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
 
-            $expression = "
-            SELECT
-                    CASE
-                        WHEN admins.user_id IS NOT NULL THEN 'Admin'
-                        WHEN tutors.user_id IS NOT NULL THEN 'Tuteur'
-                        WHEN students.user_id IS NOT NULL THEN 'Etudiant'
-                        ELSE 'Utilisateur'
-                    END AS typeUtilisateur
-                FROM users
-                LEFT JOIN tutors ON users.user_id = tutors.user_id
-                LEFT JOIN admins ON users.user_id = admins.user_id
-                LEFT JOIN students ON users.user_id = students.user_id
-                WHERE users.email = :email;
-            ";
-            $requete = $pdo->prepare($expression);
-            $requete->bindParam(':email', $email);
-            $requete->execute();
-            $resultat = $requete->fetch(PDO::FETCH_OBJ);
+            $typeUser = $Model->userTypeGet($email);
 
-            switch ($resultat->typeUtilisateur) {
+            switch ($typeUser->typeUtilisateur) {
                 case "Admin":
                     $userType = "Admin";
                     break;
