@@ -77,8 +77,8 @@ main .entreprise .bodyEntreprise {
 main .entreprise .bodyEntreprise {
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    align-items: left;
+    justify-content: left;
+    align-items: center;
 }
 
 main .entreprise .description {

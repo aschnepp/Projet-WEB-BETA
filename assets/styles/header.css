@@ -30,7 +30,6 @@ header {
       hsla(215, 45%, 53%, 1) 17%,
       hsla(210, 63%, 77%, 1) 93%);
 
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#507DBC", endColorstr="#A1C6EA", GradientType=1);
 
   color: white;
   font-family: "Montserrat";
@@ -147,7 +146,7 @@ header>#header-droite>a.boutons-header:hover::after {
 
 header #header-droite a[class*="fa"]:hover {
   text-decoration: none;
-  font-weight: none;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 600px) {
