@@ -5,8 +5,7 @@
     <!-- Main -->
     <meta charset="utf-8" />
     <title>Notation Entreprise</title>
-    <meta name="description"
-        content="Cette page vous permet de noter et commenter une entreprise dans laquelle vous avez effectué un stage." />
+    <meta name="description" content="Cette page vous permet de noter et commenter une entreprise dans laquelle vous avez effectué un stage." />
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preload -->
@@ -20,8 +19,7 @@
     <link rel="stylesheet" href="../assets/styles/review-entreprise.css" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -46,8 +44,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -73,24 +70,19 @@
                         </section>
                         <div class="bodyEntreprise">
                             <section class="items">
-                                <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png"
-                                    alt="domain" />
+                                <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png" alt="domain" />
                                 <a href="https://www.cesi.fr/" target="_blank" id="website">www.cesi.fr</a>
                             </section>
                             <section class="items">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
-                                    alt="map-marker" />
+                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png" alt="map-marker" />
                                 <p>2 allée des foulons, 67380 Lingolsheim</p>
                             </section>
                             <section class="items">
-                                <img width="30" height="30"
-                                    src="https://img.icons8.com/ios-glyphs/45/client-company.png"
-                                    alt="client-company" />
+                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/client-company.png" alt="client-company" />
                                 <p>Education / Formation</p>
                             </section>
                             <section class="items">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
-                                    alt="groups" />
+                                <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png" alt="groups" />
                                 <p>30 personnes</p>
                             </section>
                         </div>
