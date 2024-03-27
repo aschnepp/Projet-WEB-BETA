@@ -19,8 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-tuteur.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,8 +44,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -66,7 +64,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création des tuteurs</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-tuteur">Nom*</label>
                     <div>
@@ -91,8 +89,7 @@
                 <section id="date-naissance">
                     <label for="date-naissance-tuteur">Date de naissance*</label>
                     <div>
-                        <input type="text" name="date-naissance-tuteur" id="date-naissance-tuteur" required
-                            placeholder="Date de naissance">
+                        <input type="text" name="date-naissance-tuteur" id="date-naissance-tuteur" required placeholder="Date de naissance">
                     </div>
                 </section>
 
@@ -101,25 +98,21 @@
                     <label for="street_number-tuteur">Numéro</label>
                     <label for="postal_code-tuteur">Code postal*</label>
                     <input type="text" name="adresse-tuteur" id="adresse-tuteur" required placeholder="Adresse">
-                    <input type="text" name="street_number-tuteur" id="street_number-tuteur" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required
-                        placeholder="Code Postal">
+                    <input type="text" name="street_number-tuteur" id="street_number-tuteur" required placeholder="Numéro">
+                    <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required placeholder="Code Postal">
                 </section>
 
                 <section id="ville-region-tuteur">
                     <label for="locality-tuteur">Ville*</label>
                     <label for="administrative_area_level_1-tuteur">Region*</label>
                     <input type="text" name="locality-tuteur" id="locality-tuteur" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-tuteur" id="administrative_area_level_1-tuteur"
-                        required placeholder="Région">
+                    <input type="text" name="administrative_area_level_1-tuteur" id="administrative_area_level_1-tuteur" required placeholder="Région">
                 </section>
 
                 <section id="promotion">
                     <label for="promotion-tuteur">Promotion*</label>
                     <div>
-                        <input type="text" name="promotion-tuteur" id="promotion-tuteur" required
-                            placeholder="Promotion">
+                        <input type="text" name="promotion-tuteur" id="promotion-tuteur" required placeholder="Promotion">
                     </div>
                 </section>
 

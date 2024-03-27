@@ -18,8 +18,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-offre.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
 </head>
 
@@ -45,8 +44,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -66,7 +64,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'offre</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-offre">Nom*</label>
                     <div>
@@ -77,32 +75,28 @@
                 <section id="secteur">
                     <label for="secteur-activite-offre">Secteur d'activité*</label>
                     <div>
-                        <input type="text" name="secteur-activite-offre" id="secteur-activite-offre" required
-                            placeholder="Secteur d'activité">
+                        <input type="text" name="secteur-activite-offre" id="secteur-activite-offre" required placeholder="Secteur d'activité">
                     </div>
                 </section>
 
                 <section id="competences">
                     <label for="competence-offre">Compétences*</label>
                     <div>
-                        <input type="text" name="competence-offre" id="competence-offre" required
-                            placeholder="Compétences">
+                        <input type="text" name="competence-offre" id="competence-offre" required placeholder="Compétences">
                     </div>
                 </section>
 
                 <section id="entreprise-formulaire">
                     <label for="entreprise-offre">Entreprise*</label>
                     <div>
-                        <input type="text" name="entreprise-offre" id="entreprise-offre" required
-                            placeholder="Entreprise">
+                        <input type="text" name="entreprise-offre" id="entreprise-offre" required placeholder="Entreprise">
                     </div>
                 </section>
 
                 <section id="promotions">
                     <label for="promotions-concernees-offre">Promotions concernées*</label>
                     <div>
-                        <input type="text" name="promotions-concernees-offre" id="promotions-concernees-offre" required
-                            placeholder="Promotions concernées">
+                        <input type="text" name="promotions-concernees-offre" id="promotions-concernees-offre" required placeholder="Promotions concernées">
                     </div>
                 </section>
 
@@ -111,42 +105,35 @@
                     <label for="street_number-offre">Numéro</label>
                     <label for="postal_code-offre">Code postal*</label>
                     <input type="text" name="adresse-offre" id="adresse-offre" required placeholder="Adresse">
-                    <input type="text" name="street_number-offre" id="street_number-offre" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-offre" id="postal_code-offre" required
-                        placeholder="Code Postal">
+                    <input type="text" name="street_number-offre" id="street_number-offre" required placeholder="Numéro">
+                    <input type="text" name="postal_code-offre" id="postal_code-offre" required placeholder="Code Postal">
                 </section>
 
                 <section id="ville-region-offre">
                     <label for="locality-offre">Ville*</label>
                     <label for="administrative_area_level_1-offre">Region*</label>
                     <input type="text" name="locality-offre" id="locality-offre" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-offre" id="administrative_area_level_1-offre"
-                        required placeholder="Région">
+                    <input type="text" name="administrative_area_level_1-offre" id="administrative_area_level_1-offre" required placeholder="Région">
                 </section>
 
                 <section id="dates">
                     <label for="duree-offre">Durée (en semaines)*</label>
                     <label for="date-debut-offre">Date de début*</label>
                     <input type="text" name="duree-offre" id="duree-offre" required placeholder="Durée">
-                    <input type="text" name="date-debut-offre" id="date-debut-offre" required
-                        placeholder="Date de début">
+                    <input type="text" name="date-debut-offre" id="date-debut-offre" required placeholder="Date de début">
                 </section>
 
                 <section id="informations-supplementaires">
                     <label for="remuneration-offre">Rémunération (en €/h)*</label>
                     <label for="nb-places-offre">Nombre de places*</label>
-                    <input type="text" name="remuneration-offre" id="remuneration-offre" required
-                        placeholder="Rémunération">
-                    <input type="text" name="nb-places-offre" id="nb-places-offre" required
-                        placeholder="Nombre de places">
+                    <input type="text" name="remuneration-offre" id="remuneration-offre" required placeholder="Rémunération">
+                    <input type="text" name="nb-places-offre" id="nb-places-offre" required placeholder="Nombre de places">
                 </section>
 
                 <section id="description">
                     <label for="description-offre">Description offre*</label>
                     <div>
-                        <textarea type="text" name="description-offre" id="description-offre" required
-                            placeholder="Description de l'offre"></textarea>
+                        <textarea name="description-offre" id="description-offre" required placeholder="Description de l'offre"></textarea>
                     </div>
                 </section>
 

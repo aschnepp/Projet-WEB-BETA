@@ -19,8 +19,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
 </head>
 
@@ -46,8 +45,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -67,7 +65,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'entreprise</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-entreprise">Nom*</label>
                     <div>
@@ -79,21 +77,16 @@
                     <label for="adresse-entreprise-1">Adresse*</label>
                     <label for="street_number-entreprise-1">Numéro</label>
                     <label for="postal_code-entreprise-1">Code postal*</label>
-                    <input type="text" name="adresse-entreprise-1" id="adresse-entreprise-1" required
-                        placeholder="Adresse">
-                    <input type="text" name="street_number-entreprise-1" id="street_number-entreprise-1" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-entreprise-1" id="postal_code-entreprise-1" required
-                        placeholder="Code Postal">
+                    <input type="text" name="adresse-entreprise-1" id="adresse-entreprise-1" required placeholder="Adresse">
+                    <input type="text" name="street_number-entreprise-1" id="street_number-entreprise-1" required placeholder="Numéro">
+                    <input type="text" name="postal_code-entreprise-1" id="postal_code-entreprise-1" required placeholder="Code Postal">
                 </section>
 
                 <section class="ville-region-entreprise">
                     <label for="locality-entreprise-1">Ville*</label>
                     <label for="administrative_area_level_1-entreprise-1">Region*</label>
-                    <input type="text" name="locality-entreprise-1" id="locality-entreprise-1" required
-                        placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-entreprise-1"
-                        id="administrative_area_level_1-entreprise-1" required placeholder="Région">
+                    <input type="text" name="locality-entreprise-1" id="locality-entreprise-1" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-entreprise-1" id="administrative_area_level_1-entreprise-1" required placeholder="Région">
                 </section>
 
                 <section id="ajouter-adresse">
@@ -103,16 +96,14 @@
                 <section id="secteur-activite">
                     <label for="secteur-activite-entreprise">Secteur d'activité*</label>
                     <div>
-                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
-                            placeholder="Secteur d'activité">
+                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required placeholder="Secteur d'activité">
                     </div>
                 </section>
 
                 <section id="site-web">
                     <label for="site-web-entreprise">Site web (Touche "Entrer" pour visualiser le logo)*</label>
                     <div>
-                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required
-                            placeholder="Site web">
+                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required placeholder="Site web">
                     </div>
                 </section>
 
@@ -122,8 +113,7 @@
                 <section id="description-activite">
                     <label for="description-entreprise">Description entreprise*</label>
                     <div>
-                        <textarea type="text" name="description-entreprise" id="description-entreprise" required
-                            placeholder="Description de l'entreprise"></textarea>
+                        <textarea name="description-entreprise" id="description-entreprise" required placeholder="Description de l'entreprise"></textarea>
                     </div>
                 </section>
 

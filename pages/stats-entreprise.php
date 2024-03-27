@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preloads -->
-    <link rel="preload" href="../assets/scripts/stats-entreprises.js" />
+    <script rel="preload" src="../assets/scripts/stats-entreprises.js"></script>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <link rel="preconnect" href="https://maps.googleapis.com" />
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Scripts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="../assets/scripts/stats-entreprises.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../assets/scripts/stats-entreprises.js"></script>
 </head>
 
 <body>
@@ -48,8 +48,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>

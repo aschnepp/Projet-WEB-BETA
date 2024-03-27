@@ -18,8 +18,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/presentation-entreprise.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -70,18 +69,15 @@
                         <a href="https://www.amazon.fr/" target="_blank" class="website">amazon.com</a>
                     </div>
                     <div class="items">
-                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png"
-                            alt="map-marker" />
+                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png" alt="map-marker" />
                         <p>2 allée des foulons, 67380 Lingolsheim</p>
                     </div>
                     <div class="items">
-                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/client-company.png"
-                            alt="client-company" />
+                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/client-company.png" alt="client-company" />
                         <p>Education / Formation</p>
                     </div>
                     <div class="items">
-                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png"
-                            alt="groups" />
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png" alt="groups" />
                         <p>30 personnes</p>
                     </div>
                 </section>

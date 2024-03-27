@@ -18,8 +18,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-etudiant.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -45,8 +44,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -66,7 +64,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'étudiants</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-etudiant">Nom*</label>
                     <div>
@@ -91,8 +89,7 @@
                 <section id="date-naissance">
                     <label for="date-naissance-etudiant">Date de naissance*</label>
                     <div>
-                        <input type="text" name="date-naissance-etudiant" id="date-naissance-etudiant" required
-                            placeholder="Date de naissance">
+                        <input type="text" name="date-naissance-etudiant" id="date-naissance-etudiant" required placeholder="Date de naissance">
                     </div>
                 </section>
 
@@ -101,25 +98,21 @@
                     <label for="street_number-etudiant">Numéro</label>
                     <label for="postal_code-etudiant">Code postal*</label>
                     <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
-                    <input type="text" name="street_number-etudiant" id="street_number-etudiant" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required
-                        placeholder="Code Postal">
+                    <input type="text" name="street_number-etudiant" id="street_number-etudiant" required placeholder="Numéro">
+                    <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required placeholder="Code Postal">
                 </section>
 
                 <section id="ville-region-etudiant">
                     <label for="locality-etudiant">Ville*</label>
                     <label for="administrative_area_level_1-etudiant">Region*</label>
                     <input type="text" name="locality-etudiant" id="locality-etudiant" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-etudiant"
-                        id="administrative_area_level_1-etudiant" required placeholder="Région">
+                    <input type="text" name="administrative_area_level_1-etudiant" id="administrative_area_level_1-etudiant" required placeholder="Région">
                 </section>
-                
+
                 <section id="promotion">
                     <label for="promotion-etudiant">Promotion*</label>
                     <div>
-                        <input type="text" name="promotion-etudiant" id="promotion-etudiant" required
-                            placeholder="Promotion">
+                        <input type="text" name="promotion-etudiant" id="promotion-etudiant" required placeholder="Promotion">
                     </div>
                 </section>
 

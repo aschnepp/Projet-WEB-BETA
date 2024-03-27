@@ -20,8 +20,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -43,8 +42,7 @@
                 <div class="barre-bas"></div>
             </div>
 
-            <a class="liens-header boutons-header" rel="preconnect" href="pages/login.html"
-                title="Connexion">Connexion</a>
+            <a class="liens-header boutons-header" rel="preconnect" href="pages/login.html" title="Connexion">Connexion</a>
         </section>
     </header>
 
@@ -61,15 +59,13 @@
 
         <section id="texte">
             <h3>
-                <p>
-                    Vous cherchez un stage mais vous n'avez pas de pistes, ou alors vous ne savez pas s'y prendre ?
-                </p>
-                <p>
-                    Stage Catalyst résout tous vos problèmes en s'associant avec des entreprises prêtes à accueillir des
-                    stagiaires.
-                </p>
-                <p>N'attendez donc pas plus longtemps et allez postuler !</p>
+                Vous cherchez un stage mais vous n'avez pas de pistes, ou alors vous ne savez pas s'y prendre ?
             </h3>
+            <h3>
+                Stage Catalyst résout tous vos problèmes en s'associant avec des entreprises prêtes à accueillir des
+                stagiaires.
+            </h3>
+            <h3>N'attendez donc pas plus longtemps et allez postuler !</h3>
         </section>
 
         <div id="flex-main">

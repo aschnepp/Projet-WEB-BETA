@@ -5,16 +5,16 @@
     <!-- Main -->
     <meta charset="utf-8" />
     <title>Statistiques Offres</title>
-    <meta name="description"
-        content="Cette page vous permet de voir les statistiques des différentes offres de la plateforme." />
+    <meta name="description" content="Cette page vous permet de voir les statistiques des différentes offres de la plateforme." />
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preload -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <link rel="preload" href="../assets/scripts/stats-offres.js" />
+
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/stats-offres.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
 
     <!-- Style -->
@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Scripts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="../assets/scripts/stats-offres.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../assets/scripts/stats-offres.js"></script>
 </head>
 
 <body>
@@ -50,8 +50,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>

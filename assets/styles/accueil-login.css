@@ -133,7 +133,7 @@ fieldset section {
 
 #offre .headerOffre h3 {
     display: flex;
-    margin-top: auto 0;
+    margin-top: auto;
     align-items: center;
     justify-content: start;
     flex-grow: 100;
