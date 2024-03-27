@@ -3,31 +3,42 @@
 @import "color-palette.css";
 @import "footer.css";
 
-p {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+}
+
+
+main p {
   margin: 0.5rem 0;
   word-break: break-all;
 }
 
-.profile {
+main .profile {
   margin: 2rem;
   background-color: white;
   border: 2px solid black;
   border-radius: 2rem;
 }
 
-#btn-section {
+main #btn-section {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
 }
 
-#btn-section img {
+main #btn-section img {
   display: inline-block;
-  height: 1.5em;
+  height: 2.5em;
   padding: 1rem;
 }
 
-#btn-section button {
+main #btn-section button {
   display: flex;
   align-items: center;
   background-color: var(--white);
@@ -38,16 +49,16 @@ p {
   padding: 0rem 1rem 0rem 0rem;
 }
 
-.profile > h1 {
+main .profile>h1 {
   text-align: center;
   margin: 1rem 0;
 }
 
-.profile > * {
+main .profile>* {
   margin: 0rem 1rem;
 }
 
-#fa-user {
+main #fa-user {
   border: 2px solid black;
   border-radius: 2rem;
   padding: 1rem;
@@ -56,7 +67,7 @@ p {
   width: 10rem;
 }
 
-.profile > section {
+main .profile>section {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -65,7 +76,7 @@ p {
   padding: 1rem;
 }
 
-#info {
+main #info {
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 80%;
@@ -73,7 +84,7 @@ p {
   align-content: center;
 }
 
-section > section {
+main .profile section>section {
   display: flex;
   margin: 0rem 1rem;
   gap: 1rem;
@@ -81,12 +92,12 @@ section > section {
   flex-wrap: wrap;
 }
 
-section > section > p:first-child {
+main .profile>section p:first-child {
   font-weight: bold;
   text-decoration: underline;
 }
 
-section > section > p:first-child:after {
+main .profile>section p:first-child:after {
   display: inline-block;
   content: ":";
   margin: 0rem 1rem;
@@ -95,11 +106,16 @@ section > section > p:first-child:after {
 }
 
 @media only screen and (max-width: 1350px) {
-  section > section {
+  section>section {
     justify-content: center;
   }
-  .profile > section {
+
+  .profile>section {
     text-align: center;
+  }
+
+  main .profile>section {
+    font-size: 1.25rem;
   }
 }
 
@@ -115,11 +131,11 @@ section > section > p:first-child:after {
     margin: 1rem 0;
   }
 
-  section > section {
+  section>section {
     gap: 0;
   }
 
-  .profile > section {
+  .profile>section {
     font-size: 1rem;
     text-align: center;
   }
@@ -128,7 +144,7 @@ section > section > p:first-child:after {
     font-size: 10rem;
   }
 
-  section > section > p:first-child:after {
+  section>section>p:first-child:after {
     margin: 0rem 0.5rem;
   }
 }

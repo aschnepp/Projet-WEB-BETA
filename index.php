@@ -15,7 +15,7 @@
     <link rel="preload" as="image" href="assets/images/Image_recherche_stage.webp" type="image/webp">
     <link rel="preload" as="image" href="assets/images/Monde.webp" type="image/webp">
     <link rel="preload" as="image" href="assets/images/Entretien_image.webp" type="image/webp">
-    <script rel="preload" src="assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="assets/scripts/menuburger.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,14 +50,8 @@
 
     <main>
         <div id="menu-burger-flou">
-            <div id="menu-burger-main">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-                    sit
-                    aperiam totam explicabo! Rem, tenetur.</p>
-                <div>zdq</div>
-                <div>zdqz</div>
-            </div>
+            <section id="menu-burger-main">
+            </section>
         </div>
 
         <h1>
@@ -78,7 +72,7 @@
             </h3>
         </section>
 
-        <section id="flex-main">
+        <div id="flex-main">
             <section class="blocs">
                 <img src="assets/images/Image_recherche_stage.webp" alt="Recherche de stage" id="image1">
                 <h2>Plateforme de Recherche de Stage</h2>
@@ -105,7 +99,7 @@
                     emploi.
                 </p>
             </section>
-        </section>
+        </div>
 
 
     </main>

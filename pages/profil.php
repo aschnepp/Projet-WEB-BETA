@@ -12,27 +12,42 @@
     <link rel="preload" href="../assets/images/Logo.webp" as="image">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href=" https://fonts.googleapis.com/css?family=Montserrat" rel="preload" as="font" />
-    <link rel=" preload" href="../assets/styles/profil.css" as="style" />
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/profil.css" />
-    <link href=" https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="font" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <section id="header-gauche">
-            <a rel="preconnect" href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo"
-                    id="logo" /></a>
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
             <p id="header-p">Stage Catalyst</p>
         </section>
 
-        <section id="buttons">
-            <a rel="preconnect" href="login.html">Connexion</a>
+        <section id="header-milieu">
+            <!-- Menu de recherche se fait tout seul dans le JS-->
+        </section>
+
+        <section id="header-droite">
+            <section id="menu-burger-header">
+                <section class="barre-haut"></section>
+                <section class="barre-milieu"></section>
+                <section class="barre-bas"></section>
+            </section>
+
+            <!-- Icônes se font tout seul en JS-->
         </section>
     </header>
     <main>
+        <section id="menu-burger-flou">
+            <section id="menu-burger-main">
+            </section>
+        </section>
         <section class="profile">
             <h1>Profil</h1>
             <section>
@@ -82,6 +97,7 @@
                 <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg"
                         alt="Icône 'Se déconnecter'">Se déconnecter</button>
             </section>
+        </section>
     </main>
     <footer>
         <section id="liens-footer">

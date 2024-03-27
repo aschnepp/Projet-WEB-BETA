@@ -12,15 +12,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
-    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/previsualisation-logo.js"></script>
+    <script rel="preload" src="../assets/scripts/autocomplete-adresses-entreprise.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
 </head>
 
 <body>
@@ -74,25 +75,30 @@
                     </div>
                 </section>
 
-                <section id="adresse-cp-entreprise">
-                    <label for="adresse-entreprise">Adresse*</label>
-                    <label for="postal_code-entreprise">Code postal*</label>
-                    <input type="text" name="adresse-entreprise" id="adresse-entreprise" required placeholder="Adresse">
-                    <input type="text" name="postal_code-entreprise" id="postal_code-entreprise" required
+                <section class="adresse-cp-entreprise">
+                    <label for="adresse-entreprise-1">Adresse*</label>
+                    <label for="street_number-entreprise-1">Numéro</label>
+                    <label for="postal_code-entreprise-1">Code postal*</label>
+                    <input type="text" name="adresse-entreprise-1" id="adresse-entreprise-1" required
+                        placeholder="Adresse">
+                    <input type="text" name="street_number-entreprise-1" id="street_number-entreprise-1" required
+                        placeholder="Numéro">
+                    <input type="text" name="postal_code-entreprise-1" id="postal_code-entreprise-1" required
                         placeholder="Code Postal">
                 </section>
 
-                <section id="ville-region-entreprise">
-                    <label for="locality-entreprise">Ville*</label>
-                    <label for="administrative_area_level_1-entreprise">Region*</label>
-                    <input type="text" name="locality-entreprise" id="locality-entreprise" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-entreprise"
-                        id="administrative_area_level_1-entreprise" required placeholder="Région">
+                <section class="ville-region-entreprise">
+                    <label for="locality-entreprise-1">Ville*</label>
+                    <label for="administrative_area_level_1-entreprise-1">Region*</label>
+                    <input type="text" name="locality-entreprise-1" id="locality-entreprise-1" required
+                        placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-entreprise-1"
+                        id="administrative_area_level_1-entreprise-1" required placeholder="Région">
                 </section>
 
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cA"
-                    async defer></script>
+                <section id="ajouter-adresse">
+                    <button type="button" id="btn-ajouter-adresse">Ajouter une adresse</button>
+                </section>
 
                 <section id="secteur-activite">
                     <label for="secteur-activite-entreprise">Secteur d'activité*</label>
@@ -100,6 +106,17 @@
                         <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required
                             placeholder="Secteur d'activité">
                     </div>
+                </section>
+
+                <section id="site-web">
+                    <label for="site-web-entreprise">Site web (Touche "Entrer" pour visualiser le logo)*</label>
+                    <div>
+                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required
+                            placeholder="Site web">
+                    </div>
+                </section>
+
+                <section id="previsualisation-logo">
                 </section>
 
                 <section id="description-activite">

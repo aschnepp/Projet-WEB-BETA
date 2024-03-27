@@ -48,7 +48,7 @@ main #section-formulaire input {
 
 #adresse-cp-etudiant {
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 0.8fr 0.4fr 0.5fr;
     grid-column-gap: 0.5rem;
     margin-bottom: 0.5rem;
 }

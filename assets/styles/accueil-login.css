@@ -11,7 +11,7 @@ main h2 {
     margin-bottom: 2rem;
 }
 
-main h3 {
+main>h3 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -116,21 +116,41 @@ fieldset section {
     word-break: break-word;
 }
 
-#offre h3 {
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-}
 
-#offre p {
-    padding-left: 0.5rem;
+#offre .headerOffre,
+#offre .infos {
+    padding: 0.5rem;
 }
 
 #offre .headerOffre {
     width: 100%;
-    margin-bottom: .5rem;
+    height: fit-content;
     display: flex;
     justify-content: space-between;
-    height: fit-content;
+    flex-wrap: wrap;
+    row-gap: .5rem;
+}
+
+#offre .headerOffre h3 {
+    display: flex;
+    margin-top: auto 0;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 100;
+}
+
+#offre .headerOffre .stats {
+    display: flex;
+    gap: 1rem;
+    flex-grow: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+#offre p {
+    padding-left: 0.5rem;
+    text-align: center;
 }
 
 fieldset section p {
@@ -156,22 +176,33 @@ fieldset section p {
     padding-bottom: 0.5rem;
 }
 
-#item {
-    flex: 1 1 auto;
-    min-width: auto;
+.item {
+    flex-wrap: nowrap;
 }
 
 section.infos {
     margin-bottom: 0.5rem;
 }
 
+#boutons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 button {
+    display: block;
+    font-size: 1rem;
+    margin-top: 0;
     background-color: var(--blue-dark);
     color: var(--blue-light);
     border-radius: 0.5rem;
     padding: 0.3rem;
     border: none;
     cursor: pointer;
+    height: 30px;
+    text-decoration: none;
     margin-bottom: 1rem;
 }
 

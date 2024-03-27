@@ -4,23 +4,23 @@
 <head>
     <!-- Main -->
     <meta charset="UTF-8">
-    <title>Gestion des tuteurs</title>
-    <meta name="description" content="Page de gestion des tuteurs.">
+    <title>Gestion des étudiants</title>
+    <meta name="description" content="Page de gestion des étudiants.">
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/gestion-tuteur.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/styles/gestion-etudiant.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
@@ -65,69 +65,68 @@
             </div>
         </div>
         <section id="section-formulaire">
-            <h2>Création des tuteurs</h2>
+            <h2>Création d'étudiants</h2>
             <form action="" id="formulaire">
                 <section id="nom">
-                    <label for="nom-tuteur">Nom*</label>
+                    <label for="nom-etudiant">Nom*</label>
                     <div>
-                        <input type="text" name="nom-tuteur" id="nom-tuteur" required placeholder="Nom">
+                        <input type="text" name="nom-etudiant" id="nom-etudiant" required placeholder="Nom">
                     </div>
                 </section>
 
                 <section id="prenom">
-                    <label for="prenom-tuteur">Prénom*</label>
+                    <label for="prenom-etudiant">Prénom*</label>
                     <div>
-                        <input type="text" name="prenom-tuteur" id="prenom-tuteur" required placeholder="Prénom">
+                        <input type="text" name="prenom-etudiant" id="prenom-etudiant" required placeholder="Prénom">
                     </div>
                 </section>
 
                 <section id="email">
-                    <label for="email-tuteur">Email*</label>
+                    <label for="email-etudiant">Email*</label>
                     <div>
-                        <input type="email" name="competence" id="email-tuteur" required placeholder="Email">
+                        <input type="email" name="competence" id="email-etudiant" required placeholder="Email">
                     </div>
                 </section>
 
                 <section id="date-naissance">
-                    <label for="date-naissance-tuteur">Date de naissance*</label>
+                    <label for="date-naissance-etudiant">Date de naissance*</label>
                     <div>
-                        <input type="text" name="date-naissance-tuteur" id="date-naissance-tuteur" required
+                        <input type="text" name="date-naissance-etudiant" id="date-naissance-etudiant" required
                             placeholder="Date de naissance">
                     </div>
                 </section>
 
-                <section id="adresse-cp-tuteur">
-                    <label for="adresse-tuteur">Adresse*</label>
-                    <label for="postal_code-tuteur">Code postal*</label>
-                    <input type="text" name="adresse-tuteur" id="adresse-tuteur" required placeholder="Adresse">
-                    <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required
+                <section id="adresse-cp-etudiant">
+                    <label for="adresse-etudiant">Adresse*</label>
+                    <label for="street_number-etudiant">Numéro</label>
+                    <label for="postal_code-etudiant">Code postal*</label>
+                    <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
+                    <input type="text" name="street_number-etudiant" id="street_number-etudiant" required
+                        placeholder="Numéro">
+                    <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required
                         placeholder="Code Postal">
                 </section>
 
-                <section id="ville-region-tuteur">
-                    <label for="locality-tuteur">Ville*</label>
-                    <label for="administrative_area_level_1-tuteur">Region*</label>
-                    <input type="text" name="locality-tuteur" id="locality-tuteur" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-tuteur" id="administrative_area_level_1-tuteur"
-                        required placeholder="Région">
+                <section id="ville-region-etudiant">
+                    <label for="locality-etudiant">Ville*</label>
+                    <label for="administrative_area_level_1-etudiant">Region*</label>
+                    <input type="text" name="locality-etudiant" id="locality-etudiant" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-etudiant"
+                        id="administrative_area_level_1-etudiant" required placeholder="Région">
                 </section>
-
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cA"
-                    async defer></script>
-
+                
                 <section id="promotion">
-                    <label for="promotion-tuteur">Promotion*</label>
+                    <label for="promotion-etudiant">Promotion*</label>
                     <div>
-                        <input type="text" name="promotion-tuteur" id="promotion-tuteur" required
+                        <input type="text" name="promotion-etudiant" id="promotion-etudiant" required
                             placeholder="Promotion">
                     </div>
                 </section>
 
                 <section id="centre">
-                    <label for="centre-tuteur">Centre*</label>
+                    <label for="centre-etudiant">Centre*</label>
                     <div>
-                        <input type="text" name="centre-tuteur" id="centre-tuteur" required placeholder="Centre">
+                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre">
                     </div>
                 </section>
 

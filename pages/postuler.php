@@ -11,7 +11,7 @@
     <!-- Preload -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

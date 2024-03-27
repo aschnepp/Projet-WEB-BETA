@@ -1,0 +1,44 @@
+@import "normalize.css";
+@import "header.css";
+@import "color-palette.css";
+@import "footer.css";
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > section {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+main > section > * {
+  margin: 0.5rem;
+}
+
+#back-btn {
+  background-color: var(--blue-dark-contrast);
+  color: var(--white);
+  cursor: pointer;
+  border: 1px solid var(--blue-dark-contrast);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+#back-btn:hover {
+  background-color: var(--blue-dark-contrast-hover);
+}
+
+#back-btn:link {
+  text-decoration: none;
+}

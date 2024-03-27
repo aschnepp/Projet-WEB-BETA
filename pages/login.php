@@ -10,7 +10,8 @@
 
     <!-- Preload -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/cookies.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,22 +45,16 @@
     <main>
 
         <div id="menu-burger-flou">
-            <div id="menu-burger-main">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-                    sit
-                    aperiam totam explicabo! Rem, tenetur.</p>
-                <div>zdq</div>
-                <div>zdqz</div>
-            </div>
+            <section id="menu-burger-main">
+            </section>
         </div>
 
-        <form id="myForm" method="post" onsubmit="return validateForm()">
+        <form id="myForm" method="post" onsubmit="submitForm(event)">
             <fieldset>
-                <label for="username">Identifiant</label>
-                <input type="text" id="username" name="username" required />
+                <label for="email">Identifiant</label>
+                <input type="text" id="email" name="email" required autocomplete="on">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" minlength="8" required />
+                <input type="password" id="password" name="password" minlength="8" required autocomplete="off">
                 <div id="remember">
                     <input type="checkbox" id="souvenir" name="souvenir" />
                     <label for="souvenir">Se souvenir de moi</label>
@@ -69,7 +64,6 @@
                     <input type="reset" value="Réinitialiser" />
                     <input type="button" onclick="javascript:window.history.back();" value="Annuler" />
                 </div>
-                <a href="#">Demander un accès à la plateforme</a>
             </fieldset>
         </form>
     </main>

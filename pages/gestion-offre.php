@@ -12,14 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <script rel="preload" src="../assets/scripts/menuburger.js" as="script"></script>
+    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-offre.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
 </head>
 
 <body>
@@ -105,6 +106,25 @@
                     </div>
                 </section>
 
+                <section id="adresse-cp-offre">
+                    <label for="adresse-offre">Adresse*</label>
+                    <label for="street_number-offre">Numéro</label>
+                    <label for="postal_code-offre">Code postal*</label>
+                    <input type="text" name="adresse-offre" id="adresse-offre" required placeholder="Adresse">
+                    <input type="text" name="street_number-offre" id="street_number-offre" required
+                        placeholder="Numéro">
+                    <input type="text" name="postal_code-offre" id="postal_code-offre" required
+                        placeholder="Code Postal">
+                </section>
+
+                <section id="ville-region-offre">
+                    <label for="locality-offre">Ville*</label>
+                    <label for="administrative_area_level_1-offre">Region*</label>
+                    <input type="text" name="locality-offre" id="locality-offre" required placeholder="Ville">
+                    <input type="text" name="administrative_area_level_1-offre" id="administrative_area_level_1-offre"
+                        required placeholder="Région">
+                </section>
+
                 <section id="dates">
                     <label for="duree-offre">Durée (en semaines)*</label>
                     <label for="date-debut-offre">Date de début*</label>
@@ -123,7 +143,7 @@
                 </section>
 
                 <section id="description">
-                    <label for="description-offre">Description entreprise*</label>
+                    <label for="description-offre">Description offre*</label>
                     <div>
                         <textarea type="text" name="description-offre" id="description-offre" required
                             placeholder="Description de l'offre"></textarea>
