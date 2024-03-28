@@ -1,16 +1,13 @@
 <?php
-require("../model/model.php");
+require("{$_SERVER["DOCUMENT_ROOT"]}/assets/back/model/model.php");
 
 class Cookie
 {
     private $email;
-    private $password;
-    private $userType;
 
-    public function __get($name)
-    {
-        return $this->$name;
-    }
+    private $password;
+
+    private $userType;
 
     public function __construct($email, $password, $userType)
     {
@@ -19,65 +16,23 @@ class Cookie
         $this->userType = $userType;
     }
 
+    public function get($attribute)
+    {
+        return $this->$attribute;
+    }
+
     public function saveToCookies($remember)
     {
-        $cookieData = base64_encode(json_encode(get_object_vars($this)));
+        $cookieData = json_encode(get_object_vars($this));
 
-        setcookie("Login", $cookieData, ($remember == "on") ? 2147483647 : 0, "/");
+        $key = get_cfg_var("encryption_key");
+
+        $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+        $encryptedData = openssl_encrypt($cookieData, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+        $encodedData = base64_encode($iv . $encryptedData);
+
+        setcookie("Login", $encodedData, ($remember == "on") ? 2147483647 : 0, "/");
     }
-}
-
-$dbName = "stagecatalyst";
-$dbHost = "31.32.226.226";
-$dbPort = 3306;
-$dbUser = "admin";
-$dbPasswd = "Ur38sy36&*";
-
-
-$Model = new Model($dbName, $dbHost, $dbPort, $dbUser, $dbPasswd);
-
-$connexionAutho = 0;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $remember = isset($_POST['souvenir']) ? $_POST['souvenir'] : 'off';
-
-    $condition = "email = '{$email}'";
-
-    $resultat = $Model->fetch("users", ["*"], $condition, true);
-
-    if ($resultat) {
-        $connexionAutho = 1;
-        $hashedPasswordFromDb = $resultat->password;
-        if (password_verify($password, $hashedPasswordFromDb)) {
-            $connexionAutho = 1;
-
-            $typeUser = $Model->userTypeGet($email);
-
-            switch ($typeUser->typeUtilisateur) {
-                case "Admin":
-                    $userType = "Admin";
-                    break;
-                case "Tuteur":
-                    $userType = "Tuteur";
-                    break;
-                case "Etudiant":
-                    $userType = "Etudiant";
-                    break;
-                default:
-                    $userType = "Utilisateur";
-            }
-            $cookie = new Cookie($email, $password, $userType);
-            $cookie->saveToCookies($remember);
-        }
-    }
-}
-
-if ($connexionAutho == 1) {
-    http_response_code(200);
-} else {
-    http_response_code(400);
 }
 
 
