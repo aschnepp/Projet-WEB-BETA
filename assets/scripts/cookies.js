@@ -1,10 +1,10 @@
-function submitForm(event) {
+yyfunction submitForm(event) {
     event.preventDefault();
 
     var formData = new FormData(document.getElementById('myForm'));
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../assets/back/controller/cookies.php', true);
+    xhr.open('POST', "/assets/back/controller/controllerLogin.php", true);
     xhr.send(formData);
 
     xhr.onreadystatechange = function () {

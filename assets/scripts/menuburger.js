@@ -62,14 +62,6 @@ function ActivationMenuBurger() {
   }
 }
 
-function getCookies() {
-  if (document.cookie) {
-    const cookieValue = document.cookie.split('=')[1];
-    // const decodedCookie = atob(cookieValue);
-    // return JSON.parse(decodedCookie);
-  }
-  else return null;
-}
 
 function Connecte(status) {
   if (status) {
@@ -114,7 +106,8 @@ function Status(status) {
 
 window.onload = function () {
   //TODO REMPLISSAGE DU HEADER AU CHARGEMENT DE LA PAGE EN FCT DES COOKIES
-  var connected = getCookies()
+  var connected = true;
+  console.log(connected);
 
   document.querySelector("#header-milieu").innerHTML = Connecte("connected");
 
