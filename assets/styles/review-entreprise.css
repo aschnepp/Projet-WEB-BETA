@@ -166,8 +166,8 @@ fieldset .description {
 #entreprise-review .bodyEntreprise {
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
 }
 
 #note {
