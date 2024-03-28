@@ -66,7 +66,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'étudiants</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-etudiant">Nom*</label>
                     <div>
@@ -114,7 +114,7 @@
                     <input type="text" name="administrative_area_level_1-etudiant"
                         id="administrative_area_level_1-etudiant" required placeholder="Région">
                 </section>
-                
+
                 <section id="promotion">
                     <label for="promotion-etudiant">Promotion*</label>
                     <div>

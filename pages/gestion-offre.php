@@ -66,7 +66,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'offre</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-offre">Nom*</label>
                     <div>
@@ -145,7 +145,7 @@
                 <section id="description">
                     <label for="description-offre">Description offre*</label>
                     <div>
-                        <textarea type="text" name="description-offre" id="description-offre" required
+                        <textarea name="description-offre" id="description-offre" required
                             placeholder="Description de l'offre"></textarea>
                     </div>
                 </section>

@@ -67,7 +67,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'entreprise</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-entreprise">Nom*</label>
                     <div>
@@ -122,7 +122,7 @@
                 <section id="description-activite">
                     <label for="description-entreprise">Description entreprise*</label>
                     <div>
-                        <textarea type="text" name="description-entreprise" id="description-entreprise" required
+                        <textarea name="description-entreprise" id="description-entreprise" required
                             placeholder="Description de l'entreprise"></textarea>
                     </div>
                 </section>

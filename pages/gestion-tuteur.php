@@ -66,7 +66,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création des tuteurs</h2>
-            <form action="" id="formulaire">
+            <form id="formulaire">
                 <section id="nom">
                     <label for="nom-tuteur">Nom*</label>
                     <div>
