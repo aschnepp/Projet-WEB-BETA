@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/back/model/model.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/model/model.php";
 
 class Controller
 {
@@ -11,8 +11,8 @@ class Controller
         $this->model = new Model("stagecatalyst", "31.32.226.226", 3306, "admin", "Ur38sy36&*");
     }
 
-    public function reviewEntreprise()
+    public function reviewEntreprise($id)
     {
-        return $this->model->callProcedure("GetFirmsInfo");
+        return $this->model->callProcedure("GetFirmInfo", [$id]);
     }
 }
