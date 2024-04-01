@@ -14,13 +14,14 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
+    <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-offre.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -79,14 +80,16 @@
                     <div>
                         <input type="text" name="secteur-activite-offre" id="secteur-activite-offre" required
                             placeholder="Secteur d'activité">
+                        <!--TODO faire une liste obtenue avec la BDD-->
                     </div>
                 </section>
 
                 <section id="competences">
-                    <label for="competence-offre">Compétences*</label>
+                    <label for="competences-offre">Compétences*</label>
                     <div>
-                        <input type="text" name="competence-offre" id="competence-offre" required
+                        <input type="text" name="competences-offre" id="competences-offre" required
                             placeholder="Compétences">
+                        <!--TODO faire une liste obtenue avec la BDD-->
                     </div>
                 </section>
 
@@ -95,6 +98,7 @@
                     <div>
                         <input type="text" name="entreprise-offre" id="entreprise-offre" required
                             placeholder="Entreprise">
+                        <!--TODO faire une liste obtenue avec la BDD-->
                     </div>
                 </section>
 
@@ -103,6 +107,7 @@
                     <div>
                         <input type="text" name="promotions-concernees-offre" id="promotions-concernees-offre" required
                             placeholder="Promotions concernées">
+                        <!--TODO faire une liste obtenue avec la BDD-->
                     </div>
                 </section>
 
@@ -110,49 +115,68 @@
                     <label for="adresse-offre">Adresse*</label>
                     <label for="street_number-offre">Numéro</label>
                     <label for="postal_code-offre">Code postal*</label>
-                    <input type="text" name="adresse-offre" id="adresse-offre" required placeholder="Adresse">
-                    <input type="text" name="street_number-offre" id="street_number-offre" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-offre" id="postal_code-offre" required
-                        placeholder="Code Postal">
+                    <div>
+                        <input type="text" name="adresse-offre" id="adresse-offre" required placeholder="Adresse">
+                    </div>
+                    <div>
+                        <input type="text" name="street_number-offre" id="street_number-offre" required
+                            placeholder="Numéro">
+                    </div>
+                    <div>
+                        <input type="text" name="postal_code-offre" id="postal_code-offre" required
+                            placeholder="Code Postal">
+                    </div>
                 </section>
 
                 <section id="ville-region-offre">
                     <label for="locality-offre">Ville*</label>
                     <label for="administrative_area_level_1-offre">Region*</label>
-                    <input type="text" name="locality-offre" id="locality-offre" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-offre" id="administrative_area_level_1-offre"
-                        required placeholder="Région">
+                    <div>
+                        <input type="text" name="locality-offre" id="locality-offre" required placeholder="Ville">
+                    </div>
+                    <div>
+                        <input type="text" name="administrative_area_level_1-offre"
+                            id="administrative_area_level_1-offre" required placeholder="Région">
+                    </div>
+                    <!--TODO faire une liste obtenue avec la BDD-->
                 </section>
 
                 <section id="dates">
                     <label for="duree-offre">Durée (en semaines)*</label>
                     <label for="date-debut-offre">Date de début*</label>
-                    <input type="text" name="duree-offre" id="duree-offre" required placeholder="Durée">
-                    <input type="text" name="date-debut-offre" id="date-debut-offre" required
-                        placeholder="Date de début">
+                    <div>
+                        <input type="text" name="duree-offre" id="duree-offre" required placeholder="Durée">
+                    </div>
+                    <div>
+                        <input type="date" name="date-debut-offre" id="date-debut-offre" required
+                            placeholder="Date de début">
+                    </div>
                 </section>
 
                 <section id="informations-supplementaires">
                     <label for="remuneration-offre">Rémunération (en €/h)*</label>
-                    <label for="nb-places-offre">Nombre de places*</label>
-                    <input type="text" name="remuneration-offre" id="remuneration-offre" required
-                        placeholder="Rémunération">
-                    <input type="text" name="nb-places-offre" id="nb-places-offre" required
-                        placeholder="Nombre de places">
+                    <label for="nombre-places-offre">Nombre de places*</label>
+                    <div>
+                        <input type="text" name="remuneration-offre" id="remuneration-offre" required
+                            placeholder="Rémunération">
+                    </div>
+                    <div>
+                        <input type="text" name="nombre-places-offre" id="nombre-places-offre" required
+                            placeholder="Nombre de places">
+                    </div>
                 </section>
 
                 <section id="description">
                     <label for="description-offre">Description offre*</label>
                     <div>
                         <textarea type="text" name="description-offre" id="description-offre" required
-                            placeholder="Description de l'offre"></textarea>
+                            placeholder="Description de l'offre (30 caractères min)"></textarea>
                     </div>
                 </section>
 
                 <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
-                    <input type="reset" id="reset" value="Réinitialiser">
+                    <button type="submit" id="submit" value="envoyer">Créer l'entreprise</button>
+                    <button type="reset" id="reset" value="reset">Réinitialiser</button>
                     <button type="button" onclick="javascript:window.history.back();">Annuler</button>
                 </section>
 

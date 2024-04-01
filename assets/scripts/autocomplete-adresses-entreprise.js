@@ -1,5 +1,4 @@
 "use strict";
-
 let addressCount = 1;
 
 const CONFIGURATION = {
@@ -55,7 +54,7 @@ async function initMap() {
         Autocomplete
     } = google.maps.places;
 
-    const autocompleteElements = document.querySelectorAll('.adresse-cp-entreprise input[type="text"]:first-of-type');
+    const autocompleteElements = document.querySelectorAll('.adresse-cp-entreprise div:first-of-type input[type="text"]:first-of-type');
 
     autocompleteElements.forEach((inputElement, index) => {
         const inputName = inputElement.getAttribute('name');

@@ -1,0 +1,112 @@
+#formulaire i.fa-check-circle.validation-icone-input {
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-130%) translateY(1px);
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire i.fa-check-circle.validation-icone-input:before {
+    color: green;
+    font-size: 22px;
+}
+
+#formulaire i.fa-check-circle.validation-icone-label {
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%) translateY(-95%);
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire i.fa-check-circle.validation-icone-label:before {
+    color: green;
+    font-size: 22px;
+}
+
+
+
+
+#formulaire i.fa-times-circle.no-validation-icone-input {
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-130%) translateY(1px);
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-input:before {
+    color: red;
+    font-size: 22px;
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-label {
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%) translateY(-95%);
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-label:before {
+    color: red;
+    font-size: 22px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    #formulaire i.fa-check-circle.validation-icone-input {
+        height: 27.51px;
+        transform: translateX(-100%) translateY(0px);
+    }
+
+    #formulaire i.fa-check-circle.validation-icone-input:before {
+        color: green;
+        font-size: calc(0.8 * 22px);
+    }
+
+    #formulaire i.fa-check-circle.validation-icone-label {
+        height: 27.51px;
+        transform: translateX(-100%) translateY(-100%);
+    }
+
+    #formulaire i.fa-check-circle.validation-icone-label:before {
+        color: green;
+        font-size: calc(0.8 * 22px);
+    }
+
+
+    #formulaire i.fa-times-circle.no-validation-icone-input {
+        height: 27.51px;
+        transform: translateX(-100%) translateY(0px);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-input:before {
+        color: red;
+        font-size: calc(0.8 * 22px);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-label {
+        height: 27.51px;
+        transform: translateX(-100%) translateY(-100%);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-label:before {
+        color: red;
+        font-size: calc(0.8 * 22px);
+    }
+}

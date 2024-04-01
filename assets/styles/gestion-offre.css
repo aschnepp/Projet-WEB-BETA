@@ -2,6 +2,7 @@
 @import "header.css";
 @import "footer.css";
 @import "normalize.css";
+@import "icones-formulaire.css";
 
 * {
     margin: 0;
@@ -29,6 +30,11 @@ main #section-formulaire textarea {
     border-radius: 0.3rem;
     padding: 0.3rem;
     background-color: var(--blue-white);
+}
+
+main #section-formulaire input {
+    padding: 0.3rem 1.7rem 0.3rem 0.3rem;
+    overflow-x: auto
 }
 
 main #section-formulaire textarea {
@@ -127,8 +133,7 @@ main #section-formulaire textarea {
     font-style: italic;
 }
 
-main #section-formulaire #bouton-class-id button,
-main #section-formulaire #bouton-class-id #reset {
+main #section-formulaire #bouton-class-id button {
     background-color: var(--blue-dark);
     color: var(--blue-light);
     border-radius: 0.5rem;
@@ -137,8 +142,7 @@ main #section-formulaire #bouton-class-id #reset {
     cursor: pointer;
 }
 
-main #section-formulaire #bouton-class-id button:hover,
-main #section-formulaire #bouton-class-id #reset:hover {
+main #section-formulaire #bouton-class-id button:hover {
     background-color: var(--blue-dark-contrast);
     color: var(--blue);
 }
