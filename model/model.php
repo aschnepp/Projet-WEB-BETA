@@ -34,7 +34,7 @@ class Model
             $sqlString = "SELECT {$table}.{$columns} FROM {$table}";
 
             if (!empty($condition)) {
-                $sqlString .= " WHERE {$condition};";
+                $sqlString .= " WHERE {$condition}";
             } else {
                 $sqlString .= ";";
             }
@@ -57,7 +57,7 @@ class Model
     {
         try {
             $query = $this->pdo->prepare("DELETE FROM {$table} WHERE {$colname} = :id ;");
-            $query->bindParam("id", $id, PDO::PARAM_INT);
+            $query->bindParam(":id", $id, PDO::PARAM_INT);
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
@@ -118,7 +118,7 @@ class Model
         }
     }
 
-    public function userTypeGet(string $email)
+    public function userTypeGet(int $ID)
     {
         try {
             $sqlString =
@@ -133,7 +133,7 @@ class Model
             LEFT JOIN tutors ON users.user_id = tutors.user_id
             LEFT JOIN admins ON users.user_id = admins.user_id
             LEFT JOIN students ON users.user_id = students.user_id
-            WHERE users.email = aes_encrypt('{$email}', '{$this->key}');";
+            WHERE users.user_id = {$ID};";
 
             $query = $this->pdo->prepare($sqlString);
             $query->execute();
@@ -157,7 +157,6 @@ class Model
                 "CONVERT(aes_decrypt(users.name, '{$this->key}') USING utf8) AS name",
                 "CONVERT(aes_decrypt(users.phone_number, '{$this->key}') USING utf8) AS phone_number",
                 "CONVERT(aes_decrypt(users.birthdate, '{$this->key}') USING utf8) AS birthdate",
-                "CONVERT(aes_decrypt(users.picture, '{$this->key}') USING utf8) AS picture",
                 "users.address_id",
                 "users.first_connection"
             ];
