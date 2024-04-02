@@ -145,7 +145,7 @@ class Model
     }
 
 
-    public function selectFromUser(string $table, array $columns, string $condition = "", bool $unique = true)
+    public function selectFromUser(array $columns, string $condition = "", bool $unique = true)
     {
         try {
             $decryptedColumns = [
@@ -163,7 +163,7 @@ class Model
 
             $decryptedColumns = implode(",", $decryptedColumns);
             $columns = implode(",", $columns);
-            $sqlString = "SELECT {$columns} FROM (SELECT {$decryptedColumns} FROM {$table}) AS resultat";
+            $sqlString = "SELECT {$columns} FROM (SELECT {$decryptedColumns} FROM users) AS resultat";
 
             if (!empty($condition)) {
                 $sqlString .= " WHERE resultat.{$condition};";

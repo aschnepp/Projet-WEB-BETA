@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $condition = "email = '{$email}'";
 
     $Model = new Model;
-    $resultat = $Model->selectFromUser("users", ["*"], $condition, true);
+    $resultat = $Model->selectFromUser(["*"], $condition, true);
     $ID = $resultat->user_id;
 
     if ($resultat) {
