@@ -4,541 +4,797 @@
 @import "normalize.css";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 /*----------MAIN---------*/
 
 .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;
-    border: solid black 2px;
-    background: white;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  border: solid black 2px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #5a5757;
-    border: solid black 2px;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #5a5757;
+  border: solid black 2px;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #5a5757;
-    border: solid black 1px;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #5a5757;
+  border: solid black 1px;
+  cursor: pointer;
 }
 
 .slider::-ms-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #5a5757;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #5a5757;
+  cursor: pointer;
 }
 
 main #page-recherche {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main #recherche-filtre-main {
-    display: none;
-    background-color: var(--blue-light);
-    flex-direction: column;
-    min-width: 300px;
-    gap: 0.5rem;
-    padding: 1rem 1rem;
-    min-height: calc(100vh - 60px - 30px);
-    max-height: calc(100vh - 60px - 30px);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
-    overscroll-behavior: auto;
-    overflow-y: auto;
+  display: none;
+  background-color: var(--blue-light);
+  flex-direction: column;
+  min-width: 300px;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  min-height: calc(100vh - 60px - 30px);
+  max-height: calc(100vh - 60px - 30px);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+  overscroll-behavior: auto;
+  overflow-y: auto;
 }
 
 main #affichage-filtre {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 3.5rem 2rem;
-    border-radius: 15px;
-    flex-wrap: wrap;
-    word-break: break-word;
-    position: sticky;
-    overflow-y: auto;
-    min-height: calc(100vh - 60px - 30px);
-    max-height: calc(100vh - 60px - 30px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 3.5rem 2rem;
+  border-radius: 15px;
+  flex-wrap: nowrap;
+  position: sticky;
+  overflow-y: auto;
+  min-height: calc(100vh - 60px - 30px);
+  max-height: calc(100vh - 60px - 30px);
 }
 
-main #affichage-filtre>section {
-    border: solid black 2px;
-    background-color: var(--blue-light);
+main #affichage-filtre > section {
+  border: solid black 2px;
+  background-color: var(--blue-light);
 }
 
 main #page-recherche {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    gap: 1rem
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
 }
 
 main #recherche-filtre-main #recherche-menu output {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 main #recherche-filtre-main #menu-filtre #header-filtre {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main #recherche-filtre-main #menu-filtre #header-filtre h3 {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
-
 main #recherche-filtre-main #menu-filtre #header-filtre div {
-    display: flex;
-    align-items: center;
-    background-color: var(--blue-white);
-    gap: 0.5rem;
-    justify-content: space-between;
-    padding: 0rem 0.5rem;
-    border: solid black 2px;
-    border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--blue-white);
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0rem 0.5rem;
+  border: solid black 2px;
+  border-radius: 1rem;
 }
 
 #header-filtre div label {
-    position: relative;
+  position: relative;
 }
 
 #header-filtre div label::before {
-    display: block;
-    content: attr(title);
-    font-weight: bold;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 #header-filtre div label::after {
-    background: transparent;
-    content: "";
-    display: block;
-    height: 2px;
-    bottom: 0px;
-    left: 50%;
-    position: absolute;
-    background: var(--black);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+  background: transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  bottom: 0px;
+  left: 50%;
+  position: absolute;
+  background: var(--black);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
 #header-filtre div label:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #header-filtre div label:hover::after {
-    width: 100%;
-    left: 0px;
+  width: 100%;
+  left: 0px;
 }
 
 main #recherche-filtre-main #menu-filtre #header-filtre div * {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 main #recherche-filtre-main #menu-filtre #header-filtre button {
-    font-size: 2rem;
-    background-color: transparent;
-    border: none;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
 }
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre a {
-    position: relative;
-    text-align: center;
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
-    text-decoration: none;
-    border-radius: 0.5rem;
-    padding: .75rem 2rem;
-    border: none;
-    cursor: pointer;
+  position: relative;
+  text-align: center;
+  background-color: var(--blue-dark-contrast);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
 }
 
 main #recherche-filtre-main #recherche-menu #boutons-filtre a:hover {
-    padding: .75rem 1.7rem;
-    background-color: var(--blue-dark-contrast);
-    font-weight: bold;
-    text-decoration: underline;
-    color: var(--blue);
+  padding: 0.75rem 1.7rem;
+  background-color: var(--blue-dark-contrast-hover);
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-main #recherche-filtre-main #recherche-menu #statistiques-entreprises #bouton-stats-entreprise:hover {
-    padding: .75rem 1.65rem;
+main
+  #recherche-filtre-main
+  #recherche-menu
+  #statistiques-entreprises
+  #bouton-stats-entreprise:hover {
+  padding: 0.75rem 1.65rem;
 }
 
 main #recherche-filtre-main #menu-filtre #label-menu-filtre {
-    display: block;
-    margin-top: .5rem;
-    margin-bottom: .25rem;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 main #recherche-filtre-main #menu-filtre #choix-recherche {
-    margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 main #recherche-filtre-main h3 {
-    margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 main #recherche-filtre-main #recherche-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 main #recherche-filtre-main #recherche-menu section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 main #recherche-filtre-main #recherche-menu input[type="range"] {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 main #recherche-filtre-main input:not([type="range"]),
 main #recherche-filtre-main select {
-    border: solid black 2px;
-    border-radius: 5px;
+  border: solid black 2px;
+  border-radius: 5px;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre {
-    background-color: var(--blue-dark);
-    color: var(--blue-light);
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    width: 100%;
-    border: none;
-    cursor: pointer;
+main #recherche-filtre-main #recherche-menu #reset-filtre,
+main #recherche-filtre-main #recherche-menu .ajout,
+main #recherche-filtre-main #recherche-menu .modification {
+  background-color: var(--blue-dark-contrast);
+  color: var(--white);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  border: none;
+  cursor: pointer;
 }
 
-main #recherche-filtre-main #recherche-menu #reset-filtre:hover {
-    background-color: var(--blue-dark-contrast);
-    font-weight: bold;
-    text-decoration: underline;
-    color: var(--blue);
+main #recherche-filtre-main #recherche-menu #reset-filtre:hover,
+main #recherche-filtre-main #recherche-menu .ajout:hover,
+main #recherche-filtre-main #recherche-menu .modification:hover {
+  background-color: var(--blue-dark-contrast-hover);
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 main #recherche-filtre-main::-webkit-scrollbar {
-    top: 50px;
-    width: 16px;
+  top: 50px;
+  width: 16px;
 }
 
 main #recherche-filtre-main::-webkit-scrollbar-thumb {
-    background: #808080;
-    border: 4px solid transparent;
-    border-radius: 8px;
-    background-clip: padding-box;
+  background: #808080;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
 }
 
 main #affichage-filtre::-webkit-scrollbar {
-    top: 50px;
-    width: 16px;
+  top: 50px;
+  width: 16px;
 }
 
 main #affichage-filtre::-webkit-scrollbar-thumb {
-    background: #808080;
-    border: 4px solid transparent;
-    border-radius: 8px;
-    background-clip: padding-box;
+  background: #808080;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
 }
 
-
 #bouton-promotions {
-    background-color: lightgray;
-    color: var(--black);
-    border: solid 2px var(--black);
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    width: 100%;
-    cursor: pointer;
+  background-color: lightgray;
+  color: var(--black);
+  border: solid 2px var(--black);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  cursor: pointer;
 }
 
 #bouton-promotions:hover {
-    background-color: darkgray;
-    color: var(--black);
-    font-weight: bold;
-    border: solid 2px var(--black);
+  background-color: darkgray;
+  color: var(--black);
+  font-weight: bold;
+  border: solid 2px var(--black);
 }
 
 #menu-deroulant-promotions {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 }
 
 #liste-options-promotions {
-    display: none;
-    background-color: #f9f9f9;
-    width: 100%;
-    border: solid black 2px;
-    border-radius: 0.5rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    max-height: 200px;
-    list-style: none;
+  display: none;
+  background-color: #f9f9f9;
+  width: 100%;
+  border: solid black 2px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 200px;
+  list-style: none;
 }
 
 #liste-options-promotions li {
-    padding: 5px 5px;
+  padding: 5px 5px;
 }
 
 ul::-webkit-scrollbar-thumb {
-    background: #cccccc;
-    border: 4px solid transparent;
-    border-radius: 8px;
-    background-clip: padding-box;
+  background: #cccccc;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
 }
 
 ul::-webkit-scrollbar {
-    width: 16px;
+  width: 16px;
 }
 
 #liste-options-promotions li input[type="checkbox"] {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 #liste-options-promotions.visible {
-    display: block;
+  display: block;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-
-
-
 #filtre-cliquable {
-    position: fixed;
-    background-color: var(--blue-white);
-    z-index: 500;
-    display: flex;
-    align-items: center;
-    border-right: solid black 2px;
-    border-bottom: solid black 2px;
-    padding: 0.4rem 0.5rem;
-    border-radius: 0rem 0rem 1rem 0rem;
-    gap: .75rem;
+  position: fixed;
+  background-color: var(--blue-white);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  border-right: solid black 2px;
+  border-bottom: solid black 2px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0rem 0rem 1rem 0rem;
+  gap: 0.75rem;
 }
 
 #filtre-cliquable * {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #filtre-cliquable #icone-filtre {
-    font-size: 2rem;
-    background-color: transparent;
-    border: none;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
 }
 
 #filtre-cliquable label {
-    position: relative;
+  position: relative;
 }
 
 #filtre-cliquable label::before {
-    display: block;
-    content: attr(title);
-    font-weight: bold;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 #filtre-cliquable label::after {
-    background: transparent;
-    content: "";
-    display: block;
-    height: 2px;
-    bottom: 0px;
-    left: 50%;
-    position: absolute;
-    background: var(--black);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+  background: transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  bottom: 0px;
+  left: 50%;
+  position: absolute;
+  background: var(--black);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
 #filtre-cliquable label:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #filtre-cliquable label:hover::after {
-    width: 100%;
-    left: 0px;
+  width: 100%;
+  left: 0px;
 }
 
 @media only screen and (max-width: 850px) {
-    main #recherche-filtre-main.visible {
-        width: 100%;
-        flex-grow: 1;
-    }
+  main #recherche-filtre-main.visible {
+    width: 100%;
+    flex-grow: 1;
+  }
 
-    main #affichage-filtre.notvisible {
-        display: none;
-    }
+  main #affichage-filtre.notvisible {
+    display: none;
+  }
 }
 
-
 @media only screen and (max-width: 450px) {
-    main #recherche-filtre-main {
-        min-height: calc(100vh - 50px - 30px);
-        max-height: calc(100vh - 50px - 30px);
-    }
+  main #recherche-filtre-main {
+    min-height: calc(100vh - 50px - 30px);
+    max-height: calc(100vh - 50px - 30px);
+  }
 
-    main #affichage-filtre {
-        min-height: calc(100vh - 50px - 30px);
-        max-height: calc(100vh - 50px - 30px);
-    }
+  main #affichage-filtre {
+    min-height: calc(100vh - 50px - 30px);
+    max-height: calc(100vh - 50px - 30px);
+  }
 }
 
 /* CSS POUR OFFRE */
 
 main #affichage-filtre section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--blue-light);
-    width: auto;
-    height: auto;
-    padding: 0 0.5rem;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    word-break: break-word;
-    gap: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--blue-light);
+  width: auto;
+  height: auto;
+  padding: 0 0.5rem;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  word-break: break-word;
+  gap: 0.5rem;
 }
 
 main #affichage-filtre section.stats section {
-    flex-wrap: nowrap;
-    gap: .5rem
+  flex-wrap: nowrap;
+  gap: 0.5rem;
 }
 
 main #affichage-filtre .headerOffre,
 main #affichage-filtre .infos {
-    padding: 1rem;
+  padding: 0.5rem;
 }
 
 main #affichage-filtre .headerOffre h3 {
-    display: flex;
-    margin-top: auto 0;
-    align-items: center;
-    justify-content: start;
-    flex-grow: 10;
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  justify-content: start;
+  flex-grow: 100;
 }
 
 main #affichage-filtre .headerOffre {
-    width: 100%;
-    margin-bottom: .5rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: .5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
 }
 
 main #affichage-filtre .headerOffre .stats {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    flex-grow: 1;
-    justify-content: center;
-    flex-wrap: nowrap;
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px;
 }
 
 main #affichage-filtre .likes {
-    display: flex;
-    gap: 0.5rem;
-    border: solid black 1.5px;
-    margin-left: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  border: solid black 1.5px;
+  margin-left: 0.5rem;
 }
 
 main #affichage-filtre .demandes {
-    display: flex;
-    gap: 0.5rem;
-    border: solid black 1.5px;
-    margin-left: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  border: solid black 1.5px;
+  margin-left: 0.5rem;
 }
 
-main #affichage-filtre .description {
-    border: solid black 1px;
-    padding: 0.5rem;
+main #affichage-filtre .offre .description {
+  border: solid black 1px;
+  background-color: var(--blue-white);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 
 main #affichage-filtre .infos {
-    gap: .5rem;
+  gap: 0.5rem;
 }
 
 main #affichage-filtre .infos section {
-    gap: .3rem;
+  gap: 0.3rem;
 }
 
 main #affichage-filtre p {
-    text-align: center;
+  text-align: center;
 }
-
 
 main #affichage-filtre button {
-    padding: 0.5rem;
-    border: 1px solid var(--blue);
-    border-radius: 5px;
-    width: auto;
-    background-color: var(--blue-dark-contrast);
-    color: var(--white);
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid var(--blue-dark-contrast);
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: auto;
+  background-color: var(--blue-dark-contrast);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid var(--blue-dark-contrast);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-
 main #affichage-filtre button:hover {
-    background-color: var(--blue-dark-contrast-hover);
+  background-color: var(--blue-dark-contrast-hover);
 }
 
 /* CSS POUR ENTREPRISE */
 
+.entreprise .items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  padding: 0.2rem;
+  width: 100%;
+  height: auto;
+  gap: 0.5rem;
+}
+
+main #affichage-filtre .entreprise {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+main #affichage-filtre .entreprise .contentEntreprise {
+  display: flex;
+  flex-direction: column;
+}
+
+main #affichage-filtre .entreprise .headerEntreprise {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+main #affichage-filtre .entreprise .bodyEntreprise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main #affichage-filtre .entreprise .description {
+  flex: 1 0 100%;
+  border: transparent;
+}
+
+main #affichage-filtre .entreprise .description fieldset {
+  border: solid black 1.5px;
+  border-radius: 10px;
+  background-color: var(--blue-white);
+}
+
+main #affichage-filtre .entreprise .description fieldset legend {
+  font-weight: bold;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .entreprise {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 /* CSS POUR ETUDIANT */
 
+main #affichage-filtre .etudiant {
+  display: block;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  width: 80%;
+  padding: 0rem;
+}
+
+main #affichage-filtre .etudiant p {
+  margin: 0.5rem 0;
+  word-wrap: break-word;
+}
+
+main #affichage-filtre .etudiant > * {
+  margin: 0rem 1rem;
+}
+
+main #affichage-filtre .etudiant .fa-user {
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  height: fit-content;
+  width: 7.5rem;
+}
+
+main #affichage-filtre .etudiant > section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+main #affichage-filtre .etudiant .infos-etudiant {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 75%;
+  justify-content: left;
+  align-content: center;
+  padding: 0rem;
+}
+
+main #affichage-filtre .etudiant .infos-etudiant:last-child {
+  word-break: break-all;
+}
+
+main #affichage-filtre .etudiant section > section {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  flex: 1 1 80%;
+  flex-wrap: wrap;
+}
+
+main #affichage-filtre .etudiant section > section > p:first-child {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main #affichage-filtre .etudiant .boutons-etudiant {
+  row-gap: 0rem;
+}
+
+@media only screen and (max-width: 850px) {
+  main #affichage-filtre .etudiant section > section {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main #affichage-filtre .etudiant section > section {
+    gap: 0.5rem;
+  }
+
+  main #affichage-filtre .etudiant section {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  main #affichage-filtre .etudiant p {
+    margin: 0.4rem 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  main #affichage-filtre .etudiant section > section {
+    gap: 0.25rem;
+  }
+
+  main #affichage-filtre .etudiant p {
+    margin: 0.3rem 0;
+  }
+}
+
 /* CSS POUR TUTEUR */
+
+main #affichage-filtre .tuteur {
+  display: block;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  width: 80%;
+  padding: 0rem;
+}
+
+main #affichage-filtre .tuteur p {
+  margin: 0.5rem 0;
+  word-wrap: break-word;
+}
+
+main #affichage-filtre .tuteur > * {
+  margin: 0rem 1rem;
+}
+
+main #affichage-filtre .tuteur .fa-user {
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  height: fit-content;
+  width: 7.5rem;
+}
+
+main #affichage-filtre .tuteur > section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+main #affichage-filtre .tuteur .infos-tuteur {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 75%;
+  justify-content: left;
+  align-content: center;
+  padding: 0rem;
+}
+
+main #affichage-filtre .tuteur .infos-tuteur:last-child {
+  word-break: break-all;
+}
+
+main #affichage-filtre .tuteur section > section {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  flex: 1 1 80%;
+  flex-wrap: wrap;
+}
+
+main #affichage-filtre .tuteur section > section > p:first-child {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main #affichage-filtre .tuteur .boutons-tuteur {
+  row-gap: 0rem;
+}
+
+@media only screen and (max-width: 850px) {
+  main #affichage-filtre .tuteur section > section {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main #affichage-filtre .tuteur section > section {
+    gap: 0.5rem;
+  }
+
+  main #affichage-filtre .tuteur section {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  main #affichage-filtre .tuteur p {
+    margin: 0.4rem 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  main #affichage-filtre .tuteur section > section {
+    gap: 0.25rem;
+  }
+
+  main #affichage-filtre .tuteur p {
+    margin: 0.3rem 0;
+  }
+}

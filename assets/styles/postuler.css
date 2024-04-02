@@ -33,7 +33,6 @@ fieldset {
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  min-width: none;
 }
 
 fieldset legend {
@@ -142,28 +141,33 @@ fieldset section#offre {
 
 fieldset section.headerOffre {
   flex-wrap: wrap;
-  row-gap: .5rem;
+  row-gap: 0.5rem;
 }
 
 fieldset section.headerOffre h3 {
+  padding-left: 0.5rem;
+  align-items: center;
   justify-content: start;
-  flex-grow: 10;
+  flex-grow: 100;
 }
 
-fieldset section.stats {
+main fieldset section.stats {
   flex-grow: 1;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
+main fieldset section.headerOffre {
+  padding: 0;
+}
+
 fieldset section.stats section {
   flex-wrap: nowrap;
-  gap: .5rem
+  gap: 0.5rem;
 }
 
 section h3 {
   display: flex;
-  margin-top: auto 0;
   align-items: center;
   justify-content: center;
 }
@@ -189,11 +193,10 @@ fieldset #description p {
 
 #offre .headerOffre {
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   justify-content: space-between;
 }
-
 
 #likes {
   border: solid black 1.5px;
@@ -228,5 +231,5 @@ section.infos {
 }
 
 .infos {
-  gap: .5rem;
+  gap: 0.5rem;
 }
