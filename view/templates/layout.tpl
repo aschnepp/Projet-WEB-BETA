@@ -1,5 +1,5 @@
 {* smarty *}
-<html>
+<html lang="fr">
 
 <head>
     <title>{block name=title}Default Page Title{/block}</title>
