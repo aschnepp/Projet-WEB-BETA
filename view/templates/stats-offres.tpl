@@ -10,12 +10,11 @@
 
     <!-- Preload -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-
+    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/stats-offres.js"></script>
-    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,32 +28,7 @@
 </head>
 
 <body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
-
-        <section id="header-milieu">
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
-            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-        </section>
-
-        <section id="header-droite">
-            <!-- Menu Burger -->
-            <div id="menu-burger-header">
-                <div class="barre-haut"></div>
-                <div class="barre-milieu"></div>
-                <div class="barre-bas"></div>
-            </div>
-
-            <!-- Contenu du header-droite -->
-            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
-        </section>
-    </header>
+    {include file='./header.tpl'}
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
@@ -63,7 +37,7 @@
 
         <div id="stats-offres">
             <div></div>
-            <h2>Répartition par secteur</h2>
+            <h2>Répartition par compétences</h2>
             <div id="piechart" class="graphiques, piecharts"></div>
             <h2>Répartition par localité</h2>
             <div id="heatmap" class="graphiques"></div>
@@ -92,14 +66,7 @@
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
         </div>
     </main>
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" class="a-footer">CGU</a>
-            <a href="about.html" class="a-footer">A Propos</a>
-            <a href="contact.html" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
+    {include file='./footer.tpl'}
 </body>
 
 </html>

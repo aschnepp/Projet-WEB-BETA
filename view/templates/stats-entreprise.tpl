@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+ 
 <head>
     <!-- Main -->
     <meta charset="utf-8" />
@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preloads -->
+    <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <script rel="preload" src="../assets/scripts/stats-entreprises.js"></script>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
@@ -27,32 +28,7 @@
 </head>
 
 <body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
-
-        <section id="header-milieu">
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher" />
-            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-        </section>
-
-        <section id="header-droite">
-            <!-- Menu Burger -->
-            <div id="menu-burger-header">
-                <div class="barre-haut"></div>
-                <div class="barre-milieu"></div>
-                <div class="barre-bas"></div>
-            </div>
-
-            <!-- Contenu du header-droite -->
-            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
-        </section>
-    </header>
+{include file='./header.tpl'}
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
@@ -85,14 +61,7 @@
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
         </div>
     </main>
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" title="CGU" class="a-footer">CGU</a>
-            <a href="about.html" title="A Propos" class="a-footer">A Propos</a>
-            <a href="contact.html" title="Contact" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
+    {include file='./footer.tpl'}
 </body>
 
 </html>
