@@ -144,11 +144,16 @@ function removeLastAddress() {
         var derniereAdresse = adressesSupplementaires[adressesSupplementaires.length - 1];
         var derniereVilleRegion = villesRegionsSupplementaires[villesRegionsSupplementaires.length - 1];
         var hr = hr[hr.length - 1];
+        var pacContainers = document.querySelectorAll("div.pac-container");
 
         derniereAdresse.remove();
         derniereVilleRegion.remove();
         hr.remove()
 
+        if (pacContainers.length >= 4) {
+            pacContainers[pacContainers.length - 1].remove();
+            pacContainers[pacContainers.length - 2].remove();
+        }
         addressCount--;
     }
 

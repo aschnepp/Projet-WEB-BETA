@@ -219,7 +219,8 @@ function AfficherFiltresOffre() {
     </section>
     <section class="boutons-offre">
         <button type="button" class="postuler">Postuler</button>
-        <button>Modifier offre</button>
+        <button type="button">Modifier offre</button>
+        <button type="button">Ajouter à la Wishlist</button>
     </section>
 </section>
 </section>
@@ -304,7 +305,8 @@ function AfficherFiltresOffre() {
     </section>
     <section class="boutons-offre">
         <button type="button" class="postuler">Postuler</button>
-        <button>Modifier offre</button>
+        <button type="button">Modifier offre</button>
+        <button type="button">Ajouter à la Wishlist</button>
     </section>
 </section>
 </section>
@@ -411,8 +413,8 @@ function AfficherFiltresEntreprise() {
     </section>
 </section>
 <section class="boutons-entreprise">
-    <button>Voir les offres disponibles</button>
-    <button>Modifier entreprise</button>
+    <button type="button">Voir les offres disponibles</button>
+    <button type="button">Modifier entreprise</button>
 </section>
 <section class="description">
 <fieldset>
@@ -464,8 +466,8 @@ function AfficherFiltresEntreprise() {
     </section>
 </section>
 <section class="boutons-entreprise">
-    <button>Voir les offres disponibles</button>
-    <button>Modifier entreprise</button>
+    <button type="button">Voir les offres disponibles</button>
+    <button type="button">Modifier entreprise</button>
 </section>
 <section class="description">
 <fieldset>
@@ -579,7 +581,7 @@ function AfficherFiltresTuteur() {
         </section>
     </section>
     <section class="boutons-tuteur">
-        <button>Modifier tuteur</button>
+        <button type="button">Modifier tuteur</button>
     </section>
 </section>
     `
@@ -678,9 +680,9 @@ function AfficherFiltresEtudiant() {
             </section>
         </section>
         <section class="boutons-etudiant">
-            <button>Gérer ses offres de stage</button>
-            <button>Gérer sa wishlist</button>
-            <button>Modifier étudiant</button>
+            <button type="button">Gérer ses offres de stage</button>
+            <button type="button">Gérer sa wishlist</button>
+            <button type="button">Modifier étudiant</button>
         </section>
     </section>
         `);

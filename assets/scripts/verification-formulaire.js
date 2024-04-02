@@ -27,6 +27,9 @@ function Verif() {
                 VerifTuteur();
             }, 50);
         });
+
+        var boutonPromotions = document.querySelector("#promotions-tuteur");
+        boutonPromotions.addEventListener("click", TogglePopUpPromotionsCheckbox);
     }
 
     else if (currentPageURL.indexOf("gestion-offre") !== -1) {
@@ -38,6 +41,15 @@ function Verif() {
                 VerifOffre();
             }, 50);
         });
+
+        var boutonPromotionsConcernees = document.querySelector("#promotions-concernees-offre");
+        boutonPromotionsConcernees.addEventListener("click", TogglePopUpPromotionsCheckbox);
+
+        var boutonCompetences = document.querySelector("#competences-offres");
+        boutonCompetences.addEventListener("click", TogglePopUpCompetencesCheckbox);
+
+        var boutonSecteurActivite = document.querySelector("#secteur-activite-offre");
+        boutonSecteurActivite.addEventListener("click", TogglePopUpSecteursActiviteCheckbox);
     }
 
     else {
@@ -46,9 +58,12 @@ function Verif() {
         form.addEventListener("click", VerifEntreprise);
         reset.addEventListener("click", function () {
             setTimeout(function () {
-                VerifEtudiant();
+                VerifEntreprise();
             }, 50);
         });
+
+        var boutonSecteurActivite = document.querySelector("#secteur-activite-entreprise");
+        boutonSecteurActivite.addEventListener("click", TogglePopUpSecteursActiviteCheckbox);
     }
 }
 
@@ -73,6 +88,29 @@ function ChangerIcone(element, classesAjout, classesSuppression) {
     }
 }
 
+function ChangerIconePopUp(element, classesAjout, classesSuppression) {
+    var divParent = element.parentNode;
+    var divGrandParent = divParent.parentNode;
+    var iconeExistant = divGrandParent.querySelector('.fa');
+    if (iconeExistant) {
+        classesSuppression.forEach(classesSuppression => {
+            iconeExistant.classList.remove(classesSuppression);
+        });
+        classesAjout.forEach(classesAjout => {
+            iconeExistant.classList.add(classesAjout);
+        });
+    } else {
+        var nouvelIcone = document.createElement("i");
+        nouvelIcone.classList.add("fa");
+        classesAjout.forEach(classesAjout => {
+            nouvelIcone.classList.add(classesAjout);
+        });
+        var label = divGrandParent.querySelector("label");
+        divGrandParent.insertBefore(nouvelIcone, label.nextSibling);
+    }
+}
+
+
 function ajouterIconeInput(element, valide) {
     var classesSucces = ["fa-check-circle", "validation-icone-input"];
     var classesErreur = ["fa-times-circle", "no-validation-icone-input"];
@@ -87,6 +125,31 @@ function ajouterIconeLabel(element, valide) {
     var classesAjout = valide ? classesSucces : classesErreur;
     var classesSuppression = valide ? classesErreur : classesSucces;
     ChangerIcone(element, classesAjout, classesSuppression);
+}
+
+function ajouterIconePopUp(element, valide) {
+    var classesSucces = ["fa-check-circle", "validation-icone-label", "validation-icone-popup"];;
+    var classesErreur = ["fa-times-circle", "no-validation-icone-label", "no-validation-icone-popup"];;
+    var classesAjout = valide ? classesSucces : classesErreur;
+    var classesSuppression = valide ? classesErreur : classesSucces;
+    ChangerIconePopUp(element, classesAjout, classesSuppression);
+}
+
+
+function TogglePopUpSecteursActiviteCheckbox() {
+    var listeSecteurs = document.querySelector("#liste-secteurs-activite");
+    listeSecteurs.classList.toggle("visible");
+}
+
+function TogglePopUpPromotionsCheckbox() {
+    var listePromotions = document.querySelector("#liste-promotions");
+    listePromotions.classList.toggle("visible");
+}
+
+
+function TogglePopUpCompetencesCheckbox() {
+    var listeCompetences = document.querySelector("#liste-competences");
+    listeCompetences.classList.toggle("visible");
 }
 
 function ChangerEtatBouton() {
@@ -137,8 +200,16 @@ function VerifEmailEtudiant(valeur) {
     }
 }
 
+function VerifTelephoneEtudiant(valeur) {
+    var regex = /^0\d{9}$/;
+    if (regex.test(valeur)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function VerifDateNaissanceEtudiant(valeur) {
-    console.log(valeur)
     if (valeur.trim() !== '') {
         return true;
     } else {
@@ -185,7 +256,7 @@ function VerifVilleEtudiant(valeur) {
 }
 
 function VerifRegionEtudiant(valeur) {
-    var datalist = document.querySelector("#administrative_area_level_1-etudiant");
+    var datalist = document.querySelector("#liste-regions");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
@@ -198,7 +269,7 @@ function VerifRegionEtudiant(valeur) {
 function VerifPromotionEtudiant(valeur) {
     var datalist = document.querySelector("#promotion-etudiant");
     var options = datalist.querySelectorAll("option");
-    for (var i = 0; i < options.length; i++) {
+    for (var i = 1; i < options.length; i++) {
         if (options[i].value === valeur) {
             return true;
         }
@@ -207,7 +278,7 @@ function VerifPromotionEtudiant(valeur) {
 }
 
 function VerifCentreEtudiant(valeur) {
-    var datalist = document.querySelector("#centre-etudiant");
+    var datalist = document.querySelector("#liste-centres");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
@@ -229,6 +300,10 @@ function VerifEtudiant() {
     var EmailEtudiant = document.querySelector("#email-etudiant");
     var ValidationEmail = VerifEmailEtudiant(EmailEtudiant.value);
     ajouterIconeInput(EmailEtudiant, ValidationEmail);
+
+    var TelephoneEtudiant = document.querySelector("#numero-telephone-etudiant")
+    var ValidationEtudiant = VerifTelephoneEtudiant(TelephoneEtudiant.value);
+    ajouterIconeInput(TelephoneEtudiant, ValidationEtudiant);
 
     var DateNaissanceEtudiant = document.querySelector("#date-naissance-etudiant");
     var ValidationDateNaissance = VerifDateNaissanceEtudiant(DateNaissanceEtudiant.value);
@@ -256,7 +331,7 @@ function VerifEtudiant() {
 
     var PromotionEtudiant = document.querySelector("#promotion-etudiant");
     var ValidationPromotion = VerifPromotionEtudiant(PromotionEtudiant.value);
-    ajouterIconeInput(PromotionEtudiant, ValidationPromotion);
+    ajouterIconeLabel(PromotionEtudiant, ValidationPromotion);
 
     var CentreEtudiant = document.querySelector("#centre-etudiant");
     var ValidationCentre = VerifCentreEtudiant(CentreEtudiant.value);
@@ -286,6 +361,15 @@ function VerifPrenomTuteur(valeur) {
 
 function VerifEmailTuteur(valeur) {
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (regex.test(valeur)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function VerifTelephoneTuteur(valeur) {
+    var regex = /^0\d{9}$/;
     if (regex.test(valeur)) {
         return true;
     } else {
@@ -340,7 +424,7 @@ function VerifVilleTuteur(valeur) {
 }
 
 function VerifRegionTuteur(valeur) {
-    var datalist = document.querySelector("#administrative_area_level_1-tuteur");
+    var datalist = document.querySelector("#liste-regions");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
@@ -350,19 +434,21 @@ function VerifRegionTuteur(valeur) {
     return false;
 }
 
-function VerifPromotionTuteur(valeur) {
-    var datalist = document.querySelector("#promotion-tuteur");
-    var options = datalist.querySelectorAll("option");
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].value === valeur) {
-            return true;
+function VerifPromotionTuteur() {
+    var liste = document.querySelector("#liste-promotions");
+    if (liste && liste.children.length > 0) {
+        var checkboxes = liste.querySelectorAll("input[type='checkbox']");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return true;
+            }
         }
     }
     return false;
 }
 
 function VerifCentreTuteur(valeur) {
-    var datalist = document.querySelector("#centre-tuteur");
+    var datalist = document.querySelector("#liste-centres");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
@@ -384,6 +470,10 @@ function VerifTuteur() {
     var EmailTuteur = document.querySelector("#email-tuteur");
     var ValidationEmail = VerifEmailTuteur(EmailTuteur.value);
     ajouterIconeInput(EmailTuteur, ValidationEmail);
+
+    var TelephoneTuteur = document.querySelector("#numero-telephone-tuteur")
+    var ValidationTuteur = VerifTelephoneTuteur(TelephoneTuteur.value);
+    ajouterIconeInput(TelephoneTuteur, ValidationTuteur);
 
     var DateNaissanceTuteur = document.querySelector("#date-naissance-tuteur");
     var ValidationDateNaissance = VerifDateNaissanceTuteur(DateNaissanceTuteur.value);
@@ -409,9 +499,9 @@ function VerifTuteur() {
     var ValidationRegion = VerifRegionTuteur(RegionTuteur.value);
     ajouterIconeInput(RegionTuteur, ValidationRegion);
 
-    var PromotionTuteur = document.querySelector("#promotion-tuteur");
-    var ValidationPromotion = VerifPromotionTuteur(PromotionTuteur.value);
-    ajouterIconeInput(PromotionTuteur, ValidationPromotion);
+    var PromotionTuteur = document.querySelector("#promotions-tuteur");
+    var ValidationPromotion = VerifPromotionTuteur();
+    ajouterIconePopUp(PromotionTuteur, ValidationPromotion);
 
     var CentreTuteur = document.querySelector("#centre-tuteur");
     var ValidationCentre = VerifCentreTuteur(CentreTuteur.value);
@@ -432,30 +522,34 @@ function VerifNomOffre(valeur) {
     }
 }
 
-function VerifSecteurOffre(valeur) {
-    var datalist = document.querySelector("#secteur-activite-offre");
-    var options = datalist.querySelectorAll("option");
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].value === valeur) {
-            return true;
+function VerifSecteurOffre() {
+    var liste = document.querySelector("#liste-secteurs-activite");
+    if (liste && liste.children.length > 0) {
+        var checkboxes = liste.querySelectorAll("input[type='checkbox']");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return true;
+            }
         }
     }
+    return false;
 }
 
-function VerifCompetencesOffre(valeur) {
-    var datalist = document.querySelector("#competences-offre");
-    var options = datalist.querySelectorAll("option");
-
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].value === valeur) {
-            return true;
+function VerifCompetencesOffre() {
+    var liste = document.querySelector("#liste-competences");
+    if (liste && liste.children.length > 0) {
+        var checkboxes = liste.querySelectorAll("input[type='checkbox']");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return true;
+            }
         }
     }
     return false;
 }
 
 function VerifEntrepriseOffre(valeur) {
-    var datalist = document.querySelector("#entreprise-offre");
+    var datalist = document.querySelector("#liste-entreprises");
     var options = datalist.querySelectorAll("option");
 
     for (var i = 0; i < options.length; i++) {
@@ -466,17 +560,17 @@ function VerifEntrepriseOffre(valeur) {
     return false;
 }
 
-function VerifPromotionsOffre(valeur) {
-    var datalist = document.querySelector("#promotions-concernees-offre");
-    var options = datalist.querySelectorAll("option");
-
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].value === valeur) {
-            return true;
+function VerifPromotionsOffre() {
+    var liste = document.querySelector("#liste-promotions");
+    if (liste && liste.children.length > 0) {
+        var checkboxes = liste.querySelectorAll("input[type='checkbox']");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return true;
+            }
         }
     }
     return false;
-    // TODO Faire lien avec Base de données
 }
 
 function VerifAdresseOffre(valeur) {
@@ -563,7 +657,7 @@ function VerifNombrePlacesOffre(valeur) {
 }
 
 function VerifDescriptionOffre(valeur) {
-    if (valeur.trim().length > 30) {
+    if (valeur.trim().length >= 30 && valeur.trim().length <= 1500) {
         return true;
     }
     else {
@@ -577,20 +671,20 @@ function VerifOffre() {
     ajouterIconeInput(NomOffre, ValidationNom);
 
     var SecteurOffre = document.querySelector("#secteur-activite-offre");
-    var ValidationSecteur = VerifSecteurOffre(SecteurOffre.value);
-    ajouterIconeInput(SecteurOffre, ValidationSecteur);
+    var ValidationSecteur = VerifSecteurOffre();
+    ajouterIconePopUp(SecteurOffre, ValidationSecteur);
 
-    var CompetencesOffre = document.querySelector("#competences-offre");
-    var ValidationCompetences = VerifCompetencesOffre(CompetencesOffre.value);
-    ajouterIconeInput(CompetencesOffre, ValidationCompetences);
+    var CompetencesOffre = document.querySelector("#competences-offres");
+    var ValidationCompetences = VerifCompetencesOffre();
+    ajouterIconePopUp(CompetencesOffre, ValidationCompetences);
 
     var EntrepriseOffre = document.querySelector("#entreprise-offre");
     var ValidationEntreprise = VerifEntrepriseOffre(EntrepriseOffre.value);
     ajouterIconeInput(EntrepriseOffre, ValidationEntreprise);
 
     var PromotionsConcernees = document.querySelector("#promotions-concernees-offre");
-    var ValidationPromotions = VerifPromotionsOffre(PromotionsConcernees.value);
-    ajouterIconeInput(PromotionsConcernees, ValidationPromotions);
+    var ValidationPromotions = VerifPromotionsOffre();
+    ajouterIconePopUp(PromotionsConcernees, ValidationPromotions);
 
     var AdresseOffre = document.querySelector("#adresse-offre");
     var ValidationAdresse = VerifAdresseOffre(AdresseOffre.value);
@@ -684,7 +778,7 @@ function VerifVilleEntreprise(valeur) {
 }
 
 function VerifRegionEntreprise(valeur) {
-    var datalist = document.querySelector("#administrative_area_level_1-entreprise-1");
+    var datalist = document.querySelector("#liste-regions");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
@@ -694,15 +788,17 @@ function VerifRegionEntreprise(valeur) {
     return false;
 }
 
-function VerifSecteurActiviteEntreprise(valeur) {
-    var datalist = document.querySelector("#secteur-activite-entreprise");
-    var options = datalist.querySelectorAll("option");
-    for (var i = 0; i < options.length; i++) {
-        if (options[i].value === valeur) {
-            return true;
+function VerifSecteurActiviteEntreprise() {
+    var liste = document.querySelector("#liste-secteurs-activite");
+    if (liste && liste.children.length > 0) {
+        var checkboxes = liste.querySelectorAll("input[type='checkbox']");
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return true;
+            }
         }
-        return false;
     }
+    return false;
 }
 
 function VerifSiteWebEntreprise(valeur) {
@@ -724,8 +820,11 @@ function VerifDescriptionEntreprise(valeur) {
     }
 }
 
-function VerifCommentaireEntreprise(valeur) {
-    if (valeur.trim().length > 30) {
+function VerifCommentaireEntreprise(valeur, radioChecked) {
+    if (valeur.trim().length >= 30 && valeur.trim().length <= 1500 && radioChecked) {
+        return true;
+    }
+    else if (valeur.trim() == "" && !radioChecked) {
         return true;
     }
     else {
@@ -799,8 +898,8 @@ function VerifEntreprise() {
         }
     });
 
-    var secteurActiviteEntrepriseValide = VerifSecteurActiviteEntreprise(secteurActiviteEntreprise.value);
-    ajouterIconeInput(secteurActiviteEntreprise, secteurActiviteEntrepriseValide);
+    var secteurActiviteEntrepriseValide = VerifSecteurActiviteEntreprise();
+    ajouterIconePopUp(secteurActiviteEntreprise, secteurActiviteEntrepriseValide);
 
     var siteWebValide = VerifSiteWebEntreprise(siteWebEntreprise.value);
     ajouterIconeInput(siteWebEntreprise, siteWebValide);
@@ -808,10 +907,8 @@ function VerifEntreprise() {
     var descriptionValide = VerifDescriptionEntreprise(descriptionEntreprise.value);
     ajouterIconeLabel(descriptionEntreprise, descriptionValide);
 
-    if (radioChecked) {
-        var commentaireValide = VerifCommentaireEntreprise(commentaireEntreprise.value);
-        ajouterIconeLabel(commentaireEntreprise, commentaireValide);
-    }
+    var commentaireValide = VerifCommentaireEntreprise(commentaireEntreprise.value, radioChecked);
+    ajouterIconeLabel(commentaireEntreprise, commentaireValide);
 
     ChangerEtatBouton();
 }

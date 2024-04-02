@@ -157,7 +157,6 @@ class Model
                 "CONVERT(aes_decrypt(users.name, '{$this->key}') USING utf8) AS name",
                 "CONVERT(aes_decrypt(users.phone_number, '{$this->key}') USING utf8) AS phone_number",
                 "CONVERT(aes_decrypt(users.birthdate, '{$this->key}') USING utf8) AS birthdate",
-                "CONVERT(aes_decrypt(users.picture, '{$this->key}') USING utf8) AS picture",
                 "users.address_id",
                 "users.first_connection"
             ];

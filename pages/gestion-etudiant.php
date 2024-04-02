@@ -67,7 +67,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'étudiants</h2>
-            <form id="formulaire">
+            <form action="" method="post" id="formulaire">
                 <section id="nom">
                     <label for="nom-etudiant">Nom*</label>
                     <div>
@@ -86,6 +86,14 @@
                     <label for="email-etudiant">Email*</label>
                     <div>
                         <input type="email" name="competence" id="email-etudiant" required placeholder="Email">
+                    </div>
+                </section>
+
+                <section id="numero-telephone">
+                    <label for="numero-telephone-etudiant">Numéro de téléphone*</label>
+                    <div>
+                        <input type="text" name="numero-telephone-etudiant" id="numero-telephone-etudiant" required
+                            placeholder="Téléphone (06....) ">
                     </div>
                 </section>
 
@@ -114,6 +122,14 @@
                     </div>
                 </section>
 
+                <datalist id="liste-regions">
+                    <?php
+                    include("{$_SERVER["DOCUMENT_ROOT"]}/model/Regions.php");
+                    $Regions = new Regions;
+                    $Regions->getRegionsOptions();
+                    ?>
+                </datalist>
+
                 <section id="ville-region-etudiant">
                     <label for="locality-etudiant">Ville*</label>
                     <label for="administrative_area_level_1-etudiant">Region*</label>
@@ -122,7 +138,8 @@
                     </div>
                     <div>
                         <input type="text" name="administrative_area_level_1-etudiant"
-                            id="administrative_area_level_1-etudiant" required placeholder="Région">
+                            id="administrative_area_level_1-etudiant" required placeholder="Région"
+                            list="liste-regions">
                     </div>
                 </section>
 
@@ -130,15 +147,29 @@
                     <label for="promotion-etudiant">Promotion*</label>
                     <div>
                         <select type="text" name="promotion-etudiant" id="promotion-etudiant" required>
-                            <!--TODO faire une liste obtenue avec la BDD-->
+                            <option value="Choisir">Choisir une promotion</option>
+                            <?php
+                            include("{$_SERVER["DOCUMENT_ROOT"]}/model/Promotions.php");
+                            $Promotions = new Promotions;
+                            $Promotions->getPromotionsOptions();
+                            ?>
                         </select>
                     </div>
                 </section>
 
+                <datalist id="liste-centres">
+                    <?php
+                    include("{$_SERVER["DOCUMENT_ROOT"]}/model/Centres.php");
+                    $Centres = new Centres;
+                    $Centres->getCentresOptions();
+                    ?>
+                </datalist>
+
                 <section id="centre">
                     <label for="centre-etudiant">Centre*</label>
                     <div>
-                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre">
+                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre"
+                            list="liste-centres">
                     </div>
                 </section>
 
