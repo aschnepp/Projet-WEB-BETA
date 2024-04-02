@@ -23,7 +23,7 @@ class Model
             $this->pdo = new PDO("mysql:host={$dbhost};port={$dbport};dbname={$dbname}", $dbuser, $dbpasswword, $this->options);
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -49,7 +49,7 @@ class Model
             }
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -61,7 +61,7 @@ class Model
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -86,7 +86,7 @@ class Model
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -114,7 +114,7 @@ class Model
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -140,7 +140,7 @@ class Model
             return $query->fetch(PDO::FETCH_OBJ);
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
         }
     }
 
@@ -181,7 +181,30 @@ class Model
             }
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit('Something bad happened');
+            exit($e->getMessage());
+        }
+    }
+    public function callProcedure(string $procedureName, array $parameters = [])
+    {
+        try {
+            $sqlString = "CALL {$procedureName}(";
+            $paramCount = count($parameters);
+            for ($i = 0; $i < $paramCount; $i++) {
+                $sqlString .= ($i == $paramCount - 1) ? "?" : "?, ";
+            }
+            $sqlString .= ");";
+
+            $query = $this->pdo->prepare($sqlString);
+            $i = 1;
+            foreach ($parameters as $param) {
+                $query->bindParam($i, $param);
+                $i++;
+            }
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            exit($e->getMessage());
         }
     }
 }

@@ -1,8 +1,10 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . "/controller/CatalystSmarty.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/controller/SmartyCatalyst.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/model/model.php";
 
-$controller = new SmartyCatalyst();
+$model = new Model();
+$controller = new SmartyCatalyst($model);
 
 // Récupère les 3 entreprises les plus postulées et les envoie au JS pour affichage avec API
 $top = $controller->getTopFirms();

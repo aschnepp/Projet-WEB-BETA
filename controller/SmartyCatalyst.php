@@ -5,7 +5,9 @@ require "{$_SERVER["DOCUMENT_ROOT"]}/libs/smarty/libs/bootstrap.php";
 class SmartyCatalyst extends Smarty
 {
 
-    public function __construct()
+    private $model;
+
+    public function __construct($model)
     {
         parent::__construct();
 
@@ -15,13 +17,13 @@ class SmartyCatalyst extends Smarty
 
         $this->setEscapeHtml(true);
 
-        $this->model = new Model("stagecatalyst", "31.32.226.226", 3306, "admin", "Ur38sy36&*");
+        $this->model = $model;
 
         #TODO : REMOVE THIS COMMENT WHEN READY FOR PRODUCTION
         #$this->caching = Smarty::CACHING_LIFETIME_CURRENT;
     }
 
-    private $model;
+
 
     public function reviewEntreprise()
     {
