@@ -1,53 +1,66 @@
-const entreprise1 = "Facebook";
-const entreprise2 = "Vinci";
-const entreprise3 = "Orange France";
-
-google.charts.load("current", {
-  packages: ["geochart"],
-  mapsApiKey: "AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc",
-});
-google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawRegionsMap);
 document.addEventListener("DOMContentLoaded", function () {
-  fetchAndDisplayLogo(entreprise1, "logo1-container");
-  fetchAndDisplayLogo(entreprise2, "logo2-container");
-  fetchAndDisplayLogo(entreprise3, "logo3-container");
-  document.getElementById("logo1-name").textContent = "1 - " + entreprise1;
-  document.getElementById("logo2-name").textContent = "2 - " + entreprise2;
-  document.getElementById("logo3-name").textContent = "3 - " + entreprise3;
+  // Initialisation de l'API google pour les graphiques (geochart, corechart) et la clé API (sécurisée)
+  google.charts.load("current", {
+    packages: ["geochart", "corechart"],
+    mapsApiKey: "AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc",
+  });
+
+  // Formattage des données de secteurs pour le graphique en camembert
+  formattedSectors = sectors.map((sector) => [sector.nom, sector.total]);
+  formattedSectors.unshift(["Secteur", "Nombre d'entreprises"]);
+
+  // Chargements pour affichages des graphiques
+  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  // Formattage de l'URL pour les logos des entreprises pour les afficher
+  var domain = new URL(logo1).hostname;
+  domain = domain.replace("www.", "");
+  fetchAndDisplayLogo(domain, "logo1-container");
+  var domain2 = new URL(logo2).hostname;
+  domain2 = domain2.replace("www.", "");
+  fetchAndDisplayLogo(domain2, "logo2-container");
+  var domain3 = new URL(logo3).hostname;
+  domain3 = domain3.replace("www.", "");
+  fetchAndDisplayLogo(domain3, "logo3-container");
+
+  // Affichage du nom des postes les plus wishlisted
+  document.getElementById("logo1-name").textContent = "1 - " + name1;
+  document.getElementById("logo2-name").textContent = "2 - " + name2;
+  document.getElementById("logo3-name").textContent = "3 - " + name3;
 });
 
+// Fonction pour la heatmap
 function drawRegionsMap() {
   var data = google.visualization.arrayToDataTable([
     ["Region", "Entreprises"],
-    ["Alsace", 18],
-    ["Aquitaine", 8],
-    ["Auvergne", 15],
-    ["Basse-Normandie", 12],
-    ["Bourgogne", 21],
-    ["Bretagne", 9],
-    ["Centre", 15],
-    ["Champagne-Ardenne", 16],
-    ["Corse", 6],
-    ["Franche-Comté", 8],
-    ["Guadeloupe", 2],
-    ["Guyane", 4],
-    ["Haute-Normandie", 15],
-    ["Île-de-France", 25],
-    ["La Réunion", 3],
-    ["Languedoc-Roussillon", 13],
-    ["Limousin", 17],
-    ["Lorraine", 20],
-    ["Martinique", 10],
-    ["Mayotte", 12],
-    ["Midi-Pyrénées", 10],
-    ["Nord-Pas-de-Calais", 11],
-    ["Pays de la Loire", 16],
-    ["Picardie", 12],
-    ["Poitou-Charentes", 11],
-    ["Provence-Alpes-Côte d'Azur", 9],
-    ["Rhône-Alpes", 7],
+    ["Alsace", Math.ceil(regions[10].Total_Entreprises / 3)],
+    ["Aquitaine", Math.floor(regions[13].Total_Entreprises / 3)],
+    ["Auvergne", Math.floor(regions[15].Total_Entreprises / 2)],
+    ["Basse-Normandie", Math.floor(regions[8].Total_Entreprises / 2)],
+    ["Bourgogne", Math.floor(regions[7].Total_Entreprises / 2)],
+    ["Bretagne", regions[12].Total_Entreprises],
+    ["Centre", regions[6].Total_Entreprises],
+    ["Champagne-Ardenne", Math.floor(regions[10].Total_Entreprises / 3)],
+    ["Corse", regions[17].Total_Entreprises],
+    ["Franche-Comté", Math.ceil(regions[7].Total_Entreprises / 2)],
+    ["Guadeloupe", regions[0].Total_Entreprises],
+    ["Guyane", regions[2].Total_Entreprises],
+    ["Haute-Normandie", Math.ceil(regions[8].Total_Entreprises / 2)],
+    ["Île-de-France", regions[5].Total_Entreprises],
+    ["La Réunion", regions[3].Total_Entreprises],
+    ["Languedoc-Roussillon", Math.floor(regions[14].Total_Entreprises / 2)],
+    ["Limousin", Math.ceil(regions[13].Total_Entreprises / 3)],
+    ["Lorraine", Math.ceil(regions[10].Total_Entreprises / 3)],
+    ["Martinique", regions[1].Total_Entreprises],
+    ["Mayotte", regions[4].Total_Entreprises],
+    ["Midi-Pyrénées", Math.ceil(regions[14].Total_Entreprises / 2)],
+    ["Nord-Pas-de-Calais", Math.floor(regions[9].Total_Entreprises / 2)],
+    ["Pays de la Loire", regions[11].Total_Entreprises],
+    ["Picardie", Math.ceil(regions[9].Total_Entreprises / 2)],
+    ["Poitou-Charentes", Math.ceil(regions[13].Total_Entreprises / 3)],
+    ["Provence-Alpes-Côte d'Azur", regions[16].Total_Entreprises],
+    ["Rhône-Alpes", Math.ceil(regions[15].Total_Entreprises / 2)],
   ]);
   var options = {
     region: "FR",
@@ -62,16 +75,9 @@ function drawRegionsMap() {
   chart.draw(data, options);
 }
 
+// Fonction pour le camembert
 function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ["Secteurs", "Hours per Day"],
-    ["Développement Web", 11],
-    ["Réseau", 2],
-    ["Systèmes Embarqués", 4],
-    ["Programmation Orientée Objet", 2],
-    ["Travaux Publics", 7],
-    ["Conduite de travaux", 1],
-  ]);
+  var data = google.visualization.arrayToDataTable(formattedSectors);
 
   var options = {
     pieHole: 0.4,
@@ -86,7 +92,10 @@ function drawChart() {
   chart.draw(data, options);
 }
 
+// Fonction pour récupérer et afficher le logo de l'entreprise
 function fetchAndDisplayLogo(entrepriseNom, containerId) {
+  const viewportWidth = window.innerWidth;
+  const imageSize = Math.min(viewportWidth * 0.2, 150);
   const apiUrl = `https://autocomplete.clearbit.com/v1/companies/suggest?query=${encodeURIComponent(
     entrepriseNom
   )}`;
@@ -97,10 +106,18 @@ function fetchAndDisplayLogo(entrepriseNom, containerId) {
       const logoUrl = `https://logo.clearbit.com/${domain}`;
       const imageElement = document.createElement("img");
       imageElement.src = logoUrl;
-      imageElement.classList.add("logo-image"); // Add a class to the image element for easier selection
+      imageElement.classList.add("logo-image");
       imageElement.alt = entrepriseNom;
+      imageElement.style.width = `${imageSize}px`;
 
-      document.getElementById(containerId).appendChild(imageElement);
+      const container = document.getElementById(containerId);
+      const existingElement = container.firstChild;
+
+      if (existingElement) {
+        container.replaceChild(imageElement, existingElement);
+      } else {
+        container.appendChild(imageElement);
+      }
     })
     .catch((error) =>
       console.error("Erreur lors de la récupération des données:", error)
@@ -117,6 +134,7 @@ function resizeImages() {
   }
 }
 
+// Redimensionnement des graphiques et des images lors du redimensionnement de la fenêtre
 window.onresize = function () {
   drawRegionsMap();
   drawChart();
