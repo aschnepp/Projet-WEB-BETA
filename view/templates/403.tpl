@@ -9,16 +9,6 @@
 {/block}
 
 {block name=main}
-    <div id="menu-burger-flou">
-        <div id="menu-burger-main">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-                architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-                sit
-                aperiam totam explicabo! Rem, tenetur.</p>
-            <div>zdq</div>
-            <div>zdqz</div>
-        </div>
-    </div>
     <section>
         <h1>ERREUR 403</h1>
         <h2>Accès interdit</h2>
