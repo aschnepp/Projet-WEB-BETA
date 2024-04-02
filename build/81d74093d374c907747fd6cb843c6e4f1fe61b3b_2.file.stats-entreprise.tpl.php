@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.1, created on 2024-04-02 16:23:43
-  from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\stats-offres.tpl' */
+/* Smarty version 4.5.1, created on 2024-04-02 16:25:54
+  from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\stats-entreprise.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.1',
-  'unifunc' => 'content_660c14ef4786a8_01988760',
+  'unifunc' => 'content_660c1572a271f3_26854863',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'cfcf6d9f0ef9d3ca1557d2f612a71fb9a8ca667a' => 
+    '81d74093d374c907747fd6cb843c6e4f1fe61b3b' => 
     array (
-      0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\stats-offres.tpl',
-      1 => 1712067668,
+      0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\stats-entreprise.tpl',
+      1 => 1712066490,
       2 => 'file',
     ),
   ),
@@ -22,35 +22,33 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_660c14ef4786a8_01988760 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c1572a271f3_26854863 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
-
+ 
 <head>
     <!-- Main -->
     <meta charset="utf-8" />
-    <title>Statistiques Offres</title>
-    <meta name="description" content="Cette page vous permet de voir les statistiques des différentes offres de la plateforme." />
+    <title>Statistiques Entreprises</title>
+    <meta name="description" content="Statistiques des entreprises sur Stage Catalyst" />
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
-    <!-- Preload -->
+    <!-- Preloads -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <?php echo '<script'; ?>
- rel="preload" src="../assets/scripts/autocomplete-adresse.js"><?php echo '</script'; ?>
+ rel="preload" src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
 >
-    <link rel="preconnect" href="https://maps.googleapis.com" />
-    <link rel="preconnect" href="https://logo.clearbit.com" />
+    <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
     <?php echo '<script'; ?>
  rel="preload" src="../assets/scripts/menuburger.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- rel="preload" src="../assets/scripts/stats-offres.js"><?php echo '</script'; ?>
->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://logo.clearbit.com" />
 
-    <!-- Style -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/styles/stats-offres.css" />
+    <link rel="stylesheet" href="../assets/styles/stats-entreprise.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Scripts -->
@@ -58,26 +56,25 @@ function content_660c14ef4786a8_01988760 (Smarty_Internal_Template $_smarty_tpl)
  src="https://www.gstatic.com/charts/loader.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="../assets/scripts/stats-offres.js"><?php echo '</script'; ?>
+ src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
 >
 </head>
 
 <body>
-    <?php $_smarty_tpl->_subTemplateRender('file:./header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender('file:./header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
             </section>
         </div>
-
-        <div id="stats-offres">
+        <div id="stats-entreprise">
             <div></div>
-            <h2>Répartition par compétences</h2>
-            <div id="piechart" class="graphiques, piecharts"></div>
+            <h2>Répartition par secteur</h2>
+            <div id="piechart"></div>
             <h2>Répartition par localité</h2>
-            <div id="heatmap" class="graphiques"></div>
-            <h2>Top Offres</h2>
+            <div id="regions_div"></div>
+            <h2>Top entreprises</h2>
             <section id="podium">
                 <div id="first" class="places">
                     <h1>🥇</h1>
@@ -95,10 +92,6 @@ function content_660c14ef4786a8_01988760 (Smarty_Internal_Template $_smarty_tpl)
                     <div id="logo3-container"></div>
                 </div>
             </section>
-            <h2>Durée de stage</h2>
-            <div id="duree-offres" class="graphiques"></div>
-            <h2>Promotions</h2>
-            <div id="promo-piechart" class="graphiques, piecharts"></div>
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
         </div>
     </main>
