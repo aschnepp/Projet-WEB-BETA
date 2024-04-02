@@ -15,17 +15,13 @@ class SmartyCatalyst extends Smarty
 
         $this->setEscapeHtml(true);
 
+        $this->model = new Model("stagecatalyst", "31.32.226.226", 3306, "admin", "Ur38sy36&*");
 
         #TODO : REMOVE THIS COMMENT WHEN READY FOR PRODUCTION
         #$this->caching = Smarty::CACHING_LIFETIME_CURRENT;
     }
 
     private $model;
-
-    public function __construct()
-    {
-        $this->model = new Model("stagecatalyst", "31.32.226.226", 3306, "admin", "Ur38sy36&*");
-    }
 
     public function reviewEntreprise()
     {

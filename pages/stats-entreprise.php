@@ -2,7 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . "/controller/CatalystSmarty.php";
 
-$controller = new CatalystSmarty();
+$controller = new SmartyCatalyst();
 
 // Récupère les 3 entreprises les plus postulées et les envoie au JS pour affichage avec API
 $top = $controller->getTopFirms();
