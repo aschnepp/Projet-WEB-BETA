@@ -19,8 +19,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-etudiant.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
@@ -46,8 +45,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -92,16 +90,14 @@
                 <section id="numero-telephone">
                     <label for="numero-telephone-etudiant">Numéro de téléphone*</label>
                     <div>
-                        <input type="text" name="numero-telephone-etudiant" id="numero-telephone-etudiant" required
-                            placeholder="Téléphone (06....) ">
+                        <input type="text" name="numero-telephone-etudiant" id="numero-telephone-etudiant" required placeholder="Téléphone (06....) ">
                     </div>
                 </section>
 
                 <section id="date-naissance">
                     <label for="date-naissance-etudiant">Date de naissance*</label>
                     <div>
-                        <input type="date" name="date-naissance-etudiant" id="date-naissance-etudiant" required
-                            placeholder="Date de naissance (JJ/MM/AAAA)">
+                        <input type="date" name="date-naissance-etudiant" id="date-naissance-etudiant" required placeholder="Date de naissance (JJ/MM/AAAA)">
                     </div>
                 </section>
 
@@ -113,12 +109,10 @@
                         <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
                     </div>
                     <div>
-                        <input type="text" name="street_number-etudiant" id="street_number-etudiant" required
-                            placeholder="Numéro">
+                        <input type="text" name="street_number-etudiant" id="street_number-etudiant" required placeholder="Numéro">
                     </div>
                     <div>
-                        <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required
-                            placeholder="Code Postal">
+                        <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required placeholder="Code Postal">
                     </div>
                 </section>
 
@@ -137,9 +131,7 @@
                         <input type="text" name="locality-etudiant" id="locality-etudiant" required placeholder="Ville">
                     </div>
                     <div>
-                        <input type="text" name="administrative_area_level_1-etudiant"
-                            id="administrative_area_level_1-etudiant" required placeholder="Région"
-                            list="liste-regions">
+                        <input type="text" name="administrative_area_level_1-etudiant" id="administrative_area_level_1-etudiant" required placeholder="Région" list="liste-regions">
                     </div>
                 </section>
 
@@ -168,8 +160,7 @@
                 <section id="centre">
                     <label for="centre-etudiant">Centre*</label>
                     <div>
-                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre"
-                            list="liste-centres">
+                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre" list="liste-centres">
                     </div>
                 </section>
 

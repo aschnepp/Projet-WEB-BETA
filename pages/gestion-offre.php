@@ -19,8 +19,7 @@
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-offre.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
@@ -46,8 +45,7 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -117,16 +115,14 @@
                 <section id="entreprise-formulaire">
                     <label for="entreprise-offre">Entreprise*</label>
                     <div>
-                        <input type="text" name="entreprise-offre" id="entreprise-offre" required
-                            placeholder="Entreprise" list="liste-entreprises">
+                        <input type="text" name="entreprise-offre" id="entreprise-offre" required placeholder="Entreprise" list="liste-entreprises">
                     </div>
                 </section>
 
                 <section id="promotions">
                     <label for="promotions-concernees-offre">Promotions concernées*</label>
                     <div id="div-promotions-concernees">
-                        <button type="button" id="promotions-concernees-offre"
-                            class="bouton-popup-checkbox">Promotion(s)
+                        <button type="button" id="promotions-concernees-offre" class="bouton-popup-checkbox">Promotion(s)
                             concernée(s)</button>
                         <ul id="liste-promotions" class="popup-checkbox">
                             <?php
@@ -146,12 +142,10 @@
                         <input type="text" name="adresse-offre" id="adresse-offre" required placeholder="Adresse">
                     </div>
                     <div>
-                        <input type="text" name="street_number-offre" id="street_number-offre" required
-                            placeholder="Numéro">
+                        <input type="text" name="street_number-offre" id="street_number-offre" required placeholder="Numéro">
                     </div>
                     <div>
-                        <input type="text" name="postal_code-offre" id="postal_code-offre" required
-                            placeholder="Code Postal">
+                        <input type="text" name="postal_code-offre" id="postal_code-offre" required placeholder="Code Postal">
                     </div>
                 </section>
 
@@ -170,8 +164,7 @@
                         <input type="text" name="locality-offre" id="locality-offre" required placeholder="Ville">
                     </div>
                     <div>
-                        <input type="text" name="administrative_area_level_1-offre"
-                            id="administrative_area_level_1-offre" required placeholder="Région" list="liste-regions">
+                        <input type="text" name="administrative_area_level_1-offre" id="administrative_area_level_1-offre" required placeholder="Région" list="liste-regions">
                     </div>
                 </section>
 
@@ -182,8 +175,7 @@
                         <input type="text" name="duree-offre" id="duree-offre" required placeholder="Durée">
                     </div>
                     <div>
-                        <input type="date" name="date-debut-offre" id="date-debut-offre" required
-                            placeholder="Date de début">
+                        <input type="date" name="date-debut-offre" id="date-debut-offre" required placeholder="Date de début">
                     </div>
                 </section>
 
@@ -191,20 +183,17 @@
                     <label for="remuneration-offre">Rémunération (en €/h)*</label>
                     <label for="nombre-places-offre">Nombre de places*</label>
                     <div>
-                        <input type="text" name="remuneration-offre" id="remuneration-offre" required
-                            placeholder="Rémunération">
+                        <input type="text" name="remuneration-offre" id="remuneration-offre" required placeholder="Rémunération">
                     </div>
                     <div>
-                        <input type="text" name="nombre-places-offre" id="nombre-places-offre" required
-                            placeholder="Nombre de places">
+                        <input type="text" name="nombre-places-offre" id="nombre-places-offre" required placeholder="Nombre de places">
                     </div>
                 </section>
 
                 <section id="description">
                     <label for="description-offre">Description offre*</label>
                     <div>
-                        <textarea type="text" name="description-offre" id="description-offre" required
-                            placeholder="Description de l'offre (30 caractères min et 1500 max)"></textarea>
+                        <textarea type="text" name="description-offre" id="description-offre" required placeholder="Description de l'offre (30 caractères min et 1500 max)"></textarea>
                     </div>
                 </section>
 

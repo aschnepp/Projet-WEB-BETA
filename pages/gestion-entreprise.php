@@ -98,7 +98,7 @@
                     <?php
                     include("{$_SERVER["DOCUMENT_ROOT"]}/model/Regions.php");
                     $Regions = new Regions;
-                    $Regions->getRegionsOptions()
+                    $Regions->getRegionsOptions();
                     ?>
                 </datalist>
 
@@ -128,7 +128,7 @@
                         <ul id="liste-secteurs-activite" class="popup-checkbox">
                             <?php
                             include("{$_SERVER["DOCUMENT_ROOT"]}/model/Secteurs.php");
-                            $Secteurs = new Secteurs();
+                            $Secteurs = new Secteurs;
                             $Secteurs->getSecteursList();
                             ?>
                         </ul>
