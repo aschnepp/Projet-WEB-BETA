@@ -1,16 +1,19 @@
 <?php
-require("{$_SERVER["DOCUMENT_ROOT"]}/assets/back/model/model.php");
+require("{$_SERVER["DOCUMENT_ROOT"]}/model/model.php");
 
 class Cookie
 {
+    private $ID;
+
     private $email;
 
     private $password;
 
     private $userType;
 
-    public function __construct($email, $password, $userType)
+    public function __construct($ID, $email, $password, $userType)
     {
+        $this->ID = $ID;
         $this->email = $email;
         $this->password = $password;
         $this->userType = $userType;
@@ -46,4 +49,4 @@ class Cookie
 
 // chartropp2i@newsvine.com (ADMIN)
 // oM3@v3_X4{nhO,2$   MDP (ADMIN)       
-// $2a$04$rB3nqVuo6Y6XzneY5MxIMOvAFiZIXBdpLexU8JGsG8i2d61v0eOFa     MDP (BDD)       
+// $2a$04$rB3nqVuo6Y6XzneY5MxIMOvAFiZIXBdpLexU8JGsG8i2d61v0eOFa     MDP (BDD)    
