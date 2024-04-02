@@ -18,7 +18,7 @@ class Model
         }
     }
 
-    public function fetch(string $table, array $columns, string $condition = "", bool $unique = true)
+    public function select(string $table, array $columns, string $condition = "", bool $unique = true)
     {
         try {
             $columns = implode(",", $columns);

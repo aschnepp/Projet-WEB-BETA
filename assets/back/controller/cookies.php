@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $condition = "email = '{$email}'";
 
-    $resultat = $Model->fetch("users", ["*"], $condition, true);
+    $resultat = $Model->select("users", ["*"], $condition, true);
 
     if ($resultat) {
         $connexionAutho = 1;
