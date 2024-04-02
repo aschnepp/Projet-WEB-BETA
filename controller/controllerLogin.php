@@ -1,5 +1,5 @@
 <?php
-require("{$_SERVER["DOCUMENT_ROOT"]}/assets/back/controller/cookies.php");
+require("{$_SERVER["DOCUMENT_ROOT"]}/controller/cookies.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
 
+            $ID = $resultat->user_id;
             $typeUser = $Model->userTypeGet($email);
 
             switch ($typeUser->typeUtilisateur) {
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 default:
                     $userType = "Utilisateur";
             }
-            $cookie = new Cookie($email, $password, $userType);
+            $cookie = new Cookie($ID, $email, $password, $userType);
             $cookie->saveToCookies($remember);
         }
     }
