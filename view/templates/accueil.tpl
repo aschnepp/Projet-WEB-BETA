@@ -1,69 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
+{extends file="./project.tpl"}
+{block name=title}
+    Accueil
+{/block}
+{block name=head append}
+    <meta name="description" content="Page d'accueil de Stage Catalyst.">
+    <link rel="preload" href="/assets/styles/index.css" as="style">
+    <link rel="stylesheet" href="/assets/styles/index.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/">
+{/block}
 
-<head>
-    <!-- Main -->
-    <meta charset="UTF-8">
-    <title>Accueil</title>
-    <meta name="description" content="Page d'accueil après connexion.">
-    <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
-
-    <!-- Preload -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
-
-    <!-- Style -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-
-
-<body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
-
-        <section id="header-milieu">
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
-            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-        </section>
-
-        <section id="header-droite">
-            <!-- Menu Burger -->
-            <div id="menu-burger-header">
-                <div class="barre-haut"></div>
-                <div class="barre-milieu"></div>
-                <div class="barre-bas"></div>
-            </div>
-
-            <!-- Contenu du header-droite -->
-            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
-            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="entreprise.html"></a>
-        </section>
-    </header>
-
-
-    <main>
-        <div id="menu-burger-flou">
-            <div id="menu-burger-main">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit doloribus, exercitationem
-                    architecto iure esse labore maiores officiis. Deserunt sint sapiente recusandae sequi soluta,
-                    sit
-                    aperiam totam explicabo! Rem, tenetur.</p>
-                <div>zdq</div>
-                <div>zdqz</div>
-            </div>
-        </div>
+{block name=main}
+    {if isset($connected) && $connected}
 
         <h2>Bienvenue sur votre espace membre !</h2>
         <h3>Voici une offre qui pourrait vous interésser.</h3>
@@ -72,8 +19,6 @@
             <fieldset>
                 <legend>Offre</legend>
                 <section id="section-main">
-
-
                     <section id="offre">
                         <section class="headerOffre">
                             <h3>Stage Recherche Réseau</h3>
@@ -123,7 +68,6 @@
                             </section>
                         </section>
                     </section>
-
                     <section id="boutons">
                         <button type="button">Actualiser</button>
                         <button type="button">Postuler</button>
@@ -131,8 +75,38 @@
                 </section>
             </fieldset>
         </section>
-
         <section id="rechercher-plus">
-            <button type="button">Rechercher plus d'offres</button>
-        </section>
-    </main>
+        <button type="button">Rechercher plus d'offres</button>
+</section>
+{else}
+<section id="texte">
+    <h3>Vous cherchez un stage mais vous n'avez pas de pistes, ou alors vous ne savez pas s'y prendre ?</h3>
+    <h3>Stage Catalyst résout tous vos problèmes en s'associant avec des entreprises prêtes à accueillir des stagiaires.</h3>
+            <h3>N'attendez donc pas plus longtemps et allez postuler !</h3>
+</section>
+
+<div id="flex-main">
+    <section class="blocs">
+        <img src="/assets/images/Image_recherche_stage.webp" alt="Recherche de stage" id="image1">
+        <h2>Plateforme de Recherche de Stage</h2>
+        <p>
+            Plus de 85% des étudiants de France ont trouvé leur stage via le site Stage Catalyst.
+        </p>
+    </section>
+
+    <section class="blocs">
+        <img src="/assets/images/Monde.webp" alt="Image du monde" id="image2">
+        <h2>Opportunités Internationales</h2>
+        <p>
+            90% des entreprises sur la platerforme sont des entreprises internationales prêtes à former des stagiaires.
+        </p>
+    </section>
+
+    <section class="blocs">
+        <img src="/assets/images/Entretien_image.webp" alt="Image entretien" id="image3">
+        <h2>Transition vers l'Emploi</h2>
+                <p>Plus de 75% des stages de fin d'études effectués qui ont été trouvés via Stage Catalyst ont résulté en emploi.</p>
+            </section>
+        </div>
+    {/if}
+{/block}
