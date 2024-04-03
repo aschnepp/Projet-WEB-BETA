@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.1, created on 2024-04-02 16:23:43
+/* Smarty version 4.5.1, created on 2024-04-02 16:51:01
   from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\stats-offres.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.1',
-  'unifunc' => 'content_660c14ef4786a8_01988760',
+  'unifunc' => 'content_660c1b55d24fd2_19129615',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cfcf6d9f0ef9d3ca1557d2f612a71fb9a8ca667a' => 
     array (
       0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\stats-offres.tpl',
-      1 => 1712067668,
+      1 => 1712069460,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_660c14ef4786a8_01988760 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660c1b55d24fd2_19129615 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="fr">
 
@@ -35,9 +35,6 @@ function content_660c14ef4786a8_01988760 (Smarty_Internal_Template $_smarty_tpl)
 
     <!-- Preload -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <?php echo '<script'; ?>
- rel="preload" src="../assets/scripts/autocomplete-adresse.js"><?php echo '</script'; ?>
->
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
     <?php echo '<script'; ?>

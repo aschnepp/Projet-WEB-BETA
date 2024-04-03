@@ -10,7 +10,6 @@
 
     <!-- Preload -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
