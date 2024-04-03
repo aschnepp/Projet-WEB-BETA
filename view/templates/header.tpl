@@ -23,7 +23,7 @@
         <!-- Contenu du header-droite -->
         {if isset($connected) && $connected}
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            {if isset($type) && ($type == "tuteur" || "admin")}
+            {if isset($type) && $type == "tuteur" || $type == "admin"}
                 <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
                 <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             {/if}
