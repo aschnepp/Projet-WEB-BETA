@@ -1,6 +1,6 @@
 <?php
 
-require_once("{$_SERVER["DOCUMENT_ROOT"]}/model/model.php");
+require_once("{$_SERVER["DOCUMENT_ROOT"]}/model/Model.php");
 
 class Regions
 {
