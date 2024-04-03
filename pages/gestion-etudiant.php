@@ -14,13 +14,14 @@
     <link rel="preload" as="image" href="../assets/images/Logo.webp" type="image/webp">
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
+    <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-etudiant.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,7 +67,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'étudiants</h2>
-            <form id="formulaire">
+            <form action="" method="post" id="formulaire">
                 <section id="nom">
                     <label for="nom-etudiant">Nom*</label>
                     <div>
@@ -88,11 +89,19 @@
                     </div>
                 </section>
 
+                <section id="numero-telephone">
+                    <label for="numero-telephone-etudiant">Numéro de téléphone*</label>
+                    <div>
+                        <input type="text" name="numero-telephone-etudiant" id="numero-telephone-etudiant" required
+                            placeholder="Téléphone (06....) ">
+                    </div>
+                </section>
+
                 <section id="date-naissance">
                     <label for="date-naissance-etudiant">Date de naissance*</label>
                     <div>
-                        <input type="text" name="date-naissance-etudiant" id="date-naissance-etudiant" required
-                            placeholder="Date de naissance">
+                        <input type="date" name="date-naissance-etudiant" id="date-naissance-etudiant" required
+                            placeholder="Date de naissance (JJ/MM/AAAA)">
                     </div>
                 </section>
 
@@ -100,39 +109,73 @@
                     <label for="adresse-etudiant">Adresse*</label>
                     <label for="street_number-etudiant">Numéro</label>
                     <label for="postal_code-etudiant">Code postal*</label>
-                    <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
-                    <input type="text" name="street_number-etudiant" id="street_number-etudiant" required
-                        placeholder="Numéro">
-                    <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required
-                        placeholder="Code Postal">
+                    <div>
+                        <input type="text" name="adresse-etudiant" id="adresse-etudiant" required placeholder="Adresse">
+                    </div>
+                    <div>
+                        <input type="text" name="street_number-etudiant" id="street_number-etudiant" required
+                            placeholder="Numéro">
+                    </div>
+                    <div>
+                        <input type="text" name="postal_code-etudiant" id="postal_code-etudiant" required
+                            placeholder="Code Postal">
+                    </div>
                 </section>
+
+                <datalist id="liste-regions">
+                    <?php
+                    include("{$_SERVER["DOCUMENT_ROOT"]}/model/Regions.php");
+                    $Regions = new Regions;
+                    $Regions->getRegionsOptions();
+                    ?>
+                </datalist>
 
                 <section id="ville-region-etudiant">
                     <label for="locality-etudiant">Ville*</label>
                     <label for="administrative_area_level_1-etudiant">Region*</label>
-                    <input type="text" name="locality-etudiant" id="locality-etudiant" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-etudiant"
-                        id="administrative_area_level_1-etudiant" required placeholder="Région">
+                    <div>
+                        <input type="text" name="locality-etudiant" id="locality-etudiant" required placeholder="Ville">
+                    </div>
+                    <div>
+                        <input type="text" name="administrative_area_level_1-etudiant"
+                            id="administrative_area_level_1-etudiant" required placeholder="Région"
+                            list="liste-regions">
+                    </div>
                 </section>
 
                 <section id="promotion">
                     <label for="promotion-etudiant">Promotion*</label>
                     <div>
-                        <input type="text" name="promotion-etudiant" id="promotion-etudiant" required
-                            placeholder="Promotion">
+                        <select type="text" name="promotion-etudiant" id="promotion-etudiant" required>
+                            <option value="Choisir">Choisir une promotion</option>
+                            <?php
+                            include("{$_SERVER["DOCUMENT_ROOT"]}/model/Promotions.php");
+                            $Promotions = new Promotions;
+                            $Promotions->getPromotionsOptions();
+                            ?>
+                        </select>
                     </div>
                 </section>
+
+                <datalist id="liste-centres">
+                    <?php
+                    include("{$_SERVER["DOCUMENT_ROOT"]}/model/Centres.php");
+                    $Centres = new Centres;
+                    $Centres->getCentresOptions();
+                    ?>
+                </datalist>
 
                 <section id="centre">
                     <label for="centre-etudiant">Centre*</label>
                     <div>
-                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre">
+                        <input type="text" name="centre-etudiant" id="centre-etudiant" required placeholder="Centre"
+                            list="liste-centres">
                     </div>
                 </section>
 
                 <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'étudiant</button>
-                    <input type="reset" id="reset" value="Réinitialiser">
+                    <button type="submit" id="submit" value="envoyer">Créer l'étudiant</button>
+                    <button type="reset" id="reset" value="reset">Réinitialiser</button>
                     <button type="button" onclick="javascript:window.history.back();">Annuler</button>
                 </section>
 
