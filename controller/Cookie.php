@@ -1,6 +1,4 @@
 <?php
-require("{$_SERVER["DOCUMENT_ROOT"]}/model/Model.php");
-
 class Cookie
 {
     private $ID;

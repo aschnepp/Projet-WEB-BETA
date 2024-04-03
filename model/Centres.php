@@ -9,10 +9,11 @@ class Centres
         $Model = new Model;
         $centres = $Model->select("campus", ["*"], "", false);
 
-        // foreach ($centres as $centre) {
-        //     $centreNom = htmlspecialchars($centre->campus_name, ENT_QUOTES, 'UTF-8');
-        //     $liste .= "<option value='{$centreNom}'>{$centreNom}</option>";
-        // }
+        foreach ($centres as $centre) {
+            $centreNom = htmlspecialchars($centre->campus_name, ENT_QUOTES, 'UTF-8');
+            $liste = "<option value='{$centreNom}'>{$centreNom}</option>";
+            echo $liste;
+        }
 
         return $centres;
     }

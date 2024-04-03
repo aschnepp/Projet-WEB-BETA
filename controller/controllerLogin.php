@@ -1,5 +1,6 @@
 <?php
 require("{$_SERVER["DOCUMENT_ROOT"]}/controller/Cookie.php");
+require("{$_SERVER["DOCUMENT_ROOT"]}/model/User.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -8,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $condition = "email = '{$email}'";
 
-    $Model = new Model;
-    $resultat = $Model->selectFromUser(["*"], $condition, true);
+    $User = new User;
+    $resultat = $User->selectFromUser(["*"], $condition, true);
     $ID = $resultat->user_id;
 
     if ($resultat) {
