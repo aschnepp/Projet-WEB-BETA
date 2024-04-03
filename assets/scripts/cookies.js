@@ -1,4 +1,4 @@
-yyfunction submitForm(event) {
+function submitForm(event) {
     event.preventDefault();
 
     var formData = new FormData(document.getElementById('myForm'));
