@@ -29,7 +29,7 @@
             <section id="menu-burger-main">
             </section>
         </div>
-        <form id="myForm" method="post">
+        <form id="myForm" method="post" action="review-entreprise.php">
             <fieldset>
                 <legend>Entreprise</legend>
                 <div id="entreprise-review">

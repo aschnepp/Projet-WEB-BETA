@@ -35,6 +35,12 @@ if (!empty($review)) {
 echo "<script>var note = '$note';</script>";
 echo "<script>var grade = $grade;</script>";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $grade = $_POST["rating"];
+    $comment = $_POST["motiv"];
+    $controller->giveReview($ID, $entrepriseID, $grade, $comment, $alreadyReviewed);
+}
+
 // Transfert de données vers le template
 $controller->assign("comment", $comment);
 $controller->assign("entreprise", $entreprise);

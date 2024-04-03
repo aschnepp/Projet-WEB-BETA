@@ -77,5 +77,8 @@ function displayGrade(grade) {
 }
 
 function prefillGrade(grade) {
+  for (let i = 1; i <= 5.0; i += 0.5) {
+    document.getElementById("star" + i).checked = false;
+  }
   document.getElementById("star" + grade).checked = true;
 }
