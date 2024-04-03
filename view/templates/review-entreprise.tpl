@@ -75,7 +75,7 @@
                     <div class="rate">
                         <input type="radio" id="star5" name="rating" value="5" required />
                         <label for="star5" title="Awesome"></label>
-                        <input type="radio" id="star4.5" name="rating" value="4.5" />
+                        <input type="radio" id="star4.5" name="rating" value="4.5"/>
                         <label for="star4.5" class="half"></label>
                         <input type="radio" id="star4" name="rating" value="4" />
                         <label for="star4"></label>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <label for="motiv" class="labels">Commentaire</label>
-                <textarea id="motiv" name="motiv" required placeholder="Commentaire"></textarea>
+                <textarea id="motiv" name="motiv" required placeholder="Commentaire">{$comment}</textarea>
                 <div id="loginbtns">
                     <input type="submit" value="Envoyer" />
                     <input type="reset" value="Réinitialiser" />

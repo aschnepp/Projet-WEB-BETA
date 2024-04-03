@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var domain = new URL(entreprise).hostname;
   domain = domain.replace("www.", "");
   fetchAndDisplayLogo(domain, "logo-container");
-  displayGrade(grade);
+  displayGrade(note);
+  prefillGrade(grade);
 });
 
 window.onresize = function () {
@@ -73,4 +74,8 @@ function displayGrade(grade) {
     html += emptystar;
   }
   wrapper.innerHTML = html;
+}
+
+function prefillGrade(grade) {
+  document.getElementById("star" + grade).checked = true;
 }
