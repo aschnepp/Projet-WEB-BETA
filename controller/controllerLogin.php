@@ -1,5 +1,6 @@
 <?php
 require("{$_SERVER["DOCUMENT_ROOT"]}/controller/Cookie.php");
+require("{$_SERVER["DOCUMENT_ROOT"]}/model/model.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];

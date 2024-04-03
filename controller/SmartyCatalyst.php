@@ -73,4 +73,9 @@ class SmartyCatalyst extends Smarty
     {
         return $this->model->callProcedure("topOffers");
     }
+
+    public function getReview($userId, $firmId)
+    {
+        return $this->model->callProcedure("verifNotation", [$userId, $firmId]);
+    }
 }
