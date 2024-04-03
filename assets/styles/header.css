@@ -149,9 +149,8 @@ header > #header-droite > a.boutons-header:hover::after {
   left: 8px;
 }
 
-header #header-droite a[class*="fa"]:hover {
-  text-decoration: none;
-  font-weight: normal;
+header > #header-droite a[class*="fa"]:hover {
+  filter: invert(1);
 }
 
 @media only screen and (max-width: 600px) {
