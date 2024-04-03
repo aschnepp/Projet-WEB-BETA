@@ -15,12 +15,14 @@
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
+    <script rel="preload" src="../assets/scripts/gestionUsers.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-tuteur.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +47,8 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
+                href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -65,7 +68,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création des tuteurs</h2>
-            <form action="" method="post" id="formulaire">
+            <form action="GestionUsers.php" method="post" id="formulaire" onsubmit="submitForm(event)">
                 <section id="nom">
                     <label for="nom-tuteur">Nom*</label>
                     <div>
@@ -83,21 +86,23 @@
                 <section id="email">
                     <label for="email-tuteur">Email*</label>
                     <div>
-                        <input type="email" name="competence" id="email-tuteur" required placeholder="Email">
+                        <input type="email" name="email-tuteur" id="email-tuteur" required placeholder="Email">
                     </div>
                 </section>
 
                 <section id="numero-telephone">
                     <label for="numero-telephone-tuteur">Numéro de téléphone*</label>
                     <div>
-                        <input type="text" name="numero-telephone-tuteur" id="numero-telephone-tuteur" required placeholder="Téléphone (06....) ">
+                        <input type="text" name="numero-telephone-tuteur" id="numero-telephone-tuteur" required
+                            placeholder="Téléphone (06....) ">
                     </div>
                 </section>
 
                 <section id="date-naissance">
                     <label for="date-naissance-tuteur">Date de naissance*</label>
                     <div>
-                        <input type="date" name="date-naissance-tuteur" id="date-naissance-tuteur" required placeholder="Date de naissance (JJ/MM/AAAA)">
+                        <input type="date" name="date-naissance-tuteur" id="date-naissance-tuteur" required
+                            placeholder="Date de naissance (JJ/MM/AAAA)">
                     </div>
                 </section>
 
@@ -109,10 +114,12 @@
                         <input type="text" name="adresse-tuteur" id="adresse-tuteur" required placeholder="Adresse">
                     </div>
                     <div>
-                        <input type="text" name="street_number-tuteur" id="street_number-tuteur" required placeholder="Numéro">
+                        <input type="text" name="street_number-tuteur" id="street_number-tuteur" required
+                            placeholder="Numéro">
                     </div>
                     <div>
-                        <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required placeholder="Code Postal">
+                        <input type="text" name="postal_code-tuteur" id="postal_code-tuteur" required
+                            placeholder="Code Postal">
                     </div>
                 </section>
 
@@ -131,7 +138,8 @@
                         <input type="text" name="locality-tuteur" id="locality-tuteur" required placeholder="Ville">
                     </div>
                     <div>
-                        <input type="text" name="administrative_area_level_1-tuteur" id="administrative_area_level_1-tuteur" required placeholder="Région" list="liste-regions">
+                        <input type="text" name="administrative_area_level_1-tuteur"
+                            id="administrative_area_level_1-tuteur" required placeholder="Région" list="liste-regions">
                     </div>
                 </section>
 
@@ -161,7 +169,8 @@
                 <section id="centre">
                     <label for="centre-tuteur">Centre*</label>
                     <div>
-                        <input type="text" name="centre-tuteur" id="centre-tuteur" required placeholder="Centre" list="liste-centres">
+                        <input type="text" name="centre-tuteur" id="centre-tuteur" required placeholder="Centre"
+                            list="liste-centres">
                     </div>
                 </section>
 

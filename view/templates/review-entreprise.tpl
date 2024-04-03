@@ -23,7 +23,32 @@
 </head>
 
 <body>
-    {include file='./header.tpl'}
+    <header>
+        <section id="header-gauche">
+            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
+            <p id="header-p">Stage Catalyst</p>
+        </section>
+
+        <section id="header-milieu">
+            <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
+            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
+        </section>
+
+        <section id="header-droite">
+            <!-- Menu Burger -->
+            <div id="menu-burger-header">
+                <div class="barre-haut"></div>
+                <div class="barre-milieu"></div>
+                <div class="barre-bas"></div>
+            </div>
+
+            <!-- Contenu du header-droite -->
+            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
+        </section>
+    </header>
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
@@ -36,7 +61,7 @@
                     <div id="logo-container"></div>
                     <div class="contentEntreprise">
                         <section class="headerEntreprise">
-                            <h2>{$entreprise[$nentreprise]->firm_name}</h2>
+                            <h2>CESI</h2>
                             <section id="gradeWrapper">
                                 <div class="rate2">
 
@@ -46,26 +71,33 @@
                         <div class="bodyEntreprise">
                             <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios/45/domain.png" alt="domain" />
-                                <a href="{$entreprise[$nentreprise]->website}" target="_blank" id="website">Site Web</a>
+                                <a href="https://www.cesi.fr/" target="_blank" id="website">www.cesi.fr</a>
                             </section>
                             <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/map-marker.png" alt="map-marker" />
-                                <p>{$entreprise[$nentreprise]->street_number} {$entreprise[$nentreprise]->street_name}, {$entreprise[$nentreprise]->postal_code} {$entreprise[$nentreprise]->city_name}</p>
+                                <p>2 allée des foulons, 67380 Lingolsheim</p>
                             </section>
                             <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/45/client-company.png" alt="client-company" />
-                                <p>{$entreprise[$nentreprise]->activity_sector_name}</p>
+                                <p>Education / Formation</p>
                             </section>
                             <section class="items">
                                 <img width="30" height="30" src="https://img.icons8.com/ios-filled/45/groups.png" alt="groups" />
-                                <p>{$entreprise[$nentreprise]->total_postulations} personne(s)</p>
+                                <p>30 personnes</p>
                             </section>
                         </div>
                     </div>
                     <div class="description">
                         <fieldset>
                             <legend>Description</legend>
-                            <p>{$entreprise[$nentreprise]->description_firm}</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus,
+                                neque tempora! Cum
+                                quae
+                                pariatur veniam enim vel amet eligendi fuga dolor suscipit ea? Fugiat unde ex expedita
+                                alias
+                                minus
+                                voluptatibus.
+                            </p>
                         </fieldset>
                     </div>
                 </div>
@@ -105,7 +137,14 @@
             </fieldset>
         </form>
     </main>
-    {include file='./footer.tpl'}
+    <footer>
+        <section id="liens-footer">
+            <a href="../pages/cgu.html" class="a-footer">CGU</a>
+            <a href="../pages/about.html" class="a-footer">A Propos</a>
+            <a href="../pages/contact.html" class="a-footer">Contact</a>
+        </section>
+        <p>Stage Catalyst © 2024</p>
+    </footer>
 </body>
 
 </html>

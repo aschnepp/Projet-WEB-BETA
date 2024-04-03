@@ -16,26 +16,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($resultat) {
         $connexionAutho = 1;
         $hashedPasswordFromDb = $resultat->password;
+
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
 
-            $typeUser = $Model->userTypeGet($ID);
+            $typeUser = $User->userTypeGet($ID);
 
             switch ($typeUser->typeUtilisateur) {
-                case "Admin":
+                case "admins":
                     $userType = "Admin";
                     break;
-                case "Tuteur":
+                case "tutors":
                     $userType = "Tuteur";
                     break;
-                case "Etudiant":
+                case "students":
                     $userType = "Etudiant";
                     break;
                 default:
                     $userType = "Utilisateur";
             }
 
-            $cookie = new Cookie($ID, $email, $password, $userType);
+            $cookie = new Cookie($ID, $email, $userType);
             $cookie->saveToCookies($remember);
         }
     }

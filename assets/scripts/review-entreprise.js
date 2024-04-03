@@ -1,3 +1,5 @@
+var grade = 4.4;
+
 document.addEventListener("DOMContentLoaded", function () {
   var entreprise = document.getElementById("website").getAttribute("href");
   var domain = new URL(entreprise).hostname;
@@ -52,16 +54,13 @@ function resizeImages() {
 
 function displayGrade(grade) {
   const wrapper = document.getElementById("gradeWrapper");
-  const emptystar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
-  const fullstar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
-  const halfstar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
+  const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
+  const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
+  const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
 
   let html = "";
   let full = Math.floor(grade);
-  let half = grade % 1 >= 0.5 ? 1 : 0;
+  let half = ((grade % 1) >= 0.5) ? 1 : 0;
   let empty = 5 - full - half;
   for (let i = 0; i < full; i++) {
     html += fullstar;

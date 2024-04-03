@@ -5,15 +5,12 @@ class Cookie
 
     private $email;
 
-    private $password;
-
     private $userType;
 
-    public function __construct($ID = 0, $email = "", $password = "", $userType = "")
+    public function __construct($ID = 0, $email = "", $userType = "")
     {
         $this->ID = $ID;
         $this->email = $email;
-        $this->password = $password;
         $this->userType = $userType;
     }
 
@@ -53,7 +50,7 @@ class Cookie
 
         $cookieData = json_decode($decryptedData);
 
-        $cookie = new Cookie($cookieData->ID, $cookieData->email, $cookieData->password, $cookieData->userType);
+        $cookie = new Cookie($cookieData->ID, $cookieData->email, $cookieData->userType);
 
         return $cookie;
     }
