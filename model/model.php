@@ -90,6 +90,153 @@ class Model
         }
     }
 
+    public function insertUser(array $data, string $user)
+    {
+        // try {
+        //     $condition = "city_name = {$data['ville']} postal_code = {$data['code_postal']}'";
+        //     $ville = $this->select('cities', ['city_id'], $condition, true);
+
+        //     if ($ville) {
+        //         $villeId = $ville->city_id;
+        //         $regionId = $ville->region_id;
+        //     } else {
+        //         $regionId = $this->select("regions", ["region_id"], "region_name = {$data['region']}", true);
+
+        //         $sqlString = "INSERT INTO cities (city_name, street_number, region_id)
+        //     VALUES (:city_name, :street_number, :region_id);";
+        //         $query = $this->pdo->prepare($sqlString);
+        //         $query->bindParam(':street_name', $data['rue'], PDO::PARAM_STR);
+        //         $query->bindParam(':street_number', $data['numero'], PDO::PARAM_STR);
+        //         $query->bindParam(':region_id', $regionId, PDO::PARAM_INT);
+        //         $query->execute();
+        //         $villeId = $this->pdo->lastInsertId();
+        //     }
+
+        //     $sqlString = "INSERT INTO address (street_name, postal_code)
+        //     VALUES (:street_name, :street_number);";
+        //     $query = $this->pdo->prepare($sqlString);
+        //     $query->bindParam(':street_name', $data['rue'], PDO::PARAM_STR);
+        //     $query->bindParam(':street_number', $data['numero'], PDO::PARAM_INT);
+        //     $query->execute();
+
+        //     $adresseId = $this->pdo->lastInsertId();
+
+        //     $sqlString = "INSERT INTO Contains (address_id, city_id)
+        //     VALUES (:address_id, :city_id);";
+        //     $query = $this->pdo->prepare($sqlString);
+        //     $query->bindParam(":address_id", $adresseId);
+        //     $query->bindParam(":city_id", $villeId);
+        //     $query->execute();
+
+        //     $bytes = random_bytes(10);
+        //     $password = bin2hex($bytes);
+
+        //     $sqlString = "INSERT INTO users 
+        //     (username, password, email, surname, name, phone_number, birthdate, adress_id, first_connection)
+        //     VALUES ({$password}, {$data['email']},{$data['prenom']},{$data['telephone']},
+        //     {$data['date_naissance']}, {$adresseId}, 0);";
+        //     $query = $this->pdo->prepare($sqlString);
+        //     $query->execute();
+
+        //     $userId = $this->pdo->lastInsertId();
+        //     $campusId = $this->select('campus', ['campus_id'], "campus_name = {$data['campus']}");
+        //     $promotionId = $this->select('regions', ['region_id'], "region_name = {$data['promotion']}");
+
+        //     if ($user == "student") {
+        //         require_once("{$_SERVER["DOCUMENT_ROOT"]}/model/Student.php");
+        //         $student = new Student($userId, $campusId, $promotionId);
+        //         $student->InsertForStudent($student);
+        //     } else {
+        //     }
+        // } catch (Exception $e) {
+        //     error_log($e->getMessage());
+        //     exit('Something bad happened');
+        // }
+
+
+        try {
+            $condition = "email = '{$data['email']}'";
+            $email = $this->selectFromUser(['*'], $condition, true);
+            if ($email) {
+                exit('Email déjà utilisé');
+            }
+
+            $condition = "street_name = '{$data['rue']}' AND street_number = '{$data['numero']}'";
+            $adresse = $this->select('address', ['address_id'], $condition, true);
+
+            if ($adresse) {
+                $addressId = $adresse->address_id;
+            } else {
+                $addressData = [
+                    'streetName' => $data['rue'],
+                    'postalCode' => $data['numero']
+                ];
+                $this->insert('address', $addressData);
+                $addressId = $this->pdo->lastInsertId();
+            }
+
+            $condition = "city_name = '{$data['ville']}' AND postal_code = {$data['code_postal']}";
+            $ville = $this->select('cities', ['city_id'], $condition, true);
+
+            if ($ville) {
+                $cityId = $ville->city_id;
+                $regionId = $ville->region_id;
+            } else {
+                $condition = "region_name = '" . $data['region'] . "'";
+                $regionId = $this->select('regions', ['region_id'], $condition, true);
+                $villeData = [
+                    'cityName' => $data['ville'],
+                    'postalCode' => $data['codePostal'],
+                    'regionId' => $regionId
+                ];
+                $this->insert('cities', $villeData);
+                $cityId = $this->pdo->lastInsertId();
+            }
+
+            $condition = "address_id = {$addressId}";
+            $contains = $this->select('cities', ['city_id'], $condition, true);
+
+            if (!$contains) {
+                $containsData = [
+                    'address_id' => $addressId,
+                    'city_id' => $cityId
+                ];
+                $this->insert('Contains', $containsData);
+            }
+
+
+            $password = bin2hex(random_bytes(10));
+            $userData = [
+                'password' => $password,
+                'nom' => $data['nom'],
+                'prenom' => $data['prenom'],
+                'email' => $data['email'],
+                'telephone' => $data['telephone'],
+                'dateNaissance' => $data['date_naissance'],
+                'adress_id' => $addressId,
+                'first_connection' => 0
+            ];
+
+            $this->insert('users', $userData);
+
+            $userId = $this->pdo->lastInsertId();
+            $campusId = $this->select('campus', ['campus_id'], "campus_name = '{$data['campus']}'");
+            $promotionId = $this->select('regions', ['region_id'], "region_name = '{$data['promotion']}'");
+
+            $students = [
+                
+            ]
+            if ($user == "student") {
+                $this->insert('students', );
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            exit('Something bad happened');
+        }
+    }
+
+
+
     public function update(string $table, array $values, string $colname, int $id)
     {
         try {
@@ -118,7 +265,7 @@ class Model
         }
     }
 
-    public function userTypeGet(int $ID)
+    public function userTypeGet(int $id)
     {
         try {
             $sqlString =
@@ -133,9 +280,10 @@ class Model
             LEFT JOIN tutors ON users.user_id = tutors.user_id
             LEFT JOIN admins ON users.user_id = admins.user_id
             LEFT JOIN students ON users.user_id = students.user_id
-            WHERE users.user_id = {$ID};";
+            WHERE users.user_id = :userId;";
 
             $query = $this->pdo->prepare($sqlString);
+            $query->bindParam(':userId', $id);
             $query->execute();
             return $query->fetch(PDO::FETCH_OBJ);
         } catch (Exception $e) {
@@ -145,7 +293,7 @@ class Model
     }
 
 
-    public function selectFromUser(string $table, array $columns, string $condition = "", bool $unique = true)
+    public function selectFromUser(array $columns, string $condition = "", bool $unique = true)
     {
         try {
             $decryptedColumns = [
@@ -163,7 +311,7 @@ class Model
 
             $decryptedColumns = implode(",", $decryptedColumns);
             $columns = implode(",", $columns);
-            $sqlString = "SELECT {$columns} FROM (SELECT {$decryptedColumns} FROM {$table}) AS resultat";
+            $sqlString = "SELECT {$columns} FROM (SELECT {$decryptedColumns} FROM users) AS resultat";
 
             if (!empty($condition)) {
                 $sqlString .= " WHERE resultat.{$condition};";
