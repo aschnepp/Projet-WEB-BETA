@@ -72,4 +72,18 @@ class SmartyCatalyst extends Smarty
     {
         return $this->model->callProcedure("topOffers");
     }
+
+    public function getReview($userId, $firmId)
+    {
+        return $this->model->callProcedure("verifNotation", [$userId, $firmId]);
+    }
+
+    public function giveReview($userId, $firmId, $grade, $comment, $alreadyReviewed)
+    {
+        if ($alreadyReviewed) {
+            $this->model->callProcedure("updateNotation", [$userId, $firmId, number_format($grade, 1, ".", ''), $comment]);
+        } else {
+            $this->model->callProcedure("insertNotation", [$userId, $firmId, number_format($grade, 1, ".", ''), $comment]);
+        }
+    }
 }

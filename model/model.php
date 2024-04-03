@@ -178,7 +178,6 @@ class Model
         try {
             $decryptedColumns = [
                 "users.user_id",
-                "CONVERT(aes_decrypt(users.username, '{$this->key}') USING utf8) AS username",
                 "CONVERT(aes_decrypt(users.password, '{$this->key}') USING utf8) AS password",
                 "CONVERT(aes_decrypt(users.email, '{$this->key}') USING utf8) AS email",
                 "CONVERT(aes_decrypt(users.surname, '{$this->key}') USING utf8) AS surname",
@@ -224,10 +223,11 @@ class Model
             $query = $this->pdo->prepare($sqlString);
             $i = 1;
             foreach ($parameters as $param) {
-                $query->bindParam($i, $param);
+                $query->bindValue($i, $param);
                 $i++;
             }
             $query->execute();
+
             return $query->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {
             error_log($e->getMessage());
