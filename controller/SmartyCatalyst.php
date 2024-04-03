@@ -24,8 +24,12 @@ class SmartyCatalyst extends Smarty
     }
 
 
+    public function reviewEntreprise($id)
+    {
+        return $this->model->callProcedure("GetFirmInfo", [$id]);
+    }
 
-    public function reviewEntreprise()
+    public function reviewEntreprises()
     {
         return $this->model->callProcedure("GetFirmsInfo");
     }
