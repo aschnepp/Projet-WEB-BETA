@@ -21,50 +21,50 @@
                 <section id="section-main">
                     <section id="offre">
                         <section class="headerOffre">
-                            <h3>Stage Recherche Réseau</h3>
+                            <h3>{$offre->title}</h3>
                             <section class="stats">
                                 <section id="likes" class="item">
                                     <i class="fa-regular fa-heart fa-2x"></i>
-                                    <p>3</p>
+                                    <p>{$offre->total_wishlist}</p>
                                 </section>
                                 <section id="demandes" class="item">
                                     <i class="fa-regular fa-envelope fa-2x"></i>
-                                    <p>1</p>
+                                    <p>{$offre->total_postulation}</p>
                                 </section>
                             </section>
                         </section>
                         <section class="infos">
                             <section id="competences" class="item">
                                 <i class="fa-solid fa-certificate fa-2x"></i>
-                                <p>IP, NAT, CCNAv7</p>
+                                <p>{implode(", ",$skillsList)}</p>
                             </section>
                             <section id="localisation" class="item">
                                 <i class="fa-solid fa-map-location-dot fa-2x"></i>
-                                <p>2 allée des foulons, 67380 Lingolsheim</p>
+                                <p>{$offre->address}</p>
                             </section>
                             <section id="entreprise-logo" class="item">
                                 <i class="fa-solid fa-building-user fa-2x"></i>
-                                <p>CESI Strasbourg</p>
+                                <p>{$offre->firmName}</p>
                             </section>
                             <section id="promo" class="item">
                                 <i class="fa-solid fa-user-check fa-2x"></i>
-                                <p>CPI A2 Info</p>
+                                <p>{implode(", ",$promotions)}</p>
                             </section>
                             <section id="duree" class="item">
                                 <i class="fa-regular fa-clock fa-2x"></i>
-                                <p>12 Semaines</p>
+                                <p>{$offre->duration} Semaines</p>
                             </section>
                             <section id="date" class="item">
                                 <i class="fa-regular fa-calendar-days fa-2x"></i>
-                                <p>08/04 - 19/07</p>
+                                <p>{$offre->start_date} - {$offre->end_date}</p>
                             </section>
                             <section id="remuneration" class="item">
                                 <i class="fa-solid fa-coins fa-2x"></i>
-                                <p>4,35€ / heure</p>
+                                <p>{$offre->remuneration}€ / heure</p>
                             </section>
                             <section id="places" class="item">
                                 <i class="fa-solid fa-users fa-2x"></i>
-                                <p>3 places</p>
+                                <p>{$offre->available_places} places</p>
                             </section>
                         </section>
                     </section>
