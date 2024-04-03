@@ -17,14 +17,14 @@ class Secteurs
         $Model = new Model;
         $secteurs = $Model->select("activity_sectors", ["*"], "", false);
 
-        // foreach ($secteurs as $secteur) {
-        //     $preTrim = trim(htmlspecialchars($secteur->activity_sector_name, ENT_QUOTES, 'UTF-8'));
-        //     $nomTrim = str_replace(' ', '-', strtolower($preTrim));
-        //     echo "<li><input type='checkbox' id='{$nomTrim}'>
-        //     <label for='{$nomTrim}'>
-        //     $secteur->activity_sector_name
-        //     </label></li>";
-        // }
+        foreach ($secteurs as $secteur) {
+            $preTrim = trim(htmlspecialchars($secteur->activity_sector_name, ENT_QUOTES, 'UTF-8'));
+            $nomTrim = str_replace(' ', '-', strtolower($preTrim));
+            echo "<li><input type='checkbox' id='{$nomTrim}'>
+            <label for='{$nomTrim}'>
+            $secteur->activity_sector_name
+            </label></li>";
+        }
 
         return $secteurs;
     }
