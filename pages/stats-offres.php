@@ -1,105 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <!-- Main -->
-    <meta charset="utf-8" />
-    <title>Statistiques Offres</title>
-    <meta name="description" content="Cette page vous permet de voir les statistiques des différentes offres de la plateforme." />
-    <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
+require $_SERVER['DOCUMENT_ROOT'] . "/controller/SmartyCatalyst.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/model/model.php";
 
-    <!-- Preload -->
-    <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
+$model = new Model();
+$controller = new SmartyCatalyst($model);
 
-    <link rel="preconnect" href="https://maps.googleapis.com" />
-    <link rel="preconnect" href="https://logo.clearbit.com" />
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
-    <script rel="preload" src="../assets/scripts/stats-offres.js"></script>
-    <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
+// Récupère les 3 offres les plus wishlisted et les envoie au JS pour affichage avec API
+$top = $controller->getTopOffers();
+$logo1 = $top[0]->website;
+$logo2 = $top[1]->website;
+$logo3 = $top[2]->website;
+$name1 = $top[0]->title;
+$name2 = $top[1]->title;
+$name3 = $top[2]->title;
+echo "<script>var logo1 = '$logo1'; var logo2 = '$logo2'; var logo3 = '$logo3'; var name1 = '$name1'; var name2 = '$name2'; var name3 = '$name3';</script>";
 
-    <!-- Style -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/styles/stats-offres.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+// Récupère les différentes durées et leur total pour affichage avec API google chart dans le JS
+$durations = $controller->getDurationStage();
+echo "<script>var durations = " . json_encode($durations) . ";</script>";
 
-    <!-- Scripts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../assets/scripts/stats-offres.js"></script>
-</head>
+// Récupère les promotions et leur total pour affichage avec API google chart dans le JS
+$promotions = $controller->getPromotions();
+echo "<script>var promotions = " . json_encode($promotions) . ";</script>";
 
-<body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
+// Récupère les compétences et leur total pour affichage avec API google chart dans le JS
+$skills = $controller->getSkills();
+echo "<script>var skills = " . json_encode($skills) . ";</script>";
 
-        <section id="header-milieu">
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
-            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-        </section>
+// Récupère les offres par région pour affichage avec API google heatmap dans le JS
+$regions = $controller->getOffersRegions();
+echo "<script>var regions = " . json_encode($regions) . ";</script>";
 
-        <section id="header-droite">
-            <!-- Menu Burger -->
-            <div id="menu-burger-header">
-                <div class="barre-haut"></div>
-                <div class="barre-milieu"></div>
-                <div class="barre-bas"></div>
-            </div>
-
-            <!-- Contenu du header-droite -->
-            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
-        </section>
-    </header>
-    <main>
-        <div id="menu-burger-flou">
-            <section id="menu-burger-main">
-            </section>
-        </div>
-
-        <div id="stats-offres">
-            <div></div>
-            <h2>Répartition par secteur</h2>
-            <div id="piechart" class="graphiques, piecharts"></div>
-            <h2>Répartition par localité</h2>
-            <div id="heatmap" class="graphiques"></div>
-            <h2>Top Offres</h2>
-            <section id="podium">
-                <div id="first" class="places">
-                    <h1>🥇</h1>
-                    <p id="logo1-name"></p>
-                    <div id="logo1-container"></div>
-                </div>
-                <div id="second" class="places">
-                    <h1>🥈</h1>
-                    <p id="logo2-name"></p>
-                    <div id="logo2-container"></div>
-                </div>
-                <div id="third" class="places">
-                    <h1>🥉</h1>
-                    <p id="logo3-name"></p>
-                    <div id="logo3-container"></div>
-                </div>
-            </section>
-            <h2>Durée de stage</h2>
-            <div id="duree-offres" class="graphiques"></div>
-            <h2>Promotions</h2>
-            <div id="promo-piechart" class="graphiques, piecharts"></div>
-            <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
-        </div>
-    </main>
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" class="a-footer">CGU</a>
-            <a href="about.html" class="a-footer">A Propos</a>
-            <a href="contact.html" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
-</body>
-
-</html>
+// Affiche le template
+$controller->display($_SERVER['DOCUMENT_ROOT'] . "/view/templates/stats-offres.tpl");

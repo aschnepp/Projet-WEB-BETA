@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS firms(
    firm_id INT AUTO_INCREMENT,
    firm_name VARCHAR(50)  NOT NULL,
    description_firm TEXT,
-   website VARCHAR(100) ,
+   website TEXT ,
    logo TEXT,
    inactif BOOLEAN NOT NULL,
    PRIMARY KEY(firm_id)
@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS users(
    birthdate DATE,
    picture TEXT,
    address_id INT NOT NULL,
+   first_connection BOOLEAN DEFAULT 0,
    PRIMARY KEY(user_id),
    FOREIGN KEY(address_id) REFERENCES address(address_id)
 );

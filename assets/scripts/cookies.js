@@ -4,13 +4,13 @@ function submitForm(event) {
     var formData = new FormData(document.getElementById('myForm'));
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', "/assets/back/controller/controllerLogin.php", true);
+    xhr.open('POST', "/controller/controllerLogin.php", true);
     xhr.send(formData);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                window.location.href = "../pages/accueil-login.html";
+                window.location.href = "../pages/accueil-login.php";
             } else {
                 console.log(xhr.responseText)
             }

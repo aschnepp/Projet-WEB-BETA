@@ -15,12 +15,14 @@
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/previsualisation-logo.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresses-entreprise.js"></script>
+    <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gestion-entreprise.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +47,8 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
+                href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
         </section>
@@ -65,7 +68,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'entreprise</h2>
-            <form id="formulaire">
+            <form action="" method="post" id="formulaire">
                 <section id="nom">
                     <label for="nom-entreprise">Nom*</label>
                     <div>
@@ -77,16 +80,40 @@
                     <label for="adresse-entreprise-1">Adresse*</label>
                     <label for="street_number-entreprise-1">Numéro</label>
                     <label for="postal_code-entreprise-1">Code postal*</label>
-                    <input type="text" name="adresse-entreprise-1" id="adresse-entreprise-1" required placeholder="Adresse">
-                    <input type="text" name="street_number-entreprise-1" id="street_number-entreprise-1" required placeholder="Numéro">
-                    <input type="text" name="postal_code-entreprise-1" id="postal_code-entreprise-1" required placeholder="Code Postal">
+                    <div>
+                        <input type="text" name="adresse-entreprise-1" id="adresse-entreprise-1" required
+                            placeholder="Adresse">
+                    </div>
+                    <div>
+                        <input type="text" name="street_number-entreprise-1" id="street_number-entreprise-1"
+                            placeholder="Numéro">
+                    </div>
+                    <div>
+                        <input type="text" name="postal_code-entreprise-1" id="postal_code-entreprise-1" required
+                            placeholder="Code Postal">
+                    </div>
                 </section>
+
+                <datalist id="liste-regions">
+                    <?php
+                    include("{$_SERVER["DOCUMENT_ROOT"]}/model/Regions.php");
+                    $Regions = new Regions;
+                    $Regions->getRegionsOptions();
+                    ?>
+                </datalist>
 
                 <section class="ville-region-entreprise">
                     <label for="locality-entreprise-1">Ville*</label>
                     <label for="administrative_area_level_1-entreprise-1">Region*</label>
-                    <input type="text" name="locality-entreprise-1" id="locality-entreprise-1" required placeholder="Ville">
-                    <input type="text" name="administrative_area_level_1-entreprise-1" id="administrative_area_level_1-entreprise-1" required placeholder="Région">
+                    <div>
+                        <input type="text" name="locality-entreprise-1" id="locality-entreprise-1" required
+                            placeholder="Ville">
+                    </div>
+                    <div>
+                        <input type="text" name="administrative_area_level_1-entreprise-1"
+                            id="administrative_area_level_1-entreprise-1" required placeholder="Région"
+                            list="liste-regions">
+                    </div>
                 </section>
 
                 <section id="ajouter-adresse">
@@ -94,16 +121,25 @@
                 </section>
 
                 <section id="secteur-activite">
-                    <label for="secteur-activite-entreprise">Secteur d'activité*</label>
-                    <div>
-                        <input type="text" name="secteur-activite-entreprise" id="secteur-activite-entreprise" required placeholder="Secteur d'activité">
+                    <label for="secteur-activite-entreprise">Secteur(s) d'activité*</label>
+                    <div id="div-secteur-activite-entreprise" class="secteurs-activite">
+                        <button type="button" id="secteur-activite-entreprise" class="bouton-popup-checkbox">Secteur(s)
+                            d'activité</button>
+                        <ul id="liste-secteurs-activite" class="popup-checkbox">
+                            <?php
+                            include("{$_SERVER["DOCUMENT_ROOT"]}/model/Secteurs.php");
+                            $Secteurs = new Secteurs;
+                            $Secteurs->getSecteursList();
+                            ?>
+                        </ul>
                     </div>
                 </section>
 
                 <section id="site-web">
                     <label for="site-web-entreprise">Site web (Touche "Entrer" pour visualiser le logo)*</label>
                     <div>
-                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required placeholder="Site web">
+                        <input type="text" name="site-web-entreprise" id="site-web-entreprise" required
+                            placeholder="Site web">
                     </div>
                 </section>
 
@@ -111,15 +147,64 @@
                 </section>
 
                 <section id="description-activite">
-                    <label for="description-entreprise">Description entreprise*</label>
+                    <label for="description-entreprise" id="label-description-entreprise">Description
+                        entreprise*</label>
                     <div>
-                        <textarea name="description-entreprise" id="description-entreprise" required placeholder="Description de l'entreprise"></textarea>
+                        <textarea type="text" name="description-entreprise" id="description-entreprise" required
+                            placeholder="Description de l'entreprise (30 caractères min et 1500 caractères max)"></textarea>
+                    </div>
+                </section>
+
+                <section id="note-entreprise">
+                    <label for="star5" class="labels">Note</label>
+                    <div id="rate-wrapper">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5" title="Awesome"></label>
+                            <input type="radio" id="star4.5" name="rating" value="4.5" />
+                            <label for="star4.5" class="half"></label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4"></label>
+                            <input type="radio" id="star3.5" name="rating" value="3.5" />
+                            <label for="star3.5" class="half"></label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3"></label>
+                            <input type="radio" id="star2.5" name="rating" value="2.5" />
+                            <label for="star2.5" class="half"></label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2"></label>
+                            <input type="radio" id="star1.5" name="rating" value="1.5" />
+                            <label for="star1.5" class="half"></label>
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1"></label>
+                            <input type="radio" id="star0.5" name="rating" value="0.5" />
+                            <label for="star0.5" class="half"></label>
+                        </div>
+                    </div>
+                    <div id="div-reset-note">
+                        <button type="button" class="reset" id="reset-note">Retirer la note</button>
+                    </div>
+                </section>
+
+
+                <section id="section-commentaire-entreprise">
+                    <label for="commentaire-entreprise" class="labels">Commentaire</label>
+                    <div>
+                        <textarea id="commentaire-entreprise" name="commentaire-entreprise"
+                            placeholder="Commentaire (uniquement si on met une note et doit faire 30 caractères min et 1500 max)"></textarea>
+                    </div>
+                </section>
+
+                <section id="status-entreprise">
+                    <label for="inactivite-entreprise">Inactive</label>
+                    <div>
+                        <input type="checkbox" name="inactivite-entreprise" id="inactivite-entreprise">
                     </div>
                 </section>
 
                 <section id="bouton-class-id" class="boutons">
-                    <button type="button" id="submit" value="envoyer">Créer l'entreprise</button>
-                    <input type="reset" id="reset" value="Réinitialiser">
+                    <button type="submit" id="submit" value="envoyer">Créer l'entreprise</button>
+                    <button type="reset" class="reset" id="reset" value="reset">Réinitialiser</button>
                     <button type="button" onclick="javascript:window.history.back();">Annuler</button>
                 </section>
 

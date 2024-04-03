@@ -1,8 +1,9 @@
 function VerifLargeur() {
   if (window.innerWidth > 900) {
-    var hamburgerheader = document.querySelector("header #menu-burger-header.active");
+    var hamburgerheader = document.querySelector(
+      "header #menu-burger-header.active"
+    );
     if (hamburgerheader) {
-
       var body = document.querySelector("body");
       body.classList.remove("lock-scroll");
 
@@ -33,7 +34,6 @@ function ActivationMenuBurger() {
 
   var body = document.querySelector("body");
 
-
   var hamburgermenuflou = document.querySelector("main #menu-burger-flou");
   var hamburgermenumain = document.querySelector("main #menu-burger-main");
 
@@ -48,7 +48,7 @@ function ActivationMenuBurger() {
     }, 500);
     body.classList.remove("lock-scroll");
   } else {
-    hamburgerheader.classList.add("disabled")
+    hamburgerheader.classList.add("disabled");
     hamburgermenuflou.style.animation = "apparition-flou 0.5s forwards";
     hamburgermenuflou.classList.add("flou-actif");
     setTimeout(function () {
@@ -56,22 +56,21 @@ function ActivationMenuBurger() {
     }, 500);
 
     setTimeout(function () {
-      hamburgerheader.classList.remove("disabled")
+      hamburgerheader.classList.remove("disabled");
     }, 1000);
     body.classList.add("lock-scroll");
   }
 }
 
-
-function Connecte(status) {
+/* function Connecte(status) {
   if (status) {
     return `
     <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
     <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-    `
+    `;
   }
   return ``;
-}
+} */ //TODO : REMOVE THIS FUNCTION
 
 function Status(status) {
   if (status) {
@@ -82,19 +81,16 @@ function Status(status) {
           href="test.html"></a>
       <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
       <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="entreprise.html"></a>
-      `
-    }
-    else if (status.userType == "Tuteur") {
+      `;
+    } else if (status.userType == "Tuteur") {
       return `
 
-      `
-    }
-    else {
+      `;
+    } else {
       return `
-      `
+      `;
     }
-  }
-  else {
+  } else {
     return `
     <a class="liens-header boutons-header" rel="preconnect" href="../pages/login.html" title="Connexion">Connexion</a>
     `;
@@ -102,7 +98,6 @@ function Status(status) {
     //TODO Changer le path si la page actuelle = index.html
   }
 }
-
 
 window.onload = function () {
   //TODO REMPLISSAGE DU HEADER AU CHARGEMENT DE LA PAGE EN FCT DES COOKIES
@@ -116,11 +111,11 @@ window.onload = function () {
   //   document.querySelector("#loupe").style.display = "none";
   // }
 
-
   var status = Status(connected);
 
-
-  document.querySelector("#header-droite").insertAdjacentHTML('beforeend', status);
+  document
+    .querySelector("#header-droite")
+    .insertAdjacentHTML("beforeend", status);
 
   // document.querySelector("#header-droite").insertAdjacentHTML('beforeend',
   //   `

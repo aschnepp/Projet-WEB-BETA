@@ -18,7 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/profil.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -89,9 +90,12 @@
                 </section>
             </section>
             <section id="btn-section">
-                <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
-                <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
-                <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
+                <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg"
+                        alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
+                <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg"
+                        alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
+                <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg"
+                        alt="Icône 'Se déconnecter'">Se déconnecter</button>
             </section>
         </section>
     </main>
