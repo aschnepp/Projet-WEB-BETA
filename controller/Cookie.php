@@ -1,18 +1,16 @@
 <?php
-require("{$_SERVER["DOCUMENT_ROOT"]}/assets/back/model/model.php");
-
 class Cookie
 {
-    private $email;
+    private $ID;
 
-    private $password;
+    private $email;
 
     private $userType;
 
-    public function __construct($email, $password, $userType)
+    public function __construct($ID = 0, $email = "", $userType = "")
     {
+        $this->ID = $ID;
         $this->email = $email;
-        $this->password = $password;
         $this->userType = $userType;
     }
 
@@ -33,6 +31,29 @@ class Cookie
 
         setcookie("Login", $encodedData, ($remember == "on") ? 2147483647 : 0, "/");
     }
+
+    function decodeCookieData()
+    {
+        if (isset($_COOKIE["Login"])) {
+            $encodedCookieData = $_COOKIE["Login"];
+        } else {
+            return null;
+        }
+
+        $key = get_cfg_var("encryption_key");
+        $decodedData = base64_decode($encodedCookieData);
+        $ivLength = openssl_cipher_iv_length('aes-256-cbc');
+        $iv = substr($decodedData, 0, $ivLength);
+        $encryptedData = substr($decodedData, $ivLength);
+
+        $decryptedData = openssl_decrypt($encryptedData, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+
+        $cookieData = json_decode($decryptedData);
+
+        $cookie = new Cookie($cookieData->ID, $cookieData->email, $cookieData->userType);
+
+        return $cookie;
+    }
 }
 
 
@@ -46,4 +67,4 @@ class Cookie
 
 // chartropp2i@newsvine.com (ADMIN)
 // oM3@v3_X4{nhO,2$   MDP (ADMIN)       
-// $2a$04$rB3nqVuo6Y6XzneY5MxIMOvAFiZIXBdpLexU8JGsG8i2d61v0eOFa     MDP (BDD)       
+// $2a$04$rB3nqVuo6Y6XzneY5MxIMOvAFiZIXBdpLexU8JGsG8i2d61v0eOFa     MDP (BDD)    
