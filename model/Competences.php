@@ -10,8 +10,8 @@ class Competences
         $competences = $Model->select("skills", ["*"], "", false);
 
         foreach ($competences as $competence) {
-            echo "<li><input type='checkbox' name='competences[]' id='competence-{$competences->skill_id}'>
-            <label for='competence-{$competences->skill_id}'>
+            echo "<li><input type='checkbox' name='competences[]' id='competence-{$competence->skill_id}'>
+            <label for='competence-{$competence->skill_id}'>
             $competence->skill_name
             </label></li>";
         }
