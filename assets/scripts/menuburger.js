@@ -62,7 +62,7 @@ function ActivationMenuBurger() {
   }
 }
 
-/* function Connecte(status) {
+function Connecte(status) {
   if (status) {
     return `
     <input type="text" name="recherche" id="recherche" placeholder="Rechercher">
@@ -70,7 +70,7 @@ function ActivationMenuBurger() {
     `;
   }
   return ``;
-} */ //TODO : REMOVE THIS FUNCTION
+}
 
 function Status(status) {
   if (status) {

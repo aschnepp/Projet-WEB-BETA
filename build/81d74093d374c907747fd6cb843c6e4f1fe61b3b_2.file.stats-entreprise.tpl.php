@@ -1,6 +1,31 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+/* Smarty version 4.5.1, created on 2024-04-03 10:48:38
+  from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\stats-entreprise.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.5.1',
+  'unifunc' => 'content_660d17e6e85414_46992813',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '81d74093d374c907747fd6cb843c6e4f1fe61b3b' => 
+    array (
+      0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\stats-entreprise.tpl',
+      1 => 1712131835,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:./header.tpl' => 1,
+    'file:./footer.tpl' => 1,
+  ),
+),false)) {
+function content_660d17e6e85414_46992813 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html lang="fr">
+ 
 <head>
     <!-- Main -->
     <meta charset="utf-8" />
@@ -9,9 +34,14 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
 
     <!-- Preloads -->
-    <script rel="preload" src="../assets/scripts/stats-entreprises.js"></script>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <?php echo '<script'; ?>
+ rel="preload" src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
+>
+    <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
+    <?php echo '<script'; ?>
+ rel="preload" src="../assets/scripts/menuburger.js"><?php echo '</script'; ?>
+>
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
 
@@ -22,38 +52,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Scripts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../assets/scripts/stats-entreprises.js"></script>
+    <?php echo '<script'; ?>
+ src="https://www.gstatic.com/charts/loader.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
+>
 </head>
 
 <body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
-
-        <section id="header-milieu">
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher" />
-            <i class="fa fa-search" id="loupe" aria-hidden="true"></i>
-        </section>
-
-        <section id="header-droite">
-            <!-- Menu Burger -->
-            <div id="menu-burger-header">
-                <div class="barre-haut"></div>
-                <div class="barre-milieu"></div>
-                <div class="barre-bas"></div>
-            </div>
-
-            <!-- Contenu du header-droite -->
-            <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
-                href="test.html"></a>
-            <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="test.html"></a>
-        </section>
-    </header>
+<?php $_smarty_tpl->_subTemplateRender('file:./header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
@@ -86,14 +95,9 @@
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
         </div>
     </main>
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" title="CGU" class="a-footer">CGU</a>
-            <a href="about.html" title="A Propos" class="a-footer">A Propos</a>
-            <a href="contact.html" title="Contact" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
+    <?php $_smarty_tpl->_subTemplateRender('file:./footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 
-</html>
+</html><?php }
+}

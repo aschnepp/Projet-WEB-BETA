@@ -1,13 +1,13 @@
 <?php
 class Model
 {
-    private PDO $pdo;
-    private array $options = [
+    protected PDO $pdo;
+    protected array $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_EMULATE_PREPARES => false
     ];
 
-    private string $key;
+    protected string $key;
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class Model
             $this->pdo = new PDO("mysql:host={$dbhost};port={$dbport};dbname={$dbname}", $dbuser, $dbpasswword, $this->options);
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
         }
     }
 
@@ -49,7 +49,7 @@ class Model
             }
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
         }
     }
 
@@ -61,32 +61,62 @@ class Model
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
         }
     }
 
-    public function insert(string $table, array $data)
+    public function insert(string $table, array $data, bool $crypted = false)
     {
         try {
-            $sqlString = "INSERT INTO {$table} VALUES (";
+            $i = 1;
+            $sqlString = "INSERT INTO stagecatalyst.{$table} (";
+
             foreach ($data as $header => $value) {
                 if ($header === array_key_last($data)) {
-                    $sqlString = $sqlString . "?";
+                    $sqlString .= $header;
                 } else {
-                    $sqlString = $sqlString . "?,";
+                    $sqlString .= $header . ",";
                 }
             }
-            $sqlString = $sqlString . ");";
-            $query = $this->pdo->prepare($sqlString);
-            $i = 1;
-            foreach ($data as $header => $value) {
-                $query->bindParam($i, $data[$header], gettype($data[$header]) == "int" ? PDO::PARAM_INT : PDO::PARAM_STR);
-                $i++;
+            $sqlString .= ") VALUES (";
+
+            if ($crypted) {
+                $val = "";
+                foreach ($data as $header => $value) {
+                    $valTemp = $data[$header];
+                    if ($header !== 'address_id' && $header !== 'first_connection') {
+                        $key = get_cfg_var("encryption_key");
+                        $val .= "aes_encrypt('{$valTemp}', '{$key}'),";
+                    } else {
+                        $val .= "{$valTemp},";
+                    }
+                }
+                $sqlString .= $val;
+                $sqlString = rtrim($sqlString, ', ');
+            } else {
+                foreach ($data as $header => $value) {
+                    if ($header === array_key_last($data)) {
+                        $sqlString .= "?";
+                    } else {
+                        $sqlString .= "?,";
+                    }
+                }
             }
+
+            $sqlString .= ");";
+
+            $query = $this->pdo->prepare($sqlString);
+            if (!$crypted) {
+                foreach ($data as $header => $value) {
+                    $query->bindParam($i, $data[$header], gettype($data[$header]) == "int" ? PDO::PARAM_INT : PDO::PARAM_STR);
+                    $i++;
+                }
+            }
+
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
         }
     }
 
@@ -114,10 +144,10 @@ class Model
             $query->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
-            exit($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
         }
     }
-
+  
     public function userTypeGet(int $ID)
     {
         try {
@@ -144,13 +174,11 @@ class Model
         }
     }
 
-
-    public function selectFromUser(string $table, array $columns, string $condition = "", bool $unique = true)
+    public function selectFromUsers(string $table, array $columns, string $condition = "", bool $unique = true)
     {
         try {
             $decryptedColumns = [
                 "users.user_id",
-                "CONVERT(aes_decrypt(users.username, '{$this->key}') USING utf8) AS username",
                 "CONVERT(aes_decrypt(users.password, '{$this->key}') USING utf8) AS password",
                 "CONVERT(aes_decrypt(users.email, '{$this->key}') USING utf8) AS email",
                 "CONVERT(aes_decrypt(users.surname, '{$this->key}') USING utf8) AS surname",
@@ -183,6 +211,7 @@ class Model
             exit($e->getMessage());
         }
     }
+
     public function callProcedure(string $procedureName, array $parameters = [])
     {
         try {
@@ -196,10 +225,11 @@ class Model
             $query = $this->pdo->prepare($sqlString);
             $i = 1;
             foreach ($parameters as $param) {
-                $query->bindParam($i, $param);
+                $query->bindValue($i, $param);
                 $i++;
             }
             $query->execute();
+
             return $query->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {
             error_log($e->getMessage());

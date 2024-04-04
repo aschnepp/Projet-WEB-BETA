@@ -219,6 +219,12 @@
                 </section>
             </div>
         </div>
+
+        <?php
+        require_once("{$_SERVER["DOCUMENT_ROOT"]}/model/Pagination.php");
+        $Pagination = new Pagination;
+        $Pagination->getLinks();
+        ?>
     </main>
 
     <footer>

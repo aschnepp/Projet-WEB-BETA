@@ -10,7 +10,7 @@ class Competences
         $competences = $Model->select("skills", ["*"], "", false);
 
         // foreach ($competences as $competence) {
-        //     $preTrim = trim(htmlspecialchars($competence->skill_name, ENT_QUOTES, 'UTF-8'));
+        //     $preTrim = trim($competence->skill_name);
         //     $competenceTrim = str_replace(' ', '-', strtolower($preTrim));
         //     echo "<li><input type='checkbox' id='{$competenceTrim}'>
         //     <label for='{$competenceTrim}'>
