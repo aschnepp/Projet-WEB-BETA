@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var EtatFiltre = document.querySelector("#choix-recherche");
 
   ChoixFiltre();
-
   EtatFiltre.addEventListener("change", ChoixFiltre);
 });
 
