@@ -21,13 +21,13 @@ class Pagination extends Model
         }
 
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $perPage = 7;
+        $perPage = 5;
         // $start = ($page - 1) * $perPage;
         // $end = $start + $perPage;
 
         $Cookie = new Cookie;
         $id = $Cookie->get('ID');
-        // $id = 15;
+        //$id = 15;
         // var_dump($id);
 
         $nbOffers = count($this->select("{$tableName}", ['*'], "user_id = {$id}", false));
