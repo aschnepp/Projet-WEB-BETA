@@ -9,10 +9,10 @@ class Entreprises
         $Model = new Model;
         $entreprises = $Model->select("firms", ["*"], "", false);
 
-        // foreach ($entreprises as $entreprise) {
-        //     $entrepriseNom = htmlspecialchars($entreprise->firm_name, ENT_QUOTES, 'UTF-8');
-        //     echo "<option value='{$entrepriseNom}'>{$entrepriseNom}</option>";
-        // }
+        foreach ($entreprises as $entreprise) {
+            $entrepriseNom = htmlspecialchars($entreprise->firm_name, ENT_QUOTES, 'UTF-8');
+            echo "<option value='{$entrepriseNom}'>{$entrepriseNom}</option>";
+        }
 
         return $entreprises;
     }

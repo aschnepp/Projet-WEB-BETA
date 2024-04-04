@@ -15,6 +15,7 @@
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
+    <script rel="preload" src="../assets/scripts/gestionUsers.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +67,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'étudiants</h2>
-            <form action="GestionUsers.php" method="post" id="formulaire" onsubmit="submitForm(event)">
+            <form action="/model/GestionUsers.php" method="post" id="formulaire" onsubmit="submitForm(event)">
                 <section id="nom">
                     <label for="nom-etudiant">Nom*</label>
                     <div>

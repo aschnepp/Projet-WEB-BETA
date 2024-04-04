@@ -9,10 +9,10 @@ class User extends Model
         parent::__construct();
     }
 
-    public function insertUser(array $data, string $user)
+    public function insertUser(array $data, string $userType)
     {
         try {
-            if ($user != "students" && $user != "tutors") {
+            if ($userType != "students" && $userType != "tutors") {
                 throw new Exception("Type d'utilisateur pas valide.");
             }
 
@@ -90,7 +90,7 @@ class User extends Model
             $campusId = $this->select('campus', ['*'], "campus_name = '{$data['campus']}'");
 
 
-            if ($user == 'students') {
+            if ($userType == 'students') {
                 $promotionId = $this->select('promotions', ['*'], "promotion_name = '{$data['promotion']}'");
                 $studentData = [
                     'user_id' => $userId,
@@ -174,6 +174,108 @@ class User extends Model
             return $query->fetch(PDO::FETCH_OBJ);
         } catch (Exception $e) {
             error_log($e->getMessage());
+            exit('Erreur: ' . $e->getMessage());
+        }
+    }
+
+
+    public function modifyUser(array $data, int $id)
+    {
+        try {
+            $condition = "user_id = '{$id}'";
+            $user = $this->selectFromUser(['*'], $condition, true);
+
+            if (!$user) {
+                throw new Exception("Utilisateur non existant");
+            }
+
+            $adresseId = $user->address_id;
+
+            $addressData = [
+                'street_name' => $data['rue'],
+                'street_number' => $data['numero']
+            ];
+
+            $this->update('address', $addressData, 'address_id', $adresseId);
+
+
+            $condition = "city_name = '{$data['ville']}' AND postal_code = '{$data['codePostal']}'";
+            $ville = $this->select('cities', ['*'], $condition);
+
+            if ($ville) {
+                $cityId = $ville->city_id;
+            } else {
+                $condition = "region_name = '" . $data['region'] . "'";
+                $regionId = $this->select('regions', ['*'], $condition);
+                $villeData = [
+                    'city_name' => $data['ville'],
+                    'postal_code' => $data['codePostal'],
+                    'region_id' => $regionId->region_id
+                ];
+
+                $this->insert('cities', $villeData);
+                $cityId = $this->pdo->lastInsertId();
+            }
+
+            $containsData = [
+                'address_id' => $adresseId,
+                'city_id' => $cityId
+            ];
+
+            $this->update('Contains', $containsData, 'address_id', $adresseId);
+
+            $userData = [
+                'name' => $data['nom'],
+                'surname' => $data['prenom'],
+                'email' => $data['email'],
+                'phone_number' => $data['telephone'],
+                'birthdate' => $data['dateNaissance'],
+                'address_id' => $adresseId
+            ];
+
+            $this->update('users', $userData, 'user_id', $id);
+
+            $userType = $this->userTypeGet($id);
+            $campusId = $this->select('campus', ['*'], "campus_name = '{$data['campus']}'");
+
+            if ($userType->typeUtilisateur == 'students') {
+                $promotionId = $this->select('promotions', ['*'], "promotion_name = '{$data['promotion']}'");
+                $studentData = [
+                    'campus_id' => $campusId->campus_id,
+                    'promotion_id' => $promotionId->promotion_id
+                ];
+                $this->update('students', $studentData, 'user_id', $id);
+                http_response_code(200);
+            } else {
+                $tutorData = [
+                    'campus_id' => $campusId->campus_id
+                ];
+                $this->update('tutors', $tutorData, 'user_id', $id);
+
+                foreach ($data['promotions'] as $promotionId) {
+                    $promotion = $this->select('Manages', ['*'], "user_id = {$id} AND promotion_id = {$promotionId}");
+                    if ($promotion) {
+                        $existingPromotionId = $promotion->promotion_id;
+
+                        if ($existingPromotionId != $promotionId) {
+                            $managesData = [
+                                'promotion_id' => $promotionId
+                            ];
+                            $this->update('Manages', $managesData, 'user_id', $id);
+                        }
+                    } else {
+                        $managesData = [
+                            'user_id' => $id,
+                            'promotion_id' => $promotionId
+                        ];
+                        $this->insert('Manages', $managesData);
+                    }
+                }
+                http_response_code(200);
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            http_response_code(400);
             exit('Erreur: ' . $e->getMessage());
         }
     }

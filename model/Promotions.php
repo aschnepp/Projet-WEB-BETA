@@ -24,9 +24,9 @@ class Promotions
 
         foreach ($promotions as $promotion) {
             $promotionNom = htmlspecialchars($promotion->promotion_name, ENT_QUOTES, 'UTF-8');
-            echo "<li><input type='checkbox' name='promotions[]' id='{$promotionNom}' value='{$promotion->promotion_id}'>
-            <label for='{$promotionNom}'>
-            $promotion->promotion_name
+            echo "<li><input type='checkbox' name='promotions[]' id='promotion-{$promotion->promotion_id}' value='{$promotion->promotion_id}'>
+            <label for='promotion-{$promotion->promotion_id}'>
+            $promotionNom
             </label></li>";
         }
 

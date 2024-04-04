@@ -9,14 +9,12 @@ class Competences
         $Model = new Model;
         $competences = $Model->select("skills", ["*"], "", false);
 
-        // foreach ($competences as $competence) {
-        //     $preTrim = trim($competence->skill_name);
-        //     $competenceTrim = str_replace(' ', '-', strtolower($preTrim));
-        //     echo "<li><input type='checkbox' id='{$competenceTrim}'>
-        //     <label for='{$competenceTrim}'>
-        //     $competence->skill_name
-        //     </label></li>";
-        // }
+        foreach ($competences as $competence) {
+            echo "<li><input type='checkbox' name='competences[]' id='competence-{$competences->skill_id}'>
+            <label for='competence-{$competences->skill_id}'>
+            $competence->skill_name
+            </label></li>";
+        }
 
         return $competences;
     }

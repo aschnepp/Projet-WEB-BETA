@@ -1,5 +1,3 @@
-var grade = 4.4;
-
 document.addEventListener("DOMContentLoaded", function () {
   var entreprise = document.getElementById("website").getAttribute("href");
   var domain = new URL(entreprise).hostname;
