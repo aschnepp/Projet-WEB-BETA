@@ -18,11 +18,10 @@ class Secteurs
         $secteurs = $Model->select("activity_sectors", ["*"], "", false);
 
         foreach ($secteurs as $secteur) {
-            $preTrim = trim(htmlspecialchars($secteur->activity_sector_name, ENT_QUOTES, 'UTF-8'));
-            $nomTrim = str_replace(' ', '-', strtolower($preTrim));
-            echo "<li><input type='checkbox' id='{$nomTrim}'>
-            <label for='{$nomTrim}'>
-            $secteur->activity_sector_name
+            $nom = htmlspecialchars($secteur->activity_sector_name, ENT_QUOTES, 'UTF-8');
+            echo "<li><input type='checkbox' name='sectors[]' id='secteur-{$secteur->activity_sector_id}'>
+            <label for='secteur-{$secteur->activity_sector_id}'>
+            $nom
             </label></li>";
         }
 

@@ -9,10 +9,10 @@ class Promotions
         $Model = new Model;
         $promotions = $Model->select("promotions", ["*"], "", false);
 
-        // foreach ($promotions as $promotion) {
-        //     $promotionNom = htmlspecialchars($promotion->promotion_name, ENT_QUOTES, 'UTF-8');
-        //     echo "<option value='{$promotionNom}'>{$promotionNom}</option>";
-        // }
+        foreach ($promotions as $promotion) {
+            $promotionNom = htmlspecialchars($promotion->promotion_name, ENT_QUOTES, 'UTF-8');
+            echo "<option value='{$promotionNom}'>{$promotionNom}</option>";
+        }
 
         return $promotions;
     }
@@ -22,13 +22,13 @@ class Promotions
         $Model = new Model;
         $promotions = $Model->select("promotions", ["*"], "", false);
 
-        // foreach ($promotions as $promotion) {
-        //     $promotionNom = htmlspecialchars($promotion->promotion_name, ENT_QUOTES, 'UTF-8');
-        //     echo "<li><input type='checkbox' id='{$promotionNom}'>
-        //     <label for='{$promotionNom}'>
-        //     $promotion->promotion_name
-        //     </label></li>";
-        // }
+        foreach ($promotions as $promotion) {
+            $promotionNom = htmlspecialchars($promotion->promotion_name, ENT_QUOTES, 'UTF-8');
+            echo "<li><input type='checkbox' name='promotions[]' id='promotion-{$promotion->promotion_id}' value='{$promotion->promotion_id}'>
+            <label for='promotion-{$promotion->promotion_id}'>
+            $promotionNom
+            </label></li>";
+        }
 
         return $promotions;
     }
