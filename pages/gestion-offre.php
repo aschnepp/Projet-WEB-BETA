@@ -15,7 +15,6 @@
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
-    <script rel="preload" src="../assets/scripts/gestionOffres.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +65,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création d'offre</h2>
-            <form action="/model/GestionOffres.php" method="post" id="formulaire" onsubmit="submitForm(event)">
+            <form action="" method="post" id="formulaire">
                 <section id="nom">
                     <label for="nom-offre">Nom*</label>
                     <div>

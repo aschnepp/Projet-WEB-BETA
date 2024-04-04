@@ -23,12 +23,9 @@ class SmartyCatalyst extends Smarty
         #$this->caching = Smarty::CACHING_LIFETIME_CURRENT;
     }
 
-    public function reviewEntreprise($id)
-    {
-        return $this->model->callProcedure("GetFirmInfo", [$id]);
-    }
 
-    public function reviewEntreprises()
+
+    public function reviewEntreprise()
     {
         return $this->model->callProcedure("GetFirmsInfo");
     }
@@ -71,39 +68,5 @@ class SmartyCatalyst extends Smarty
     public function getTopOffers()
     {
         return $this->model->callProcedure("topOffers");
-    }
-
-    public function getReview($userId, $firmId)
-    {
-        return $this->model->callProcedure("verifNotation", [$userId, $firmId]);
-    }
-
-    public function giveReview($userId, $firmId, $grade, $comment, $alreadyReviewed)
-    {
-        if ($alreadyReviewed) {
-            $this->model->callProcedure("updateNotation", [$userId, $firmId, number_format($grade, 1, ".", ''), $comment]);
-        } else {
-            $this->model->callProcedure("insertNotation", [$userId, $firmId, number_format($grade, 1, ".", ''), $comment]);
-        }
-    }
-
-    public function getProfil($userId)
-    {
-        return $this->model->selectFromUser(["*"], "user_id = " . $userId, true);
-    }
-
-    public function getAddresse($addId)
-    {
-        return $this->model->callProcedure("getAddress", [$addId]);
-    }
-
-    public function getStudent($userId)
-    {
-        return $this->model->callProcedure("getEtudiant", [$userId]);
-    }
-
-    public function getTuteur($userId)
-    {
-        return $this->model->callProcedure("getTuteur", [$userId]);
     }
 }

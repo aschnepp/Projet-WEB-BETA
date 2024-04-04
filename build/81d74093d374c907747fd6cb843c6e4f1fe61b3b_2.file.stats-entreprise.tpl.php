@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.5.1, created on 2024-04-02 16:25:54
+  from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\stats-entreprise.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.5.1',
+  'unifunc' => 'content_660c1572a271f3_26854863',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '81d74093d374c907747fd6cb843c6e4f1fe61b3b' => 
+    array (
+      0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\stats-entreprise.tpl',
+      1 => 1712066490,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:./header.tpl' => 1,
+    'file:./footer.tpl' => 1,
+  ),
+),false)) {
+function content_660c1572a271f3_26854863 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
  
 <head>
@@ -10,9 +35,13 @@
 
     <!-- Preloads -->
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/stats-entreprises.js"></script>
+    <?php echo '<script'; ?>
+ rel="preload" src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
+>
     <link rel="preload" href="../assets/images/Logo.webp" as="image" type="image/webp" />
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <?php echo '<script'; ?>
+ rel="preload" src="../assets/scripts/menuburger.js"><?php echo '</script'; ?>
+>
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="preconnect" href="https://logo.clearbit.com" />
 
@@ -23,12 +52,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Scripts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../assets/scripts/stats-entreprises.js"></script>
+    <?php echo '<script'; ?>
+ src="https://www.gstatic.com/charts/loader.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../assets/scripts/stats-entreprises.js"><?php echo '</script'; ?>
+>
 </head>
 
 <body>
-{include file='./header.tpl'}
+<?php $_smarty_tpl->_subTemplateRender('file:./header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <main>
         <div id="menu-burger-flou">
             <section id="menu-burger-main">
@@ -61,7 +95,9 @@
             <a href="https://clearbit.com" id="attributions">Logos provided by Clearbit</a>
         </div>
     </main>
-    {include file='./footer.tpl'}
+    <?php $_smarty_tpl->_subTemplateRender('file:./footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 
-</html>
+</html><?php }
+}

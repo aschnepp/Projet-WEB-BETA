@@ -101,15 +101,21 @@ function Status(status) {
 
 window.onload = function () {
   //TODO REMPLISSAGE DU HEADER AU CHARGEMENT DE LA PAGE EN FCT DES COOKIES
+  var connected = true;
+  console.log(connected);
 
+  document.querySelector("#header-milieu").innerHTML = Connecte("connected");
 
   // if (connecte == false) {
   //   document.querySelector("#recherche").style.display = "none";
   //   document.querySelector("#loupe").style.display = "none";
   // }
 
+  var status = Status(connected);
 
-
+  document
+    .querySelector("#header-droite")
+    .insertAdjacentHTML("beforeend", status);
 
   // document.querySelector("#header-droite").insertAdjacentHTML('beforeend',
   //   `
@@ -121,6 +127,9 @@ window.onload = function () {
   // ` +
   //   status);
 
+  var items_menu_burger = `<p>TEST123</p>`;
+
+  document.querySelector("#menu-burger-main").innerHTML = items_menu_burger;
 
   // document.querySelector("main").insertAdjacentHTML("afterbegin",
   //   `<section id="menu-burger-flou">

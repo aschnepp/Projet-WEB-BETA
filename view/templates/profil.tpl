@@ -54,60 +54,43 @@
                 <section id="info">
                     <section>
                         <p>Prénom</p>
-                        <p>{$prenom}</p>
+                        <p>d,qzd,qdq</p>
                     </section>
                     <section>
                         <p>Nom</p>
-                        <p>{$nom}</p>
+                        <p>DQZDQ</p>
                     </section>
                     <section>
                         <p>Email</p>
-                        <p>{$email}</p>
+                        <p>guigui67480@gmail.com</p>
                     </section>
                 </section>
             </section>
             <section>
                 <section>
                     <p>Date de naissance</p>
-                    <p>{$birthday}</p>
+                    <p>11 mai 2004</p>
                 </section>
                 <section>
                     <p>Age</p>
-                    <p>{$age}</p>
+                    <p>19</p>
                 </section>
                 <section>
                     <p>Adresse</p>
-                    <p>{$formattedAddress}</p>
+                    <p>19 rue des tests, Strasbourg, 67000</p>
                 </section>
-                {if $type == "tutors"}
                 <section>
                     <p>Promotion gérées</p>
-                    <p>{$promos}</p>
+                    <p>A1, A2, A3</p>
                 </section>
                 <section>
                     <p>Centre</p>
-                    <p>{$campus}</p>
+                    <p>Strasbourg</p>
                 </section>
-                {else if $type == "students"}
-                    <section>
-                    <p>Promotion</p>
-                    <p>{$promo}</p>
-                </section>
-                <section>
-                    <p>Centre</p>
-                    <p>{$campus}</p>
-                </section>
-                <section>
-                    <p>Nombre de postulation</p>
-                    <p>{$candidature}</p>
-                </section>
-                <section>
-                    <p>Nombre de stages</p>
-                    <p>{$stage}</p>
-                </section>
-                {/if}
             </section>
             <section id="btn-section">
+                <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
+                <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
                 <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
             </section>
         </section>

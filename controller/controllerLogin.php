@@ -1,6 +1,5 @@
 <?php
 require("{$_SERVER["DOCUMENT_ROOT"]}/controller/Cookie.php");
-require("{$_SERVER["DOCUMENT_ROOT"]}/model/User.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -9,34 +8,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $condition = "email = '{$email}'";
 
-    $User = new User;
-    $resultat = $User->selectFromUser(["*"], $condition, true);
+    $Model = new Model;
+    $resultat = $Model->selectFromUser(["*"], $condition, true);
     $ID = $resultat->user_id;
 
     if ($resultat) {
         $connexionAutho = 1;
         $hashedPasswordFromDb = $resultat->password;
-
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
 
-            $typeUser = $User->userTypeGet($ID);
+            $typeUser = $Model->userTypeGet($ID);
 
             switch ($typeUser->typeUtilisateur) {
-                case "admins":
+                case "Admin":
                     $userType = "Admin";
                     break;
-                case "tutors":
+                case "Tuteur":
                     $userType = "Tuteur";
                     break;
-                case "students":
+                case "Etudiant":
                     $userType = "Etudiant";
                     break;
                 default:
                     $userType = "Utilisateur";
             }
 
-            $cookie = new Cookie($ID, $email, $userType);
+            $cookie = new Cookie($ID, $email, $password, $userType);
             $cookie->saveToCookies($remember);
         }
     }

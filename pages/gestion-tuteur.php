@@ -15,7 +15,6 @@
     <script rel="preload" src="../assets/scripts/menuburger.js"></script>
     <script rel="preload" src="../assets/scripts/autocomplete-adresse.js"></script>
     <script rel="preload" src="../assets/scripts/verification-formulaire.js"></script>
-    <script rel="preload" src="../assets/scripts/gestionUsers.js"></script>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +65,7 @@
         </div>
         <section id="section-formulaire">
             <h2>Création des tuteurs</h2>
-            <form action="/model/GestionUsers.php" method="post" id="formulaire" onsubmit="submitForm(event)">
+            <form action="" method="post" id="formulaire">
                 <section id="nom">
                     <label for="nom-tuteur">Nom*</label>
                     <div>
@@ -84,7 +83,7 @@
                 <section id="email">
                     <label for="email-tuteur">Email*</label>
                     <div>
-                        <input type="email" name="email-tuteur" id="email-tuteur" required placeholder="Email">
+                        <input type="email" name="competence" id="email-tuteur" required placeholder="Email">
                     </div>
                 </section>
 

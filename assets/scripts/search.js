@@ -1,61 +1,71 @@
 var grade = 4.2;
 
 document.addEventListener("DOMContentLoaded", function () {
-  var EtatFiltre = document.querySelector("#choix-recherche");
+    var EtatFiltre = document.querySelector("#choix-recherche");
 
-  ChoixFiltre();
+    ChoixFiltre();
 
-  EtatFiltre.addEventListener("change", ChoixFiltre);
+    EtatFiltre.addEventListener("change", ChoixFiltre);
 });
 
+
 function ChoixFiltre() {
-  var EtatFiltre = document.querySelector("#choix-recherche");
-  var valeurSelectionnee = EtatFiltre.value;
+    var EtatFiltre = document.querySelector("#choix-recherche");
+    var valeurSelectionnee = EtatFiltre.value;
 
-  if (valeurSelectionnee === "menu-offre") {
-    AfficherFiltresOffre();
-  } else if (valeurSelectionnee === "menu-entreprise") {
-    AfficherFiltresEntreprise();
-  } else if (valeurSelectionnee === "menu-tuteur") {
-    AfficherFiltresTuteur();
-  } else {
-    AfficherFiltresEtudiant();
-  }
+    if (valeurSelectionnee === "menu-offre") {
+        AfficherFiltresOffre();
+    }
+    else if (valeurSelectionnee === "menu-entreprise") {
+        AfficherFiltresEntreprise();
+    }
+    else if (valeurSelectionnee === "menu-tuteur") {
+        AfficherFiltresTuteur();
+    }
+    else {
+        AfficherFiltresEtudiant();
+    }
 
-  var BoutonReset = document.querySelector("#reset-filtre");
-  BoutonReset.addEventListener("click", ResetScrollToTop);
-  BoutonReset.addEventListener("click", ResetCouleurSlider);
+    var BoutonReset = document.querySelector("#reset-filtre");
+    BoutonReset.addEventListener("click", ResetScrollToTop);
+    BoutonReset.addEventListener("click", ResetCouleurSlider);
 }
 
 function ResetScrollToTop() {
-  document.querySelector("#recherche-filtre-main").scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+    document.querySelector("#recherche-filtre-main").scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function StatsEntreprisesOuOffres() {
-  var EtatFiltre = document.querySelector("#choix-recherche");
-  var valeurSelectionnee = EtatFiltre.value;
+    var EtatFiltre = document.querySelector("#choix-recherche");
+    var valeurSelectionnee = EtatFiltre.value;
 
-  if (valeurSelectionnee === "Entreprise") {
-    return `
-        <a href="stats-entreprise.php" target="_blank" title="Statistiques d'entreprise"
+    if (valeurSelectionnee === "Entreprise") {
+        return `
+        <a href="stats-entreprise.html" target="_blank" title="Statistiques d'entreprise"
     id="bouton-stats-entreprise">Statistiques d'entreprises</a>
         `;
-  } else if (valeurSelectionnee === "Offre") {
-    return `
-        <a href="stats-offres.php" target="_blank" title="Statistiques d'offres" id="bouton-stats-offres">Statistiques
+    }
+
+    else if (valeurSelectionnee === "Offre") {
+        return `
+        <a href="stats-offres.html" target="_blank" title="Statistiques d'offres" id="bouton-stats-offres">Statistiques
         d'offres</a>
         `;
-  } else {
-    return "";
-  }
+    }
+
+    else {
+        return '';
+    }
 }
 
+
 function AfficherFiltresOffre() {
-  ClearRecherche();
-  document.querySelector("#recherche-menu").innerHTML = `                
+    ClearRecherche();
+    document.querySelector("#recherche-menu").innerHTML =
+        `                
         <section>
         <label for="region-offre-recherche">Region</label>
         <input type="text" id="region-offre-recherche" list="region-datalist"
@@ -120,100 +130,14 @@ function AfficherFiltresOffre() {
 
     <section id="boutons-filtre">
         <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
-        <input type="button" name="ajout" class="ajout" value="Ajouter offre"> 
-        <a href="stats-offres.php" target="_blank" title="Statistiques d'offres" id="bouton-stats-offres">Statistiques d'offres</a>
+        <input type="button" name="ajout" class="ajout" value="Ajouter offre"> `
+        + StatsEntreprisesOuOffres() +
+        `
     </section>
-`;
+` ;
 
-  document.querySelector("#affichage-filtre").insertAdjacentHTML(
-    "afterbegin",
-    `
-
-<section class="offre">
-<section class="headerOffre">
-    <h3>Stage Recherche Réseau</h3>
-    <section class="stats">
-        <section class="likes item">
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
-                alt="wishlists" />
-            <p>3</p>
-        </section>
-        <section class="demandes item">
-            <img width="30" height="30"
-                src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
-            <p>1</p>
-        </section>
-    </section>
-</section>
-
-<section class="infos">
-    <section class="competences item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
-            alt="learning" />
-        <p>IP, NAT, CCNAv7</p>
-    </section>
-    <section class="localisation item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
-            alt="map-marker" />
-        <p>2 allée des foulons, 67380 Lingolsheim</p>
-    </section>
-    <section class="entreprise-logo item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
-            alt="client-company" />
-        <p>CESI Strasbourg</p>
-    </section>
-    <section class="promo item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
-            alt="reviewer-male" />
-        <p>CPI A2 Info</p>
-    </section>
-    <section class="duree item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
-            alt="time--v1" />
-        <p>12 Semaines</p>
-    </section>
-    <section class="date item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
-            alt="google-calendar" />
-        <p>08/04 - 19/07</p>
-    </section>
-    <section class="remuneration item">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
-            alt="money--v1" />
-        <p>4,35€ / heure</p>
-    </section>
-    <section class="places item">
-        <img width="30" height="30"
-            src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
-            alt="conference-call--v1" />
-        <p>3 places</p>
-    </section>
-    <section class="description">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
-            quaerat.
-            Quisquam
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
-            pariatur et
-            modi,
-            laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
-            velit
-            eos
-            facilis. Sapiente!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
-            tempore qui odio
-            necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
-            aliquid
-            sit
-            explicabo maiores molestiae
-        </p>
-    </section>
-    <section class="boutons-offre">
-        <button type="button" class="postuler">Postuler</button>
-        <button type="button">Modifier offre</button>
-        <button type="button">Ajouter à la Wishlist</button>
-    </section>
-</section>
-</section>
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
 
 <section class="offre">
 <section class="headerOffre">
@@ -300,14 +224,100 @@ function AfficherFiltresOffre() {
     </section>
 </section>
 </section>
-`
-  );
-  Slider();
+
+<section class="offre">
+<section class="headerOffre">
+    <h3>Stage Recherche Réseau</h3>
+    <section class="stats">
+        <section class="likes item">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png"
+                alt="wishlists" />
+            <p>3</p>
+        </section>
+        <section class="demandes item">
+            <img width="30" height="30"
+                src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
+            <p>1</p>
+        </section>
+    </section>
+</section>
+
+<section class="infos">
+    <section class="competences item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png"
+            alt="learning" />
+        <p>IP, NAT, CCNAv7</p>
+    </section>
+    <section class="localisation item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png"
+            alt="map-marker" />
+        <p>2 allée des foulons, 67380 Lingolsheim</p>
+    </section>
+    <section class="entreprise-logo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png"
+            alt="client-company" />
+        <p>CESI Strasbourg</p>
+    </section>
+    <section class="promo item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png"
+            alt="reviewer-male" />
+        <p>CPI A2 Info</p>
+    </section>
+    <section class="duree item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png"
+            alt="time--v1" />
+        <p>12 Semaines</p>
+    </section>
+    <section class="date item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png"
+            alt="google-calendar" />
+        <p>08/04 - 19/07</p>
+    </section>
+    <section class="remuneration item">
+        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png"
+            alt="money--v1" />
+        <p>4,35€ / heure</p>
+    </section>
+    <section class="places item">
+        <img width="30" height="30"
+            src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png"
+            alt="conference-call--v1" />
+        <p>3 places</p>
+    </section>
+    <section class="description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam. Quas,
+            quaerat.
+            Quisquam
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam repellendus cum ea
+            pariatur et
+            modi,
+            laborum quae consequatur doloribus accusantium eligendi aperiam, illo iure autem nobis
+            velit
+            eos
+            facilis. Sapiente!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsam sunt magni, saepe,
+            tempore qui odio
+            necessitatibus laboriosam repellat, nobis voluptatem blanditiis rerum placeat libero
+            aliquid
+            sit
+            explicabo maiores molestiae
+        </p>
+    </section>
+    <section class="boutons-offre">
+        <button type="button" class="postuler">Postuler</button>
+        <button type="button">Modifier offre</button>
+        <button type="button">Ajouter à la Wishlist</button>
+    </section>
+</section>
+</section>
+`);
+    Slider();
 }
 
 function AfficherFiltresEntreprise() {
-  ClearRecherche();
-  document.querySelector("#recherche-menu").innerHTML = `
+    ClearRecherche();
+    document.querySelector("#recherche-menu").innerHTML =
+        `
         <section>
         <label for="nom-entreprise-recherche">Nom</label>
         <input type="text" id="nom-entreprise-recherche" placeholder="Nom entreprise">
@@ -358,14 +368,14 @@ function AfficherFiltresEntreprise() {
 
     <section id="boutons-filtre">
         <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
-        <input type="button" name="ajout" class="ajout" value="Ajouter entreprise"> 
-        <a href="stats-entreprise.php" target="_blank" title="Statistiques d'entreprise" id="bouton-stats-entreprise">Statistiques d'entreprises</a>
+        <input type="button" name="ajout" class="ajout" value="Ajouter entreprise"> `
+        + StatsEntreprisesOuOffres() +
+        `
     </section>
-`;
+` ;
 
-  document.querySelector("#affichage-filtre").insertAdjacentHTML(
-    "afterbegin",
-    `
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
 
 <section class="entreprise">
 <div class="logo-container"></div>
@@ -472,26 +482,25 @@ function AfficherFiltresEntreprise() {
 </fieldset>
 </section>
 </section>
-`
-  );
+`);
 
-  var entreprises = document.querySelectorAll(".entreprise");
-  entreprises.forEach(function (entreprise) {
-    var website = entreprise.querySelector(".website").getAttribute("href");
-    var domain = new URL(website).hostname.replace("www.", "");
-    var container = entreprise.querySelector(".logo-container");
-    fetchAndDisplayLogo(domain, container);
-  });
+    var entreprises = document.querySelectorAll(".entreprise");
+    entreprises.forEach(function (entreprise) {
+        var website = entreprise.querySelector(".website").getAttribute("href");
+        var domain = new URL(website).hostname.replace("www.", "");
+        var container = entreprise.querySelector(".logo-container");
+        fetchAndDisplayLogo(domain, container);
+    });
 
-  displayGrade(grade);
+    displayGrade(grade);
 
-  Slider();
+    Slider();
 }
 
 function AfficherFiltresTuteur() {
-  ClearRecherche();
-  document.querySelector("#recherche-menu").innerHTML =
-    `
+    ClearRecherche();
+    document.querySelector("#recherche-menu").innerHTML =
+        `
         <section>
         <label for="nom-tuteur-recherche">Nom</label>
         <input type="text" id="nom-tuteur-recherche" placeholder="Nom">
@@ -521,15 +530,14 @@ function AfficherFiltresTuteur() {
 
     <section id="boutons-filtre">
         <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
-        <input type="button" name="ajout" class="ajout" value="Ajouter tuteur"> ` +
-    StatsEntreprisesOuOffres() +
-    `
+        <input type="button" name="ajout" class="ajout" value="Ajouter tuteur"> `
+        + StatsEntreprisesOuOffres() +
+        `
     </section>
         `;
 
-  document.querySelector("#affichage-filtre").insertAdjacentHTML(
-    "afterbegin",
-    `
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
     
     <section class="tuteur">
     <section>
@@ -577,19 +585,19 @@ function AfficherFiltresTuteur() {
     </section>
 </section>
     `
-  );
-  var boutonPromotions = document.querySelector("#bouton-promotions");
-  var optionsList = document.querySelector("#liste-options-promotions");
+    );
+    var boutonPromotions = document.querySelector("#bouton-promotions");
+    var optionsList = document.querySelector("#liste-options-promotions");
 
-  boutonPromotions.addEventListener("click", function () {
-    optionsList.classList.toggle("visible");
-  });
+    boutonPromotions.addEventListener("click", function () {
+        optionsList.classList.toggle("visible");
+    });
 }
 
 function AfficherFiltresEtudiant() {
-  ClearRecherche();
-  document.querySelector("#recherche-menu").innerHTML =
-    `                   <section>
+    ClearRecherche();
+    document.querySelector("#recherche-menu").innerHTML =
+        `                   <section>
         <label for="nom-etudiant-recherche">Nom</label>
         <input type="text" id="nom-etudiant-recherche" placeholder="Nom">
     </section>
@@ -613,15 +621,14 @@ function AfficherFiltresEtudiant() {
 
     <section id="boutons-filtre">
         <input type="reset" name="reset" id="reset-filtre" value="Réinitialiser">
-        <input type="button" name="ajout" class="ajout" value="Ajouter etudiant"> ` +
-    StatsEntreprisesOuOffres() +
-    `
+        <input type="button" name="ajout" class="ajout" value="Ajouter etudiant"> `
+        + StatsEntreprisesOuOffres() +
+        `
     </section>
         `;
 
-  document.querySelector("#affichage-filtre").insertAdjacentHTML(
-    "afterbegin",
-    `
+    document.querySelector("#affichage-filtre").insertAdjacentHTML("afterbegin",
+        `
 
         <section class="etudiant">
         <section>
@@ -678,112 +685,106 @@ function AfficherFiltresEtudiant() {
             <button type="button">Modifier étudiant</button>
         </section>
     </section>
-        `
-  );
+        `);
 }
 
-function ClearRecherche() {
-  const affichageFiltre = document.getElementById("affichage-filtre");
 
-  affichageFiltre.innerHTML = "<button>+ Afficher plus</button>";
+function ClearRecherche() {
+    const affichageFiltre = document.getElementById("affichage-filtre");
+
+    affichageFiltre.innerHTML = "<button>+ Afficher plus</button>";
 }
 
 function Slider() {
-  const SliderRecup = document.querySelectorAll(".slider");
+    const SliderRecup = document.querySelectorAll(".slider");
 
-  SliderRecup.forEach(function (slider) {
-    const min = slider.min;
-    const max = slider.max;
-    const value = slider.value;
+    SliderRecup.forEach(function (slider) {
+        const min = slider.min;
+        const max = slider.max;
+        const value = slider.value;
 
-    slider.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${
-      ((value - min) / (max - min)) * 100
-    }%, #FFFFFF ${((value - min) / (max - min)) * 100}%, #FFFFFF 100%)`;
+        slider.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(value - min) / (max - min) * 100}%, #FFFFFF ${(value - min) / (max - min) * 100}%, #FFFFFF 100%)`;
 
-    slider.addEventListener("input", function () {
-      this.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${
-        ((this.value - this.min) / (this.max - this.min)) * 100
-      }%, #FFFFFF ${
-        ((this.value - this.min) / (this.max - this.min)) * 100
-      }%, #FFFFFF 100%)`;
+        slider.addEventListener("input", function () {
+            this.style.background = `linear-gradient(to right, #5899E2 0%, #5899E2 ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF ${(this.value - this.min) / (this.max - this.min) * 100}%, #FFFFFF 100%)`;
+        });
     });
-  });
 }
+
 
 function ResetCouleurSlider() {
-  const SliderRecup = document.querySelectorAll(".slider");
+    const SliderRecup = document.querySelectorAll(".slider");
 
-  SliderRecup.forEach(function (slider) {
-    slider.style.background = `white`;
-  });
+    SliderRecup.forEach(function (slider) {
+        slider.style.background = `white`;
+    });
 }
 
+
+
+
 function fetchAndDisplayLogo(entrepriseNom, container) {
-  const viewportWidth = window.innerWidth;
-  const imageSize = Math.min(viewportWidth * 0.2, 150);
-  const apiUrl = `https://autocomplete.clearbit.com/v1/companies/suggest?query=${encodeURIComponent(
-    entrepriseNom
-  )}`;
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      const domain = data[0]?.domain;
-      const logoUrl = `https://logo.clearbit.com/${domain}`;
-      const imageElement = document.createElement("img");
-      imageElement.src = logoUrl;
-      imageElement.classList.add("logo-image");
-      imageElement.alt = entrepriseNom;
-      imageElement.style.width = `${imageSize}px`;
+    const viewportWidth = window.innerWidth;
+    const imageSize = Math.min(viewportWidth * 0.2, 150);
+    const apiUrl = `https://autocomplete.clearbit.com/v1/companies/suggest?query=${encodeURIComponent(entrepriseNom)}`;
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            const domain = data[0]?.domain;
+            const logoUrl = `https://logo.clearbit.com/${domain}`;
+            const imageElement = document.createElement("img");
+            imageElement.src = logoUrl;
+            imageElement.classList.add("logo-image");
+            imageElement.alt = entrepriseNom;
+            imageElement.style.width = `${imageSize}px`;
 
-      const existingElement = container.firstChild;
+            const existingElement = container.firstChild;
 
-      if (existingElement) {
-        container.replaceChild(imageElement, existingElement);
-      } else {
-        container.appendChild(imageElement);
-      }
-    })
-    .catch((error) =>
-      console.error("Erreur lors de la récupération des données:", error)
-    );
+            if (existingElement) {
+                container.replaceChild(imageElement, existingElement);
+            } else {
+                container.appendChild(imageElement);
+            }
+        })
+        .catch((error) =>
+            console.error("Erreur lors de la récupération des données:", error)
+        );
 }
 
 window.onresize = function () {
-  resizeImages();
+    resizeImages();
 };
 
 function resizeImages() {
-  const viewportWidth = window.innerWidth;
-  const imageSize = Math.min(viewportWidth * 0.3, 150);
-  const imageElements = document.querySelectorAll(".logo-image");
-  imageElements.forEach(function (imageElement) {
-    imageElement.style.width = `${imageSize}px`;
-  });
+    const viewportWidth = window.innerWidth;
+    const imageSize = Math.min(viewportWidth * 0.3, 150);
+    const imageElements = document.querySelectorAll(".logo-image");
+    imageElements.forEach(function (imageElement) {
+        imageElement.style.width = `${imageSize}px`;
+    });
 }
 
 function displayGrade(grade) {
-  const rateWrappers = document.querySelectorAll(".gradeWrapper");
-  const emptystar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
-  const fullstar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
-  const halfstar =
-    "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
+    const rateWrappers = document.querySelectorAll(".gradeWrapper");
+    const emptystar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star--v1.png' alt='star--v1' />";
+    const fullstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/filled-star.png' alt='filled-star' />";
+    const halfstar = "<img width='20' height='20' src='https://img.icons8.com/windows/30/star-half-empty.png' alt='star-half-empty' />";
 
-  rateWrappers.forEach(function (wrapper) {
-    let html = "";
-    let full = Math.floor(grade);
-    let half = grade % 1 >= 0.5 ? 1 : 0;
-    let empty = 5 - full - half;
-    for (let i = 0; i < full; i++) {
-      html += fullstar;
-    }
-    if (half > 0) {
-      html += halfstar;
-    }
-    for (let i = 0; i < empty; i++) {
-      html += emptystar;
-    }
-    wrapper.innerHTML = html;
-  });
+    rateWrappers.forEach(function (wrapper) {
+        let html = "";
+        let full = Math.floor(grade);
+        let half = ((grade % 1) >= 0.5) ? 1 : 0;
+        let empty = 5 - full - half;
+        for (let i = 0; i < full; i++) {
+            html += fullstar;
+        }
+        if (half > 0) {
+            html += halfstar;
+        }
+        for (let i = 0; i < empty; i++) {
+            html += emptystar;
+        }
+        wrapper.innerHTML = html;
+    });
 }
+
