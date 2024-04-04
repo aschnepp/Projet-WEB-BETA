@@ -7,6 +7,7 @@ class Model
         PDO::ATTR_EMULATE_PREPARES => false
     ];
 
+    
     protected string $key;
 
     public function __construct()
