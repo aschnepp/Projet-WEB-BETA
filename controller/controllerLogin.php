@@ -18,8 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashedPasswordFromDb = $resultat->password;
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
+            
+            $typeUser = $User->userTypeGet($ID);
 
-            $typeUser = $Model->userTypeGet($ID);
 
             switch ($typeUser->typeUtilisateur) {
                 case "Admin":
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             $cookie = new Cookie($ID, $email, $password, $userType);
+
             $cookie->saveToCookies($remember);
         }
     }
