@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password, $hashedPasswordFromDb)) {
             $connexionAutho = 1;
-
+            
             $typeUser = $User->userTypeGet($ID);
 
             switch ($typeUser->typeUtilisateur) {
