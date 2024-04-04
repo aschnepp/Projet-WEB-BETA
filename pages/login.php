@@ -52,9 +52,10 @@
         <form id="myForm" method="post" onsubmit="submitForm(event)">
             <fieldset>
                 <label for="email">Identifiant</label>
-                <input type="text" id="email" name="email" required autocomplete="on">
+                <input type="text" id="email" name="email" required autocomplete="on" placeholder="Email">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" minlength="8" required autocomplete="off">
+                <input type="password" id="password" name="password" minlength="8" required autocomplete="off"
+                    placeholder="Mot de passe (fourni 1ere fois)">
                 <div id="remember">
                     <input type="checkbox" id="souvenir" name="souvenir" />
                     <label for="souvenir">Se souvenir de moi</label>

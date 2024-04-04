@@ -1,0 +1,103 @@
+#formulaire i.fa-check-circle {
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire i.fa-check-circle:before {
+    color: green;
+    font-size: 22px;
+}
+
+#formulaire i.fa-check-circle.validation-icone-input {
+    transform: translateX(-130%) translateY(1px);
+}
+
+
+#formulaire i.fa-check-circle.validation-icone-label {
+    transform: translateX(-100%) translateY(-95%);
+}
+
+#formulaire i.fa-check-circle.validation-icone-label.validation-icone-popup {
+    transform: translateX(50%) translateY(-15%);
+}
+
+
+
+#formulaire i.fa-times-circle {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    height: 31.2px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#formulaire i.fa-times-circle:before {
+    color: red;
+    font-size: 22px;
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-input {
+    transform: translateX(-130%) translateY(1px);
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-label {
+    transform: translateX(-100%) translateY(-95%);
+}
+
+#formulaire i.fa-times-circle.no-validation-icone-label.no-validation-icone-popup {
+    transform: translateX(50%) translateY(-15%);
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #formulaire i.fa-check-circle {
+        height: 27.51px;
+    }
+
+    #formulaire i.fa-check-circle:before {
+        color: green;
+        font-size: calc(0.8 * 22px);
+    }
+
+    #formulaire i.fa-check-circle.validation-icone-input {
+        transform: translateX(-100%) translateY(0px);
+    }
+
+    #formulaire i.fa-check-circle.validation-icone-label {
+        transform: translateX(-100%) translateY(-100%);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-label.validation-icone-popup {
+        transform: translateX(10%) translateY(-20%);
+    }
+
+
+    #formulaire i.fa-times-circle {
+        height: 27.51px;
+    }
+
+    #formulaire i.fa-times-circle:before {
+        color: red;
+        font-size: calc(0.8 * 22px);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-input {
+        transform: translateX(-100%) translateY(0px);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-label {
+        transform: translateX(-100%) translateY(-100%);
+    }
+
+    #formulaire i.fa-times-circle.no-validation-icone-label.no-validation-icone-popup {
+        transform: translateX(10%) translateY(-20%);
+    }
+}
