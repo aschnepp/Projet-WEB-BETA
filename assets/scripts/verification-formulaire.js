@@ -611,7 +611,7 @@ function VerifVilleOffre(valeur) {
 }
 
 function VerifRegionOffre(valeur) {
-    var datalist = document.querySelector("#administrative_area_level_1-offre");
+    var datalist = document.querySelector("#liste-regions");
     var options = datalist.querySelectorAll("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].value === valeur) {
