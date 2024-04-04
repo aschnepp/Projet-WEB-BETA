@@ -4,7 +4,7 @@ function submitForm(event) {
     var formData = new FormData(document.getElementById('formulaire'));
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', "/model/GestionOffres.php", true);
+    xhr.open('POST', "../model/GestionOffres.php", true);
     xhr.send(formData);
 
     xhr.onreadystatechange = function () {

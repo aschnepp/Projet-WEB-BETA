@@ -79,7 +79,7 @@
                     <p>Adresse</p>
                     <p>{$formattedAddress}</p>
                 </section>
-                {if $type == "Tuteur"}
+                {if $type == "tutors"}
                 <section>
                     <p>Promotion gérées</p>
                     <p>{$promos}</p>
@@ -88,7 +88,7 @@
                     <p>Centre</p>
                     <p>{$campus}</p>
                 </section>
-                {else if $type == "Etudiant"}
+                {else if $type == "students"}
                     <section>
                     <p>Promotion</p>
                     <p>{$promo}</p>
@@ -108,16 +108,7 @@
                 {/if}
             </section>
             <section id="btn-section">
-                {if $type == "Admin"}
-                    <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
-                    <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
-                    <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {else if $type == "Tuteur"}
-                    <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
-                    <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {else}
-                    <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {/if}
+                <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
             </section>
         </section>
     </main>

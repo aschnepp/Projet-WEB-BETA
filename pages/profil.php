@@ -5,8 +5,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/controller/SmartyCatalyst.php";
 require $_SERVER["DOCUMENT_ROOT"] . "/model/User.php";
 
 // Initialisation des classes
-$model = new Model();
-$controller = new SmartyCatalyst($model);
+$user = new User();
+$controller = new SmartyCatalyst($user);
 $cookie = new Cookie();
 
 // Récupération des données
@@ -26,23 +26,22 @@ $currentDate = new DateTime();
 $age = $birthdate->diff($currentDate)->y;
 $addresse = $controller->getAddresse($data->address_id)[0];
 $formattedAddress = $addresse->street_number . " " . $addresse->street_name . ", " . $addresse->postal_code . " " . $addresse->city_name;
-$type = $model->userTypeGet($ID)->typeUtilisateur;
+$type = $user->userTypeGet($ID)->typeUtilisateur;
 
 switch ($type) {
-    case "Admin":
+    case "admins":
         break;
-    case "Tuteur":
+    case "tutors":
         $infosSupp = $controller->getTuteur($ID);
         $campus = $infosSupp[0]->campus_name;
         $promos = "";
         for ($i = 0; $i < count($infosSupp); $i++) {
             $promos .= $infosSupp[$i]->promotion_name . " ";
         }
-        var_dump($promos);
         $controller->assign("campus", $campus);
         $controller->assign("promos", $promos);
         break;
-    case "Etudiant":
+    case "students":
         $infosSupp = $controller->getStudent($ID);
         $campus = $infosSupp[0]->campus_name;
         $promo = $infosSupp[0]->promotion_name;
@@ -65,7 +64,5 @@ $controller->assign("tel", $tel);
 $controller->assign("birthday", $birthday);
 $controller->assign("age", $age);
 $controller->assign("formattedAddress", $formattedAddress);
-$controller->assign("type", $type);
-
 $controller->assign("type", $type);
 $controller->display($_SERVER['DOCUMENT_ROOT'] . "/view/templates/profil.tpl");

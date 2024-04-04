@@ -89,7 +89,7 @@ class SmartyCatalyst extends Smarty
 
     public function getProfil($userId)
     {
-        return $this->model->selectFromUsers("users", ["*"], "user_id = " . $userId, true);
+        return $this->model->selectFromUser(["*"], "user_id = " . $userId, true);
     }
 
     public function getAddresse($addId)

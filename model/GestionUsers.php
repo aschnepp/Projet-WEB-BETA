@@ -1,22 +1,4 @@
 <?php
-// require("{$_SERVER["DOCUMENT_ROOT"]}/controller/cookies.php");
-
-// $Cookie = new Cookie();
-// var_dump($Cookie);
-
-// $Cookie = $Cookie->decodeCookieData();
-// var_dump($Cookie);
-
-// $condition = "user_id = 101";
-// $user = $Model->selectFromUser(["*"], $condition, true);
-
-
-// $hash = password_hash($user->password, CRYPT_BLOWFISH);
-
-// $Model->insert()
-
-
-
 require("{$_SERVER["DOCUMENT_ROOT"]}/model/User.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

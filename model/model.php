@@ -147,4 +147,29 @@ class Model
             exit('Erreur: ' . $e->getMessage());
         }
     }
+
+    public function callProcedure(string $procedureName, array $parameters = [])
+    {
+        try {
+            $sqlString = "CALL {$procedureName}(";
+            $paramCount = count($parameters);
+            for ($i = 0; $i < $paramCount; $i++) {
+                $sqlString .= ($i == $paramCount - 1) ? "?" : "?, ";
+            }
+            $sqlString .= ");";
+
+            $query = $this->pdo->prepare($sqlString);
+            $i = 1;
+            foreach ($parameters as $param) {
+                $query->bindValue($i, $param);
+                $i++;
+            }
+            $query->execute();
+
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            exit($e->getMessage());
+        }
+    }
 }
