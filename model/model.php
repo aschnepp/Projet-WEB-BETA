@@ -172,8 +172,7 @@ class Model
         }
     }
 
-
-    public function selectFromUser(string $table, array $columns, string $condition = "", bool $unique = true)
+    public function selectFromUsers(string $table, array $columns, string $condition = "", bool $unique = true)
     {
         try {
             $decryptedColumns = [
@@ -210,6 +209,7 @@ class Model
             exit($e->getMessage());
         }
     }
+
     public function callProcedure(string $procedureName, array $parameters = [])
     {
         try {

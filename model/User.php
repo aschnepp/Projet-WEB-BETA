@@ -125,7 +125,6 @@ class User extends Model
         }
     }
 
-
     public function selectFromUser(array $columns, string $condition = "", bool $unique = true)
     {
         try {
