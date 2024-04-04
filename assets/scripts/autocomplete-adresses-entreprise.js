@@ -1,5 +1,18 @@
 "use strict";
-let addressCount = 1;
+
+var addressCount = 1;
+
+document.addEventListener("DOMContentLoaded", () => {
+  initButtons();
+  var addressCount = document.querySelectorAll(".adresse-cp-entreprise").length;
+  loadGoogleMaps()
+    .then(() => {
+      initMap();
+    })
+    .catch((error) => {
+      console.error("Erreur de chargement de l'API Google Maps :", error);
+    });
+});
 
 const CONFIGURATION = {
   mapsApiKey: "AIzaSyAgxHvp2OvCHEjca05FzbQRJGz9b7Z27Dc",
@@ -215,14 +228,3 @@ function loadGoogleMaps() {
     script.onload = resolve;
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  initButtons();
-  loadGoogleMaps()
-    .then(() => {
-      initMap();
-    })
-    .catch((error) => {
-      console.error("Erreur de chargement de l'API Google Maps :", error);
-    });
-});
