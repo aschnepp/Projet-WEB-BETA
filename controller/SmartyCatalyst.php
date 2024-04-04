@@ -86,4 +86,24 @@ class SmartyCatalyst extends Smarty
             $this->model->callProcedure("insertNotation", [$userId, $firmId, number_format($grade, 1, ".", ''), $comment]);
         }
     }
+
+    public function getProfil($userId)
+    {
+        return $this->model->selectFromUsers("users", ["*"], "user_id = " . $userId, true);
+    }
+
+    public function getAddresse($addId)
+    {
+        return $this->model->callProcedure("getAddress", [$addId]);
+    }
+
+    public function getStudent($userId)
+    {
+        return $this->model->callProcedure("getEtudiant", [$userId]);
+    }
+
+    public function getTuteur($userId)
+    {
+        return $this->model->callProcedure("getTuteur", [$userId]);
+    }
 }
