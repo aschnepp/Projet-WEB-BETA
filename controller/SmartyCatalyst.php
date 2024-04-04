@@ -1,11 +1,14 @@
 <?php
 
-require "{$_SERVER["DOCUMENT_ROOT"]}/libs/smarty/libs/bootstrap.php";
+require_once "{$_SERVER["DOCUMENT_ROOT"]}/libs/smarty/libs/bootstrap.php";
+require_once "{$_SERVER["DOCUMENT_ROOT"]}/model/Secteurs.php";
+require_once "{$_SERVER["DOCUMENT_ROOT"]}/model/Regions.php";
+require_once "{$_SERVER["DOCUMENT_ROOT"]}/model/Model.php";
 
 class SmartyCatalyst extends Smarty
 {
 
-    private $model;
+    private Model $model;
 
     public function __construct($model)
     {
@@ -16,6 +19,10 @@ class SmartyCatalyst extends Smarty
         $this->setCacheDir("{$_SERVER["DOCUMENT_ROOT"]}/cache/");
 
         $this->setEscapeHtml(true);
+
+        $this->registerPlugin("modifier", "strtolower", "strtolower");
+        $this->registerPlugin("modifier", "str_replace", "str_replace");
+        $this->registerPlugin("modifier", "htmlspecialchars", "htmlspecialchars");
 
         $this->model = $model;
 
@@ -38,7 +45,7 @@ class SmartyCatalyst extends Smarty
         return $this->model->callProcedure("topFirms");
     }
 
-    public function getSectors()
+    public function getSectorsCount()
     {
         return $this->model->callProcedure("count_activity_sector_totals");
     }
@@ -105,5 +112,40 @@ class SmartyCatalyst extends Smarty
     public function getTuteur($userId)
     {
         return $this->model->callProcedure("getTuteur", [$userId]);
+    }
+
+    public function getSectors(): array
+    {
+        $sectorModel = new Secteurs($this->model);
+        return $sectorModel->getSecteurs();
+    }
+
+    public function getFirmInfo(int $id)
+    {
+        return $this->model->callProcedure("GetFirmInfo", [$id], true);
+    }
+
+    public function getAllRegion(): array
+    {
+        $regionModel = new Regions($this->model);
+        return $regionModel->getRegions();
+    }
+
+    public function getFirmAdresses(int $id)
+    {
+        return $this->model->callProcedure("getFirmAdresses", [$id]);
+    }
+
+    public function getFirmSectors(int $id)
+    {
+        return $this->model->callProcedure("getFirmSectors", [$id], false, [PDO::FETCH_COLUMN, 0]);
+    }
+
+    public function getFirmReviews(int $firm_ID, int $user_ID = null)
+    {
+        $args = array();
+        $args[] = $firm_ID;
+        $user_ID == null ? $args[] = null : $args[] = $user_ID;
+        return $this->model->callProcedure("getFirmReview", $args, true);
     }
 }
