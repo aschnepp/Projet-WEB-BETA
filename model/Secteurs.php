@@ -4,16 +4,26 @@ require_once("{$_SERVER["DOCUMENT_ROOT"]}/model/Model.php");
 
 class Secteurs
 {
-    private Model $Model;
-
-    public function __construct(Model $model)
+    public function getSecteurs()
     {
-        $this->Model = $model;
+        $Model = new Model;
+        $secteurs = $Model->select("activity_sectors", ["*"], "", false);
+
+        return $secteurs;
     }
 
-    public function getSecteurs(): array
+    public function getSecteursList()
     {
-        $secteurs = $this->Model->select("activity_sectors", ["*"], "", false, [PDO::FETCH_COLUMN, 1]);
+        $Model = new Model;
+        $secteurs = $Model->select("activity_sectors", ["*"], "", false);
+
+        foreach ($secteurs as $secteur) {
+            $nom = htmlspecialchars($secteur->activity_sector_name, ENT_QUOTES, 'UTF-8');
+            echo "<li><input type='checkbox' name='sectors[]' id='secteur-{$secteur->activity_sector_id}'>
+            <label for='secteur-{$secteur->activity_sector_id}'>
+            $nom
+            </label></li>";
+        }
 
         return $secteurs;
     }
