@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.5.1, created on 2024-04-04 10:35:39
+  from 'C:\Users\maxim\OneDrive\Documents\CESI\A2\4-Développement-WEB\Projet\Projet-WEB\view\templates\profil.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.5.1',
+  'unifunc' => 'content_660e665be84973_53663514',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd4ed4d71a0e07955b175a7876ef63778d489a0b2' => 
+    array (
+      0 => 'C:\\Users\\maxim\\OneDrive\\Documents\\CESI\\A2\\4-Développement-WEB\\Projet\\Projet-WEB\\view\\templates\\profil.tpl',
+      1 => 1712219735,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660e665be84973_53663514 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -12,7 +35,9 @@
     <link rel="preload" href="../assets/images/Logo.webp" as="image">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href=" https://fonts.googleapis.com/css?family=Montserrat" rel="preload" as="font" />
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+    <?php echo '<script'; ?>
+ rel="preload" src="../assets/scripts/menuburger.js"><?php echo '</script'; ?>
+>
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,70 +79,82 @@
                 <section id="info">
                     <section>
                         <p>Prénom</p>
-                        <p>{$prenom}</p>
+                        <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['prenom']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                     </section>
                     <section>
                         <p>Nom</p>
-                        <p>{$nom}</p>
+                        <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['nom']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                     </section>
                     <section>
                         <p>Email</p>
-                        <p>{$email}</p>
+                        <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['email']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                     </section>
                 </section>
             </section>
             <section>
                 <section>
                     <p>Date de naissance</p>
-                    <p>{$birthday}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['birthday']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Age</p>
-                    <p>{$age}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['age']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Adresse</p>
-                    <p>{$formattedAddress}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['formattedAddress']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
-                {if $type == "Tuteur"}
+                <?php if ($_smarty_tpl->tpl_vars['type']->value == "Tuteur") {?>
                 <section>
                     <p>Promotion gérées</p>
-                    <p>{$promos}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['promos']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Centre</p>
-                    <p>{$campus}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['campus']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
-                {else if $type == "Etudiant"}
+                <?php } elseif ($_smarty_tpl->tpl_vars['type']->value == "Etudiant") {?>
                     <section>
                     <p>Promotion</p>
-                    <p>{$promo}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['promo']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Centre</p>
-                    <p>{$campus}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['campus']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Nombre de postulation</p>
-                    <p>{$candidature}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['candidature']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
                 <section>
                     <p>Nombre de stages</p>
-                    <p>{$stage}</p>
+                    <p><?php echo htmlspecialchars((string) ($_smarty_tpl->tpl_vars['stage']->value), ENT_QUOTES, 'UTF-8');?>
+</p>
                 </section>
-                {/if}
+                <?php }?>
             </section>
             <section id="btn-section">
-                {if $type == "Admin"}
+                <?php if ($_smarty_tpl->tpl_vars['type']->value == "Admin") {?>
                     <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
                     <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
                     <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {else if $type == "Tuteur"}
+                <?php } elseif ($_smarty_tpl->tpl_vars['type']->value == "Tuteur") {?>
                     <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg" alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
                     <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {else}
+                <?php } else { ?>
                     <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg" alt="Icône 'Se déconnecter'">Se déconnecter</button>
-                {/if}
+                <?php }?>
             </section>
         </section>
     </main>
@@ -131,4 +168,5 @@
     </footer>
 </body>
 
-</html>
+</html><?php }
+}
