@@ -6,6 +6,7 @@ require $_SERVER["DOCUMENT_ROOT"] . "/model/model.php";
 $model = new Model();
 $controller = new SmartyCatalyst($model);
 
+
 // Récupère les 3 offres les plus wishlisted et les envoie au JS pour affichage avec API
 $top = $controller->getTopOffers();
 $logo1 = $top[0]->website;
