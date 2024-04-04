@@ -237,15 +237,15 @@ main #entreprise-review .description fieldset legend {
   min-width: 240px;
 }
 
-.rate > input {
+.rate>input {
   display: none;
 }
 
-.rate > label {
+.rate>label {
   float: right;
 }
 
-.rate > label:before {
+.rate>label:before {
   display: inline-block;
   font-size: 1.7rem;
   padding: 0.3rem 0.7rem;
@@ -261,15 +261,15 @@ main #entreprise-review .description fieldset legend {
   padding-right: 0;
 }
 
-.rate > input:checked ~ label,
-.rate > label:hover,
-.rate > label:hover ~ label {
+.rate>input:checked~label,
+.rate>label:hover,
+.rate>label:hover~label {
   color: #f4ab19;
 }
 
-.rate > input:checked + label:hover,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
+.rate>input:checked+label:hover,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
   color: #b67c0f;
 }

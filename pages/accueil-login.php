@@ -16,8 +16,9 @@
 
     <!-- Style -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/accueil-login.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -44,7 +45,8 @@
 
             <!-- Contenu du header-droite -->
             <a class="fa fa-heart liens-header" id="wishlist" aria-hidden="true" rel="preconnect" href="test.html"></a>
-            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect" href="test.html"></a>
+            <a class="fa fa-building liens-header" id="entreprise" aria-hidden="true" rel="preconnect"
+                href="test.html"></a>
             <a class="fa fa-briefcase liens-header" id="job" aria-hidden="true" rel="preconnect" href="test.html"></a>
             <a class="fa fa-cog liens-header" aria-hidden="true" rel="preconnect" href="entreprise.html"></a>
         </section>
@@ -77,46 +79,46 @@
                             <h3>Stage Recherche Réseau</h3>
                             <section class="stats">
                                 <section id="likes" class="item">
-                                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/hearts.png" alt="wishlists" />
+                                    <i class="fa-regular fa-heart fa-2x"></i>
                                     <p>3</p>
                                 </section>
                                 <section id="demandes" class="item">
-                                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/secured-letter--v1.png" alt="demandes" />
+                                    <i class="fa-regular fa-envelope fa-2x"></i>
                                     <p>1</p>
                                 </section>
                             </section>
                         </section>
                         <section class="infos">
                             <section id="competences" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/learning.png" alt="learning" />
+                                <i class="fa-solid fa-certificate fa-2x"></i>
                                 <p>IP, NAT, CCNAv7</p>
                             </section>
                             <section id="localisation" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/map-marker.png" alt="map-marker" />
+                                <i class="fa-solid fa-map-location-dot fa-2x"></i>
                                 <p>2 allée des foulons, 67380 Lingolsheim</p>
                             </section>
                             <section id="entreprise-logo" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/client-company.png" alt="client-company" />
+                                <i class="fa-solid fa-building-user fa-2x"></i>
                                 <p>CESI Strasbourg</p>
                             </section>
                             <section id="promo" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/reviewer-male.png" alt="reviewer-male" />
+                                <i class="fa-solid fa-user-check fa-2x"></i>
                                 <p>CPI A2 Info</p>
                             </section>
                             <section id="duree" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/time--v1.png" alt="time--v1" />
+                                <i class="fa-regular fa-clock fa-2x"></i>
                                 <p>12 Semaines</p>
                             </section>
                             <section id="date" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-calendar.png" alt="google-calendar" />
+                                <i class="fa-regular fa-calendar-days fa-2x"></i>
                                 <p>08/04 - 19/07</p>
                             </section>
                             <section id="remuneration" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/money--v1.png" alt="money--v1" />
+                                <i class="fa-solid fa-coins fa-2x"></i>
                                 <p>4,35€ / heure</p>
                             </section>
                             <section id="places" class="item">
-                                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/conference-call--v1.png" alt="conference-call--v1" />
+                                <i class="fa-solid fa-users fa-2x"></i>
                                 <p>3 places</p>
                             </section>
                         </section>
@@ -130,19 +132,7 @@
             </fieldset>
         </section>
 
-        <section id="rechercher">
+        <section id="rechercher-plus">
             <button type="button">Rechercher plus d'offres</button>
         </section>
     </main>
-
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" title="CGU" class="a-footer">CGU</a>
-            <a href="about.html" title="A Propos" class="a-footer">A Propos</a>
-            <a href="contact.html" title="Contact" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
-</body>
-
-</html>

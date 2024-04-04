@@ -1,112 +1,68 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <!-- Main -->
-    <meta charset="UTF-8">
-    <title>Profil</title>
-    <meta name="description" content="Page de profil du site 'Stage Catalyst'">
-    <link rel="icon" type="image/x-icon" href="../assets/images/Logo.ico">
+require $_SERVER["DOCUMENT_ROOT"] . "/controller/Cookie.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/controller/SmartyCatalyst.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/model/User.php";
 
-    <!-- Preload -->
-    <link rel="preload" href="../assets/images/Logo.webp" as="image">
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href=" https://fonts.googleapis.com/css?family=Montserrat" rel="preload" as="font" />
-    <script rel="preload" src="../assets/scripts/menuburger.js"></script>
+// Initialisation des classes
+$user = new User();
+$controller = new SmartyCatalyst($user);
+$cookie = new Cookie();
 
-    <!-- Style -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/profil.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
+// Récupération des données
+$cookie = $cookie->decodeCookieData();
+$ID = $cookie->get("ID");
+$data = $controller->getProfil($ID);
 
-<body>
-    <header>
-        <section id="header-gauche">
-            <a href="../index.html" id="image-accueil"><img src="../assets/images/Logo.webp" alt="logo" id="logo" /></a>
-            <p id="header-p">Stage Catalyst</p>
-        </section>
+$email = $data->email;
+$nom = $data->name;
+$prenom = $data->surname;
+$tel = $data->phone_number;
+$birthday = $data->birthdate;
 
-        <section id="header-milieu">
-            <!-- Menu de recherche se fait tout seul dans le JS-->
-        </section>
+// Calculate age from birthdate
+$birthdate = new DateTime($birthday);
+$currentDate = new DateTime();
+$age = $birthdate->diff($currentDate)->y;
+$addresse = $controller->getAddresse($data->address_id)[0];
+$formattedAddress = $addresse->street_number . " " . $addresse->street_name . ", " . $addresse->postal_code . " " . $addresse->city_name;
+$type = $user->userTypeGet($ID)->typeUtilisateur;
 
-        <section id="header-droite">
-            <section id="menu-burger-header">
-                <section class="barre-haut"></section>
-                <section class="barre-milieu"></section>
-                <section class="barre-bas"></section>
-            </section>
+switch ($type) {
+    case "admins":
+        break;
+    case "tutors":
+        $infosSupp = $controller->getTuteur($ID);
+        $campus = $infosSupp[0]->campus_name;
+        $promos = "";
+        for ($i = 0; $i < count($infosSupp); $i++) {
+            $promos .= $infosSupp[$i]->promotion_name . " ";
+        }
+        $controller->assign("campus", $campus);
+        $controller->assign("promos", $promos);
+        break;
+    case "students":
+        $infosSupp = $controller->getStudent($ID);
+        $campus = $infosSupp[0]->campus_name;
+        $promo = $infosSupp[0]->promotion_name;
+        $candidature = $infosSupp[0]->nbCandidatures;
+        $stage = $infosSupp[0]->nbStages;
+        $controller->assign("campus", $campus);
+        $controller->assign("promo", $promo);
+        $controller->assign("candidature", $candidature);
+        $controller->assign("stage", $stage);
+        break;
+    default:
+        break;
+}
 
-            <!-- Icônes se font tout seul en JS-->
-        </section>
-    </header>
-    <main>
-        <section id="menu-burger-flou">
-            <section id="menu-burger-main">
-            </section>
-        </section>
-        <section class="profile">
-            <h1>Profil</h1>
-            <section>
-                <img src="../assets/fontawesome/svgs/solid/user.svg" alt="Icône utilisateur par défaut" id="fa-user">
-                <section id="info">
-                    <section>
-                        <p>Prénom</p>
-                        <p>d,qzd,qdq</p>
-                    </section>
-                    <section>
-                        <p>Nom</p>
-                        <p>DQZDQ</p>
-                    </section>
-                    <section>
-                        <p>Email</p>
-                        <p>guigui67480@gmail.com</p>
-                    </section>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <p>Date de naissance</p>
-                    <p>11 mai 2004</p>
-                </section>
-                <section>
-                    <p>Age</p>
-                    <p>19</p>
-                </section>
-                <section>
-                    <p>Adresse</p>
-                    <p>19 rue des tests, Strasbourg, 67000</p>
-                </section>
-                <section>
-                    <p>Promotion gérées</p>
-                    <p>A1, A2, A3</p>
-                </section>
-                <section>
-                    <p>Centre</p>
-                    <p>Strasbourg</p>
-                </section>
-            </section>
-            <section id="btn-section">
-                <button><img src=" ../assets/fontawesome/svgs/solid/user-pen.svg"
-                        alt="Icône pour le bouton 'Gérer les étudiants'">Gérer les étudiants</button>
-                <button><img src="../assets/fontawesome/svgs/solid/user-pen.svg"
-                        alt="Icône pour le bouton 'Gérer les tuteurs'">Gérer les tuteurs</button>
-                <button><img src="../assets/fontawesome/svgs/solid/arrow-right-from-bracket.svg"
-                        alt="Icône 'Se déconnecter'">Se déconnecter</button>
-            </section>
-        </section>
-    </main>
-    <footer>
-        <section id="liens-footer">
-            <a href="cgu.html" class="a-footer">CGU</a>
-            <a href="about.html" class="a-footer">A Propos</a>
-            <a href="contact.html" class="a-footer">Contact</a>
-        </section>
-        <p>Stage Catalyst © 2024</p>
-    </footer>
-</body>
-
-</html>
+// Transfert de données vers le template
+$controller->assign("email", $email);
+$controller->assign("nom", $nom);
+$controller->assign("prenom", $prenom);
+$controller->assign("tel", $tel);
+$controller->assign("birthday", $birthday);
+$controller->assign("age", $age);
+$controller->assign("formattedAddress", $formattedAddress);
+$controller->assign("type", $type);
+$controller->display($_SERVER['DOCUMENT_ROOT'] . "/view/templates/profil.tpl");
